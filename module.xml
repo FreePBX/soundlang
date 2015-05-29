@@ -1,0 +1,25 @@
+<module>
+	<rawname>soundlang</rawname>
+	<repo>standard</repo>
+	<name>Sound Languages</name>
+	<version>13.0.0alpha1</version>
+	<publisher>Schmooze Com Inc</publisher>
+	<license>GPLv3+</license>
+	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
+	<changelog>
+		*13.0.0alpha1* First release
+	</changelog>
+	<category>Admin</category>
+	<description>
+		Management of sound prompt languages.
+	</description>
+	<depends>
+		<version>13.0.0</version>
+	</depends>
+	<menuitems>
+		<soundlang>Sound Languages</soundlang>
+	</menuitems>
+	<supported>
+		<version>13.0</version>
+	</supported>
+</module>
