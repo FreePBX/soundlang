@@ -45,7 +45,6 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 			'en' => _('English'),
 			'es' => _('Spanish'),
 			'fr' => _('French'),
-			'ja' => _('Japanese'),
 		);
 		$language = $this->getLanguage();
 
