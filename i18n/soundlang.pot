@@ -1,0 +1,95 @@
+# This file is part of FreePBX.
+#
+# For licensing information, please see the file named LICENSE located in the module directory
+#
+# FreePBX language template for soundlang
+# Copyright (C) 2008-2015 Sangoma, Inc.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-06-17 11:06-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: views/packages.php:14
+msgid "Actions"
+msgstr ""
+
+#: views/packages.php:12
+msgid "Available"
+msgstr ""
+
+#: Soundlang.class.php:277
+#, php-format
+msgid "Could not untar %s to %s"
+msgstr ""
+
+#: Soundlang.class.php:45
+msgid "English"
+msgstr ""
+
+#: Soundlang.class.php:382
+#, php-format
+msgid "Failed to get remote file, error was:"
+msgstr ""
+
+#: views/packages.php:11
+msgid "Format"
+msgstr ""
+
+#: Soundlang.class.php:47
+msgid "French"
+msgstr ""
+
+#: views/rnav.php:2
+msgid "Global Language"
+msgstr ""
+
+#: views/packages.php:13
+msgid "Installed"
+msgstr ""
+
+#: views/packages.php:10
+#: views/select.php:14
+msgid "Language"
+msgstr ""
+
+#: views/rnav.php:3
+msgid "Language Packs"
+msgstr ""
+
+#: views/select.php:30
+msgid "Language to be used for sound prompts throughout the system"
+msgstr ""
+
+#: views/packages.php:9
+msgid "Module"
+msgstr ""
+
+#: Soundlang.class.php:140
+msgid "Reset"
+msgstr ""
+
+#: Soundlang.class.php:46
+msgid "Spanish"
+msgstr ""
+
+#: Soundlang.class.php:145
+msgid "Submit"
+msgstr ""
+
+#: Soundlang.class.php:320
+#, php-format
+msgid "failed to delete %s from cache directory after opening sounds archive."
+msgstr ""
+
+#: Soundlang.class.php:276
+#, php-format
+msgid "failed to open %s sounds archive."
+msgstr ""
