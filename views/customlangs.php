@@ -13,7 +13,7 @@
 									<i class="fa fa-remove"></i> <span><?php echo _('Delete')?></span>
 								</button>
 							</div>
-							<table data-toolbar="#toolbar-customlangs" data-toggle="table" data-pagination="true" data-search="true" class="table table-striped" id="table-customlangs">
+							<table data-toolbar="#toolbar-customlangs" data-toggle="table" data-pagination="true" class="table table-striped" id="table-customlangs">
 								<thead>
 									<tr>
 										<th data-checkbox="true"></th>
