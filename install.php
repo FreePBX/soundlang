@@ -14,7 +14,7 @@ $sql[] = 'CREATE TABLE IF NOT EXISTS `soundlang_customlangs` (
  `id` int(11) NOT NULL AUTO_INCREMENT,
  `language` varchar(20) NOT NULL,
  `description` varchar(80) NOT NULL,
- PRIMARY KEY (`language`)
+ PRIMARY KEY (`id`)
 );';
 
 $sql[] = 'CREATE TABLE IF NOT EXISTS `soundlang_packs` (

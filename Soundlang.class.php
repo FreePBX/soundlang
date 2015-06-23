@@ -88,6 +88,7 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 			$html .= load_view(dirname(__FILE__).'/views/packages.php', array('packages' => $packages, 'languages' => $languages));
 			break;
 		case 'customlangs':
+		case 'delcustomlang':
 			$customlangs = $this->getCustomLanguages();
 
 			$html .= load_view(dirname(__FILE__).'/views/customlangs.php', array('customlangs' => $customlangs));
@@ -152,6 +153,10 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 					$this->updateCustomLanguage($id, $language, $description);
 				}
 			}
+			break;
+		case 'delcustomlang':
+			$id = $request['customlang'];
+			$this->delCustomLanguage($id);
 			break;
 		}
 	}
@@ -349,24 +354,36 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 	}
 
 	private function updateCustomLanguage($id, $language, $description = '') {
+		global $amp_conf;
+
 		$sql = "UPDATE soundlang_customlangs SET language = :language, description = :description";
 		$sth = $this->db->prepare($sql);
 		$res = $sth->execute(array(
 			':language' => $language,
 			':description' => $description,
 		));
+
+		$destdir = $amp_conf['ASTVARLIBDIR'] . "/sounds/" . str_replace('/', '_', $language) . "/";
+		@mkdir($destdir);
 	}
 
 	private function addCustomLanguage($language, $description = '') {
+		global $amp_conf;
+
 		$sql = "INSERT INTO soundlang_customlangs (language, description) VALUES (:language, :description)";
 		$sth = $this->db->prepare($sql);
 		$res = $sth->execute(array(
 			':language' => $language,
 			':description' => $description,
 		));
+
+		$destdir = $amp_conf['ASTVARLIBDIR'] . "/sounds/" . str_replace('/', '_', $language) . "/";
+		@mkdir($destdir);
 	}
 
 	private function delCustomLanguage($id) {
+		global $amp_conf;
+
 		$language = $this->getCustomLanguage($id);
 		if ($language['language'] == $this->getLanguage()) {
 			/* Our current language was removed.  Fall back to default. */
@@ -378,6 +395,9 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 		$sth->execute(array(
 			':id' => $id,
 		));
+
+		$destdir = $amp_conf['ASTVARLIBDIR'] . "/sounds/" . str_replace('/', '_', $language['language']) . "/";
+		@rmdir($destdir);
 	}
 
 	private function getPackageInstalled($package) {
