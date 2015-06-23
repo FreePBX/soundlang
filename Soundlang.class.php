@@ -4,6 +4,9 @@
 //	Copyright 2015 Schmooze Com Inc.
 //
 namespace FreePBX\modules;
+// Default setting array passed to ajaxRequest
+$setting = array('authenticate' => true, 'allowremote' => false);
+
 class Soundlang extends \FreePBX_Helpers implements \BMO {
 	private $message = '';
 	private $maxTimeLimit = 250;
@@ -37,20 +40,18 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 	 * Function used in page.soundlang.php
 	 */
 	public function myShowPage() {
-		$action = !empty($_REQUEST['action']) ? $_REQUEST['action'] : '';
+		$request = $_REQUEST;
+		$action = !empty($request['action']) ? $request['action'] : '';
 
 		$html .= load_view(dirname(__FILE__).'/views/main.php', array('message' => $this->message));
 
-		$languages = array(
-			'en' => _('English'),
-			'es' => _('Spanish'),
-			'fr' => _('French'),
-		);
-		$language = $this->getLanguage();
+		$languages = $this->getLanguages();
 
 		switch ($action) {
 		case '':
 		case 'save':
+			$language = $this->getLanguage();
+
 			$html .= load_view(dirname(__FILE__).'/views/select.php', array('languages' => $languages, 'language' => $language));
 			break;
 		case 'packages':
@@ -86,6 +87,18 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 
 			$html .= load_view(dirname(__FILE__).'/views/packages.php', array('packages' => $packages, 'languages' => $languages));
 			break;
+		case 'customlangs':
+			$customlangs = $this->getCustomLanguages();
+
+			$html .= load_view(dirname(__FILE__).'/views/customlangs.php', array('customlangs' => $customlangs));
+			break;
+		case 'addcustomlang':
+		case 'showcustomlang':
+			if ($action == 'showcustomlang' && !empty($request['customlang'])) {
+				$customlang = $this->getCustomLanguage($request['customlang']);
+			}
+
+			$html .= load_view(dirname(__FILE__).'/views/customlang.php', array('customlang' => $customlang));
 		}
 
 		return $html;
@@ -96,44 +109,90 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 	 * @param {string} $display The Page name
 	 */
 	public function doConfigPageInit($display) {
-		$action = !empty($_REQUEST['action']) ? $_REQUEST['action'] : '';
+		$request = $_REQUEST;
+		$action = !empty($request['action']) ? $request['action'] : '';
 
 		switch ($action) {
 		case 'save':
-			$language = $_REQUEST['language'];
+			$language = $request['language'];
 
 			$this->setLanguage($language);
 			break;
 		case 'install':
-			$package['type'] = $_REQUEST['type'];
-			$package['module'] = $_REQUEST['module'];
-			$package['language'] = $_REQUEST['language'];
-			$package['format'] = $_REQUEST['format'];
-			$package['version'] = $_REQUEST['version'];
+			$package['type'] = $request['type'];
+			$package['module'] = $request['module'];
+			$package['language'] = $request['language'];
+			$package['format'] = $request['format'];
+			$package['version'] = $request['version'];
 
 			$this->installPackage($package);
 
 			break;
 		case 'uninstall':
-			$package['type'] = $_REQUEST['type'];
-			$package['module'] = $_REQUEST['module'];
-			$package['language'] = $_REQUEST['language'];
-			$package['format'] = $_REQUEST['format'];
+			$package['type'] = $request['type'];
+			$package['module'] = $request['module'];
+			$package['language'] = $request['language'];
+			$package['format'] = $request['format'];
 
 			$this->uninstallPackage($package);
 
+			break;
+		case 'customlangs':
+		case 'showcustomlang':
+			$save = $request['save'];
+
+			if ($save == 'customlang') {
+				$id = $request['customlang'];
+				$language = $request['language'];
+				$description = $request['description'];
+
+				if (empty($id)) {
+					$this->addCustomLanguage($language, $description);
+				} else {
+					$this->updateCustomLanguage($id, $language, $description);
+				}
+			}
 			break;
 		}
 	}
 
 	public function getActionBar($request) {
-		$action = !empty($_REQUEST['action']) ? $_REQUEST['action'] : '';
+		$action = !empty($request['action']) ? $request['action'] : '';
 
 		$buttons = array();
 
 		switch ($action) {
 		case '':
 		case 'save':
+			$buttons['reset'] = array(
+				'name' => 'reset',
+				'id' => 'reset',
+				'value' => _('Reset')
+			);
+			$buttons['submit'] = array(
+				'name' => 'submit',
+				'id' => 'submit',
+				'value' => _('Submit')
+			);
+			break;
+		case 'showcustomlang':
+			$buttons['delete'] = array(
+				'name' => 'delete',
+				'id' => 'delete',
+				'value' => _('Delete')
+			);
+			$buttons['reset'] = array(
+				'name' => 'reset',
+				'id' => 'reset',
+				'value' => _('Reset')
+			);
+			$buttons['submit'] = array(
+				'name' => 'submit',
+				'id' => 'submit',
+				'value' => _('Submit')
+			);
+			break;
+		case 'addcustomlang':
 			$buttons['reset'] = array(
 				'name' => 'reset',
 				'id' => 'reset',
@@ -160,6 +219,84 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 		$this->FreePBX->WriteConfig($conf);
 	}
 
+	/**
+	 * Ajax Request
+	 * @param string $req     The request type
+	 * @param string $setting Settings to return back
+	 */
+	public function ajaxRequest($req, $setting){
+		switch($req){
+			case "delete":
+				return true;
+			break;
+			default:
+				return false;
+			break;
+		}
+	}
+
+	/**
+	 * Handle AJAX
+	 */
+	public function ajaxHandler(){
+		$request = $_REQUEST;
+		switch($request['command']){
+			case 'delete':
+				switch ($request['type']) {
+					case 'customlangs':
+						$ret = array();
+						foreach($request['customlangs'] as $language){
+							$ret[$language] = $this->delCustomLanguage($language);
+						}
+						return array('status' => true, 'message' => $ret);
+					break;
+				}
+			break;
+			default:
+				echo json_encode(_("Error: You should never see this"));
+			break;
+		}
+	}
+
+	public function getLanguages() {
+		$descs = array(
+			'en' => _('English'),
+			'es' => _('Spanish'),
+			'fr' => _('French'),
+			'it' => _('Italian'),
+			'ja' => _('Japanese'),
+			'ru' => _('Russian'),
+		);
+
+		$packages =$this->getPackages();
+		foreach ($packages as $package) {
+			if (!empty($package['installed'])) {
+				if (!empty($descs[$package['language']])) {
+					$desc = $descs[$package['language']];
+				} else {
+					$desc = $package['language'];
+				}
+
+				$packagelangs[$package['language']] = $desc;
+			}
+		}
+
+		$customlangs = array();
+		$customs = $this->getCustomLanguages();
+		foreach ($customs as $customlang) {
+			$customlangs[$customlang['language']] = $customlang['description'];
+		}
+
+		$languages = array_merge($packagelangs, $customlangs);
+		if (empty($languages)) {
+			$languages = array('en' => $descs['en']);
+		}
+
+		asort($languages);
+
+		return $languages;
+	}
+
 	public function getLanguage() {
 		$sql = "SELECT value FROM soundlang_settings WHERE keyword = 'language';";
 		$language = $this->db->getOne($sql);
@@ -177,6 +314,70 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 		$sth->execute(array(':language' => $language));
 
 		needreload();
+	}
+
+	private function getCustomLanguages() {
+		$customlangs = array();
+
+		$sql = "SELECT id, language, description FROM soundlang_customlangs;";
+		$sth = $this->db->prepare($sql);
+		$sth->execute();
+		$languages = $sth->fetchAll(\PDO::FETCH_ASSOC);
+
+		if (!empty($languages)) {
+			foreach ($languages as $language) {
+				$customlangs[] = array(
+					'id' => $language['id'],
+					'language' => $language['language'],
+					'description' => $language['description'],
+				);
+			}
+		}
+
+		return $customlangs;
+	}
+
+	private function getCustomLanguage($id) {
+		$sql = "SELECT id, language, description FROM soundlang_customlangs WHERE id = :id;";
+		$sth = $this->db->prepare($sql);
+		$sth->execute(array(
+			':id' => $id,
+		));
+		$customlang = $sth->fetch(\PDO::FETCH_ASSOC);
+
+		return $customlang;
+	}
+
+	private function updateCustomLanguage($id, $language, $description = '') {
+		$sql = "UPDATE soundlang_customlangs SET language = :language, description = :description";
+		$sth = $this->db->prepare($sql);
+		$res = $sth->execute(array(
+			':language' => $language,
+			':description' => $description,
+		));
+	}
+
+	private function addCustomLanguage($language, $description = '') {
+		$sql = "INSERT INTO soundlang_customlangs (language, description) VALUES (:language, :description)";
+		$sth = $this->db->prepare($sql);
+		$res = $sth->execute(array(
+			':language' => $language,
+			':description' => $description,
+		));
+	}
+
+	private function delCustomLanguage($id) {
+		$language = $this->getCustomLanguage($id);
+		if ($language['language'] == $this->getLanguage()) {
+			/* Our current language was removed.  Fall back to default. */
+			$this->setLanguage('en');
+		}
+
+		$sql = "DELETE FROM soundlang_customlangs WHERE id = :id;";
+		$sth = $this->db->prepare($sql);
+		$sth->execute(array(
+			':id' => $id,
+		));
 	}
 
 	private function getPackageInstalled($package) {

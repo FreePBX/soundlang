@@ -10,6 +10,13 @@ $sql[] = 'CREATE TABLE IF NOT EXISTS `soundlang_settings` (
  PRIMARY KEY (`keyword`)
 );';
 
+$sql[] = 'CREATE TABLE IF NOT EXISTS `soundlang_customlangs` (
+ `id` int(11) NOT NULL AUTO_INCREMENT,
+ `language` varchar(20) NOT NULL,
+ `description` varchar(80) NOT NULL,
+ PRIMARY KEY (`language`)
+);';
+
 $sql[] = 'CREATE TABLE IF NOT EXISTS `soundlang_packs` (
  `type` varchar(20) NOT NULL,
  `module` varchar(80) NOT NULL,
