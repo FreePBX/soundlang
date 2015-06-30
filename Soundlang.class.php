@@ -85,7 +85,8 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 				}
 			});
 
-			$html .= load_view(dirname(__FILE__).'/views/packages.php', array('packages' => $packages, 'languages' => $languages));
+			$languagenames = $this->getLanguageNames();
+			$html .= load_view(dirname(__FILE__).'/views/packages.php', array('packages' => $packages, 'languagenames' => $languagenames));
 			break;
 		case 'customlangs':
 		case 'delcustomlang':
@@ -263,8 +264,8 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 		}
 	}
 
-	public function getLanguages() {
-		$descs = array(
+	public function getLanguageNames() {
+		$names = array(
 			'en' => _('English'),
 			'es' => _('Spanish'),
 			'fr' => _('French'),
@@ -273,18 +274,24 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 			'ru' => _('Russian'),
 		);
 
+		return $names;
+	}
+
+	public function getLanguages() {
+		$names = $this->getLanguageNames();
+
 		$packagelangs = array();
 		$packages = $this->getPackages();
 		if (!empty($packages)) {
 			foreach ($packages as $package) {
 				if (!empty($package['installed'])) {
-					if (!empty($descs[$package['language']])) {
-						$desc = $descs[$package['language']];
+					if (!empty($names[$package['language']])) {
+						$name = $names[$package['language']];
 					} else {
-						$desc = $package['language'];
+						$name = $package['language'];
 					}
 
-					$packagelangs[$package['language']] = $desc;
+					$packagelangs[$package['language']] = $name;
 				}
 			}
 		}
@@ -299,7 +306,7 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 
 		$languages = array_merge($packagelangs, $customlangs);
 		if (empty($languages)) {
-			$languages = array('en' => $descs['en']);
+			$languages = array('en' => $names['en']);
 		}
 
 		asort($languages);

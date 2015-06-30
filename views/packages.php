@@ -18,7 +18,7 @@
 							<?php foreach ($packages as $package) { ?>
 							<tr>
 								<td><?php echo $package['module'] ?></td>
-								<td><?php echo $languages[$package['language']] ?></td>
+								<td><?php echo !empty($languagenames[$package['language']]) ? $languagenames[$package['language']] . ' (' . $package['language'] . ')' : $package['language'] ?></td>
 								<td><?php echo $package['format'] ?></td>
 								<td><?php echo $package['version'] ?></td>
 								<td><?php echo $package['installed'] ?></td>
