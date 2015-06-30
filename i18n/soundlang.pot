@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-06-30 13:52-0500\n"
+"POT-Creation-Date: 2015-06-30 14:19-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -50,7 +50,7 @@ msgstr ""
 msgid "Available"
 msgstr ""
 
-#: Soundlang.class.php:503
+#: Soundlang.class.php:510
 #, php-format
 msgid "Could not untar %s to %s"
 msgstr ""
@@ -59,7 +59,7 @@ msgstr ""
 msgid "Custom Languages"
 msgstr ""
 
-#: Soundlang.class.php:187
+#: Soundlang.class.php:188
 #: views/customlangs.php:13
 #: assets/js/soundlang.js:13
 #: assets/js/soundlang.js:19
@@ -79,15 +79,15 @@ msgstr ""
 msgid "Edit Custom Language"
 msgstr ""
 
-#: Soundlang.class.php:268
+#: Soundlang.class.php:269
 msgid "English"
 msgstr ""
 
-#: Soundlang.class.php:261
+#: Soundlang.class.php:262
 msgid "Error: You should never see this"
 msgstr ""
 
-#: Soundlang.class.php:608
+#: Soundlang.class.php:615
 #, php-format
 msgid "Failed to get remote file, error was:"
 msgstr ""
@@ -96,7 +96,7 @@ msgstr ""
 msgid "Format"
 msgstr ""
 
-#: Soundlang.class.php:270
+#: Soundlang.class.php:271
 msgid "French"
 msgstr ""
 
@@ -112,11 +112,11 @@ msgstr ""
 msgid "Installed"
 msgstr ""
 
-#: Soundlang.class.php:271
+#: Soundlang.class.php:272
 msgid "Italian"
 msgstr ""
 
-#: Soundlang.class.php:272
+#: Soundlang.class.php:273
 msgid "Japanese"
 msgstr ""
 
@@ -146,32 +146,32 @@ msgstr ""
 msgid "Module"
 msgstr ""
 
-#: Soundlang.class.php:175
-#: Soundlang.class.php:192
-#: Soundlang.class.php:204
+#: Soundlang.class.php:176
+#: Soundlang.class.php:193
+#: Soundlang.class.php:205
 msgid "Reset"
 msgstr ""
 
-#: Soundlang.class.php:273
+#: Soundlang.class.php:274
 msgid "Russian"
 msgstr ""
 
-#: Soundlang.class.php:269
+#: Soundlang.class.php:270
 msgid "Spanish"
 msgstr ""
 
-#: Soundlang.class.php:180
-#: Soundlang.class.php:197
-#: Soundlang.class.php:209
+#: Soundlang.class.php:181
+#: Soundlang.class.php:198
+#: Soundlang.class.php:210
 msgid "Submit"
 msgstr ""
 
-#: Soundlang.class.php:546
+#: Soundlang.class.php:553
 #, php-format
 msgid "failed to delete %s from cache directory after opening sounds archive."
 msgstr ""
 
-#: Soundlang.class.php:502
+#: Soundlang.class.php:509
 #, php-format
 msgid "failed to open %s sounds archive."
 msgstr ""
