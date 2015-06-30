@@ -273,23 +273,28 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 			'ru' => _('Russian'),
 		);
 
-		$packages =$this->getPackages();
-		foreach ($packages as $package) {
-			if (!empty($package['installed'])) {
-				if (!empty($descs[$package['language']])) {
-					$desc = $descs[$package['language']];
-				} else {
-					$desc = $package['language'];
-				}
+		$packagelangs = array();
+		$packages = $this->getPackages();
+		if (!empty($packages)) {
+			foreach ($packages as $package) {
+				if (!empty($package['installed'])) {
+					if (!empty($descs[$package['language']])) {
+						$desc = $descs[$package['language']];
+					} else {
+						$desc = $package['language'];
+					}
 
-				$packagelangs[$package['language']] = $desc;
+					$packagelangs[$package['language']] = $desc;
+				}
 			}
 		}
 
 		$customlangs = array();
 		$customs = $this->getCustomLanguages();
-		foreach ($customs as $customlang) {
-			$customlangs[$customlang['language']] = $customlang['description'];
+		if (!empty($customs)) {
+			foreach ($customs as $customlang) {
+				$customlangs[$customlang['language']] = $customlang['description'];
+			}
 		}
 
 		$languages = array_merge($packagelangs, $customlangs);

@@ -2,11 +2,12 @@
 	<rawname>soundlang</rawname>
 	<repo>standard</repo>
 	<name>Sound Languages</name>
-	<version>13.0.0beta1</version>
+	<version>13.0.0beta2</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
 	<changelog>
+		*13.0.0beta2* Fix error when no languages installed
 		*13.0.0beta1* Add custom languages
 		*13.0.0alpha1* First release
 	</changelog>
