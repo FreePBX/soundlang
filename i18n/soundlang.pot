@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-06-17 11:06-0500\n"
+"POT-Creation-Date: 2015-06-30 13:43-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,24 +17,77 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+#: views/customlang.php:67
+msgid "A brief description for this Custom Language."
+msgstr ""
+
+#: views/customlangs.php:23
+msgid "Action"
+msgstr ""
+
 #: views/packages.php:14
 msgid "Actions"
+msgstr ""
+
+#: views/customlangs.php:10
+msgid "Add"
+msgstr ""
+
+#: views/customlang.php:6
+msgid "Add Custom Language"
+msgstr ""
+
+#: assets/js/soundlang.js:40
+msgid "Are you sure you want to delete this custom language?"
+msgstr ""
+
+#: assets/js/soundlang.js:8
+#, perl-format
+msgid "Are you sure you wish to delete this %s?"
 msgstr ""
 
 #: views/packages.php:12
 msgid "Available"
 msgstr ""
 
-#: Soundlang.class.php:277
+#: Soundlang.class.php:498
 #, php-format
 msgid "Could not untar %s to %s"
 msgstr ""
 
-#: Soundlang.class.php:45
+#: views/rnav.php:4
+msgid "Custom Languages"
+msgstr ""
+
+#: Soundlang.class.php:187
+#: views/customlangs.php:13
+#: assets/js/soundlang.js:13
+#: assets/js/soundlang.js:19
+msgid "Delete"
+msgstr ""
+
+#: assets/js/soundlang.js:9
+msgid "Deleting..."
+msgstr ""
+
+#: views/customlang.php:55
+#: views/customlangs.php:22
+msgid "Description"
+msgstr ""
+
+#: views/customlang.php:3
+msgid "Edit Custom Language"
+msgstr ""
+
+#: Soundlang.class.php:268
 msgid "English"
 msgstr ""
 
-#: Soundlang.class.php:382
+#: Soundlang.class.php:261
+msgid "Error: You should never see this"
+msgstr ""
+
+#: Soundlang.class.php:603
 #, php-format
 msgid "Failed to get remote file, error was:"
 msgstr ""
@@ -43,7 +96,7 @@ msgstr ""
 msgid "Format"
 msgstr ""
 
-#: Soundlang.class.php:47
+#: Soundlang.class.php:270
 msgid "French"
 msgstr ""
 
@@ -51,13 +104,34 @@ msgstr ""
 msgid "Global Language"
 msgstr ""
 
+#: views/customlangs.php:20
+msgid "ID"
+msgstr ""
+
 #: views/packages.php:13
 msgid "Installed"
 msgstr ""
 
+#: Soundlang.class.php:271
+msgid "Italian"
+msgstr ""
+
+#: Soundlang.class.php:272
+msgid "Japanese"
+msgstr ""
+
+#: views/customlangs.php:21
 #: views/packages.php:10
 #: views/select.php:14
 msgid "Language"
+msgstr ""
+
+#: views/customlang.php:31
+msgid "Language Code"
+msgstr ""
+
+#: views/customlang.php:43
+msgid "Language Code (e.g. 'en')."
 msgstr ""
 
 #: views/rnav.php:3
@@ -72,24 +146,32 @@ msgstr ""
 msgid "Module"
 msgstr ""
 
-#: Soundlang.class.php:140
+#: Soundlang.class.php:175
+#: Soundlang.class.php:192
+#: Soundlang.class.php:204
 msgid "Reset"
 msgstr ""
 
-#: Soundlang.class.php:46
+#: Soundlang.class.php:273
+msgid "Russian"
+msgstr ""
+
+#: Soundlang.class.php:269
 msgid "Spanish"
 msgstr ""
 
-#: Soundlang.class.php:145
+#: Soundlang.class.php:180
+#: Soundlang.class.php:197
+#: Soundlang.class.php:209
 msgid "Submit"
 msgstr ""
 
-#: Soundlang.class.php:320
+#: Soundlang.class.php:541
 #, php-format
 msgid "failed to delete %s from cache directory after opening sounds archive."
 msgstr ""
 
-#: Soundlang.class.php:276
+#: Soundlang.class.php:497
 #, php-format
 msgid "failed to open %s sounds archive."
 msgstr ""
