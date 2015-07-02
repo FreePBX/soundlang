@@ -636,7 +636,6 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 		$contents = null;
 
 		$mirrors = $modulef->generate_remote_urls($path, true);
-		$mirrors["mirrors"][0] = "http://192.168.0.35:89";
 
 		$params = $mirrors['options'];
 		$params['sv'] = 2;
