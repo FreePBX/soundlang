@@ -6,8 +6,8 @@
 					<table class="table table-striped">
 						<thead>
 							<tr>
-								<th class="col-md-2"><?php echo _("Module")?></th>
-								<th class="col-md-1"><?php echo _("Language")?></th>
+								<th class="col-md-1"><?php echo _("Module")?></th>
+								<th class="col-md-2"><?php echo _("Language")?></th>
 								<th class="col-md-1"><?php echo _("Format")?></th>
 								<th class="col-md-1"><?php echo _("Available")?></th>
 								<th class="col-md-1"><?php echo _("Installed")?></th>
@@ -18,7 +18,21 @@
 							<?php foreach ($packages as $package) { ?>
 							<tr>
 								<td><?php echo $package['module'] ?></td>
-								<td><?php echo !empty($languagenames[$package['language']]) ? $languagenames[$package['language']] . ' (' . $package['language'] . ')' : $package['language'] ?></td>
+								<td>
+								<?php
+									$lang = explode('_', $package['language'], 2);
+
+									if (!empty($languagelocations[$lang[1]]) && !empty($languagenames[$lang[0]])) {
+										$name = $languagenames[$lang[0]] . ' - ' . $languagelocations[$lang[1]] . ' (' . $package['language'] . ')';
+									} else if (!empty($languagenames[$lang[0]])) {
+										$name = $languagenames[$lang[0]] . ' (' . $package['language'] . ')';
+									} else {
+										$name = $package['language'];
+									}
+
+									echo $name;
+								?>
+								</td>
 								<td><?php echo $package['format'] ?></td>
 								<td><?php echo $package['version'] ?></td>
 								<td><?php echo $package['installed'] ?></td>

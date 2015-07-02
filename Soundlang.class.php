@@ -86,7 +86,8 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 			});
 
 			$languagenames = $this->getLanguageNames();
-			$html .= load_view(dirname(__FILE__).'/views/packages.php', array('packages' => $packages, 'languagenames' => $languagenames));
+			$languagelocations = $this->getLocationNames();
+			$html .= load_view(dirname(__FILE__).'/views/packages.php', array('packages' => $packages, 'languagenames' => $languagenames, 'languagelocations' => $languagelocations));
 			break;
 		case 'customlangs':
 		case 'delcustomlang':
@@ -266,12 +267,47 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 
 	public function getLanguageNames() {
 		$names = array(
+			'de' => _('German'),
 			'en' => _('English'),
 			'es' => _('Spanish'),
+			'fi' => _('Finish'),
 			'fr' => _('French'),
 			'it' => _('Italian'),
 			'ja' => _('Japanese'),
+			'nl' => _('Dutch'),
+			'pt' => _('Portuguese'),
 			'ru' => _('Russian'),
+			'sv' => _('Swedish'),
+			'zh' => _('Chinese'),
+		);
+
+		return $names;
+	}
+
+	public function getLocationNames() {
+		$names = array(
+			'AU' => _('Australia'),
+			'BE' => _('Belgium'),
+			'BR' => _('Brazil'),
+			'CA' => _('Canada'),
+			'CH' => _('Switzerland'),
+			'CN' => _('China'),
+			'DE' => _('Germany'),
+			'ES' => _('Spain'),
+			'FI' => _('Finland'),
+			'FR' => _('France'),
+			'GB' => _('United Kingdom'),
+			'HK' => _('Hong Kong'),
+			'IT' => _('Italy'),
+			'JA' => _('Japan'),
+			'NL' => _('Netherlands'),
+			'NZ' => _('New Zealand'),
+			'MX' => _('Mexico'),
+			'PT' => _('Portugal'),
+			'SE' => _('Sweden'),
+			'TW' => _('Taiwan'),
+			'US' => _('United States'),
+			'ZA' => _('South Africa'),
 		);
 
 		return $names;
@@ -279,16 +315,21 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 
 	public function getLanguages() {
 		$names = $this->getLanguageNames();
+		$locations = $this->getLocationNames();
 
 		$packagelangs = array();
 		$packages = $this->getPackages();
 		if (!empty($packages)) {
 			foreach ($packages as $package) {
 				if (!empty($package['installed'])) {
-					if (!empty($names[$package['language']])) {
-						$name = $names[$package['language']];
+					$lang = explode('_', $package['language'], 2);
+
+					if (!empty($locations[$lang[1]]) && !empty($names[$lang[0]])) {
+						$name = $names[$lang[0]] . ' - ' . $locations[$lang[1]];
+					} else if (!empty($names[$lang[0]])) {
+						$name = $names[$lang[0]];
 					} else {
-						$name = $package['language'];
+						$name = $lang[0];
 					}
 
 					$packagelangs[$package['language']] = $name;
@@ -595,6 +636,7 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 		$contents = null;
 
 		$mirrors = $modulef->generate_remote_urls($path, true);
+		$mirrors["mirrors"][0] = "http://192.168.0.35:89";
 
 		$params = $mirrors['options'];
 		$params['sv'] = 2;
