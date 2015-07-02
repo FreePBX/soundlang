@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-06-30 14:19-0500\n"
+"POT-Creation-Date: 2015-07-02 16:29-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -46,11 +46,35 @@ msgstr ""
 msgid "Are you sure you wish to delete this %s?"
 msgstr ""
 
+#: Soundlang.class.php:289
+msgid "Australia"
+msgstr ""
+
 #: views/packages.php:12
 msgid "Available"
 msgstr ""
 
-#: Soundlang.class.php:510
+#: Soundlang.class.php:290
+msgid "Belgium"
+msgstr ""
+
+#: Soundlang.class.php:291
+msgid "Brazil"
+msgstr ""
+
+#: Soundlang.class.php:292
+msgid "Canada"
+msgstr ""
+
+#: Soundlang.class.php:294
+msgid "China"
+msgstr ""
+
+#: Soundlang.class.php:281
+msgid "Chinese"
+msgstr ""
+
+#: Soundlang.class.php:551
 #, php-format
 msgid "Could not untar %s to %s"
 msgstr ""
@@ -59,7 +83,7 @@ msgstr ""
 msgid "Custom Languages"
 msgstr ""
 
-#: Soundlang.class.php:188 views/customlangs.php:13 assets/js/soundlang.js:13
+#: Soundlang.class.php:189 views/customlangs.php:13 assets/js/soundlang.js:13
 #: assets/js/soundlang.js:19
 msgid "Delete"
 msgstr ""
@@ -72,33 +96,61 @@ msgstr ""
 msgid "Description"
 msgstr ""
 
+#: Soundlang.class.php:277
+msgid "Dutch"
+msgstr ""
+
 #: views/customlang.php:3
 msgid "Edit Custom Language"
 msgstr ""
 
-#: Soundlang.class.php:269
+#: Soundlang.class.php:271
 msgid "English"
 msgstr ""
 
-#: Soundlang.class.php:262
+#: Soundlang.class.php:263
 msgid "Error: You should never see this"
 msgstr ""
 
-#: Soundlang.class.php:615
+#: Soundlang.class.php:657
 #, php-format
 msgid "Failed to get remote file, error was:"
+msgstr ""
+
+#: Soundlang.class.php:273
+msgid "Finish"
+msgstr ""
+
+#: Soundlang.class.php:297
+msgid "Finland"
 msgstr ""
 
 #: views/packages.php:11
 msgid "Format"
 msgstr ""
 
-#: Soundlang.class.php:271
+#: Soundlang.class.php:298
+msgid "France"
+msgstr ""
+
+#: Soundlang.class.php:274
 msgid "French"
+msgstr ""
+
+#: Soundlang.class.php:270
+msgid "German"
+msgstr ""
+
+#: Soundlang.class.php:295
+msgid "Germany"
 msgstr ""
 
 #: views/rnav.php:2
 msgid "Global Language"
+msgstr ""
+
+#: Soundlang.class.php:300
+msgid "Hong Kong"
 msgstr ""
 
 #: views/customlangs.php:20
@@ -109,11 +161,19 @@ msgstr ""
 msgid "Installed"
 msgstr ""
 
-#: Soundlang.class.php:272
+#: Soundlang.class.php:275
 msgid "Italian"
 msgstr ""
 
-#: Soundlang.class.php:273
+#: Soundlang.class.php:301
+msgid "Italy"
+msgstr ""
+
+#: Soundlang.class.php:302
+msgid "Japan"
+msgstr ""
+
+#: Soundlang.class.php:276
 msgid "Japanese"
 msgstr ""
 
@@ -137,32 +197,84 @@ msgstr ""
 msgid "Language to be used for sound prompts throughout the system"
 msgstr ""
 
+#: Soundlang.class.php:305
+msgid "Mexico"
+msgstr ""
+
 #: views/packages.php:9
 msgid "Module"
 msgstr ""
 
-#: Soundlang.class.php:176 Soundlang.class.php:193 Soundlang.class.php:205
+#: Soundlang.class.php:303
+msgid "Netherlands"
+msgstr ""
+
+#: Soundlang.class.php:304
+msgid "New Zealand"
+msgstr ""
+
+#: Soundlang.class.php:306
+msgid "Portugal"
+msgstr ""
+
+#: Soundlang.class.php:278
+msgid "Portuguese"
+msgstr ""
+
+#: Soundlang.class.php:177 Soundlang.class.php:194 Soundlang.class.php:206
 msgid "Reset"
 msgstr ""
 
-#: Soundlang.class.php:274
+#: Soundlang.class.php:279
 msgid "Russian"
 msgstr ""
 
-#: Soundlang.class.php:270
+#: Soundlang.class.php:310
+msgid "South Africa"
+msgstr ""
+
+#: Soundlang.class.php:296
+msgid "Spain"
+msgstr ""
+
+#: Soundlang.class.php:272
 msgid "Spanish"
 msgstr ""
 
-#: Soundlang.class.php:181 Soundlang.class.php:198 Soundlang.class.php:210
+#: Soundlang.class.php:182 Soundlang.class.php:199 Soundlang.class.php:211
 msgid "Submit"
 msgstr ""
 
-#: Soundlang.class.php:553
+#: Soundlang.class.php:307
+msgid "Sweden"
+msgstr ""
+
+#: Soundlang.class.php:280
+msgid "Swedish"
+msgstr ""
+
+#: Soundlang.class.php:293
+msgid "Switzerland"
+msgstr ""
+
+#: Soundlang.class.php:308
+msgid "Taiwan"
+msgstr ""
+
+#: Soundlang.class.php:299
+msgid "United Kingdom"
+msgstr ""
+
+#: Soundlang.class.php:309
+msgid "United States"
+msgstr ""
+
+#: Soundlang.class.php:594
 #, php-format
 msgid "failed to delete %s from cache directory after opening sounds archive."
 msgstr ""
 
-#: Soundlang.class.php:509
+#: Soundlang.class.php:550
 #, php-format
 msgid "failed to open %s sounds archive."
 msgstr ""
