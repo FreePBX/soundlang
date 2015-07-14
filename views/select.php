@@ -15,7 +15,7 @@
 												<i class="fa fa-question-circle fpbx-help-icon" data-for="language"></i>
 											</div>
 											<div class="col-md-9">
-												<select name="language">
+												<select name="language" id="language" class="form-control">
 												<?php foreach ($languages as $key => $val) { ?>
 													<option value="<?php echo $key?>" <?php echo ($language == $key ? 'selected' : '')?>><?php echo $val?></option>
 												<?php } ?>

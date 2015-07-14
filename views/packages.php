@@ -2,16 +2,16 @@
 	<div class="row">
 		<div class="col-sm-9">
 			<div class="fpbx-container">
-				<div class="display full-border">
-					<table class="table table-striped">
+				<div class="display no-border">
+					<table  data-toggle="table" data-pagination="true" data-show-columns="true" data-show-toggle="true" data-search="true"  class="table table-striped">
 						<thead>
 							<tr>
-								<th class="col-md-1"><?php echo _("Module")?></th>
-								<th class="col-md-2"><?php echo _("Language")?></th>
-								<th class="col-md-1"><?php echo _("Format")?></th>
-								<th class="col-md-1"><?php echo _("Available")?></th>
-								<th class="col-md-1"><?php echo _("Installed")?></th>
-								<th class="col-md-1"><?php echo _("Actions")?></th>
+								<th data-sortable="true"><?php echo _("Module")?></th>
+								<th data-sortable="true"><?php echo _("Language")?></th>
+								<th data-sortable="true"><?php echo _("Format")?></th>
+								<th data-sortable="true"><?php echo _("Available")?></th>
+								<th data-sortable="true"><?php echo _("Installed")?></th>
+								<th data-sortable="true"><?php echo _("Actions")?></th>
 							</tr>
 						</thead>
 						<tbody>
