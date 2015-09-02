@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-07-02 16:31-0500\n"
+"POT-Creation-Date: 2015-09-02 11:43-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -46,7 +46,7 @@ msgstr ""
 msgid "Are you sure you wish to delete this %s?"
 msgstr ""
 
-#: Soundlang.class.php:289
+#: Soundlang.class.php:292
 msgid "Australia"
 msgstr ""
 
@@ -54,27 +54,27 @@ msgstr ""
 msgid "Available"
 msgstr ""
 
-#: Soundlang.class.php:290
+#: Soundlang.class.php:293
 msgid "Belgium"
 msgstr ""
 
-#: Soundlang.class.php:291
+#: Soundlang.class.php:294
 msgid "Brazil"
 msgstr ""
 
-#: Soundlang.class.php:292
+#: Soundlang.class.php:295
 msgid "Canada"
 msgstr ""
 
-#: Soundlang.class.php:294
+#: Soundlang.class.php:297
 msgid "China"
 msgstr ""
 
-#: Soundlang.class.php:281
+#: Soundlang.class.php:280
 msgid "Chinese"
 msgstr ""
 
-#: Soundlang.class.php:551
+#: Soundlang.class.php:624
 #, php-format
 msgid "Could not untar %s to %s"
 msgstr ""
@@ -83,7 +83,7 @@ msgstr ""
 msgid "Custom Languages"
 msgstr ""
 
-#: Soundlang.class.php:189
+#: Soundlang.class.php:194
 #: views/customlangs.php:13
 #: assets/js/soundlang.js:13
 #: assets/js/soundlang.js:19
@@ -99,7 +99,7 @@ msgstr ""
 msgid "Description"
 msgstr ""
 
-#: Soundlang.class.php:277
+#: Soundlang.class.php:276
 msgid "Dutch"
 msgstr ""
 
@@ -107,24 +107,24 @@ msgstr ""
 msgid "Edit Custom Language"
 msgstr ""
 
-#: Soundlang.class.php:271
+#: Soundlang.class.php:270
 msgid "English"
 msgstr ""
 
-#: Soundlang.class.php:263
+#: Soundlang.class.php:258
 msgid "Error: You should never see this"
 msgstr ""
 
-#: Soundlang.class.php:656
+#: Soundlang.class.php:739
 #, php-format
 msgid "Failed to get remote file, error was:"
 msgstr ""
 
-#: Soundlang.class.php:273
+#: Soundlang.class.php:272
 msgid "Finish"
 msgstr ""
 
-#: Soundlang.class.php:297
+#: Soundlang.class.php:300
 msgid "Finland"
 msgstr ""
 
@@ -132,19 +132,19 @@ msgstr ""
 msgid "Format"
 msgstr ""
 
-#: Soundlang.class.php:298
+#: Soundlang.class.php:301
 msgid "France"
 msgstr ""
 
-#: Soundlang.class.php:274
+#: Soundlang.class.php:273
 msgid "French"
 msgstr ""
 
-#: Soundlang.class.php:270
+#: Soundlang.class.php:269
 msgid "German"
 msgstr ""
 
-#: Soundlang.class.php:295
+#: Soundlang.class.php:298
 msgid "Germany"
 msgstr ""
 
@@ -152,7 +152,7 @@ msgstr ""
 msgid "Global Language"
 msgstr ""
 
-#: Soundlang.class.php:300
+#: Soundlang.class.php:303
 msgid "Hong Kong"
 msgstr ""
 
@@ -164,19 +164,19 @@ msgstr ""
 msgid "Installed"
 msgstr ""
 
-#: Soundlang.class.php:275
+#: Soundlang.class.php:274
 msgid "Italian"
 msgstr ""
 
-#: Soundlang.class.php:301
+#: Soundlang.class.php:304
 msgid "Italy"
 msgstr ""
 
-#: Soundlang.class.php:302
+#: Soundlang.class.php:305
 msgid "Japan"
 msgstr ""
 
-#: Soundlang.class.php:276
+#: Soundlang.class.php:275
 msgid "Japanese"
 msgstr ""
 
@@ -202,7 +202,7 @@ msgstr ""
 msgid "Language to be used for sound prompts throughout the system"
 msgstr ""
 
-#: Soundlang.class.php:305
+#: Soundlang.class.php:308
 msgid "Mexico"
 msgstr ""
 
@@ -210,80 +210,110 @@ msgstr ""
 msgid "Module"
 msgstr ""
 
-#: Soundlang.class.php:303
+#: Soundlang.class.php:306
 msgid "Netherlands"
 msgstr ""
 
-#: Soundlang.class.php:304
+#: Soundlang.class.php:307
 msgid "New Zealand"
 msgstr ""
 
-#: Soundlang.class.php:306
+#: Soundlang.class.php:309
 msgid "Portugal"
 msgstr ""
 
-#: Soundlang.class.php:278
+#: Soundlang.class.php:277
 msgid "Portuguese"
-msgstr ""
-
-#: Soundlang.class.php:177
-#: Soundlang.class.php:194
-#: Soundlang.class.php:206
-msgid "Reset"
-msgstr ""
-
-#: Soundlang.class.php:279
-msgid "Russian"
-msgstr ""
-
-#: Soundlang.class.php:310
-msgid "South Africa"
-msgstr ""
-
-#: Soundlang.class.php:296
-msgid "Spain"
-msgstr ""
-
-#: Soundlang.class.php:272
-msgid "Spanish"
 msgstr ""
 
 #: Soundlang.class.php:182
 #: Soundlang.class.php:199
 #: Soundlang.class.php:211
-msgid "Submit"
+msgid "Reset"
 msgstr ""
 
-#: Soundlang.class.php:307
-msgid "Sweden"
+#: Soundlang.class.php:278
+msgid "Russian"
 msgstr ""
 
-#: Soundlang.class.php:280
-msgid "Swedish"
+#: Console/Soundlang.class.php:18
+msgid "Sound Language Prompts"
 msgstr ""
 
-#: Soundlang.class.php:293
-msgid "Switzerland"
-msgstr ""
-
-#: Soundlang.class.php:308
-msgid "Taiwan"
+#: Soundlang.class.php:313
+msgid "South Africa"
 msgstr ""
 
 #: Soundlang.class.php:299
+msgid "Spain"
+msgstr ""
+
+#: Soundlang.class.php:271
+msgid "Spanish"
+msgstr ""
+
+#: Soundlang.class.php:187
+#: Soundlang.class.php:204
+#: Soundlang.class.php:216
+msgid "Submit"
+msgstr ""
+
+#: Console/Soundlang.class.php:55
+#, php-format
+msgid "Successfully installed %s"
+msgstr ""
+
+#: Console/Soundlang.class.php:96
+#, php-format
+msgid "Successfully set default language to %s, you will need to reload"
+msgstr ""
+
+#: Console/Soundlang.class.php:69
+#, php-format
+msgid "Successfully uninstalled %s"
+msgstr ""
+
+#: Soundlang.class.php:310
+msgid "Sweden"
+msgstr ""
+
+#: Soundlang.class.php:279
+msgid "Swedish"
+msgstr ""
+
+#: Soundlang.class.php:296
+msgid "Switzerland"
+msgstr ""
+
+#: Soundlang.class.php:311
+msgid "Taiwan"
+msgstr ""
+
+#: Console/Soundlang.class.php:51
+#: Console/Soundlang.class.php:65
+#: Console/Soundlang.class.php:92
+msgid "That is not a valid ID"
+msgstr ""
+
+#: Console/Soundlang.class.php:46
+#: Console/Soundlang.class.php:60
+msgid "The command provided is not valid"
+msgstr ""
+
+#: Soundlang.class.php:302
 msgid "United Kingdom"
 msgstr ""
 
-#: Soundlang.class.php:309
+#: Soundlang.class.php:312
 msgid "United States"
 msgstr ""
 
-#: Soundlang.class.php:594
+#: Soundlang.class.php:667
 #, php-format
 msgid "failed to delete %s from cache directory after opening sounds archive."
 msgstr ""
 
-#: Soundlang.class.php:550
+#: Soundlang.class.php:623
 #, php-format
 msgid "failed to open %s sounds archive."
 msgstr ""
