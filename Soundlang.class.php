@@ -163,6 +163,11 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 		}
 	}
 
+	/**
+	 * Generate floating action bar
+	 * @param  array $request the $_REQUEST
+	 * @return array          Finalized button array
+	 */
 	public function getActionBar($request) {
 		$action = !empty($request['action']) ? $request['action'] : '';
 
@@ -216,16 +221,6 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 		return $buttons;
 	}
 
-	public function genConfig() {
-		$conf = array();
-
-		return $conf;
-	}
-
-	public function writeConfig($conf) {
-		$this->FreePBX->WriteConfig($conf);
-	}
-
 	/**
 	 * Ajax Request
 	 * @param string $req     The request type
@@ -265,6 +260,10 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 		}
 	}
 
+	/**
+	 * Get Language Names
+	 * @return array Array of language keys to Names
+	 */
 	public function getLanguageNames() {
 		$names = array(
 			'de' => _('German'),
@@ -284,6 +283,10 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 		return $names;
 	}
 
+	/**
+	 * Get language Locales
+	 * @return array Array of Language locales
+	 */
 	public function getLocationNames() {
 		$names = array(
 			'AU' => _('Australia'),
@@ -313,6 +316,17 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 		return $names;
 	}
 
+	/**
+	 * Get Languages
+	 *
+	 * This gets unique languges:
+	 * OUT > Array
+	 * (
+	 * 		[en] => English
+	 *   	[en_GB] => English (United Kingdom)
+	 * )
+	 * @return [type] [description]
+	 */
 	public function getLanguages() {
 		$names = $this->getLanguageNames();
 		$locations = $this->getLocationNames();
@@ -322,16 +336,20 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 		if (!empty($packages)) {
 			foreach ($packages as $package) {
 				if (!empty($package['installed'])) {
-					$lang = explode('_', $package['language'], 2);
-
-					if (!empty($locations[$lang[1]]) && !empty($names[$lang[0]])) {
-						$name = $names[$lang[0]] . ' - ' . $locations[$lang[1]];
-					} else if (!empty($names[$lang[0]])) {
-						$name = $names[$lang[0]];
+					//Try to use local_get_display_name if it's installed
+					if(function_exists('locale_get_display_name')) {
+						$language = set_language();
+						$name = locale_get_display_name($package['language'], $language);
 					} else {
-						$name = $lang[0];
+						$lang = explode('_', $package['language'], 2);
+						if ((count($lang) == 2) && !empty($locations[$lang[1]]) && !empty($names[$lang[0]])) {
+							$name = $names[$lang[0]] . ' - ' . $locations[$lang[1]];
+						} else if (!empty($names[$lang[0]])) {
+							$name = $names[$lang[0]];
+						} else {
+							$name = $lang[0];
+						}
 					}
-
 					$packagelangs[$package['language']] = $name;
 				}
 			}
@@ -355,6 +373,10 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 		return $languages;
 	}
 
+	/**
+	 * Get the default global language
+	 * @return string The language ID
+	 */
 	public function getLanguage() {
 		$sql = "SELECT value FROM soundlang_settings WHERE keyword = 'language';";
 		$language = $this->db->getOne($sql);
@@ -366,7 +388,11 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 		return $language;
 	}
 
-	private function setLanguage($language) {
+	/**
+	 * Set the default language
+	 * @param string $language The Language ID
+	 */
+	public function setLanguage($language) {
 		$sql = "UPDATE soundlang_settings SET value = :language WHERE keyword = 'language';";
 		$sth = $this->db->prepare($sql);
 		$sth->execute(array(':language' => $language));
@@ -374,6 +400,10 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 		needreload();
 	}
 
+	/**
+	 * Get all Custom Languages
+	 * @return array Array of custom languages
+	 */
 	private function getCustomLanguages() {
 		$customlangs = array();
 
@@ -395,6 +425,11 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 		return $customlangs;
 	}
 
+	/**
+	 * Get a custom language
+	 * @param  int $id The language ID
+	 * @return array     Array of information about language
+	 */
 	private function getCustomLanguage($id) {
 		$sql = "SELECT id, language, description FROM soundlang_customlangs WHERE id = :id;";
 		$sth = $this->db->prepare($sql);
@@ -406,6 +441,12 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 		return $customlang;
 	}
 
+	/**
+	 * Update Custom Language information
+	 * @param  int $id          The language ID
+	 * @param  string $language    The language type
+	 * @param  string $description The language description
+	 */
 	private function updateCustomLanguage($id, $language, $description = '') {
 		global $amp_conf;
 
@@ -420,6 +461,11 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 		@mkdir($destdir);
 	}
 
+	/**
+	 * Add a new custom language
+	 * @param string $language    The language type
+	 * @param string $description The language description
+	 */
 	private function addCustomLanguage($language, $description = '') {
 		global $amp_conf;
 
@@ -434,6 +480,10 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 		@mkdir($destdir);
 	}
 
+	/**
+	 * Delete custom language
+	 * @param  int $id The language ID
+	 */
 	private function delCustomLanguage($id) {
 		global $amp_conf;
 
@@ -453,6 +503,11 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 		@rmdir($destdir);
 	}
 
+	/**
+	 * Get information about an installed package
+	 * @param  array $package Array of information about package
+	 * @return mixed          The installed version or null
+	 */
 	private function getPackageInstalled($package) {
 		$sql = "SELECT * FROM soundlang_packs WHERE type = :type AND module = :module AND language = :language AND format = :format";
 		$sth = $this->db->prepare($sql);
@@ -467,6 +522,11 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 		return !empty($installed) ? $installed['installed'] : NULL;
 	}
 
+	/**
+	 * Set package installed information
+	 * @param array $package   Array of information about the package
+	 * @param string $installed the new version to set
+	 */
 	private function setPackageInstalled($package, $installed) {
 		$sql = "UPDATE soundlang_packs SET installed = :installed WHERE type = :type AND module = :module AND language = :language AND format = :format";
 		$sth = $this->db->prepare($sql);
@@ -479,7 +539,11 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 		));
 	}
 
-	private function getPackages() {
+	/**
+	 * Get list of all locally known packages
+	 * @return array Array of package information(s)
+	 */
+	public function getPackages() {
 		$sql = "SELECT * FROM soundlang_packs";
 		$sth = $this->db->prepare($sql);
 		$sth->execute();
@@ -488,7 +552,11 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 		return $packages;
 	}
 
-	private function getOnlinePackages() {
+	/**
+	 * Get online packages
+	 * @return array Array of packages
+	 */
+	public function getOnlinePackages() {
 		$version = getversion();
 		// we need to know the freepbx major version we have running (ie: 12.0.1 is 12.0)
 		preg_match('/(\d+\.\d+)/',$version,$matches);
@@ -529,7 +597,12 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 		}
 	}
 
-	private function installPackage($package) {
+	/**
+	 * Install Package from online servers
+	 * @param  array $package Array of information about the package
+	 * @return mixed          return a string of the installed package or null
+	 */
+	public function installPackage($package) {
 		global $amp_conf;
 
 		$this->uninstallPackage($package);
@@ -595,7 +668,11 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 		}
 	}
 
-	private function uninstallPackage($package) {
+	/**
+	 * Uninstall a package
+	 * @param  array $package Information about the package
+	 */
+	public function uninstallPackage($package) {
 		global $amp_conf;
 
 		$this->setPackageInstalled($package, NULL);
@@ -630,6 +707,12 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 		}
 	}
 
+	/**
+	 * Retrieve a remote file
+	 * Stores file into memory
+	 * @param  string $path The full path to said file
+	 * @return string       binary representation of file
+	 */
 	private function getRemoteFile($path) {
 		$modulef =& \module_functions::create();
 
