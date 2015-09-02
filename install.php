@@ -56,5 +56,3 @@ foreach ($sql as $statement){
 		die_freepbx("Can not execute $statement : " . $check->getMessage() .  "\n");
 	}
 }
-
-?>

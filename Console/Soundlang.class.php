@@ -100,7 +100,13 @@ class Soundlang extends Command {
 				}
 			break;
 	    default:
-	      $output->writeln("<error>The command provided is not valid</error>");
+	      $output->writeln("<error>The command provided is not valid.</error>");
+        $output->writeln("Avalible commands are:");
+        $output->writeln("<info>list</info> - List all language packages");
+        $output->writeln("<info>install <id></info> - Install language pack by ID");
+        $output->writeln("<info>uninstall <id></info> - Uninstall language pack by ID");
+        $output->writeln("<info>global list</info> - List the Avalible global languages");
+        $output->writeln("<info>global <id></info> - Set the global language by ID");
 	      exit(4);
 	    break;
     }
