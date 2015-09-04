@@ -3,7 +3,7 @@
 		<div class="col-sm-9">
 			<div class="fpbx-container">
 				<div class="display no-border">
-					<table  data-toggle="table" data-pagination="true" data-show-columns="true" data-show-toggle="true" data-search="true"  class="table table-striped">
+					<table  data-toggle="table" data-pagination="true" data-show-columns="true" data-show-toggle="true" data-search="true" data-state-save="true" data-state-save-id-table="soundlangscookie"  class="table table-striped">
 						<thead>
 							<tr>
 								<th data-sortable="true"><?php echo _("Module")?></th>
