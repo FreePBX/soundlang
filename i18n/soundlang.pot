@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-09-02 11:43-0700\n"
+"POT-Creation-Date: 2015-10-20 12:13-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -74,7 +74,7 @@ msgstr ""
 msgid "Chinese"
 msgstr ""
 
-#: Soundlang.class.php:624
+#: Soundlang.class.php:625
 #, php-format
 msgid "Could not untar %s to %s"
 msgstr ""
@@ -115,7 +115,7 @@ msgstr ""
 msgid "Error: You should never see this"
 msgstr ""
 
-#: Soundlang.class.php:739
+#: Soundlang.class.php:740
 #, php-format
 msgid "Failed to get remote file, error was:"
 msgstr ""
@@ -308,12 +308,12 @@ msgstr ""
 msgid "United States"
 msgstr ""
 
-#: Soundlang.class.php:667
+#: Soundlang.class.php:668
 #, php-format
 msgid "failed to delete %s from cache directory after opening sounds archive."
 msgstr ""
 
-#: Soundlang.class.php:623
+#: Soundlang.class.php:624
 #, php-format
 msgid "failed to open %s sounds archive."
 msgstr ""
