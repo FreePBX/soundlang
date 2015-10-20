@@ -2,11 +2,12 @@
 	<rawname>soundlang</rawname>
 	<repo>standard</repo>
 	<name>Sound Languages</name>
-	<version>13.0.4</version>
+	<version>13.0.5</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
 	<changelog>
+		*13.0.5* FREEPBX-10521 Wrong update of language in Soung Language module
 		*13.0.4* FREEPBX-10147 save placement and location in cookie
 		*13.0.2* Describe console commands for the normal person
 		*13.0.1* Proper language replacement usage

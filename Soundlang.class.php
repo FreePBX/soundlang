@@ -450,9 +450,10 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 	private function updateCustomLanguage($id, $language, $description = '') {
 		global $amp_conf;
 
-		$sql = "UPDATE soundlang_customlangs SET language = :language, description = :description";
+		$sql = "UPDATE soundlang_customlangs SET language = :language, description = :description WHERE id = :id";
 		$sth = $this->db->prepare($sql);
 		$res = $sth->execute(array(
+			':id' => $id,
 			':language' => $language,
 			':description' => $description,
 		));
