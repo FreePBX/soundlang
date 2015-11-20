@@ -56,3 +56,25 @@ foreach ($sql as $statement){
 		die_freepbx("Can not execute $statement : " . $check->getMessage() .  "\n");
 	}
 }
+
+if($first_install) {
+  $soundlang = \FreePBX::create()->Soundlang;
+  $online = $soundlang->getOnlinePackages();
+  if($online) {
+    outn(_("New install, downloading default english language set..."));
+    $list = $soundlang->getPackages();
+    $found = false;
+    foreach($list as $id => $package) {
+      if($package['language'] == 'en' && $package['module'] == 'core-sounds' && $package['format'] == "ulaw") {
+        $soundlang->installPackage($package);
+        $found = true;
+        break;
+      }
+    }
+    if($found) {
+      out(_("Done"));
+    } else {
+      out(_("Not Found. You will need to install languages manually in the module"));
+    }
+  }
+}
