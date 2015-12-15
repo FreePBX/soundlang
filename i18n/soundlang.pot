@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-10-20 12:13-0700\n"
+"POT-Creation-Date: 2015-12-14 17:34-0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -35,6 +35,11 @@ msgstr ""
 
 #: views/customlang.php:6
 msgid "Add Custom Language"
+msgstr ""
+
+#: soundlang.i18n.php:6
+#: soundlang.i18n.php:12
+msgid "Admin"
 msgstr ""
 
 #: assets/js/soundlang.js:40
@@ -97,6 +102,10 @@ msgstr ""
 #: views/customlang.php:55
 #: views/customlangs.php:22
 msgid "Description"
+msgstr ""
+
+#: install.php:75
+msgid "Done"
 msgstr ""
 
 #: Soundlang.class.php:276
@@ -202,6 +211,10 @@ msgstr ""
 msgid "Language to be used for sound prompts throughout the system"
 msgstr ""
 
+#: soundlang.i18n.php:8
+msgid "Management of sound prompt languages."
+msgstr ""
+
 #: Soundlang.class.php:308
 msgid "Mexico"
 msgstr ""
@@ -216,6 +229,14 @@ msgstr ""
 
 #: Soundlang.class.php:307
 msgid "New Zealand"
+msgstr ""
+
+#: install.php:64
+msgid "New install, downloading default english language set..."
+msgstr ""
+
+#: install.php:77
+msgid "Not Found. You will need to install languages manually in the module"
 msgstr ""
 
 #: Soundlang.class.php:309
@@ -238,6 +259,11 @@ msgstr ""
 
 #: Console/Soundlang.class.php:18
 msgid "Sound Language Prompts"
+msgstr ""
+
+#: soundlang.i18n.php:4
+#: soundlang.i18n.php:10
+msgid "Sound Languages"
 msgstr ""
 
 #: Soundlang.class.php:313
