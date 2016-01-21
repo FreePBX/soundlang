@@ -1,27 +1,30 @@
 <?php
-//Namespace should be FreePBX\Console\Command
+// vim: set ai ts=4 sw=4 ft=php:
+
+// Namespace should be FreePBX\Console\Command
 namespace FreePBX\Console\Command;
 
-//Symfony stuff all needed add these
+// Symfony stuff all needed add these
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
-//Tables
+// Tables
 use Symfony\Component\Console\Helper\TableHelper;
-//Process
+// Process
 use Symfony\Component\Process\Process;
+
 class Soundlang extends Command {
-  protected function configure(){
-    $this->setName('sounds')
-      ->setDescription(_('Sound Language Prompts'))
-      ->setDefinition(array(
-        new InputArgument('args', InputArgument::IS_ARRAY, null, null),));
-  }
-  protected function execute(InputInterface $input, OutputInterface $output){
-    $args = $input->getArgument('args');
-    $command = isset($args[0])?$args[0]:'';
+	protected function configure(){
+		$this->setName('sounds')
+			->setDescription(_('Sound Language Prompts'))
+			->setDefinition(array(
+				new InputArgument('args', InputArgument::IS_ARRAY, null, null),));
+	}
+	protected function execute(InputInterface $input, OutputInterface $output){
+		$args = $input->getArgument('args');
+		$command = isset($args[0])?$args[0]:'';
 		$soundlang = \FreePBX::create()->Soundlang;
 		switch ($command) {
 			case "list":
@@ -39,7 +42,7 @@ class Soundlang extends Command {
 				$table->setHeaders(array("ID", "Module","Language","Format","Available","Installed"));
 				$table->setRows($rows);
 				$table->render($output);
-	    break;
+				break;
 			case "install":
 				$list = $soundlang->getPackages();
 				if(!isset($args[1])) {
@@ -53,7 +56,7 @@ class Soundlang extends Command {
 				}
 				$soundlang->installPackage($list[$id]);
 				$output->writeln(sprintf(_("Successfully installed %s"),$list[$id]['module']."-".$list[$id]['language']."-".$list[$id]['format']."-".$list[$id]['version']));
-			break;
+				break;
 			case "uninstall":
 				$list = $soundlang->getPackages();
 				if(!isset($args[1])) {
@@ -67,7 +70,7 @@ class Soundlang extends Command {
 				}
 				$soundlang->uninstallPackage($list[$id]);
 				$output->writeln(sprintf(_("Successfully uninstalled %s"),$list[$id]['module']."-".$list[$id]['language']."-".$list[$id]['format']."-".$list[$id]['version']));
-			break;
+				break;
 			case "global":
 				if(!isset($args[1])) {
 					$lang = $soundlang->getLanguage();
@@ -98,17 +101,17 @@ class Soundlang extends Command {
 						break;
 					}
 				}
-			break;
-	    default:
-	      $output->writeln("<error>The command provided is not valid.</error>");
-        $output->writeln("Avalible commands are:");
-        $output->writeln("<info>list</info> - List all language packages");
-        $output->writeln("<info>install <id></info> - Install language pack by ID");
-        $output->writeln("<info>uninstall <id></info> - Uninstall language pack by ID");
-        $output->writeln("<info>global list</info> - List the Avalible global languages");
-        $output->writeln("<info>global <id></info> - Set the global language by ID");
-	      exit(4);
-	    break;
-    }
-  }
+				break;
+			default:
+				$output->writeln("<error>The command provided is not valid.</error>");
+				$output->writeln("Avalible commands are:");
+				$output->writeln("<info>list</info> - List all language packages");
+				$output->writeln("<info>install <id></info> - Install language pack by ID");
+				$output->writeln("<info>uninstall <id></info> - Uninstall language pack by ID");
+				$output->writeln("<info>global list</info> - List the Avalible global languages");
+				$output->writeln("<info>global <id></info> - Set the global language by ID");
+				exit(4);
+				break;
+		}
+	}
 }
