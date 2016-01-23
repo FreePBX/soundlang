@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-12-14 17:34-0800\n"
-"PO-Revision-Date: 2016-01-22 18:36+0200\n"
+"PO-Revision-Date: 2016-01-23 05:59+0200\n"
 "Last-Translator: Nicolas <forums@riendeau.org>\n"
 "Language-Team: French "
 "<http://weblate.freepbx.org/projects/freepbx/soundlang/fr_FR/>\n"
@@ -191,7 +191,7 @@ msgstr "Japonais"
 
 #: views/customlangs.php:21 views/packages.php:10 views/select.php:14
 msgid "Language"
-msgstr "Langue"
+msgstr "Langage"
 
 #: views/customlang.php:31
 msgid "Language Code"
@@ -203,7 +203,7 @@ msgstr "Code de langue (e.g. 'fr')."
 
 #: views/rnav.php:3
 msgid "Language Packs"
-msgstr ""
+msgstr "Paquet de langue"
 
 #: views/select.php:30
 msgid "Language to be used for sound prompts throughout the system"
