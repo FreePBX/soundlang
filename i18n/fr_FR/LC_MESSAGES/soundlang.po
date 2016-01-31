@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-12-14 17:34-0800\n"
-"PO-Revision-Date: 2016-01-23 05:59+0200\n"
+"PO-Revision-Date: 2016-01-31 00:49+0200\n"
 "Last-Translator: Nicolas <forums@riendeau.org>\n"
 "Language-Team: French "
 "<http://weblate.freepbx.org/projects/freepbx/soundlang/fr_FR/>\n"
@@ -207,11 +207,11 @@ msgstr "Paquet de langue"
 
 #: views/select.php:30
 msgid "Language to be used for sound prompts throughout the system"
-msgstr ""
+msgstr "La langue à utiliser pour les messages système"
 
 #: soundlang.i18n.php:8
 msgid "Management of sound prompt languages."
-msgstr ""
+msgstr "Gestion des langues de message."
 
 #: Soundlang.class.php:308
 msgid "Mexico"
@@ -232,10 +232,13 @@ msgstr "Nouvelle Zélande"
 #: install.php:64
 msgid "New install, downloading default english language set..."
 msgstr ""
+"Il s'agit d'une nouvelle installation, téléchargement des fichiers de langue "
+"anglaise par défaut..."
 
 #: install.php:77
 msgid "Not Found. You will need to install languages manually in the module"
 msgstr ""
+"Non trouvés. Vous devrez installer les langues manuellement dans le module"
 
 #: Soundlang.class.php:309
 msgid "Portugal"
@@ -255,11 +258,11 @@ msgstr "Russe"
 
 #: Console/Soundlang.class.php:18
 msgid "Sound Language Prompts"
-msgstr ""
+msgstr "Messages de langue"
 
 #: soundlang.i18n.php:4 soundlang.i18n.php:10
 msgid "Sound Languages"
-msgstr ""
+msgstr "Langues"
 
 #: Soundlang.class.php:313
 msgid "South Africa"
@@ -280,17 +283,17 @@ msgstr "Soumettre"
 #: Console/Soundlang.class.php:55
 #, php-format
 msgid "Successfully installed %s"
-msgstr ""
+msgstr "Installé %s avec succès"
 
 #: Console/Soundlang.class.php:96
 #, php-format
 msgid "Successfully set default language to %s, you will need to reload"
-msgstr ""
+msgstr "La langue par défaut à été changé à %s, vous devrez recharger"
 
 #: Console/Soundlang.class.php:69
 #, php-format
 msgid "Successfully uninstalled %s"
-msgstr ""
+msgstr "%s a été supprimé avec succès"
 
 #: Soundlang.class.php:310
 msgid "Sweden"
@@ -311,11 +314,11 @@ msgstr "Taiwan"
 #: Console/Soundlang.class.php:51 Console/Soundlang.class.php:65
 #: Console/Soundlang.class.php:92
 msgid "That is not a valid ID"
-msgstr ""
+msgstr "Ce n'est pas un ID valide"
 
 #: Console/Soundlang.class.php:46 Console/Soundlang.class.php:60
 msgid "The command provided is not valid"
-msgstr ""
+msgstr "La commande fournie n'est pas valide"
 
 #: Soundlang.class.php:302
 msgid "United Kingdom"
@@ -329,8 +332,10 @@ msgstr "États-Unis"
 #, php-format
 msgid "failed to delete %s from cache directory after opening sounds archive."
 msgstr ""
+"%s n'a pu être supprimé du répertoire de cache après l'ouverture de "
+"l'archive de sons."
 
 #: Soundlang.class.php:624
 #, php-format
 msgid "failed to open %s sounds archive."
-msgstr ""
+msgstr "échec d'ouverture de l'archive de sons %s."
