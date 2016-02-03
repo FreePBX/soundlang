@@ -9,15 +9,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-14 17:34-0800\n"
+"POT-Creation-Date: 2016-02-03 11:57-0800\n"
 "PO-Revision-Date: 2016-01-31 00:49+0200\n"
 "Last-Translator: Nicolas <forums@riendeau.org>\n"
-"Language-Team: French "
-"<http://weblate.freepbx.org/projects/freepbx/soundlang/fr_FR/>\n"
-"Language: fr_FR\n"
+"Language-Team: French <http://weblate.freepbx.org/projects/freepbx/soundlang/"
+"fr_FR/>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: fr_FR\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
 "X-Generator: Weblate 2.2-dev\n"
 
@@ -256,7 +256,7 @@ msgstr "Remise à 0"
 msgid "Russian"
 msgstr "Russe"
 
-#: Console/Soundlang.class.php:18
+#: Console/Soundlang.class.php:21
 msgid "Sound Language Prompts"
 msgstr "Messages de langue"
 
@@ -280,17 +280,17 @@ msgstr "Espagnol"
 msgid "Submit"
 msgstr "Soumettre"
 
-#: Console/Soundlang.class.php:55
+#: Console/Soundlang.class.php:58
 #, php-format
 msgid "Successfully installed %s"
 msgstr "Installé %s avec succès"
 
-#: Console/Soundlang.class.php:96
+#: Console/Soundlang.class.php:99
 #, php-format
 msgid "Successfully set default language to %s, you will need to reload"
 msgstr "La langue par défaut à été changé à %s, vous devrez recharger"
 
-#: Console/Soundlang.class.php:69
+#: Console/Soundlang.class.php:72
 #, php-format
 msgid "Successfully uninstalled %s"
 msgstr "%s a été supprimé avec succès"
@@ -311,12 +311,12 @@ msgstr "Suisse"
 msgid "Taiwan"
 msgstr "Taiwan"
 
-#: Console/Soundlang.class.php:51 Console/Soundlang.class.php:65
-#: Console/Soundlang.class.php:92
+#: Console/Soundlang.class.php:54 Console/Soundlang.class.php:68
+#: Console/Soundlang.class.php:95
 msgid "That is not a valid ID"
 msgstr "Ce n'est pas un ID valide"
 
-#: Console/Soundlang.class.php:46 Console/Soundlang.class.php:60
+#: Console/Soundlang.class.php:49 Console/Soundlang.class.php:63
 msgid "The command provided is not valid"
 msgstr "La commande fournie n'est pas valide"
 

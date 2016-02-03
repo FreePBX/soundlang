@@ -9,15 +9,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-14 17:34-0800\n"
+"POT-Creation-Date: 2016-02-03 11:57-0800\n"
 "PO-Revision-Date: 2016-01-20 05:28+0200\n"
 "Last-Translator: Ernesto <ecasas@sangoma.com>\n"
-"Language-Team: English (United States) "
-"<http://weblate.freepbx.org/projects/freepbx/soundlang/en_US/>\n"
-"Language: en_US\n"
+"Language-Team: English (United States) <http://weblate.freepbx.org/projects/"
+"freepbx/soundlang/en_US/>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: en_US\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 2.2-dev\n"
 
@@ -253,7 +253,7 @@ msgstr ""
 msgid "Russian"
 msgstr ""
 
-#: Console/Soundlang.class.php:18
+#: Console/Soundlang.class.php:21
 msgid "Sound Language Prompts"
 msgstr ""
 
@@ -277,17 +277,17 @@ msgstr ""
 msgid "Submit"
 msgstr "Enviar"
 
-#: Console/Soundlang.class.php:55
+#: Console/Soundlang.class.php:58
 #, php-format
 msgid "Successfully installed %s"
 msgstr ""
 
-#: Console/Soundlang.class.php:96
+#: Console/Soundlang.class.php:99
 #, php-format
 msgid "Successfully set default language to %s, you will need to reload"
 msgstr ""
 
-#: Console/Soundlang.class.php:69
+#: Console/Soundlang.class.php:72
 #, php-format
 msgid "Successfully uninstalled %s"
 msgstr ""
@@ -308,12 +308,12 @@ msgstr ""
 msgid "Taiwan"
 msgstr ""
 
-#: Console/Soundlang.class.php:51 Console/Soundlang.class.php:65
-#: Console/Soundlang.class.php:92
+#: Console/Soundlang.class.php:54 Console/Soundlang.class.php:68
+#: Console/Soundlang.class.php:95
 msgid "That is not a valid ID"
 msgstr ""
 
-#: Console/Soundlang.class.php:46 Console/Soundlang.class.php:60
+#: Console/Soundlang.class.php:49 Console/Soundlang.class.php:63
 msgid "The command provided is not valid"
 msgstr ""
 

@@ -3,13 +3,13 @@
 # For licensing information, please see the file named LICENSE located in the module directory
 #
 # FreePBX language template for soundlang
-# Copyright (C) 2008-2015 Sangoma, Inc.
+# Copyright (C) 2008-2016 Sangoma, Inc.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-14 17:34-0800\n"
+"POT-Creation-Date: 2016-02-03 11:57-0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -257,7 +257,7 @@ msgstr ""
 msgid "Russian"
 msgstr ""
 
-#: Console/Soundlang.class.php:18
+#: Console/Soundlang.class.php:21
 msgid "Sound Language Prompts"
 msgstr ""
 
@@ -284,17 +284,17 @@ msgstr ""
 msgid "Submit"
 msgstr ""
 
-#: Console/Soundlang.class.php:55
+#: Console/Soundlang.class.php:58
 #, php-format
 msgid "Successfully installed %s"
 msgstr ""
 
-#: Console/Soundlang.class.php:96
+#: Console/Soundlang.class.php:99
 #, php-format
 msgid "Successfully set default language to %s, you will need to reload"
 msgstr ""
 
-#: Console/Soundlang.class.php:69
+#: Console/Soundlang.class.php:72
 #, php-format
 msgid "Successfully uninstalled %s"
 msgstr ""
@@ -315,14 +315,14 @@ msgstr ""
 msgid "Taiwan"
 msgstr ""
 
-#: Console/Soundlang.class.php:51
-#: Console/Soundlang.class.php:65
-#: Console/Soundlang.class.php:92
+#: Console/Soundlang.class.php:54
+#: Console/Soundlang.class.php:68
+#: Console/Soundlang.class.php:95
 msgid "That is not a valid ID"
 msgstr ""
 
-#: Console/Soundlang.class.php:46
-#: Console/Soundlang.class.php:60
+#: Console/Soundlang.class.php:49
+#: Console/Soundlang.class.php:63
 msgid "The command provided is not valid"
 msgstr ""
 
