@@ -608,10 +608,14 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 
 		$this->uninstallPackage($package);
 
-		$tmpdir = sys_get_temp_dir();
-		$pkgdir = $tmpdir . '/' . $package['type'] . '-' . $package['module'] . '-' . $package['language'] . '-' . $package['format'] . '-' . $package['version'] . '/';
+		$tmpdir = $amp_conf['ASTVARLIBDIR'] . "/sounds/tmp";
+		if (!is_dir($tmpdir)) {
+			mkdir($tmpdir);
+		}
+		$basename = $package['type'].'-'.$package['module'].'-'.$package['language'].'-'.$package['format'] .'-'.$package['version'];
+		$pkgdir = $tmpdir . '/' . $basename . '/';
 
-		$filename = $package['type'] . '-' . $package['module'] . '-' . $package['language'] . '-' . $package['format'] . '-' . $package['version'] . '.tar.gz';
+		$filename = $basename . '.tar.gz';
 
 		$filedata = $this->getRemoteFile("/sounds/" . $filename);
 		file_put_contents($tmpdir . "/" . $filename, $filedata);
@@ -663,9 +667,28 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 
 			needreload();
 		}
-
-		if (unlink($tmpdir . "/" . $filename) === false) {
+		$this->recursivermdir($tmpdir);
+		// if the recursive remove failed, log an error
+		if (is_dir($tmpdir . "/" . $filename)) {
 			freepbx_log(FPBX_LOG_WARNING, sprintf(_("failed to delete %s from cache directory after opening sounds archive."), $filename));
+		}
+	}
+
+	public function recursivermdir($dir) {
+		if (is_dir($dir)) {
+			$objs = scandir($dir);
+			foreach ($objs as $obj) {
+				if ($obj != "." && $obj != "..") {
+					$name = $dir . "/" . $obj;
+					if (filetype($name) == "dir") {
+						$this->recursivermdir($name);
+					} else {
+						unlink($name);
+					}
+				}
+				reset($objs);
+			}
+			rmdir($dir);
 		}
 	}
 
