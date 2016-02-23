@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-02-03 11:57-0800\n"
+"POT-Creation-Date: 2016-02-23 13:47-0800\n"
 "PO-Revision-Date: 2016-01-20 05:28+0200\n"
 "Last-Translator: Ernesto <ecasas@sangoma.com>\n"
 "Language-Team: English (United States) <http://weblate.freepbx.org/projects/"
@@ -82,7 +82,7 @@ msgstr ""
 msgid "Chinese"
 msgstr ""
 
-#: Soundlang.class.php:625
+#: Soundlang.class.php:629
 #, php-format
 msgid "Could not untar %s to %s"
 msgstr ""
@@ -124,7 +124,7 @@ msgstr ""
 msgid "Error: You should never see this"
 msgstr ""
 
-#: Soundlang.class.php:740
+#: Soundlang.class.php:763
 #, php-format
 msgid "Failed to get remote file, error was:"
 msgstr ""
@@ -325,12 +325,12 @@ msgstr ""
 msgid "United States"
 msgstr ""
 
-#: Soundlang.class.php:668
+#: Soundlang.class.php:673
 #, php-format
 msgid "failed to delete %s from cache directory after opening sounds archive."
 msgstr ""
 
-#: Soundlang.class.php:624
+#: Soundlang.class.php:628
 #, php-format
 msgid "failed to open %s sounds archive."
 msgstr ""

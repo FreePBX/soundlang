@@ -2,11 +2,12 @@
 	<rawname>soundlang</rawname>
 	<repo>standard</repo>
 	<name>Sound Languages</name>
-	<version>13.0.7</version>
+	<version>13.0.8</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
 	<changelog>
+		*13.0.8* Work around /tmp directory issue on FreeBSD by lidl
 		*13.0.7* Spelling
 		*13.0.6* FREEPBX-10131
 		*13.0.5* FREEPBX-10521 Wrong update of language in Soung Language module
