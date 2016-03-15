@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-02-23 13:47-0800\n"
+"POT-Creation-Date: 2016-03-15 12:41-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -158,6 +158,7 @@ msgid "Germany"
 msgstr ""
 
 #: views/rnav.php:2
+#: views/select.php:4
 msgid "Global Language"
 msgstr ""
 
@@ -191,7 +192,7 @@ msgstr ""
 
 #: views/customlangs.php:21
 #: views/packages.php:10
-#: views/select.php:14
+#: views/select.php:16
 msgid "Language"
 msgstr ""
 
@@ -207,7 +208,7 @@ msgstr ""
 msgid "Language Packs"
 msgstr ""
 
-#: views/select.php:30
+#: views/select.php:32
 msgid "Language to be used for sound prompts throughout the system"
 msgstr ""
 
