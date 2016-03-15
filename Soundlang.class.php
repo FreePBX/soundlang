@@ -764,4 +764,7 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 			}
 		}
 	}
+	public function getRightNav($request) {
+		return load_view(dirname(__FILE__).'/views/rnav.php',array());
+	}
 }

@@ -12,7 +12,7 @@ echo $heading;
 ?>
 <div class="container-fluid">
 	<div class="row">
-		<div class="col-sm-9">
+		<div class="col-sm-12">
 			<div class="fpbx-container">
 				<?php if(!empty($message)){ ?>
 					<div class="alert alert-<?php echo $message['type']?>"><?php echo $message['message']?></div>
@@ -72,9 +72,6 @@ echo $heading;
 					</form>
 				</div>
 			</div>
-		</div>
-		<div class="col-sm-3 hidden-xs bootnav">
-			<?php echo load_view(dirname(__FILE__).'/rnav.php',array()); ?>
 		</div>
 	</div>
 </div>

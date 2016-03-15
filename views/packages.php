@@ -1,9 +1,9 @@
 <div class="container-fluid">
 	<div class="row">
-		<div class="col-sm-9">
+		<div class="col-sm-12">
 			<div class="fpbx-container">
 				<div class="display no-border">
-					<table  data-toggle="table" data-pagination="true" data-show-columns="true" data-show-toggle="true" data-search="true" data-state-save="true" data-state-save-id-table="soundlangscookie"  class="table table-striped">
+					<table  data-toggle="table" data-pagination="true" data-show-columns="true" data-show-toggle="true" data-search="true" data-cookie="true" data-cookie-id-table="soundlangscookie"  class="table table-striped">
 						<thead>
 							<tr>
 								<th data-sortable="true"><?php echo _("Module")?></th>
@@ -11,7 +11,7 @@
 								<th data-sortable="true"><?php echo _("Format")?></th>
 								<th data-sortable="true"><?php echo _("Available")?></th>
 								<th data-sortable="true"><?php echo _("Installed")?></th>
-								<th data-sortable="true"><?php echo _("Actions")?></th>
+								<th><?php echo _("Actions")?></th>
 							</tr>
 						</thead>
 						<tbody>
@@ -49,9 +49,6 @@
 					</table>
 				</div>
 			</div>
-		</div>
-		<div class="col-sm-3 hidden-xs bootnav">
-			<?php echo load_view(dirname(__FILE__).'/rnav.php',array()); ?>
 		</div>
 	</div>
 </div>

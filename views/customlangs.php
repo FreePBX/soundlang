@@ -1,12 +1,12 @@
 <div class="container-fluid">
 	<div class="row">
-		<div class="col-sm-9">
+		<div class="col-sm-12">
 			<div class="fpbx-container">
 				<div class="display no-border">
 					<div class="container-fluid">
 						<div class="table-responsive">
 							<div id="toolbar-customlangs">
-								<a href="config.php?display=soundlang&amp;action=addcustomlang" id="add-customlangs" class="btn btn-danger btn-add" data-type="customlangs" data-section="customlangs">
+								<a href="config.php?display=soundlang&amp;action=addcustomlang" data-cookie="true" data-cookie-id-table="soundlang-customlangs-grid" id="add-customlangs" class="btn btn-danger btn-add" data-type="customlangs" data-section="customlangs">
 									<i class="fa fa-plus"></i> <span><?php echo _('Add')?></span>
 								</a>
 								<button id="remove-customlangs" class="btn btn-danger btn-remove" data-type="customlangs" disabled data-section="customlangs">
@@ -45,9 +45,6 @@
 					</div>
 				</div>
 			</div>
-		</div>
-		<div class="col-sm-3 hidden-xs bootnav">
-			<?php echo load_view(dirname(__FILE__).'/rnav.php',array()); ?>
 		</div>
 	</div>
 </div>

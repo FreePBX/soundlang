@@ -1,6 +1,8 @@
 <div class="container-fluid">
 	<div class="row">
-		<div class="col-sm-9">
+		<div class="col-sm-12">
+			<h2><?php echo _("Global Language")?></h2>
+
 			<div class="fpbx-container">
 				<div class="display full-border">
 					<form method="POST" class="fpbx-submit">
@@ -34,9 +36,6 @@
 					</form>
 				</div>
 			</div>
-		</div>
-		<div class="col-sm-3 hidden-xs bootnav">
-			<?php echo load_view(dirname(__FILE__).'/rnav.php',array()); ?>
 		</div>
 	</div>
 </div>
