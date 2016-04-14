@@ -10,13 +10,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-03-15 12:41-0700\n"
-"PO-Revision-Date: 2016-04-14 12:34+0300\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2016-04-14 14:47+0200\n"
+"Last-Translator: Media <mousavi.media@gmail.com>\n"
+"Language-Team: Persian (Iran) "
+"<http://weblate.freepbx.org/projects/freepbx/soundlang/fa_IR/>\n"
 "Language: fa_IR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2.4\n"
 
 #: views/customlang.php:67
 msgid "A brief description for this Custom Language."
@@ -57,7 +60,7 @@ msgstr "استرالیا"
 
 #: views/packages.php:12
 msgid "Available"
-msgstr "در دسترس"
+msgstr "دردسترس"
 
 #: Soundlang.class.php:293
 msgid "Belgium"
@@ -99,7 +102,7 @@ msgstr "در حال حذف..."
 
 #: views/customlang.php:55 views/customlangs.php:22
 msgid "Description"
-msgstr "توضیح"
+msgstr "شرح"
 
 #: install.php:75
 msgid "Done"
