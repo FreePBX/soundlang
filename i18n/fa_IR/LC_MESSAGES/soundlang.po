@@ -10,20 +10,20 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-04-29 19:35-0700\n"
-"PO-Revision-Date: 2016-04-25 19:46+0200\n"
-"Last-Translator: psdk <hyavari26@gmail.com>\n"
-"Language-Team: Persian (Iran) <http://weblate.freepbx.org/projects/freepbx/"
-"soundlang/fa_IR/>\n"
+"PO-Revision-Date: 2016-04-30 12:58+0200\n"
+"Last-Translator: Media <mousavi.media@gmail.com>\n"
+"Language-Team: Persian (Iran) "
+"<http://weblate.freepbx.org/projects/freepbx/soundlang/fa_IR/>\n"
+"Language: fa_IR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: fa_IR\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 2.4\n"
 
 #: Soundlang.class.php:421
 msgid "A PHP extension stopped the file upload"
-msgstr ""
+msgstr "پک پسوند PHP بارگذاری فایل را متوقف کرد"
 
 #: views/customlang.php:67
 msgid "A brief description for this Custom Language."
@@ -43,7 +43,7 @@ msgstr "افزودن زبان سفارشی"
 
 #: views/customlangs.php:10
 msgid "Add New Custom Language"
-msgstr ""
+msgstr "افزودن زبان سفارشی جدید"
 
 #: soundlang.i18n.php:6 soundlang.i18n.php:12
 msgid "Admin"
@@ -76,7 +76,7 @@ msgstr "برزیل"
 
 #: views/customlang.php:83
 msgid "Browse"
-msgstr ""
+msgstr "مسیردهی"
 
 #: Soundlang.class.php:464
 msgid "Canada"
@@ -84,13 +84,15 @@ msgstr "کانادا"
 
 #: views/packages.php:7
 msgid "Change Global Sound Language"
-msgstr ""
+msgstr "تغییر صدای زبان عمومی"
 
 #: views/customlang.php:126
 msgid ""
 "Check all file formats you would like this system recording to be encoded "
 "into"
 msgstr ""
+"بررسی تمامی فرمت های فایلی که سیستم میتواند تماس های ضبط شده را به آنها "
+"تبدیل کند"
 
 #: Soundlang.class.php:466
 msgid "China"
@@ -102,12 +104,12 @@ msgstr "چینی"
 
 #: views/customlang.php:110
 msgid "Convert To"
-msgstr ""
+msgstr "تبدیل به"
 
 #: assets/js/soundlang.js:196
 #, perl-format
 msgid "Copying %s to %s"
-msgstr ""
+msgstr "در حال کپی %s به %s"
 
 #: Soundlang.class.php:798
 #, php-format
@@ -124,7 +126,7 @@ msgstr "حذف"
 
 #: views/customlangs.php:13
 msgid "Delete Custom Language"
-msgstr ""
+msgstr "حذف زبان سفارشی"
 
 #: assets/js/soundlang.js:11
 msgid "Deleting..."
@@ -140,7 +142,7 @@ msgstr "انجام شد"
 
 #: views/customlang.php:91
 msgid "Drop Multiple Files or Archives Here"
-msgstr ""
+msgstr "چند فایل فشرده یا معمولی را به اینجا منتقل کنید"
 
 #: Soundlang.class.php:445
 msgid "Dutch"
@@ -165,11 +167,11 @@ msgstr "عدم حذف فایل، خطا:"
 
 #: Soundlang.class.php:418
 msgid "Failed to write file to disk"
-msgstr ""
+msgstr "خطا در نوشتن فایل به روی دیسک"
 
 #: views/customlang.php:86
 msgid "Files to upload"
-msgstr ""
+msgstr "فایلها برای بارگذاری"
 
 #: Soundlang.class.php:441
 msgid "Finish"
@@ -177,7 +179,7 @@ msgstr "پایان"
 
 #: assets/js/soundlang.js:227 assets/js/soundlang.js:232
 msgid "Finished!"
-msgstr ""
+msgstr "پایان یافت!"
 
 #: Soundlang.class.php:469
 msgid "Finland"
@@ -220,6 +222,7 @@ msgid ""
 "If you are doing media conversions this can take a very long time, is that "
 "ok?"
 msgstr ""
+"عملیات تبدیل فایلهای صوتی به یکدیگر زمان بسیاری لازم دارد، اشکالی ندارد؟"
 
 #: views/packages.php:17
 msgid "Installed"
@@ -271,7 +274,7 @@ msgstr "مکزیک"
 
 #: Soundlang.class.php:415
 msgid "Missing a temporary folder"
-msgstr ""
+msgstr "از دست دادن پوشه موقت"
 
 #: views/packages.php:13
 msgid "Module"
@@ -291,11 +294,11 @@ msgstr "نصب جدید، در حال دانلود زبان انگلیسی به 
 
 #: assets/js/soundlang.js:117
 msgid "No Suitable files were found in the archive!"
-msgstr ""
+msgstr "فایلهای مناسبی در این فایل فشرده پیدا نشد!"
 
 #: Soundlang.class.php:412
 msgid "No file was uploaded"
-msgstr ""
+msgstr "فایلی بارگذاری نشده"
 
 #: install.php:77
 msgid "Not Found. You will need to install languages manually in the module"
@@ -312,7 +315,7 @@ msgstr "پرتغالی"
 #: assets/js/soundlang.js:194
 #, perl-format
 msgid "Processing %s for %s in format %s"
-msgstr ""
+msgstr "پردازش %s برای %s در فرمت %s"
 
 #: Soundlang.class.php:213 Soundlang.class.php:230 Soundlang.class.php:242
 msgid "Reset"
@@ -390,19 +393,19 @@ msgstr "این دستور نامعتبر است"
 msgid ""
 "The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in "
 "the HTML form"
-msgstr ""
+msgstr "حجم فایل بارگذاری شده بیشتر از حد مجاز تعیین شده در فرم است"
 
 #: Soundlang.class.php:403
 msgid "The uploaded file exceeds the upload_max_filesize directive in php.ini"
-msgstr ""
+msgstr "حجم فایل بارگذاری شده بیشتر از حد تعیین شده در  php.ini  میباشد"
 
 #: Soundlang.class.php:409
 msgid "The uploaded file was only partially uploaded"
-msgstr ""
+msgstr "تنها بخشی از فایل بارگذاری شده است"
 
 #: assets/js/soundlang.js:222
 msgid "There was an error, See the console for more details"
-msgstr ""
+msgstr "بروز خطا، برای اطلاعات بیشتر به کنسول مراجعه کنید"
 
 #: Soundlang.class.php:471
 msgid "United Kingdom"
@@ -414,15 +417,15 @@ msgstr "آمریکا"
 
 #: Soundlang.class.php:398
 msgid "Unsupported file format"
-msgstr ""
+msgstr "فرمت فایل نامعتبر"
 
 #: assets/js/soundlang.js:99
 msgid "Unsupported file type"
-msgstr ""
+msgstr "نوع فایل پشتیبانی نشده"
 
 #: views/customlang.php:78
 msgid "Upload Recording"
-msgstr ""
+msgstr "بارگذاری ضبط"
 
 #: views/customlang.php:98
 #, php-format
@@ -431,14 +434,16 @@ msgid ""
 "includes archives (that include multiple files, such as %s) and multiple "
 "files"
 msgstr ""
+"بارگذاری فایلها از سیستم محلی. فرمت های قابل قبول عبارتند ار: %s. این مورد "
+"شامل فایلهای فشرده (چندین فایل، مانند %s) هم میشود"
 
 #: views/packages.php:8
 msgid "View Custom Languages"
-msgstr ""
+msgstr "مشاهده زبانهای سفارشی"
 
 #: assets/js/soundlang.js:144
 msgid "You must set a valid language code"
-msgstr ""
+msgstr "شما باید یک کد زبان معتبر وارد کنید"
 
 #: Soundlang.class.php:842
 #, php-format
