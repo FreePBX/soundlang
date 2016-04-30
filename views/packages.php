@@ -3,7 +3,11 @@
 		<div class="col-sm-12">
 			<div class="fpbx-container">
 				<div class="display no-border">
-					<table  data-toggle="table" data-pagination="true" data-show-columns="true" data-show-toggle="true" data-search="true" data-cookie="true" data-cookie-id-table="soundlangscookie"  class="table table-striped">
+					<div id="toolbar-all">
+						<a class="btn btn-primary" href="?display=soundlang&amp;action=global"><i class="fa fa-language"></i> <?php echo _("Change Global Sound Language")?></a>
+						<a class="btn btn-primary" href="?display=soundlang&amp;action=customlangs"><i class="fa fa-globe"></i> <?php echo _("View Custom Languages")?></a>
+					</div>
+					<table data-toolbar="#toolbar-all" data-toggle="table" data-pagination="true" data-show-columns="true" data-show-toggle="true" data-search="true" data-cookie="true" data-cookie-id-table="soundlangscookie"  class="table table-striped">
 						<thead>
 							<tr>
 								<th data-sortable="true"><?php echo _("Module")?></th>

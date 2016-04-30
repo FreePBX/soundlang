@@ -1,4 +1,6 @@
-var deleteCustoms = [];
+var deleteCustoms = [],
+files = [];
+
 $(".btn-remove").click(function() {
 	var type = $(this).data("type"), btn = $(this), section = $(this).data("section");
 	var chosen = $("#table-"+section).bootstrapTable("getSelections");
@@ -69,3 +71,176 @@ $(document).on("click", 'a[id^="del"]',function(){
 		}
 	});
 });
+
+
+/**
+ * Drag/Drop/Upload Files
+ */
+$('#dropzone').on('drop dragover', function (e) {
+	e.preventDefault();
+});
+$('#dropzone').on('dragleave drop', function (e) {
+	$(this).removeClass("activate");
+});
+$('#dropzone').on('dragover', function (e) {
+	$(this).addClass("activate");
+});
+$('#fileupload').fileupload({
+	dataType: 'json',
+	dropZone: $("#dropzone"),
+	add: function (e, data) {
+		//TODO: Need to check all supported formats
+		var sup = "\.("+supportedRegExp+")$",
+				patt = new RegExp(sup),
+				submit = true;
+		$.each(data.files, function(k, v) {
+			if(!patt.test(v.name.toLowerCase())) {
+				submit = false;
+				alert(_("Unsupported file type"));
+				return false;
+			}
+			var s = v.name.replace(/\.[^/.]+$/, "").replace(/\s|&|<|>|\.|`|'|\*|\?|\"/g, '-').toLowerCase();
+		});
+		if(submit) {
+			data.submit();
+		}
+	},
+	drop: function () {
+		$("#upload-progress .progress-bar").css("width", "0%");
+	},
+	dragover: function (e, data) {
+	},
+	change: function (e, data) {
+	},
+	done: function (e, data) {
+		if(data.result.gfiles.length === 0) {
+			alert(_("No Suitable files were found in the archive!"));
+			return;
+		}
+		$.each(data.result.gfiles, function(k,v) {
+			files.push(v);
+		});
+		$("#filecount").text(files.length);
+		if(data.result.bfiles.length > 0) {
+			//alert("Some files were not suitable to be uploaded. Check the console log for more information")
+			console.warn("The below files are NOT supported");
+			console.warn(data.result.bfiles);
+		}
+	},
+	progressall: function (e, data) {
+		var progress = parseInt(data.loaded / data.total * 100, 10);
+		$("#upload-progress .progress-bar").css("width", progress+"%");
+	},
+	fail: function (e, data) {
+	},
+	always: function (e, data) {
+	}
+});
+$("#customlang-frm").submit(function(e) {
+	e.preventDefault();
+	$("#action-buttons input").prop("disabled",true);
+	var data = {};
+	if($("#language").val().trim() === "") {
+		return warnInvalid($("#language"),_("You must set a valid language code"));
+	}
+	data.language = $("#language").val().trim();
+
+	data.id = $("#id").val();
+
+	data.description = $("#description").val();
+
+	data.codecs = [];
+	$(".codec:checked").each(function() {
+		data.codecs.push($(this).val());
+	});
+
+	if(data.codecs.length > 0 && !confirm(_("If you are doing media conversions this can take a very long time, is that ok?"))) {
+		$("#action-buttons input").prop("disabled",false);
+		return;
+	}
+	var process = [], playback = [], remove = [];
+	if(data.codecs.length > 0) {
+		$.each(files, function(file, d) {
+			$.each(data.codecs, function(k, codec) {
+				process.push({
+					"name": d.filename,
+					"codec": codec,
+					"temporary": d.localfilename,
+					"language": data.language,
+					"directory": d.directory
+				});
+			});
+		});
+	} else {
+		$.each(files, function(file, d) {
+			process.push({
+				"name": d.filename,
+				"codec": "",
+				"temporary": d.localfilename,
+				"language": data.language,
+				"directory": d.directory
+			});
+		});
+	}
+	if(process.length > 0) {
+		var total = process.length, count = 0;
+		$("#recscreen .progress-bar").prop("aria-valuenow",0);
+		$("#recscreen .progress-bar").css("width",0+"px");
+		$("#recscreen").removeClass("hidden");
+		async.forEachOfSeries(process, function (value, key, callback) {
+			value.command = "convert";
+			value.module = "soundlang";
+			if(value.codec !== "") {
+				$("#recscreen label").html(sprintf(_("Processing %s for %s in format %s"),value.name, data.language, value.codec));
+			} else {
+				$("#recscreen label").html(sprintf(_("Copying %s to %s"),value.name, data.language));
+			}
+			$.ajax({
+				type: 'POST',
+				url: "ajax.php",
+				data: value,
+				dataType: 'json',
+				timeout: 240000
+			}).done(function(data) {
+				if(data.status) {
+					callback();
+				} else {
+					console.error(data);
+					callback(data.message);
+				}
+			}).fail(function(data) {
+				console.error(data);
+				callback(data);
+			}).always(function(data) {
+				count++;
+				var progress = (count/total) * 100;
+				$("#recscreen .progress-bar").prop("aria-valuenow",progress);
+				$("#recscreen .progress-bar").css("width",progress+"%");
+			});
+		}, function(err){
+			if(err) {
+				alert(_("There was an error, See the console for more details"));
+				console.error(err);
+				$("#action-buttons input").prop("disabled", false);
+				$("#recscreen").addClass("hidden");
+			} else {
+				$("#recscreen label").text(_("Finished!"));
+				saveCustomLang(data.id, data.language, data.description);
+			}
+		});
+	} else {
+		$("#recscreen label").text(_("Finished!"));
+		saveCustomLang(data.id, data.language, data.description);
+	}
+});
+function saveCustomLang(id, language, description) {
+	$.post( "ajax.php", {module: "soundlang", command: "saveCustomLang", id: id, language: language, description: description}, function( data ) {
+		if(data.status) {
+			window.location = "config.php?display=soundlang";
+		} else {
+			alert(data.message);
+			$("#recscreen").addClass("hidden");
+			$("#action-buttons input").prop("disabled", false);
+		}
+	});
+}

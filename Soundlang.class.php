@@ -4,16 +4,37 @@
 //	Copyright 2015 Schmooze Com Inc.
 //
 namespace FreePBX\modules;
-// Default setting array passed to ajaxRequest
-$setting = array('authenticate' => true, 'allowremote' => false);
-
+include(__DIR__."/vendor/autoload.php");
+use splitbrain\PHPArchive\Tar;
 class Soundlang extends \FreePBX_Helpers implements \BMO {
 	private $message = '';
 	private $maxTimeLimit = 250;
+	private $temp;
+	private $path;
+	/** Extensions to show in the convert to section
+	 * Limited on purpose because there are far too many,
+	 * Most of which are not supported by asterisk
+	 */
+	private $convert = array(
+		"wav",
+		"sln",
+		"sln16",
+		"sln48",
+		"g722",
+		"ulaw",
+		"alaw",
+		"g729",
+		"gsm"
+	);
 
 	public function __construct($freepbx = null) {
 		$this->db = $freepbx->Database;
 		$this->FreePBX = $freepbx;
+		$this->temp = $this->FreePBX->Config->get("ASTSPOOLDIR") . "/tmp";
+		if(!file_exists($this->temp)) {
+			mkdir($this->temp,0777,true);
+		}
+		$this->path = $this->FreePBX->Config->get("ASTVARLIBDIR")."/sounds";
 	}
 
 	public function install() {
@@ -48,12 +69,13 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 		$languages = $this->getLanguages();
 
 		switch ($action) {
-		case '':
+		case 'global':
 		case 'save':
 			$language = $this->getLanguage();
 
 			$html .= load_view(dirname(__FILE__).'/views/select.php', array('languages' => $languages, 'language' => $language));
 			break;
+		case '':
 		case 'packages':
 		case 'install':
 		case 'uninstall':
@@ -92,7 +114,6 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 		case 'customlangs':
 		case 'delcustomlang':
 			$customlangs = $this->getCustomLanguages();
-
 			$html .= load_view(dirname(__FILE__).'/views/customlangs.php', array('customlangs' => $customlangs));
 			break;
 		case 'addcustomlang':
@@ -101,7 +122,17 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 				$customlang = $this->getCustomLanguage($request['customlang']);
 			}
 
-			$html .= load_view(dirname(__FILE__).'/views/customlang.php', array('customlang' => $customlang));
+			$media = $this->FreePBX->Media();
+			$supported = $media->getSupportedFormats();
+			ksort($supported['in']);
+			ksort($supported['out']);
+			$supported['in']['tgz'] = 'tgz';
+			$supported['in']['gz'] = 'gz';
+			$supported['in']['tar'] = 'tar';
+			$supported['in']['zip'] = 'zip';
+			$convertto = array_intersect($supported['out'], $this->convert);
+
+			$html .= load_view(dirname(__FILE__).'/views/customlang.php', array('customlang' => $customlang, 'convertto' => $convertto, 'supported' => $supported));
 		}
 
 		return $html;
@@ -174,7 +205,7 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 		$buttons = array();
 
 		switch ($action) {
-		case '':
+		case 'global':
 		case 'save':
 			$buttons['reset'] = array(
 				'name' => 'reset',
@@ -228,7 +259,10 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 	 */
 	public function ajaxRequest($req, $setting){
 		switch($req){
+			case "convert":
+			case "upload":
 			case "delete":
+			case "saveCustomLang":
 				return true;
 			break;
 			default:
@@ -243,6 +277,49 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 	public function ajaxHandler(){
 		$request = $_REQUEST;
 		switch($request['command']){
+			case "saveCustomLang":
+				if (empty($_POST['id'])) {
+					$this->addCustomLanguage($_POST['language'], $_POST['description']);
+				} else {
+					$this->updateCustomLanguage($_POST['id'], $_POST['language'], $_POST['description']);
+				}
+				return array("status" => true);
+			break;
+			case "convert":
+				set_time_limit(0);
+				$media = $this->FreePBX->Media;
+				$temporary = $_POST['temporary'];
+				$name = basename($_POST['name']);
+				$codec = $_POST['codec'];
+				$lang = $_POST['language'];
+				$directory = $_POST['directory'];
+				$path = $this->path . "/" . $lang;
+				if(!empty($directory)) {
+					$path = $path ."/".$directory;
+				}
+				if(!file_exists($path)) {
+					mkdir($path);
+				}
+				$name = preg_replace("/\s+|'+|`+|\"+|<+|>+|\?+|\*|\.+|&+/","-",$name);
+				if(!empty($codec)) {
+					$media->load($temporary);
+					try {
+						$media->convert($path."/".$name.".".$codec);
+						unlink($temporary);
+					} catch(\Exception $e) {
+						return array("status" => false, "message" => $e->getMessage()." [".$path."/".$name.".".$codec."]");
+					}
+					return array("status" => true, "name" => $name);
+				} else {
+					$ext = pathinfo($temporary,PATHINFO_EXTENSION);
+					if($temporary && file_exists($temporary)) {
+						rename($temporary, $path."/".$name.".".$ext);
+						return array("status" => true, "name" => $name);
+					} else {
+						return array("status" => true, "name" => $name);
+					}
+				}
+			break;
 			case 'delete':
 				switch ($request['type']) {
 					case 'customlangs':
@@ -252,6 +329,98 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 						}
 						return array('status' => true, 'message' => $ret);
 					break;
+				}
+			break;
+			case "upload":
+				foreach ($_FILES["files"]["error"] as $key => $error) {
+					switch($error) {
+						case UPLOAD_ERR_OK:
+							$extension = pathinfo($_FILES["files"]["name"][$key], PATHINFO_EXTENSION);
+							$extension = strtolower($extension);
+							$supported = $this->FreePBX->Media->getSupportedFormats();
+							$archives = array("tgz","gz","tar","zip");
+							if(in_array($extension,$supported['in']) || in_array($extension,$archives)) {
+								$tmp_name = $_FILES["files"]["tmp_name"][$key];
+								$dname = \Media\Media::cleanFileName($_FILES["files"]["name"][$key]);
+								$dname = pathinfo($dname,PATHINFO_FILENAME);
+								$id = time().rand(1,1000);
+								$name = $dname . '-' . $id . '.' . $extension;
+								move_uploaded_file($tmp_name, $this->temp."/".$name);
+								$gfiles = $bfiles = array();
+								if(in_array($extension,$archives)) {
+									//this is an archives
+									$tar = new Tar();
+									$archive = $this->temp."/".$name;
+									$tar->open($archive);
+									$path = $this->temp."/".$id;
+									if(!file_exists($path)) {
+										mkdir($path);
+									}
+									$tar->extract($path);
+									$objects = new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($path));
+									foreach($objects as $name => $object){
+										if($object->isDir()) {
+											continue;
+										}
+										$file = (string)$object;
+										$extension = pathinfo($file, PATHINFO_EXTENSION);
+										$extension = strtolower($extension);
+										$dir = dirname(str_replace($path."/","",$file));
+										$dir = ($dir != ".") ? $dir : "";
+										$dname = \Media\Media::cleanFileName(pathinfo($file,PATHINFO_FILENAME));
+										if(!in_array($extension,$supported['in'])) {
+											$bfiles[] = array(
+												"directory" => $dir,
+												"filename" => (!empty($dir) ? $dir."/" : "").$dname,
+												"localfilename" => $file,
+												"id" => ""
+											);
+											continue;
+										}
+										$gfiles[] = array(
+											"directory" => $dir,
+											"filename" => (!empty($dir) ? $dir."/" : "").$dname,
+											"localfilename" => $file,
+											"id" => ""
+										);
+									}
+									unlink($archive);
+								} else {
+									$gfiles[] = array(
+										"directory" => "",
+										"filename" => pathinfo($dname,PATHINFO_FILENAME),
+										"localfilename" => $this->temp."/".$name,
+										"id" => $id
+									);
+								}
+								return array("status" => true, "gfiles" => $gfiles, "bfiles" => $bfiles);
+							} else {
+								return array("status" => false, "message" => _("Unsupported file format"));
+								break;
+							}
+						break;
+						case UPLOAD_ERR_INI_SIZE:
+							return array("status" => false, "message" => _("The uploaded file exceeds the upload_max_filesize directive in php.ini"));
+						break;
+						case UPLOAD_ERR_FORM_SIZE:
+							return array("status" => false, "message" => _("The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in the HTML form"));
+						break;
+						case UPLOAD_ERR_PARTIAL:
+							return array("status" => false, "message" => _("The uploaded file was only partially uploaded"));
+						break;
+						case UPLOAD_ERR_NO_FILE:
+							return array("status" => false, "message" => _("No file was uploaded"));
+						break;
+						case UPLOAD_ERR_NO_TMP_DIR:
+							return array("status" => false, "message" => _("Missing a temporary folder"));
+						break;
+						case UPLOAD_ERR_CANT_WRITE:
+							return array("status" => false, "message" => _("Failed to write file to disk"));
+						break;
+						case UPLOAD_ERR_EXTENSION:
+							return array("status" => false, "message" => _("A PHP extension stopped the file upload"));
+						break;
+					}
 				}
 			break;
 			default:
