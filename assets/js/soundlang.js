@@ -113,18 +113,22 @@ $('#fileupload').fileupload({
 	change: function (e, data) {
 	},
 	done: function (e, data) {
-		if(data.result.gfiles.length === 0) {
-			alert(_("No Suitable files were found in the archive!"));
-			return;
-		}
-		$.each(data.result.gfiles, function(k,v) {
-			files.push(v);
-		});
-		$("#filecount").text(files.length);
-		if(data.result.bfiles.length > 0) {
-			//alert("Some files were not suitable to be uploaded. Check the console log for more information")
-			console.warn("The below files are NOT supported");
-			console.warn(data.result.bfiles);
+		if(data.result.status) {
+			if(data.result.gfiles.length === 0) {
+				alert(_("No Suitable files were found in the archive!"));
+				return;
+			}
+			$.each(data.result.gfiles, function(k,v) {
+				files.push(v);
+			});
+			$("#filecount").text(files.length);
+			if(data.result.bfiles.length > 0) {
+				//alert("Some files were not suitable to be uploaded. Check the console log for more information")
+				console.warn("The below files are NOT supported");
+				console.warn(data.result.bfiles);
+			}
+		} else {
+			alert(data.result.message);
 		}
 	},
 	progressall: function (e, data) {
