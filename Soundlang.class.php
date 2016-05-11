@@ -332,6 +332,9 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 				}
 			break;
 			case "upload":
+				if(empty($_FILES["files"])) {
+					return array("status" => false, "message" => _("No files were sent to the server"));
+				}
 				foreach ($_FILES["files"]["error"] as $key => $error) {
 					switch($error) {
 						case UPLOAD_ERR_OK:
