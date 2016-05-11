@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-05-11 09:32-0700\n"
+"POT-Creation-Date: 2016-05-11 10:15-0700\n"
 "PO-Revision-Date: 2016-04-30 12:58+0200\n"
 "Last-Translator: Media <mousavi.media@gmail.com>\n"
 "Language-Team: Persian (Iran) <http://weblate.freepbx.org/projects/freepbx/"
@@ -106,7 +106,7 @@ msgstr "چینی"
 msgid "Convert To"
 msgstr "تبدیل به"
 
-#: assets/js/soundlang.js:196
+#: assets/js/soundlang.js:200
 #, perl-format
 msgid "Copying %s to %s"
 msgstr "در حال کپی %s به %s"
@@ -177,7 +177,7 @@ msgstr "فایلها برای بارگذاری"
 msgid "Finish"
 msgstr "پایان"
 
-#: assets/js/soundlang.js:227 assets/js/soundlang.js:232
+#: assets/js/soundlang.js:231 assets/js/soundlang.js:236
 msgid "Finished!"
 msgstr "پایان یافت!"
 
@@ -217,7 +217,7 @@ msgstr "هنگ کنگ"
 msgid "ID"
 msgstr "شناسه"
 
-#: assets/js/soundlang.js:157
+#: assets/js/soundlang.js:161
 msgid ""
 "If you are doing media conversions this can take a very long time, is that "
 "ok?"
@@ -292,7 +292,7 @@ msgstr "نیوزلند"
 msgid "New install, downloading default english language set..."
 msgstr "نصب جدید، در حال دانلود زبان انگلیسی به عنوان پیشفرض..."
 
-#: assets/js/soundlang.js:117
+#: assets/js/soundlang.js:118
 msgid "No Suitable files were found in the archive!"
 msgstr "فایلهای مناسبی در این فایل فشرده پیدا نشد!"
 
@@ -316,7 +316,7 @@ msgstr "پرتغال"
 msgid "Portuguese"
 msgstr "پرتغالی"
 
-#: assets/js/soundlang.js:194
+#: assets/js/soundlang.js:198
 #, perl-format
 msgid "Processing %s for %s in format %s"
 msgstr "پردازش %s برای %s در فرمت %s"
@@ -407,7 +407,7 @@ msgstr "حجم فایل بارگذاری شده بیشتر از حد تعیین 
 msgid "The uploaded file was only partially uploaded"
 msgstr "تنها بخشی از فایل بارگذاری شده است"
 
-#: assets/js/soundlang.js:222
+#: assets/js/soundlang.js:226
 msgid "There was an error, See the console for more details"
 msgstr "بروز خطا، برای اطلاعات بیشتر به کنسول مراجعه کنید"
 
@@ -445,7 +445,7 @@ msgstr ""
 msgid "View Custom Languages"
 msgstr "مشاهده زبانهای سفارشی"
 
-#: assets/js/soundlang.js:144
+#: assets/js/soundlang.js:148
 msgid "You must set a valid language code"
 msgstr "شما باید یک کد زبان معتبر وارد کنید"
 

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-05-11 09:32-0700\n"
+"POT-Creation-Date: 2016-05-11 10:15-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -101,7 +101,7 @@ msgstr ""
 msgid "Convert To"
 msgstr ""
 
-#: assets/js/soundlang.js:196
+#: assets/js/soundlang.js:200
 #, perl-format
 msgid "Copying %s to %s"
 msgstr ""
@@ -175,8 +175,8 @@ msgstr ""
 msgid "Finish"
 msgstr ""
 
-#: assets/js/soundlang.js:227
-#: assets/js/soundlang.js:232
+#: assets/js/soundlang.js:231
+#: assets/js/soundlang.js:236
 msgid "Finished!"
 msgstr ""
 
@@ -217,7 +217,7 @@ msgstr ""
 msgid "ID"
 msgstr ""
 
-#: assets/js/soundlang.js:157
+#: assets/js/soundlang.js:161
 msgid ""
 "If you are doing media conversions this can take a very long time, is that "
 "ok?"
@@ -293,7 +293,7 @@ msgstr ""
 msgid "New install, downloading default english language set..."
 msgstr ""
 
-#: assets/js/soundlang.js:117
+#: assets/js/soundlang.js:118
 msgid "No Suitable files were found in the archive!"
 msgstr ""
 
@@ -317,7 +317,7 @@ msgstr ""
 msgid "Portuguese"
 msgstr ""
 
-#: assets/js/soundlang.js:194
+#: assets/js/soundlang.js:198
 #, perl-format
 msgid "Processing %s for %s in format %s"
 msgstr ""
@@ -415,7 +415,7 @@ msgstr ""
 msgid "The uploaded file was only partially uploaded"
 msgstr ""
 
-#: assets/js/soundlang.js:222
+#: assets/js/soundlang.js:226
 msgid "There was an error, See the console for more details"
 msgstr ""
 
@@ -451,7 +451,7 @@ msgstr ""
 msgid "View Custom Languages"
 msgstr ""
 
-#: assets/js/soundlang.js:144
+#: assets/js/soundlang.js:148
 msgid "You must set a valid language code"
 msgstr ""
 

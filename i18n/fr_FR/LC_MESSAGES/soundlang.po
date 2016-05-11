@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-05-11 09:32-0700\n"
+"POT-Creation-Date: 2016-05-11 10:15-0700\n"
 "PO-Revision-Date: 2016-02-04 23:02+0200\n"
 "Last-Translator: Nicolas Riendeau <freepbx@riendeau.org>\n"
 "Language-Team: French <http://weblate.freepbx.org/projects/freepbx/soundlang/"
@@ -104,7 +104,7 @@ msgstr "Chinois"
 msgid "Convert To"
 msgstr ""
 
-#: assets/js/soundlang.js:196
+#: assets/js/soundlang.js:200
 #, perl-format
 msgid "Copying %s to %s"
 msgstr ""
@@ -175,7 +175,7 @@ msgstr ""
 msgid "Finish"
 msgstr "Terminer"
 
-#: assets/js/soundlang.js:227 assets/js/soundlang.js:232
+#: assets/js/soundlang.js:231 assets/js/soundlang.js:236
 msgid "Finished!"
 msgstr ""
 
@@ -215,7 +215,7 @@ msgstr "Hong Kong"
 msgid "ID"
 msgstr "ID"
 
-#: assets/js/soundlang.js:157
+#: assets/js/soundlang.js:161
 msgid ""
 "If you are doing media conversions this can take a very long time, is that "
 "ok?"
@@ -291,7 +291,7 @@ msgstr ""
 "Il s'agit d'une nouvelle installation, téléchargement des fichiers de langue "
 "anglaise par défaut..."
 
-#: assets/js/soundlang.js:117
+#: assets/js/soundlang.js:118
 msgid "No Suitable files were found in the archive!"
 msgstr ""
 
@@ -316,7 +316,7 @@ msgstr "Portugal"
 msgid "Portuguese"
 msgstr "Portugais"
 
-#: assets/js/soundlang.js:194
+#: assets/js/soundlang.js:198
 #, perl-format
 msgid "Processing %s for %s in format %s"
 msgstr ""
@@ -407,7 +407,7 @@ msgstr ""
 msgid "The uploaded file was only partially uploaded"
 msgstr ""
 
-#: assets/js/soundlang.js:222
+#: assets/js/soundlang.js:226
 msgid "There was an error, See the console for more details"
 msgstr ""
 
@@ -443,7 +443,7 @@ msgstr ""
 msgid "View Custom Languages"
 msgstr ""
 
-#: assets/js/soundlang.js:144
+#: assets/js/soundlang.js:148
 msgid "You must set a valid language code"
 msgstr ""
 
