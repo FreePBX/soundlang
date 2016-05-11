@@ -6,6 +6,7 @@
 namespace FreePBX\modules;
 include(__DIR__."/vendor/autoload.php");
 use splitbrain\PHPArchive\Tar;
+use splitbrain\PHPArchive\Zip;
 class Soundlang extends \FreePBX_Helpers implements \BMO {
 	private $message = '';
 	private $maxTimeLimit = 250;
