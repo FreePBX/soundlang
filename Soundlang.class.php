@@ -351,8 +351,12 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 								move_uploaded_file($tmp_name, $this->temp."/".$name);
 								$gfiles = $bfiles = array();
 								if(in_array($extension,$archives)) {
-									//this is an archives
-									$tar = new Tar();
+									//this is an archive
+									if($extension == "zip") {
+										$tar = new Zip();
+									} else {
+										$tar = new Tar();
+									}
 									$archive = $this->temp."/".$name;
 									$tar->open($archive);
 									$path = $this->temp."/".$id;
