@@ -46,7 +46,7 @@ $(document).on("click", 'a[id^="del"]',function(){
 	var uid = $(this).data('uid');
 	var row = $('#row'+uid);
 	$.ajax({
-		url: "/admin/ajax.php",
+		url: "ajax.php",
 		data: {
 			module:'soundlang',
 			command:'delete',

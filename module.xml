@@ -2,11 +2,12 @@
 	<rawname>soundlang</rawname>
 	<repo>standard</repo>
 	<name>Sound Languages</name>
-	<version>13.0.14</version>
+	<version>13.0.15</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
 	<changelog>
+		*13.0.15* FREEPBX-12606 Absolute paths used in some modules.
 		*13.0.14* Use Zip not Tar for zip files
 		*13.0.13* FREEPBX-12287 Display message on invalid upload
 		*13.0.12* FREEPBX-12287 If there were no files uploaded during an upload alert the user
