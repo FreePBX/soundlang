@@ -2,11 +2,12 @@
 	<rawname>soundlang</rawname>
 	<repo>standard</repo>
 	<name>Sound Languages</name>
-	<version>13.0.15</version>
+	<version>14.0.1</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
 	<changelog>
+		*14.0.1* Use new Languages
 		*13.0.15* FREEPBX-12606 Absolute paths used in some modules.
 		*13.0.14* Use Zip not Tar for zip files
 		*13.0.13* FREEPBX-12287 Display message on invalid upload
@@ -33,12 +34,12 @@
 		Management of sound prompt languages.
 	</description>
 	<depends>
-		<version>13.0.0</version>
+		<version>14.0.0</version>
 	</depends>
 	<menuitems>
 		<soundlang>Sound Languages</soundlang>
 	</menuitems>
 	<supported>
-		<version>13.0</version>
+		<version>14.0</version>
 	</supported>
 </module>
