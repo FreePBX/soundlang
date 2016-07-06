@@ -515,7 +515,7 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 				if (!empty($package['installed'])) {
 					//Try to use local_get_display_name if it's installed
 					if(function_exists('locale_get_display_name')) {
-						$language = set_language();
+						$language = $this->getLanguage();
 						$name = locale_get_display_name($package['language'], $language);
 					} else {
 						$lang = explode('_', $package['language'], 2);
