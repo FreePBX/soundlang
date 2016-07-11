@@ -59,15 +59,6 @@ foreach ($sql as $statement){
 
 if($first_install) {
 	$soundlang = \FreePBX::create()->Soundlang;
-
-	$package = array(
-		"type" => "asterisk",
-		"module" => "extra-sounds",
-		"language" => "en",
-		"format" => "ulaw"
-	);
-	$version = "1.5";
-	$soundlang = $this->setPackageInstalled($package, $version);
 	$vlsd = FreePBX::Config()->get("ASTVARLIBDIR")."/sounds";
 
 	$online = $soundlang->getOnlinePackages();
@@ -79,6 +70,7 @@ if($first_install) {
 			if($package['language'] == 'en' && in_array($package['module'], array('core-sounds','extra-sounds')) && in_array($package['format'],array("ulaw","g722"))) {
 				if(file_exists($vlsd."/.asterisk-".$package['module']."-en-".$package['format']."-".$package['version'])) {
 					out(sprintf(_("%s is already installed!"),$package['module']."-".$package['format']));
+					$soundlang->setPackageInstalled($package, $package['version']);
 				} else {
 					outn(sprintf(_("Installing %s..."),$package['module']."-".$package['format']));
 					$soundlang->installPackage($package);
