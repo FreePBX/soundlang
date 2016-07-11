@@ -76,6 +76,9 @@ if($first_install) {
 					$soundlang->installPackage($package);
 					out(_("Done"));
 				}
+			} elseif(file_exists($vlsd."/.asterisk-".$package['module']."-".$package['language']."-".$package['format']."-".$package['version'])) {
+				out(sprintf(_("%s is already installed!"),$package['module']."-".$package['format']));
+				$soundlang->setPackageInstalled($package, $package['version']);
 			}
 		}
 		out(_("Finished installing default sounds"));
