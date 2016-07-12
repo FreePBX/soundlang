@@ -778,77 +778,86 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 	/**
 	 * Install Package from online servers
 	 * @param  array $package Array of information about the package
+	 * @param bool $force Force redownload, even if it exists.
 	 * @return mixed          return a string of the installed package or null
 	 */
-	public function installPackage($package) {
+	public function installPackage($package, $force = false) {
 		global $amp_conf;
 
-		$this->uninstallPackage($package);
-
-		$tmpdir = $amp_conf['ASTVARLIBDIR'] . "/sounds/tmp";
-		if (!is_dir($tmpdir)) {
-			mkdir($tmpdir);
-		}
 		$basename = $package['type'].'-'.$package['module'].'-'.$package['language'].'-'.$package['format'] .'-'.$package['version'];
-		$pkgdir = $tmpdir . '/' . $basename . '/';
+		$soundsdir = $amp_conf['ASTVARLIBDIR'] . "/sounds";
 
-		$filename = $basename . '.tar.gz';
+		// Does this sound language package already exist on this machine?
+		$txtfile = $soundsdir.'/'.$package['language'].'/'.$package['module'].'-'.$package['language'].'.txt';
+		if ($force || !file_exists("$soundsdir/.$basename") || !file_exists($txtfile)) {
+			// No. We need to fetch it.
 
-		$filedata = $this->getRemoteFile("/sounds/" . $filename);
-		file_put_contents($tmpdir . "/" . $filename, $filedata);
-
-		/* Untar into temp dir */
-		@mkdir($pkgdir);
-		exec("tar zxf " . $tmpdir . "/" . escapeshellarg($filename) . " -C " . escapeshellarg($pkgdir), $output, $exitcode);
-		if ($exitcode != 0) {
-			@rmdir($pkgdir);
-			freepbx_log(FPBX_LOG_ERROR, sprintf(_("failed to open %s sounds archive."), $filename));
-			return array(sprintf(_('Could not untar %s to %s'), $filename, $amp_conf['ASTVARLIBDIR'] . "/sounds/" . $package['language'] . "/"));
-		}
-
-		/* Track installed sounds */
-		$olddir = getcwd();
-		chdir($pkgdir);
-		$glob = glob("{*.[a-z]*,*/*.[a-z]*}", GLOB_BRACE);
-		$files = array_filter($glob, function($v) {
-			return substr($v, -4) != ".txt";
-		});
-		chdir($olddir);
-
-		if ($files && !empty($files)) {
-			$sql = "INSERT INTO soundlang_prompts (type, module, language, format, filename) VALUES (:type, :module, :language, :format, :filename)";
-			$sth = $this->db->prepare($sql);
-			foreach ($files as $file) {
-				$row = array(
-					':type' => $package['type'],
-					':module' => $package['module'],
-					':language' => $package['language'],
-					':format' => $package['format'],
-					':filename' => $file,
-				);
-				$res = $sth->execute($row);
+			$tmpdir = "$soundsdir/tmp";
+			if (!is_dir($tmpdir)) {
+				mkdir($tmpdir);
 			}
 
-			/* Move prompts into place */
-			$destdir = $amp_conf['ASTVARLIBDIR'] . "/sounds/" . $package['language'] . "/";
+			// This is the file we want to download
+			$filename = $basename . '.tar.gz';
+			$filedata = $this->getRemoteFile("/sounds/" . $filename);
+			file_put_contents($tmpdir . "/" . $filename, $filedata);
+
+			// Extract it to the correct location
+			$destdir = "$soundsdir/".$package['language']."/";
 			@mkdir($destdir);
-			foreach ($files as $file) {
-				if (!is_dir(dirname($destdir . $file))) {
-					@mkdir(dirname($destdir . $file));
-				}
+			exec("tar zxf " . $tmpdir . "/" . escapeshellarg($filename) . " -C " . escapeshellarg($destdir), $output, $exitcode);
 
-				rename($pkgdir . $file, $destdir . $file);
+			if ($exitcode != 0) {
+				freepbx_log(FPBX_LOG_ERROR, sprintf(_("failed to open %s sounds archive."), $filename));
+				return array(sprintf(_('Could not untar %s to %s'), $filename, $destdir));
 			}
 
-			$this->setPackageInstalled($package, $package['version']);
+			// If the txt file doesn't exist, there's something wrong with the package.
+			if (!file_exists($txtfile)) {
+				throw new \Exception("Couldn't find $txtfile - not in archive $filename?");
+			}
+			// Create our version file so we know it exists in the future.
+			touch ("$soundsdir/.$basename");
+		}
 
-			needreload();
+		// Get a list of sounds in this package.
+		$prompts = file($txtfile, \FILE_SKIP_EMPTY_LINES);
+		$files = array();
+		foreach ($prompts as $prompt) {
+			// If it's a comment, skip
+			if ($prompt[0] == ";") {
+				continue;
+			}
+			// Ignore the description
+			$tmparr = explode(":", $prompt);
+			$files[] = $tmparr[0];
 		}
-		$this->recursivermdir($tmpdir);
-		// if the recursive remove failed, log an error
-		if (is_dir($tmpdir . "/" . $filename)) {
-			freepbx_log(FPBX_LOG_WARNING, sprintf(_("failed to delete %s from cache directory after opening sounds archive."), $filename));
+
+		if (!$files) {
+			throw new \Exception("Unable to find any soundfiles in $basename package");
 		}
+
+		$row = array(
+			':type' => $package['type'],
+			':module' => $package['module'],
+			':language' => $package['language'],
+			':format' => $package['format']
+		);
+
+		// Delete any prompts from this package previously
+		$sql = "DELETE FROM `soundlang_prompts` WHERE `type`=:type AND `module`=:module AND `language`=:language AND `format`=:format";
+		$del = $this->db->prepare($sql);
+		$del->execute($row);
+
+		// Now load in the new files
+		$sql = "INSERT INTO soundlang_prompts (type, module, language, format, filename) VALUES (:type, :module, :language, :format, :filename)";
+		$sth = $this->db->prepare($sql);
+		foreach ($files as $file) {
+			$row['filename'] = $file.'.'.$package['format'];
+			$res = $sth->execute($row);
+		}
+
+		$this->setPackageInstalled($package, $package['version']);
 	}
 
 	public function recursivermdir($dir) {
@@ -876,6 +885,17 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 	public function uninstallPackage($package) {
 		global $amp_conf;
 
+		$soundsdir = $amp_conf['ASTVARLIBDIR'] . "/sounds";
+		$tmpname = $package['type'].'-'.$package['module'].'-'.$package['language'].'-'.$package['format'] .'-';
+
+		// Figure out which one we have, if any
+		$installed = glob("$soundsdir/.$tmpname*");
+		if ($installed) {
+			foreach ($installed as $file) {
+				unlink($file);
+			}
+		}
+
 		$this->setPackageInstalled($package, NULL);
 
 		$sql = "SELECT * FROM soundlang_prompts WHERE type = :type AND module = :module AND language = :language AND format = :format";
@@ -889,7 +909,9 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 		$files = $sth->fetchAll(\PDO::FETCH_ASSOC);
 
 		if ($files) {
-			$destdir = $amp_conf['ASTVARLIBDIR'] . "/sounds/" . $package['language'] . "/";
+			$destdir = "$soundsdir/" . $package['language'] . "/";
+
+			// Delete the soundfiles from this pack
 			foreach ($files as $file) {
 				@unlink($destdir . $file['filename']);
 			}
