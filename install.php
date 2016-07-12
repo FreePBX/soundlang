@@ -62,25 +62,43 @@ if($first_install) {
 	$vlsd = FreePBX::Config()->get("ASTVARLIBDIR")."/sounds";
 
 	$online = $soundlang->getOnlinePackages();
+	$alreadyinstalled = array();
 	if($online) {
 		out(_("New install, downloading default english language set..."));
 		$list = $soundlang->getPackages();
 		$found = false;
 		foreach($list as $id => $package) {
-			if($package['language'] == 'en' && in_array($package['module'], array('core-sounds','extra-sounds')) && in_array($package['format'],array("ulaw","g722"))) {
-				if(file_exists($vlsd."/.asterisk-".$package['module']."-en-".$package['format']."-".$package['version'])) {
-					out(sprintf(_("%s is already installed!"),$package['module']."-".$package['format']));
-					$soundlang->setPackageInstalled($package, $package['version']);
-				} else {
-					outn(sprintf(_("Installing %s..."),$package['module']."-".$package['format']));
-					$soundlang->installPackage($package);
-					out(_("Done"));
-				}
-			} elseif(file_exists($vlsd."/.asterisk-".$package['module']."-".$package['language']."-".$package['format']."-".$package['version'])) {
-				out(sprintf(_("%s is already installed!"),$package['module']."-".$package['format']));
-				$soundlang->setPackageInstalled($package, $package['version']);
+			if($package['language'] == 'en' &&
+				in_array($package['module'], array('core-sounds','extra-sounds')) &&
+				in_array($package['format'], array("ulaw","g722"))) {
+
+				outn(sprintf(_("Installing %s..."),$package['module']."-".$package['format']));
+				$soundlang->installPackage($package);
+				$allreadyinstalled[$package['module']."-".$package['format']] = true;
+				out(_("Done"));
 			}
 		}
 		out(_("Finished installing default sounds"));
+	}
+
+	// Install any packages that already exist on the system, too
+	$installed = glob("$vlsd/.asterisk-*");
+	foreach ($installed as $pkg) {
+		if (preg_match("!/\.(asterisk.+)$!", $pkg, $out)) {
+			$tmparr = explode("-", $out[1]);
+			$package = array(
+				"type" => $tmparr[0],
+				"module" => $tmparr[1].'-'.$tmparr[2],
+				"language" => $tmparr[3],
+				"format" => $tmparr[4],
+				"version" => $tmparr[5]
+			);
+			if (isset($allreadyinstalled[$package['module']."-".$package['format']])) {
+				// This was already installed above
+				continue;
+			}
+			out(sprintf(_("Installing additional package %s..."),$package['module']."-".$package['format']));
+			$soundlang->installPackage($package);
+		}
 	}
 }
