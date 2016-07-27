@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-05-11 13:23-0700\n"
-"PO-Revision-Date: 2016-07-06 05:16+0200\n"
+"PO-Revision-Date: 2016-07-26 23:30+0200\n"
 "Last-Translator: Media <mousavi.media@gmail.com>\n"
 "Language-Team: Persian (Iran) "
 "<http://weblate.freepbx.org/projects/freepbx/soundlang/fa_IR/>\n"
@@ -23,7 +23,7 @@ msgstr ""
 
 #: Soundlang.class.php:429
 msgid "A PHP extension stopped the file upload"
-msgstr "پک پسوند PHP بارگذاری فایل را متوقف کرد"
+msgstr "بارگذاری فایل توسط PHP متوقف شد"
 
 #: views/customlang.php:67
 msgid "A brief description for this Custom Language."
@@ -76,7 +76,7 @@ msgstr "برزیل"
 
 #: views/customlang.php:83
 msgid "Browse"
-msgstr "مسیردهی"
+msgstr "مرور کردن"
 
 #: Soundlang.class.php:472
 msgid "Canada"
@@ -167,7 +167,7 @@ msgstr "عدم حذف فایل، خطا:"
 
 #: Soundlang.class.php:426
 msgid "Failed to write file to disk"
-msgstr "خطا در نوشتن فایل به روی دیسک"
+msgstr "بروز خطا در هنگام نوشتن فایل به روی دیسک"
 
 #: views/customlang.php:86
 msgid "Files to upload"
@@ -274,7 +274,7 @@ msgstr "مکزیک"
 
 #: Soundlang.class.php:423
 msgid "Missing a temporary folder"
-msgstr "از دست دادن پوشه موقت"
+msgstr "فولدر موقت پیدا نشد"
 
 #: views/packages.php:13
 msgid "Module"
@@ -298,7 +298,7 @@ msgstr "فایلهای مناسبی در این فایل فشرده پیدا ن�
 
 #: Soundlang.class.php:420
 msgid "No file was uploaded"
-msgstr "فایلی بارگذاری نشده"
+msgstr "فایلی بارگذاری نشد"
 
 #: Soundlang.class.php:337
 msgid "No files were sent to the server"
@@ -397,7 +397,8 @@ msgstr "این دستور نامعتبر است"
 msgid ""
 "The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in "
 "the HTML form"
-msgstr "حجم فایل بارگذاری شده بیشتر از حد مجاز تعیین شده در فرم است"
+msgstr ""
+"حجم فایل بارگذاری شده از حداکثر حجم مجاز تعیین شده در فرم HTML بیشتر است"
 
 #: Soundlang.class.php:411
 msgid "The uploaded file exceeds the upload_max_filesize directive in php.ini"
@@ -405,7 +406,7 @@ msgstr "حجم فایل بارگذاری شده بیشتر از حد تعیین 
 
 #: Soundlang.class.php:417
 msgid "The uploaded file was only partially uploaded"
-msgstr "تنها بخشی از فایل بارگذاری شده است"
+msgstr "بخشی از فایل بارگذاری شده"
 
 #: assets/js/soundlang.js:226
 msgid "There was an error, See the console for more details"
@@ -425,7 +426,7 @@ msgstr "فرمت فایل پشتیبانی نمیشود"
 
 #: assets/js/soundlang.js:99
 msgid "Unsupported file type"
-msgstr "نوع فایل پشتیبانی نشده"
+msgstr "نوع فایل پشتیبانی نمیشود"
 
 #: views/customlang.php:78
 msgid "Upload Recording"
