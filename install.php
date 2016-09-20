@@ -4,6 +4,33 @@ global $db;
 
 $first_install = db_e($db->getAll('SELECT * FROM soundlang_settings'), '');
 
+$m = \FreePBX::Database()->migrate('soundlang_packages');
+$cols = array(
+	"id" => array( "type" => "bigint", "primaryKey" => true, "autoincrement" => true, "notnull" => true ),
+	"type" => array( "type" => "string", "length" => 20, "notnull" => true ),
+	"module" => array( "type" => "string", "length" => 80, "notnull" => true ),
+	"language" => array( "type" => "string", "length" => 20, "notnull" => true ),
+	"license" => array( "type" => "string", "length" => 256, "notnull" => false ),
+	"author" => array( "type" => "string", "length" => 80, "notnull" => false ),
+	"authorlink" => array( "type" => "string", "length" => 256, "notnull" => false ),
+	"format" => array( "type" => "string", "length" => 20, "notnull" => true ),
+	"version" => array( "type" => "string", "length" => 20, "notnull" => false ),
+	"installed" => array( "type" => "string", "length" => 20, "notnull" => false ),
+);
+
+$ind = array(
+	"id" => array(
+		"type" => "unique",
+		"cols" => array( "id" ),
+	),
+	"unique" => array(
+		"type" => "unique",
+		"cols" => array( "type", "module", "language", "format" ),
+	),
+);
+
+$m->modify($cols, $ind);
+
 $sql[] = 'CREATE TABLE IF NOT EXISTS `soundlang_settings` (
  `keyword` varchar(20) NOT NULL,
  `value` varchar(80) NOT NULL,
@@ -15,17 +42,6 @@ $sql[] = 'CREATE TABLE IF NOT EXISTS `soundlang_customlangs` (
  `language` varchar(20) NOT NULL,
  `description` varchar(80) NOT NULL,
  PRIMARY KEY (`id`)
-);';
-
-$sql[] = 'CREATE TABLE IF NOT EXISTS `soundlang_packs` (
- `type` varchar(20) NOT NULL,
- `module` varchar(80) NOT NULL,
- `language` varchar(20) NOT NULL,
- `format` varchar(20) NOT NULL,
- `version` varchar(20) DEFAULT NULL,
- `installed` varchar(20) DEFAULT NULL,
- `timestamp` timestamp NOT NULL,
- PRIMARY KEY (`type`,`module`,`language`,`format`)
 );';
 
 $sql[] = 'CREATE TABLE IF NOT EXISTS `soundlang_prompts` (
@@ -48,6 +64,9 @@ if ($first_install) {
 	$sql[] = "INSERT INTO soundlang_settings (keyword, value) VALUES
 			('language', '$language')
 	";
+} else {
+	$db->query("INSERT INTO soundlang_packages (type, module, language, format, version, installed) SELECT type, module, language, format, version, installed FROM soundlang_packs");
+	$db->query("DROP TABLE soundlang_packs");
 }
 
 foreach ($sql as $statement){

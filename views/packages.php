@@ -42,9 +42,9 @@
 								<td><?php echo $package['installed'] ?></td>
 								<td>
 								<?php if (empty($package['installed']) || (!empty($package['version']) && $package['installed'] != $package['version'])) { ?>
-									<a href="config.php?display=soundlang&action=install&type=<?php echo $package['type'] ?>&module=<?php echo $package['module'] ?>&language=<?php echo $package['language'] ?>&format=<?php echo $package['format'] ?>&version=<?php echo $package['version'] ?>"><i class="fa fa-download fa-fw"></i></a>
+									<a href="config.php?display=soundlang&action=install&id=<?php echo $package['id'] ?>"><i class="fa fa-download fa-fw"></i></a>
 								<?php } else { ?>
-									<a href="config.php?display=soundlang&action=uninstall&type=<?php echo $package['type'] ?>&module=<?php echo $package['module'] ?>&language=<?php echo $package['language'] ?>&format=<?php echo $package['format'] ?>"><i class="fa fa-ban fa-fw"></i></a>
+									<a href="config.php?display=soundlang&action=uninstall&id=<?php echo $package['id'] ?>"><i class="fa fa-ban fa-fw"></i></a>
 								<?php } ?>
 								</td>
 							</tr>

@@ -158,22 +158,11 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 			$this->setLanguage($language);
 			break;
 		case 'install':
-			$package['type'] = $request['type'];
-			$package['module'] = $request['module'];
-			$package['language'] = $request['language'];
-			$package['format'] = $request['format'];
-			$package['version'] = $request['version'];
-
-			$this->installPackage($package);
+			$this->installPackage($request['id'], $request['version']);
 
 			break;
 		case 'uninstall':
-			$package['type'] = $request['type'];
-			$package['module'] = $request['module'];
-			$package['language'] = $request['language'];
-			$package['format'] = $request['format'];
-
-			$this->uninstallPackage($package);
+			$this->uninstallPackage($request['id']);
 
 			break;
 		case 'customlangs':
@@ -447,17 +436,22 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 	 */
 	public function getLanguageNames() {
 		$names = array(
+			'cs' => _('Czech'),
 			'de' => _('German'),
 			'en' => _('English'),
 			'es' => _('Spanish'),
 			'fi' => _('Finish'),
 			'fr' => _('French'),
+			'hi' => _('Hebrew'),
 			'it' => _('Italian'),
 			'ja' => _('Japanese'),
 			'nl' => _('Dutch'),
+			'no' => _('Norwegian'),
+			'pl' => _('Polish'),
 			'pt' => _('Portuguese'),
 			'ru' => _('Russian'),
 			'sv' => _('Swedish'),
+			'tw' => _('Turkish'),
 			'zh' => _('Chinese'),
 		);
 
@@ -476,19 +470,27 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 			'CA' => _('Canada'),
 			'CH' => _('Switzerland'),
 			'CN' => _('China'),
+			'CO' => _('Colombia'),
+			'CZ' => _('Czech Republic'),
 			'DE' => _('Germany'),
 			'ES' => _('Spain'),
 			'FI' => _('Finland'),
 			'FR' => _('France'),
 			'GB' => _('United Kingdom'),
 			'HK' => _('Hong Kong'),
+			'IE' => _('Ireland'),
+			'IL' => _('Israel'),
+			'IN' => _('India'),
 			'IT' => _('Italy'),
 			'JA' => _('Japan'),
 			'NL' => _('Netherlands'),
+			'NO' => _('Norway'),
 			'NZ' => _('New Zealand'),
 			'MX' => _('Mexico'),
+			'PL' => _('Poland'),
 			'PT' => _('Portugal'),
 			'SE' => _('Sweden'),
+			'TR' => _('Turkey'),
 			'TW' => _('Taiwan'),
 			'US' => _('United States'),
 			'ZA' => _('South Africa'),
@@ -691,13 +693,10 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 	 * @return mixed          The installed version or null
 	 */
 	private function getPackageInstalled($package) {
-		$sql = "SELECT * FROM soundlang_packs WHERE type = :type AND module = :module AND language = :language AND format = :format";
+		$sql = "SELECT * FROM soundlang_packages WHERE id = :id";
 		$sth = $this->db->prepare($sql);
 		$sth->execute(array(
-			':type' => $package['type'],
-			':module' => $package['module'],
-			':language' => $package['language'],
-			':format' => $package['format'],
+			':id' => $package['id'],
 		));
 		$installed = $sth->fetch(\PDO::FETCH_ASSOC);
 
@@ -710,14 +709,11 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 	 * @param string $installed the new version to set
 	 */
 	private function setPackageInstalled($package, $installed) {
-		$sql = "UPDATE soundlang_packs SET installed = :installed WHERE type = :type AND module = :module AND language = :language AND format = :format";
+		$sql = "UPDATE soundlang_packages SET installed = :installed WHERE id = :id";
 		$sth = $this->db->prepare($sql);
 		$sth->execute(array(
 			':installed' => $installed,
-			':type' => $package['type'],
-			':module' => $package['module'],
-			':language' => $package['language'],
-			':format' => $package['format'],
+			':id' => $package['id'],
 		));
 	}
 
@@ -726,12 +722,28 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 	 * @return array Array of package information(s)
 	 */
 	public function getPackages() {
-		$sql = "SELECT * FROM soundlang_packs";
+		$sql = "SELECT * FROM soundlang_packages";
 		$sth = $this->db->prepare($sql);
 		$sth->execute();
 
-		$packages = $sth->fetchAll(\PDO::FETCH_ASSOC);
+		$data = $sth->fetchAll(\PDO::FETCH_ASSOC);
+		$packages = array();
+		foreach ($data as $package) {
+			$packages[$package['id']] = $package;
+		}
+
 		return $packages;
+	}
+
+	public function getPackageById($id) {
+		$sql = "SELECT * FROM soundlang_packages WHERE `id` = :id";
+		$sth = $this->db->prepare($sql);
+		$sth->execute(array(
+			':id' => $id,
+		));
+
+		$package = $sth->fetch(\PDO::FETCH_ASSOC);
+		return $package;
 	}
 
 	/**
@@ -743,6 +755,8 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 		// we need to know the freepbx major version we have running (ie: 12.0.1 is 12.0)
 		preg_match('/(\d+\.\d+)/',$version,$matches);
 		$base_version = $matches[1];
+
+		$packages = $this->getPackages();
 
 		$xml = $this->getRemoteFile("/sounds-" . $base_version . ".xml");
 		if(!empty($xml)) {
@@ -757,20 +771,34 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 			$available = $sounds['sounds']['package'];
 
 			/* Delete packages that aren't installed */
-			$sql = "DELETE FROM soundlang_packs WHERE installed IS NULL";
+			$sql = "DELETE FROM soundlang_packages WHERE installed IS NULL";
 			$sth = $this->db->prepare($sql);
 			$sth->execute();
 
 			/* Add / Update package versions */
-			$sql = "INSERT INTO soundlang_packs (type, module, language, format, version) VALUES (:type, :module, :language, :format, :version) ON DUPLICATE KEY UPDATE version = :version";
+			$sql = "REPLACE INTO soundlang_packages (id, type, module, language, license, author, authorlink, format, version, installed) VALUES (:id, :type, :module, :language, :license, :author, :authorlink, :format, :version, :installed)";
 			$sth = $this->db->prepare($sql);
 			foreach ($available as $package) {
+				$id = NULL;
+				foreach ($packages as $k => $v) {
+					if ($package['type'] == $v['type'] && $package['module'] == $v['module'] && $package['language'] == $v['language'] && $package['format'] == $v['format']) {
+						/* Package already exists.  Use existing id/installed version. */
+						$id = $k;
+						$package['installed'] = $v['installed'];
+					}
+				}
+
 				$res = $sth->execute(array(
+					':id' => $id,
 					':type' => $package['type'],
 					':module' => $package['module'],
 					':language' => $package['language'],
+					':license' => $package['license'],
+					':author' => $package['author'],
+					':authorlink' => $package['authorlink'],
 					':format' => $package['format'],
 					':version' => $package['version'],
+					':installed' => $package['installed'],
 				));
 			}
 			return true;
@@ -785,8 +813,13 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 	 * @param bool $force Force redownload, even if it exists.
 	 * @return mixed          return a string of the installed package or null
 	 */
-	public function installPackage($package, $force = false) {
+	public function installPackage($id, $version, $force = false) {
 		global $amp_conf;
+
+		$package = $this->getPackageById($id);
+		if (empty($package)) {
+			return;
+		}
 
 		$basename = $package['type'].'-'.$package['module'].'-'.$package['language'].'-'.$package['format'] .'-'.$package['version'];
 		$soundsdir = $amp_conf['ASTVARLIBDIR'] . "/sounds";
@@ -886,8 +919,13 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 	 * Uninstall a package
 	 * @param  array $package Information about the package
 	 */
-	public function uninstallPackage($package) {
+	public function uninstallPackage($id) {
 		global $amp_conf;
+
+		$package = $this->getPackageById($id);
+		if (empty($package)) {
+			return;
+		}
 
 		$soundsdir = $amp_conf['ASTVARLIBDIR'] . "/sounds";
 		$tmpname = $package['type'].'-'.$package['module'].'-'.$package['language'].'-'.$package['format'] .'-';
