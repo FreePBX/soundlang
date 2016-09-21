@@ -1,6 +1,11 @@
 var deleteCustoms = [],
 files = [];
 
+$(document).ready(function() {
+	$('#formats').multiselect({
+	});
+});
+
 $(".btn-remove").click(function() {
 	var type = $(this).data("type"), btn = $(this), section = $(this).data("section");
 	var chosen = $("#table-"+section).bootstrapTable("getSelections");

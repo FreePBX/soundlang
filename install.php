@@ -62,7 +62,8 @@ if ($first_install) {
 	$db->query("DELETE FROM iaxsettings WHERE keyword = 'language' OR keyword = 'sip_language'");
 
 	$sql[] = "INSERT INTO soundlang_settings (keyword, value) VALUES
-			('language', '$language')
+			('language', '$language'),
+			('formats', 'ulaw,g722')
 	";
 } else {
 	$db->query("INSERT INTO soundlang_packages (type, module, language, format, version, installed) SELECT type, module, language, format, version, installed FROM soundlang_packs");
@@ -92,7 +93,7 @@ if($first_install) {
 				in_array($package['format'], array("ulaw","g722"))) {
 
 				outn(sprintf(_("Installing %s..."),$package['module']."-".$package['format']));
-				$soundlang->installPackage($package);
+				$soundlang->installPackage($package['id']);
 				$allreadyinstalled[$package['module']."-".$package['format']] = true;
 				out(_("Done"));
 			}
@@ -117,7 +118,7 @@ if($first_install) {
 				continue;
 			}
 			out(sprintf(_("Installing additional package %s..."),$package['module']."-".$package['format']));
-			$soundlang->installPackage($package);
+			$soundlang->installPackage($package['id']);
 		}
 	}
 }

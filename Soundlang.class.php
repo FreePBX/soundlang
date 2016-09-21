@@ -74,11 +74,28 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 		$languages = $this->getLanguages();
 
 		switch ($action) {
-		case 'global':
-		case 'save':
+		case 'settings':
+		case 'savesettings':
 			$language = $this->getLanguage();
+			$formatpref = $this->getFormatPref();
 
-			$html .= load_view(dirname(__FILE__).'/views/select.php', array('languages' => $languages, 'language' => $language));
+			$packages = $this->getPackages();
+			if (empty($packages)) {
+				$formatlist = $formatpref;
+			} else {
+				$formatlist = array();
+				foreach ($packages as $package) {
+					$formatlist[$package['format']] = $package['format'];
+				}
+			}
+
+			$displayvars = array(
+				'languages' => $languages,
+				'language' => $language,
+				'formatpref' => $formatpref,
+				'formatlist' => $formatlist
+			);
+			$html .= load_view(dirname(__FILE__).'/views/settings.php', $displayvars);
 			break;
 		case '':
 		case 'packages':
@@ -91,30 +108,51 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 				break;
 			}
 
-			usort($packages, function($a, $b) {
-				/* Sort packages by type, module, language, then format. */
-				if ($a['type'] == $b['type']) {
-					if ($a['module'] == $b['module']) {
-						if ($a['language'] == $b['language']) {
-							if ($a['format'] == $b['format']) {
-								return 0;
-							} else {
-								return ($a['format'] < $b['format']) ? -1 : 1;
-							}
-						} else {
-							return ($a['language'] < $b['language']) ? -1 : 1;
-						}
-					} else {
-						return ($a['module'] < $b['module']) ? -1 : 1;
-					}
+			$formats = $this->getFormatPref();
+
+			$languages = array();
+			foreach ($packages as $package) {
+				if (isset($languages[$package['language']])) {
+					$language = $languages[$package['language']];
 				} else {
-					return ($a['type'] < $b['type']) ? -1 : 1;
+					$language = array(
+						'installed' => 0,
+						'author' => $package['author'],
+						'authorlink' => $package['authorlink'],
+						'license' => $package['license'],
+						'installed' => true,
+					);
 				}
-			});
+
+				if (in_array($package['format'], $formats)) {
+					if (empty($package['installed']) || $package['installed'] < $package['version']) {
+						$language['installed'] = false;
+					}
+				}
+				$languages[$package['language']] = $language;
+			}
+
+			/* TODO: Sort packages by language. */
 
 			$languagenames = $this->getLanguageNames();
 			$languagelocations = $this->getLocationNames();
-			$html .= load_view(dirname(__FILE__).'/views/packages.php', array('packages' => $packages, 'languagenames' => $languagenames, 'languagelocations' => $languagelocations));
+			$html .= load_view(dirname(__FILE__).'/views/packages.php', array('languages' => $languages, 'languagenames' => $languagenames, 'languagelocations' => $languagelocations));
+			break;
+		case 'language':
+			$language = $request['lang'];
+
+			$packages = $this->getPackages();
+			if (empty($packages)) {
+				break;
+			}
+
+			$langpacks = array();
+			foreach ($packages as $package) {
+				if ($package['language'] == $language) {
+					$langpacks[] = $package;
+				}
+			}
+			$html .= load_view(dirname(__FILE__).'/views/language.php', array('packages' => $langpacks));
 			break;
 		case 'customlangs':
 		case 'delcustomlang':
@@ -152,17 +190,19 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 		$action = !empty($request['action']) ? $request['action'] : '';
 
 		switch ($action) {
-		case 'save':
+		case 'savesettings':
 			$language = $request['language'];
-
 			$this->setLanguage($language);
+
+			$formats = $request['formats'];
+			$this->setFormatPref($formats);
 			break;
 		case 'install':
-			$this->installPackage($request['id'], $request['version']);
+			$this->installLanguage($request['lang']);
 
 			break;
 		case 'uninstall':
-			$this->uninstallPackage($request['id']);
+			$this->uninstallLanguage($request['lang']);
 
 			break;
 		case 'customlangs':
@@ -199,8 +239,8 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 		$buttons = array();
 
 		switch ($action) {
-		case 'global':
-		case 'save':
+		case 'settings':
+		case 'savesettings':
 			$buttons['reset'] = array(
 				'name' => 'reset',
 				'id' => 'reset',
@@ -505,8 +545,8 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 	 * This gets unique languges:
 	 * OUT > Array
 	 * (
-	 * 		[en] => English
-	 *   	[en_GB] => English (United Kingdom)
+	 * 	[en] => English
+	 * 	[en_GB] => English (United Kingdom)
 	 * )
 	 * @return [type] [description]
 	 */
@@ -519,7 +559,7 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 		if (!empty($packages)) {
 			foreach ($packages as $package) {
 				if (!empty($package['installed'])) {
-					//Try to use local_get_display_name if it's installed
+					//Try to use locale_get_display_name if it's installed
 					if(function_exists('locale_get_display_name')) {
 						$language = set_language();
 						$name = locale_get_display_name($package['language'], $language);
@@ -581,6 +621,33 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 		$sth->execute(array(':language' => $language));
 
 		needreload();
+	}
+
+	/**
+	 * Get the format preference
+	 * @return array List of format preferences
+	 */
+	public function getFormatPref() {
+		$sql = "SELECT value FROM soundlang_settings WHERE keyword = 'formats';";
+		$data = $this->db->getOne($sql);
+
+		if (empty($data)) {
+			$formats = array('g722', 'ulaw');
+		} else {
+			$formats = explode(',', $data);
+		}
+
+		return $formats;
+	}
+
+	/**
+	 * Set the format preferences
+	 * @param array $formats List of format preferences
+	 */
+	public function setFormatPref($formats) {
+		$sql = "REPLACE INTO soundlang_settings (keyword, value) VALUES('formats', :formats);";
+		$sth = $this->db->prepare($sql);
+		$sth->execute(array(':formats' => !empty($formats) ? implode(',', $formats) : 'g722,ulaw'));
 	}
 
 	/**
@@ -807,19 +874,51 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 		}
 	}
 
+	public function installLanguage($language) {
+		$packages = $this->getPackages();
+		if (empty($packages)) {
+			return false;
+		}
+
+		foreach ($packages as $package) {
+			if ($package['language'] == $language) {
+				$formats = $this->getFormatPref();
+				if (in_array($package['format'], $formats)) {
+					$this->installPackage($package['id']);
+				}
+			}
+		}
+	}
+
+	public function uninstallLanguage($language) {
+		$packages = $this->getPackages();
+		if (empty($packages)) {
+			return false;
+		}
+
+		foreach ($packages as $package) {
+			if ($package['language'] == $language) {
+				/* We don't check the format here.  Just delete everything. */
+				$this->uninstallPackage($package['id']);
+			}
+		}
+	}
+
 	/**
 	 * Install Package from online servers
 	 * @param  array $package Array of information about the package
 	 * @param bool $force Force redownload, even if it exists.
 	 * @return mixed          return a string of the installed package or null
 	 */
-	public function installPackage($id, $version, $force = false) {
+	public function installPackage($id, $force = false) {
 		global $amp_conf;
 
 		$package = $this->getPackageById($id);
 		if (empty($package)) {
 			return;
 		}
+
+		//var_dump($package);
 
 		$basename = $package['type'].'-'.$package['module'].'-'.$package['language'].'-'.$package['format'] .'-'.$package['version'];
 		$soundsdir = $amp_conf['ASTVARLIBDIR'] . "/sounds";
