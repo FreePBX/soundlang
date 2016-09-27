@@ -8,12 +8,32 @@ $(document).ready(function() {
 
 $(document).on("click", 'a[id^="licenselink"]', function(){
 	var langid = $(this).data('langid');
-	var licenselink = $(this).data('licenselink');
 	$("#langid").val(langid);
-	$("#licenselink").text(licenselink);
-	$("#licensetext").text("License text goes here.");
-	$("#licensesub").attr("disabled", false);
-	$("#licensesub").html(_("Accept License Agreement"));
+	var langid = $("#langid").val();
+	$.ajax({
+		url: "ajax.php",
+		data: {
+			module:'soundlang',
+			command:'licenseText',
+			lang: langid,
+		},
+		type: "GET",
+		dataType: "json",
+		success: function(data){
+			$("#licensetext").text(data.license);
+
+			$("#licensesub").attr("disabled", false);
+			$("#licensesub").html(_("Accept License Agreement"));
+		},
+		error: function(xhr, status, e){
+			$("#licensesub").attr("disabled", true);
+			$("#licensesub").html(_("License Could Not be Retrieved"));
+
+			console.dir(xhr);
+			console.log(status);
+			console.log(e);
+		}
+	});
 });
 
 $("#licensesub").on("click", function(){

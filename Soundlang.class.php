@@ -298,6 +298,7 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 			case "delete":
 			case "saveCustomLang":
 			case "install":
+			case "licenseText":
 				return true;
 			break;
 			default:
@@ -314,6 +315,21 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 		switch($request['command']){
 			case "install":
 				$this->installLanguage($request['lang']);
+				return array("status" => true);
+			case "licenseText":
+				$packages = $this->getPackages();
+				if (empty($packages)) {
+					return array("status" => false);
+				}
+
+				foreach ($packages as $package) {
+					if ($package['language'] == $request['lang']) {
+						if (!empty($package['license'])) {
+							return array("status" => true, "license" => $package['license']);
+						}
+					}
+				}
+
 				return array("status" => true);
 			case "saveCustomLang":
 				if (empty($_POST['id'])) {
@@ -800,7 +816,7 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 		$data = $sth->fetchAll(\PDO::FETCH_ASSOC);
 		$packages = array();
 		foreach ($data as $package) {
-$package['license'] = 'https://www.gnu.org/licenses/gpl-3.0.txt';
+$package['license'] = "I'm a random license.  Click me.";
 			$packages[$package['id']] = $package;
 		}
 

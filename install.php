@@ -10,7 +10,7 @@ $cols = array(
 	"type" => array( "type" => "string", "length" => 20, "notnull" => true ),
 	"module" => array( "type" => "string", "length" => 80, "notnull" => true ),
 	"language" => array( "type" => "string", "length" => 20, "notnull" => true ),
-	"license" => array( "type" => "string", "length" => 256, "notnull" => false ),
+	"license" => array( "type" => "blob", "notnull" => false ),
 	"author" => array( "type" => "string", "length" => 80, "notnull" => false ),
 	"authorlink" => array( "type" => "string", "length" => 256, "notnull" => false ),
 	"format" => array( "type" => "string", "length" => 20, "notnull" => true ),

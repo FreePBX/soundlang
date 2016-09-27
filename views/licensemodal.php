@@ -4,6 +4,7 @@
 		<div class="modal-content">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+				<h4 class="modal-title"><?php echo _("License Agreement")?></h4>
 			</div>
 			<div class="modal-body">
 				<input type="hidden" id="langid" value=""/>
@@ -13,20 +14,7 @@
 							<div class="row">
 								<div class="form-group">
 									<div class="col-md-12">
-										<span id="licenselink" name="licenselink"></span>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="element-container">
-					<div class="row">
-						<div class="col-md-12">
-							<div class="row">
-								<div class="form-group">
-									<div class="col-md-12">
-										<span id="licensetext" name="licensetext"></span>
+										<pre id="licensetext" name="licensetext"></pre>
 									</div>
 								</div>
 							</div>
@@ -41,5 +29,4 @@
 	 </div>
   </div>
 </div>
-
 <!--End License Modal-->
