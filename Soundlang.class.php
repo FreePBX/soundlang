@@ -297,6 +297,7 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 			case "upload":
 			case "delete":
 			case "saveCustomLang":
+			case "install":
 				return true;
 			break;
 			default:
@@ -311,6 +312,9 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 	public function ajaxHandler(){
 		$request = $_REQUEST;
 		switch($request['command']){
+			case "install":
+				$this->installLanguage($request['lang']);
+				return array("status" => true);
 			case "saveCustomLang":
 				if (empty($_POST['id'])) {
 					$this->addCustomLanguage($_POST['language'], $_POST['description']);
@@ -796,6 +800,7 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 		$data = $sth->fetchAll(\PDO::FETCH_ASSOC);
 		$packages = array();
 		foreach ($data as $package) {
+$package['license'] = 'https://www.gnu.org/licenses/gpl-3.0.txt';
 			$packages[$package['id']] = $package;
 		}
 
@@ -1078,7 +1083,7 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 	 * @return string       binary representation of file
 	 */
 	private function getRemoteFile($path) {
-		$modulef =& \module_functions::create();
+		$modulef = \module_functions::create();
 
 		$contents = null;
 

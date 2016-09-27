@@ -6,6 +6,44 @@ $(document).ready(function() {
 	});
 });
 
+$(document).on("click", 'a[id^="licenselink"]', function(){
+	var langid = $(this).data('langid');
+	var licenselink = $(this).data('licenselink');
+	$("#langid").val(langid);
+	$("#licenselink").text(licenselink);
+	$("#licensetext").text("License text goes here.");
+	$("#licensesub").attr("disabled", false);
+	$("#licensesub").html(_("Accept License Agreement"));
+});
+
+$("#licensesub").on("click", function(){
+	var button = $(this);
+	button.html(_('Installing'));
+	button.attr("disabled", true);
+	var langid = $("#langid").val();
+	$.ajax({
+		url: "ajax.php",
+		data: {
+			module:'soundlang',
+			command:'install',
+			lang: langid,
+		},
+		type: "GET",
+		dataType: "json",
+		success: function(data){
+			console.log(data);
+			button.html(data.message);
+			$('#licensemodal').modal('hide');
+
+		},
+		error: function(xhr, status, e){
+			console.dir(xhr);
+			console.log(status);
+			console.log(e);
+		}
+	});
+});
+
 $(".btn-remove").click(function() {
 	var type = $(this).data("type"), btn = $(this), section = $(this).data("section");
 	var chosen = $("#table-"+section).bootstrapTable("getSelections");
