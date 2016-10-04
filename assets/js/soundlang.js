@@ -10,30 +10,47 @@ $(document).on("click", 'a[id^="licenselink"]', function(){
 	var langid = $(this).data('langid');
 	$("#langid").val(langid);
 	var langid = $("#langid").val();
-	$.ajax({
-		url: "ajax.php",
-		data: {
-			module:'soundlang',
-			command:'licenseText',
-			lang: langid,
-		},
-		type: "GET",
-		dataType: "json",
-		success: function(data){
-			$("#licensetext").text(data.license);
 
-			$("#licensesub").attr("disabled", false);
-			$("#licensesub").html(_("Accept License Agreement"));
-		},
-		error: function(xhr, status, e){
-			$("#licensesub").attr("disabled", true);
-			$("#licensesub").html(_("License Could Not be Retrieved"));
-
-			console.dir(xhr);
-			console.log(status);
-			console.log(e);
-		}
-	});
+	if ($(this).children('i').hasClass('fa-download')){
+		$.ajax({
+			url: "ajax.php",
+			data: {
+				module:'soundlang',
+				command:'licenseText',
+				lang: langid,
+			},
+			type: "GET",
+			dataType: "json",
+			success: function(data){
+				$("#licensetext").text(data.license);
+	
+				$("#licensesub").attr("disabled", false);
+				$("#licensesub").html(_("Accept License Agreement"));
+			},
+			error: function(xhr, status, e){
+				$("#licensesub").attr("disabled", true);
+				$("#licensesub").html(_("License Could Not be Retrieved"));
+	
+				console.dir(xhr);
+				console.log(status);
+				console.log(e);
+			}
+		});
+	} else if ($(this).children('i').hasClass('fa-ban')){
+		$.ajax({
+			url: "ajax.php",
+			data: {
+				module:'soundlang',
+				command:'uninstall',
+				lang: langid,
+			},
+			type: "GET",
+			dataType: "json",
+			success: function(data){
+				location.reload();
+			}
+		});
+	}
 });
 
 $("#licensesub").on("click", function(){
@@ -55,6 +72,7 @@ $("#licensesub").on("click", function(){
 			button.html(data.message);
 			$('#licensemodal').modal('hide');
 
+			location.reload();
 		},
 		error: function(xhr, status, e){
 			console.dir(xhr);

@@ -132,7 +132,7 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 				$languages[$package['language']] = $language;
 			}
 
-			/* TODO: Sort packages by language. */
+			ksort($languages);
 
 			$languagenames = $this->getLanguageNames();
 			$languagelocations = $this->getLocationNames();
@@ -196,6 +196,23 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 
 			$formats = $request['formats'];
 			$this->setFormatPref($formats);
+
+			$packages = $this->getPackages();
+			if (!empty($packages)) {
+				foreach ($packages as $package) {
+					if (!empty($package['installed'])) {
+						if (!in_array($package['format'], $formats)) {
+							/* Remove packages for unused formats. */
+							$this->uninstallPackage($package['id']);
+						}
+						$languages[$package['language']] = true;
+					}
+				}
+			}
+			foreach ($languages as $key => $val) {
+				/* Install any missing formats. */
+				$this->installLanguage($key);
+			}
 			break;
 		case 'install':
 			$this->installLanguage($request['lang']);
@@ -298,6 +315,7 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 			case "delete":
 			case "saveCustomLang":
 			case "install":
+			case "uninstall":
 			case "licenseText":
 				return true;
 			break;
@@ -316,6 +334,9 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 			case "install":
 				$this->installLanguage($request['lang']);
 				return array("status" => true);
+			case "uninstall":
+				$this->unInstallLanguage($request['lang']);
+				return array("status" => true);
 			case "licenseText":
 				$packages = $this->getPackages();
 				if (empty($packages)) {
@@ -324,8 +345,12 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 
 				foreach ($packages as $package) {
 					if ($package['language'] == $request['lang']) {
-						if (!empty($package['license'])) {
-							return array("status" => true, "license" => $package['license']);
+						$filename = $package['type'] . '-' . $package['module'] . '-' . $package['language'] . '-license.txt';
+						$filedata = $this->getRemoteFile("/sounds/" . $filename);
+						if (!empty($filedata)) {
+							return array("status" => true, "license" => $filedata);
+						} else {
+							return array("status" => true);
 						}
 					}
 				}
@@ -903,9 +928,11 @@ $package['license'] = "I'm a random license.  Click me.";
 
 		foreach ($packages as $package) {
 			if ($package['language'] == $language) {
-				$formats = $this->getFormatPref();
-				if (in_array($package['format'], $formats)) {
-					$this->installPackage($package['id']);
+				if (empty($package['installed']) || version_compare($package['version'], $package['installed'], 'gt')) {
+					$formats = $this->getFormatPref();
+					if (in_array($package['format'], $formats)) {
+						$this->installPackage($package['id']);
+					}
 				}
 			}
 		}
@@ -1106,7 +1133,8 @@ $package['license'] = "I'm a random license.  Click me.";
 		$mirrors = $modulef->generate_remote_urls($path, true);
 
 		$params = $mirrors['options'];
-		$params['sv'] = 2;
+		$params['sv'] = 2; // Stats version
+		$params['soundlangver'] = 2;
 
 		foreach($mirrors['mirrors'] as $url) {
 			set_time_limit($this->maxTimeLimit);

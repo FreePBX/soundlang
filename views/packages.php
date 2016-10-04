@@ -44,9 +44,9 @@
 								</td>
 								<td>
 								<?php if ($package['installed']) { ?>
-									<a href="config.php?display=soundlang&action=uninstall&lang=<?php echo $language ?>"><i class="fa fa-ban fa-fw"></i></a>
+									<a href="#" data-langid="<?php echo $language; ?>" id="licenselink<?php echo $language; ?>"><i class="fa fa-ban fa-fw"></i></a>
 								<?php } else { ?>
-									<a data-toggle="modal" data-langid="<?php echo $language ;?>" data-target="#licensemodal" id="licenselink<?php echo $language; ?>" data-licenselink="<?php echo $package['license']; ?>" class="clickable"><i class="fa fa-download fa-fw"></i></a>
+									<a href="#" data-toggle="modal" data-langid="<?php echo $language ;?>" data-target="#licensemodal" id="licenselink<?php echo $language; ?>" data-licenselink="<?php echo $package['license']; ?>" class="clickable"><i class="fa fa-download fa-fw"></i></a>
 								<?php } ?>
 								</td>
 							</tr>
