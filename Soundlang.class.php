@@ -99,8 +99,6 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 			break;
 		case '':
 		case 'packages':
-		case 'install':
-		case 'uninstall':
 			$this->getOnlinePackages();
 
 			$packages = $this->getPackages();
@@ -213,14 +211,6 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 				/* Install any missing formats. */
 				$this->installLanguage($key);
 			}
-			break;
-		case 'install':
-			$this->installLanguage($request['lang']);
-
-			break;
-		case 'uninstall':
-			$this->uninstallLanguage($request['lang']);
-
 			break;
 		case 'customlangs':
 		case 'showcustomlang':
@@ -335,7 +325,7 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 				$this->installLanguage($request['lang']);
 				return array("status" => true);
 			case "uninstall":
-				$this->unInstallLanguage($request['lang']);
+				$this->uninstallLanguage($request['lang']);
 				return array("status" => true);
 			case "licenseText":
 				$packages = $this->getPackages();
