@@ -2,11 +2,12 @@
 	<rawname>soundlang</rawname>
 	<repo>standard</repo>
 	<name>Sound Languages</name>
-	<version>13.0.17</version>
+	<version>13.0.18</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
 	<changelog>
+		*13.0.18* FREEPBX-13042 Show authors/licenses for prompts and redesign packages page
 		*13.0.17* FREEPBX-12620
 		*13.0.16* Check to see if sounds were previously installed before installing
 		*13.0.15* FREEPBX-12606 Absolute paths used in some modules.
