@@ -517,7 +517,7 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 			'es' => _('Spanish'),
 			'fi' => _('Finish'),
 			'fr' => _('French'),
-			'hi' => _('Hebrew'),
+			'he' => _('Hebrew'),
 			'it' => _('Italian'),
 			'ja' => _('Japanese'),
 			'nl' => _('Dutch'),
@@ -526,7 +526,7 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 			'pt' => _('Portuguese'),
 			'ru' => _('Russian'),
 			'sv' => _('Swedish'),
-			'tw' => _('Turkish'),
+			'tr' => _('Turkish'),
 			'zh' => _('Chinese'),
 		);
 
