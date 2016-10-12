@@ -130,13 +130,13 @@ if ($online) {
 	$packages = $soundlang->getPackages();
 	if (!empty($packages)) {
 		foreach ($packages as $package) {
-			if (!empty($package['installed']) && $package['installed'] != $package['version']) {
+			if (!empty($package['installed'])) {
 				$languages[$package['language']] = $package['language'];
 			}
 		}
 	}
 
-	/* Install the updated languages. */
+	/* Update any installed languages. */
 	foreach ($languages as $language) {
 		out(sprintf(_("Installing/updating packages for %s..."), $language));
 		$soundlang->installLanguage($language);
