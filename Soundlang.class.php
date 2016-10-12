@@ -195,6 +195,7 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 			$formats = $request['formats'];
 			$this->setFormatPref($formats);
 
+			$languages = array();
 			$packages = $this->getPackages();
 			if (!empty($packages)) {
 				foreach ($packages as $package) {
