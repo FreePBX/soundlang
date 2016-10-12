@@ -2,11 +2,12 @@
 	<rawname>soundlang</rawname>
 	<repo>standard</repo>
 	<name>Sound Languages</name>
-	<version>13.0.19</version>
+	<version>13.0.20</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
 	<changelog>
+		*13.0.20* FREEPBX-13336 Install missing packages for installed languages on module updates
 		*13.0.19* FREEPBX-13330 ISO language codes are incorrect for Hebrew and Turkish.
 		*13.0.18* FREEPBX-13042 Show authors/licenses for prompts and redesign packages page
 		*13.0.17* FREEPBX-12620

@@ -77,19 +77,19 @@ foreach ($sql as $statement){
 	}
 }
 
+$soundlang = \FreePBX::create()->Soundlang;
+$online = $soundlang->getOnlinePackages();
+
 if($first_install) {
-	$soundlang = \FreePBX::create()->Soundlang;
 	$vlsd = FreePBX::Config()->get("ASTVARLIBDIR")."/sounds";
 
-	$online = $soundlang->getOnlinePackages();
 	$alreadyinstalled = array();
 	if($online) {
 		out(_("New install, downloading default english language set..."));
 		$list = $soundlang->getPackages();
-		$found = false;
 		foreach($list as $id => $package) {
 			if($package['language'] == 'en' &&
-				in_array($package['module'], array('core-sounds','extra-sounds')) &&
+				in_array($package['module'], array('core-sounds','extra-sounds','module-sounds')) &&
 				in_array($package['format'], array("ulaw","g722"))) {
 
 				outn(sprintf(_("Installing %s..."),$package['module']."-".$package['format']));
@@ -122,3 +122,25 @@ if($first_install) {
 		}
 	}
 }
+
+
+/* Find and install any missing packages for installed languages. */
+if ($online) {
+	$languages = array();
+	$packages = $soundlang->getPackages();
+	if (!empty($packages)) {
+		foreach ($packages as $package) {
+			if (!empty($package['installed']) && $package['installed'] != $package['version']) {
+				$languages[$package['language']] = $package['language'];
+			}
+		}
+	}
+
+	/* Install the updated languages. */
+	foreach ($languages as $language) {
+		out(sprintf(_("Installing/updating packages for %s..."), $language));
+		$soundlang->installLanguage($language);
+		out(_("Done"));
+	}
+}
+
