@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-05 11:16-0500\n"
+"POT-Creation-Date: 2016-10-12 10:24-0500\n"
 "PO-Revision-Date: 2016-10-08 12:44+0200\n"
 "Last-Translator: psdk <hyavari26@gmail.com>\n"
 "Language-Team: Persian (Iran) <http://weblate.freepbx.org/projects/freepbx/"
@@ -161,7 +161,7 @@ msgstr "در حال حذف..."
 msgid "Description"
 msgstr "توضیحات"
 
-#: install.php:98
+#: install.php:98 install.php:143
 msgid "Done"
 msgstr "انجام شد"
 
@@ -287,6 +287,11 @@ msgstr "در حال نصب %s..."
 msgid "Installing additional package %s..."
 msgstr "در حال نصب پکیج اضافی %s..."
 
+#: install.php:141
+#, php-format
+msgid "Installing/updating packages for %s..."
+msgstr ""
+
 #: Soundlang.class.php:556
 msgid "Ireland"
 msgstr ""
@@ -363,7 +368,7 @@ msgstr "هلند"
 msgid "New Zealand"
 msgstr "نیوزلند"
 
-#: install.php:87
+#: install.php:88
 msgid "New install, downloading default english language set..."
 msgstr "نصب جدید، در حال دانلود زبان انگلیسی به عنوان پیشفرض..."
 

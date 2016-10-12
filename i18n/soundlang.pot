@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-05 11:16-0500\n"
+"POT-Creation-Date: 2016-10-12 10:24-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -160,6 +160,7 @@ msgid "Description"
 msgstr ""
 
 #: install.php:98
+#: install.php:143
 msgid "Done"
 msgstr ""
 
@@ -285,6 +286,11 @@ msgstr ""
 msgid "Installing additional package %s..."
 msgstr ""
 
+#: install.php:141
+#, php-format
+msgid "Installing/updating packages for %s..."
+msgstr ""
+
 #: Soundlang.class.php:556
 msgid "Ireland"
 msgstr ""
@@ -362,7 +368,7 @@ msgstr ""
 msgid "New Zealand"
 msgstr ""
 
-#: install.php:87
+#: install.php:88
 msgid "New install, downloading default english language set..."
 msgstr ""
 
