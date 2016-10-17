@@ -71,11 +71,10 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 
 		$html .= load_view(dirname(__FILE__).'/views/main.php', array('message' => $this->message));
 
-		$languages = $this->getLanguages();
-
 		switch ($action) {
 		case 'settings':
 		case 'savesettings':
+			$languages = $this->getLanguages();
 			$language = $this->getLanguage();
 			$formatpref = $this->getFormatPref();
 
@@ -208,9 +207,12 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 					}
 				}
 			}
-			foreach ($languages as $key => $val) {
-				/* Install any missing formats. */
-				$this->installLanguage($key);
+
+			if (!empty($languages)) {
+				foreach ($languages as $key => $val) {
+					/* Install any missing formats. */
+					$this->installLanguage($key);
+				}
 			}
 			break;
 		case 'customlangs':
@@ -575,6 +577,30 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 		return $names;
 	}
 
+	public function getDefaultLocations() {
+		$defaults = array(
+			'cs' => 'CZ',
+			'de' => 'DE',
+			'en' => 'US',
+			'es' => 'ES',
+			'fi' => 'FI',
+			'fr' => 'FR',
+			'he' => 'IL',
+			'it' => 'IT',
+			'ja' => 'JA',
+			'nl' => 'NL',
+			'no' => 'NO',
+			'pl' => 'PL',
+			'pt' => 'PT',
+			'ru' => 'RU',
+			'sv' => 'SE',
+			'tr' => 'TR',
+			'zh' => 'CN',
+		);
+
+		return $defaults;
+	}
+
 	/**
 	 * Get Languages
 	 *
@@ -586,7 +612,7 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 	 * )
 	 * @return [type] [description]
 	 */
-	public function getLanguages() {
+	public function getAvailableLanguages() {
 		$names = $this->getLanguageNames();
 		$locations = $this->getLocationNames();
 
@@ -594,23 +620,21 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 		$packages = $this->getPackages();
 		if (!empty($packages)) {
 			foreach ($packages as $package) {
-				if (!empty($package['installed'])) {
-					//Try to use locale_get_display_name if it's installed
-					if(function_exists('locale_get_display_name')) {
-						$language = set_language();
-						$name = locale_get_display_name($package['language'], $language);
+				//Try to use locale_get_display_name if it's installed
+				if(function_exists('locale_get_display_name')) {
+					$language = set_language();
+					$name = locale_get_display_name($package['language'], $language);
+				} else {
+					$lang = explode('_', $package['language'], 2);
+					if ((count($lang) == 2) && !empty($locations[$lang[1]]) && !empty($names[$lang[0]])) {
+						$name = $names[$lang[0]] . ' - ' . $locations[$lang[1]];
+					} else if (!empty($names[$lang[0]])) {
+						$name = $names[$lang[0]];
 					} else {
-						$lang = explode('_', $package['language'], 2);
-						if ((count($lang) == 2) && !empty($locations[$lang[1]]) && !empty($names[$lang[0]])) {
-							$name = $names[$lang[0]] . ' - ' . $locations[$lang[1]];
-						} else if (!empty($names[$lang[0]])) {
-							$name = $names[$lang[0]];
-						} else {
-							$name = $lang[0];
-						}
+						$name = $lang[0];
 					}
-					$packagelangs[$package['language']] = $name;
 				}
+				$packagelangs[$package['language']] = $name;
 			}
 		}
 
@@ -630,6 +654,22 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 		asort($languages);
 
 		return $languages;
+	}
+
+	public function getLanguages() {
+		$installed = array();
+
+		$languages = $this->getAvailableLanguages();
+		$packages = $this->getPackages();
+		if (!empty($packages)) {
+			foreach ($packages as $package) {
+				if (!empty($package['installed'])) {
+					$installed[$package['language']] = $languages[$package['language']];
+				}
+			}
+		}
+
+		return $installed;
 	}
 
 	/**
@@ -832,7 +872,6 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 		$data = $sth->fetchAll(\PDO::FETCH_ASSOC);
 		$packages = array();
 		foreach ($data as $package) {
-$package['license'] = "I'm a random license.  Click me.";
 			$packages[$package['id']] = $package;
 		}
 
