@@ -9,15 +9,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-17 12:07-0500\n"
+"POT-Creation-Date: 2016-10-25 06:04+0000\n"
 "PO-Revision-Date: 2016-10-08 12:44+0200\n"
 "Last-Translator: psdk <hyavari26@gmail.com>\n"
 "Language-Team: Persian (Iran) <http://weblate.freepbx.org/projects/freepbx/"
 "soundlang/fa_IR/>\n"
+"Language: fa_IR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: fa_IR\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 2.4\n"
 
@@ -122,11 +122,6 @@ msgstr ""
 msgid "Convert To"
 msgstr "تبدیل به"
 
-#: assets/js/soundlang.js:281
-#, perl-format
-msgid "Copying %s to %s"
-msgstr "در حال کپی کردن %s به %s"
-
 #: Soundlang.class.php:1026
 #, php-format
 msgid "Could not untar %s to %s"
@@ -161,7 +156,7 @@ msgstr "در حال حذف..."
 msgid "Description"
 msgstr "توضیحات"
 
-#: install.php:98 install.php:143
+#: install.php:102 install.php:147
 msgid "Done"
 msgstr "انجام شد"
 
@@ -206,7 +201,7 @@ msgstr "فایلها برای بارگذاری"
 msgid "Finish"
 msgstr "پایان"
 
-#: install.php:101
+#: install.php:105
 msgid "Finished installing default sounds"
 msgstr "نصب فایلهای صدای پیشفرض پایان یافت"
 
@@ -258,13 +253,6 @@ msgstr "هنگ کنگ"
 msgid "ID"
 msgstr "شناسه"
 
-#: assets/js/soundlang.js:242
-msgid ""
-"If you are doing media conversions this can take a very long time, is that "
-"ok?"
-msgstr ""
-"عملیات تبدیل فایلهای صوتی به یکدیگر زمان بسیاری لازم دارد، اشکالی ندارد؟"
-
 #: Soundlang.class.php:561
 msgid "India"
 msgstr ""
@@ -277,17 +265,17 @@ msgstr "نصب شده"
 msgid "Installing"
 msgstr ""
 
-#: install.php:95
+#: install.php:99
 #, php-format
 msgid "Installing %s..."
 msgstr "در حال نصب %s..."
 
-#: install.php:120
+#: install.php:124
 #, php-format
 msgid "Installing additional package %s..."
 msgstr "در حال نصب پکیج اضافی %s..."
 
-#: install.php:141
+#: install.php:145
 #, php-format
 msgid "Installing/updating packages for %s..."
 msgstr ""
@@ -368,7 +356,7 @@ msgstr "هلند"
 msgid "New Zealand"
 msgstr "نیوزلند"
 
-#: install.php:88
+#: install.php:92
 msgid "New install, downloading default english language set..."
 msgstr "نصب جدید، در حال دانلود زبان انگلیسی به عنوان پیشفرض..."
 
@@ -407,11 +395,6 @@ msgstr "پرتغال"
 #: Soundlang.class.php:529
 msgid "Portuguese"
 msgstr "پرتغالی"
-
-#: assets/js/soundlang.js:279
-#, perl-format
-msgid "Processing %s for %s in format %s"
-msgstr "پردازش %s برای %s در فرمت %s"
 
 #: Soundlang.class.php:257 Soundlang.class.php:274 Soundlang.class.php:286
 msgid "Reset"
@@ -546,14 +529,25 @@ msgstr ""
 "بارگذاری فایلها از سیستم محلی. فرمت های قابل قبول عبارتند ار: %s. این مورد "
 "شامل فایلهای فشرده (چندین فایل، مانند %s) هم میشود"
 
-#: assets/js/soundlang.js:229
-msgid "You must set a valid language code"
-msgstr "شما باید یک کد زبان معتبر وارد کنید"
-
 #: Soundlang.class.php:1025
 #, php-format
 msgid "failed to open %s sounds archive."
 msgstr "شکست در باز کردن %s از بایگانی صداها."
+
+#~ msgid "Copying %s to %s"
+#~ msgstr "در حال کپی کردن %s به %s"
+
+#~ msgid ""
+#~ "If you are doing media conversions this can take a very long time, is "
+#~ "that ok?"
+#~ msgstr ""
+#~ "عملیات تبدیل فایلهای صوتی به یکدیگر زمان بسیاری لازم دارد، اشکالی ندارد؟"
+
+#~ msgid "Processing %s for %s in format %s"
+#~ msgstr "پردازش %s برای %s در فرمت %s"
+
+#~ msgid "You must set a valid language code"
+#~ msgstr "شما باید یک کد زبان معتبر وارد کنید"
 
 #~ msgid "Change Global Sound Language"
 #~ msgstr "تغییر صدای زبان عمومی"
