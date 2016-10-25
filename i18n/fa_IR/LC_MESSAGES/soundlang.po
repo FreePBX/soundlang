@@ -9,10 +9,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-25 05:52+0000\n"
+"POT-Creation-Date: 2016-10-25 06:07+0000\n"
 "PO-Revision-Date: 2016-07-06 05:16+0200\n"
 "Last-Translator: Media <mousavi.media@gmail.com>\n"
-"Language-Team: Persian (Iran) <http://weblate.freepbx.org/projects/freepbx/soundlang/fa_IR/>\n"
+"Language-Team: Persian (Iran) <http://weblate.freepbx.org/projects/freepbx/"
+"soundlang/fa_IR/>\n"
 "Language: fa_IR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -94,8 +95,12 @@ msgid "Canada"
 msgstr "کانادا"
 
 #: views/customlang.php:126
-msgid "Check all file formats you would like this system recording to be encoded into"
-msgstr "بررسی تمامی فرمت های فایلی که سیستم میتواند تماس های ضبط شده را به آنها تبدیل کند"
+msgid ""
+"Check all file formats you would like this system recording to be encoded "
+"into"
+msgstr ""
+"بررسی تمامی فرمت های فایلی که سیستم میتواند تماس های ضبط شده را به آنها "
+"تبدیل کند"
 
 #: Soundlang.class.php:550
 msgid "China"
@@ -151,7 +156,7 @@ msgstr "در حال حذف..."
 msgid "Description"
 msgstr "توضیحات"
 
-#: install.php:98 install.php:143
+#: install.php:102 install.php:147
 msgid "Done"
 msgstr "انجام شد"
 
@@ -196,7 +201,7 @@ msgstr "فایلها برای بارگذاری"
 msgid "Finish"
 msgstr "پایان"
 
-#: install.php:101
+#: install.php:105
 msgid "Finished installing default sounds"
 msgstr "نصب فایلهای صدای پیشفرض پایان یافت"
 
@@ -260,17 +265,17 @@ msgstr "نصب شده"
 msgid "Installing"
 msgstr ""
 
-#: install.php:95
+#: install.php:99
 #, php-format
 msgid "Installing %s..."
 msgstr "در حال نصب %s..."
 
-#: install.php:120
+#: install.php:124
 #, php-format
 msgid "Installing additional package %s..."
 msgstr "در حال نصب پکیج اضافی %s..."
 
-#: install.php:141
+#: install.php:145
 #, php-format
 msgid "Installing/updating packages for %s..."
 msgstr ""
@@ -351,7 +356,7 @@ msgstr "هلند"
 msgid "New Zealand"
 msgstr "نیوزلند"
 
-#: install.php:88
+#: install.php:92
 msgid "New install, downloading default english language set..."
 msgstr "نصب جدید، در حال دانلود زبان انگلیسی به عنوان پیشفرض..."
 
@@ -468,8 +473,11 @@ msgid "The command provided is not valid"
 msgstr "این دستور نامعتبر است"
 
 #: Soundlang.class.php:485
-msgid "The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in the HTML form"
-msgstr "حجم فایل بارگذاری شده از حداکثر حجم مجاز تعیین شده در فرم HTML بیشتر است"
+msgid ""
+"The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in "
+"the HTML form"
+msgstr ""
+"حجم فایل بارگذاری شده از حداکثر حجم مجاز تعیین شده در فرم HTML بیشتر است"
 
 #: Soundlang.class.php:482
 msgid "The uploaded file exceeds the upload_max_filesize directive in php.ini"
@@ -513,8 +521,13 @@ msgstr "بارگذاری ضبط"
 
 #: views/customlang.php:98
 #, php-format
-msgid "Upload files from your local system. Supported upload formats are: %s. This includes archives (that include multiple files, such as %s) and multiple files"
-msgstr "بارگذاری فایلها از سیستم محلی. فرمت های قابل قبول عبارتند ار: %s. این مورد شامل فایلهای فشرده (چندین فایل، مانند %s) هم میشود"
+msgid ""
+"Upload files from your local system. Supported upload formats are: %s. This "
+"includes archives (that include multiple files, such as %s) and multiple "
+"files"
+msgstr ""
+"بارگذاری فایلها از سیستم محلی. فرمت های قابل قبول عبارتند ار: %s. این مورد "
+"شامل فایلهای فشرده (چندین فایل، مانند %s) هم میشود"
 
 #: Soundlang.class.php:1025
 #, php-format
@@ -530,8 +543,11 @@ msgstr "شکست در باز کردن %s از بایگانی صداها."
 #~ msgid "Copying %s to %s"
 #~ msgstr "در حال کپی کردن %s به %s"
 
-#~ msgid "If you are doing media conversions this can take a very long time, is that ok?"
-#~ msgstr "عملیات تبدیل فایلهای صوتی به یکدیگر زمان بسیاری لازم دارد، اشکالی ندارد؟"
+#~ msgid ""
+#~ "If you are doing media conversions this can take a very long time, is "
+#~ "that ok?"
+#~ msgstr ""
+#~ "عملیات تبدیل فایلهای صوتی به یکدیگر زمان بسیاری لازم دارد، اشکالی ندارد؟"
 
 #~ msgid "Not Found. You will need to install languages manually in the module"
 #~ msgstr "یافت نشد. شما باید به صورت دستی زبان را به این ماژول اضافه کنید"
@@ -545,5 +561,6 @@ msgstr "شکست در باز کردن %s از بایگانی صداها."
 #~ msgid "You must set a valid language code"
 #~ msgstr "شما باید یک کد زبان معتبر وارد کنید"
 
-#~ msgid "failed to delete %s from cache directory after opening sounds archive."
+#~ msgid ""
+#~ "failed to delete %s from cache directory after opening sounds archive."
 #~ msgstr "شکست در حذف %s از دایرکتوری کش بعد از باز کردن بایگانی صداها."
