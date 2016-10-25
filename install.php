@@ -66,8 +66,12 @@ if ($first_install) {
 			('formats', 'ulaw,g722')
 	";
 } else {
-	$db->query("INSERT INTO soundlang_packages (type, module, language, format, version, installed) SELECT type, module, language, format, version, installed FROM soundlang_packs");
-	$db->query("DROP TABLE soundlang_packs");
+	try {
+		$db->query("INSERT INTO soundlang_packages (type, module, language, format, version, installed) SELECT type, module, language, format, version, installed FROM soundlang_packs");
+		$db->query("DROP TABLE soundlang_packs");
+	} catch (\Exception $e) {
+		// Ignore errors
+	}
 }
 
 foreach ($sql as $statement){
