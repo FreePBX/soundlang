@@ -1,6 +1,87 @@
 var deleteCustoms = [],
 files = [];
 
+$(document).ready(function() {
+	$('#formats').multiselect({
+	});
+});
+
+$(document).on("click", 'a[id^="licenselink"]', function(){
+	var langid = $(this).data('langid');
+	$("#langid").val(langid);
+	var langid = $("#langid").val();
+
+	if ($(this).children('i').hasClass('fa-download')){
+		$.ajax({
+			url: "ajax.php",
+			data: {
+				module:'soundlang',
+				command:'licenseText',
+				lang: langid,
+			},
+			type: "GET",
+			dataType: "json",
+			success: function(data){
+				$("#licensetext").text(data.license);
+	
+				$("#licensesub").attr("disabled", false);
+				$("#licensesub").html(_("Accept License Agreement"));
+			},
+			error: function(xhr, status, e){
+				$("#licensesub").attr("disabled", true);
+				$("#licensesub").html(_("License Could Not be Retrieved"));
+	
+				console.dir(xhr);
+				console.log(status);
+				console.log(e);
+			}
+		});
+	} else if ($(this).children('i').hasClass('fa-ban')){
+		$.ajax({
+			url: "ajax.php",
+			data: {
+				module:'soundlang',
+				command:'uninstall',
+				lang: langid,
+			},
+			type: "GET",
+			dataType: "json",
+			success: function(data){
+				location.reload();
+			}
+		});
+	}
+});
+
+$("#licensesub").on("click", function(){
+	var button = $(this);
+	button.html(_('Installing'));
+	button.attr("disabled", true);
+	var langid = $("#langid").val();
+	$.ajax({
+		url: "ajax.php",
+		data: {
+			module:'soundlang',
+			command:'install',
+			lang: langid,
+		},
+		type: "GET",
+		dataType: "json",
+		success: function(data){
+			console.log(data);
+			button.html(data.message);
+			$('#licensemodal').modal('hide');
+
+			location.reload();
+		},
+		error: function(xhr, status, e){
+			console.dir(xhr);
+			console.log(status);
+			console.log(e);
+		}
+	});
+});
+
 $(".btn-remove").click(function() {
 	var type = $(this).data("type"), btn = $(this), section = $(this).data("section");
 	var chosen = $("#table-"+section).bootstrapTable("getSelections");
