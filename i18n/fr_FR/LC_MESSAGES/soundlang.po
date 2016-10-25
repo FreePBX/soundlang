@@ -12,8 +12,7 @@ msgstr ""
 "POT-Creation-Date: 2016-10-25 05:52+0000\n"
 "PO-Revision-Date: 2016-02-04 23:02+0200\n"
 "Last-Translator: Nicolas Riendeau <freepbx@riendeau.org>\n"
-"Language-Team: French <http://weblate.freepbx.org/projects/freepbx/soundlang/"
-"fr_FR/>\n"
+"Language-Team: French <http://weblate.freepbx.org/projects/freepbx/soundlang/fr_FR/>\n"
 "Language: fr_FR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -95,9 +94,7 @@ msgid "Canada"
 msgstr "Canada"
 
 #: views/customlang.php:126
-msgid ""
-"Check all file formats you would like this system recording to be encoded "
-"into"
+msgid "Check all file formats you would like this system recording to be encoded into"
 msgstr ""
 
 #: Soundlang.class.php:550
@@ -356,9 +353,7 @@ msgstr "Nouvelle Zélande"
 
 #: install.php:88
 msgid "New install, downloading default english language set..."
-msgstr ""
-"Il s'agit d'une nouvelle installation, téléchargement des fichiers de langue "
-"anglaise par défaut..."
+msgstr "Il s'agit d'une nouvelle installation, téléchargement des fichiers de langue anglaise par défaut..."
 
 #: assets/js/soundlang.js:199
 msgid "No Suitable files were found in the archive!"
@@ -473,9 +468,7 @@ msgid "The command provided is not valid"
 msgstr "La commande fournie n'est pas valide"
 
 #: Soundlang.class.php:485
-msgid ""
-"The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in "
-"the HTML form"
+msgid "The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in the HTML form"
 msgstr ""
 
 #: Soundlang.class.php:482
@@ -520,10 +513,7 @@ msgstr ""
 
 #: views/customlang.php:98
 #, php-format
-msgid ""
-"Upload files from your local system. Supported upload formats are: %s. This "
-"includes archives (that include multiple files, such as %s) and multiple "
-"files"
+msgid "Upload files from your local system. Supported upload formats are: %s. This includes archives (that include multiple files, such as %s) and multiple files"
 msgstr ""
 
 #: Soundlang.class.php:1025
@@ -531,15 +521,29 @@ msgstr ""
 msgid "failed to open %s sounds archive."
 msgstr "échec d'ouverture de l'archive de sons %s."
 
+#: assets/js/soundlang.js:281
+#, perl-format
+msgid "Copying %s to %s"
+msgstr ""
+
+#: assets/js/soundlang.js:242
+msgid "If you are doing media conversions this can take a very long time, is that ok?"
+msgstr ""
+
+#: assets/js/soundlang.js:279
+#, perl-format
+msgid "Processing %s for %s in format %s"
+msgstr ""
+
+#: assets/js/soundlang.js:229
+msgid "You must set a valid language code"
+msgstr ""
+
 #~ msgid "Add"
 #~ msgstr "Ajouter"
 
 #~ msgid "Not Found. You will need to install languages manually in the module"
-#~ msgstr ""
-#~ "Non trouvés. Vous devrez installer les langues manuellement dans le module"
+#~ msgstr "Non trouvés. Vous devrez installer les langues manuellement dans le module"
 
-#~ msgid ""
-#~ "failed to delete %s from cache directory after opening sounds archive."
-#~ msgstr ""
-#~ "%s n'a pu être supprimé du répertoire de cache après l'ouverture de "
-#~ "l'archive de sons."
+#~ msgid "failed to delete %s from cache directory after opening sounds archive."
+#~ msgstr "%s n'a pu être supprimé du répertoire de cache après l'ouverture de l'archive de sons."
