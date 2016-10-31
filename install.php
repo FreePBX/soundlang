@@ -121,8 +121,16 @@ if($first_install) {
 				// This was already installed above
 				continue;
 			}
-			out(sprintf(_("Installing additional package %s..."),$package['module']."-".$package['format']));
-			$soundlang->installPackage($package['id']);
+			foreach($list as $id => $p) {
+				if($p['language'] == $package['language'] && $p['version'] == $package['version'] && $p['format'] == $package['format']) {
+					$package['id'] = $id;
+					break;
+				}
+			}
+			if(!empty($package['id'])) {
+				out(sprintf(_("Installing additional package %s..."),$package['module']."-".$package['format']));
+				$soundlang->installPackage($package['id']);
+			}
 		}
 	}
 }
@@ -147,4 +155,3 @@ if ($online) {
 		out(_("Done"));
 	}
 }
-

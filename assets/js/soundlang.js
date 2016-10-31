@@ -23,20 +23,21 @@ $(document).on("click", 'a[id^="licenselink"]', function(){
 			dataType: "json",
 			success: function(data){
 				$("#licensetext").text(data.license);
-	
+
 				$("#licensesub").attr("disabled", false);
 				$("#licensesub").html(_("Accept License Agreement"));
 			},
 			error: function(xhr, status, e){
 				$("#licensesub").attr("disabled", true);
 				$("#licensesub").html(_("License Could Not be Retrieved"));
-	
+
 				console.dir(xhr);
 				console.log(status);
 				console.log(e);
 			}
 		});
 	} else if ($(this).children('i').hasClass('fa-ban')){
+		alert(_("Uninstalling. Please wait for the page to refresh"));
 		$.ajax({
 			url: "ajax.php",
 			data: {
@@ -46,9 +47,8 @@ $(document).on("click", 'a[id^="licenselink"]', function(){
 			},
 			type: "GET",
 			dataType: "json",
-			success: function(data){
-				location.reload();
-			}
+		}).always(function() {
+			location.reload();
 		});
 	}
 });

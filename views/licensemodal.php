@@ -14,7 +14,7 @@
 							<div class="row">
 								<div class="form-group">
 									<div class="col-md-12">
-										<pre id="licensetext" name="licensetext"></pre>
+										<pre id="licensetext" name="licensetext"><?php echo _("Loading...")?></pre>
 									</div>
 								</div>
 							</div>

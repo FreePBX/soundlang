@@ -12,8 +12,7 @@ msgstr ""
 "POT-Creation-Date: 2016-10-25 06:07+0000\n"
 "PO-Revision-Date: 2016-07-06 05:16+0200\n"
 "Last-Translator: Media <mousavi.media@gmail.com>\n"
-"Language-Team: Persian (Iran) <http://weblate.freepbx.org/projects/freepbx/"
-"soundlang/fa_IR/>\n"
+"Language-Team: Persian (Iran) <http://weblate.freepbx.org/projects/freepbx/soundlang/fa_IR/>\n"
 "Language: fa_IR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -95,12 +94,8 @@ msgid "Canada"
 msgstr "کانادا"
 
 #: views/customlang.php:126
-msgid ""
-"Check all file formats you would like this system recording to be encoded "
-"into"
-msgstr ""
-"بررسی تمامی فرمت های فایلی که سیستم میتواند تماس های ضبط شده را به آنها "
-"تبدیل کند"
+msgid "Check all file formats you would like this system recording to be encoded into"
+msgstr "بررسی تمامی فرمت های فایلی که سیستم میتواند تماس های ضبط شده را به آنها تبدیل کند"
 
 #: Soundlang.class.php:550
 msgid "China"
@@ -473,11 +468,8 @@ msgid "The command provided is not valid"
 msgstr "این دستور نامعتبر است"
 
 #: Soundlang.class.php:485
-msgid ""
-"The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in "
-"the HTML form"
-msgstr ""
-"حجم فایل بارگذاری شده از حداکثر حجم مجاز تعیین شده در فرم HTML بیشتر است"
+msgid "The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in the HTML form"
+msgstr "حجم فایل بارگذاری شده از حداکثر حجم مجاز تعیین شده در فرم HTML بیشتر است"
 
 #: Soundlang.class.php:482
 msgid "The uploaded file exceeds the upload_max_filesize directive in php.ini"
@@ -521,18 +513,33 @@ msgstr "بارگذاری ضبط"
 
 #: views/customlang.php:98
 #, php-format
-msgid ""
-"Upload files from your local system. Supported upload formats are: %s. This "
-"includes archives (that include multiple files, such as %s) and multiple "
-"files"
-msgstr ""
-"بارگذاری فایلها از سیستم محلی. فرمت های قابل قبول عبارتند ار: %s. این مورد "
-"شامل فایلهای فشرده (چندین فایل، مانند %s) هم میشود"
+msgid "Upload files from your local system. Supported upload formats are: %s. This includes archives (that include multiple files, such as %s) and multiple files"
+msgstr "بارگذاری فایلها از سیستم محلی. فرمت های قابل قبول عبارتند ار: %s. این مورد شامل فایلهای فشرده (چندین فایل، مانند %s) هم میشود"
 
 #: Soundlang.class.php:1025
 #, php-format
 msgid "failed to open %s sounds archive."
 msgstr "شکست در باز کردن %s از بایگانی صداها."
+
+#: views/licensemodal.php:17
+msgid "Loading..."
+msgstr ""
+
+#: assets/js/soundlang.js:40
+msgid "Uninstalling. Please wait for the page to refresh"
+msgstr ""
+
+#~ msgid "Copying %s to %s"
+#~ msgstr "در حال کپی کردن %s به %s"
+
+#~ msgid "If you are doing media conversions this can take a very long time, is that ok?"
+#~ msgstr "عملیات تبدیل فایلهای صوتی به یکدیگر زمان بسیاری لازم دارد، اشکالی ندارد؟"
+
+#~ msgid "Processing %s for %s in format %s"
+#~ msgstr "پردازش %s برای %s در فرمت %s"
+
+#~ msgid "You must set a valid language code"
+#~ msgstr "شما باید یک کد زبان معتبر وارد کنید"
 
 #~ msgid "Add"
 #~ msgstr "افزودن"
@@ -540,27 +547,11 @@ msgstr "شکست در باز کردن %s از بایگانی صداها."
 #~ msgid "Change Global Sound Language"
 #~ msgstr "تغییر صدای زبان عمومی"
 
-#~ msgid "Copying %s to %s"
-#~ msgstr "در حال کپی کردن %s به %s"
-
-#~ msgid ""
-#~ "If you are doing media conversions this can take a very long time, is "
-#~ "that ok?"
-#~ msgstr ""
-#~ "عملیات تبدیل فایلهای صوتی به یکدیگر زمان بسیاری لازم دارد، اشکالی ندارد؟"
-
 #~ msgid "Not Found. You will need to install languages manually in the module"
 #~ msgstr "یافت نشد. شما باید به صورت دستی زبان را به این ماژول اضافه کنید"
-
-#~ msgid "Processing %s for %s in format %s"
-#~ msgstr "پردازش %s برای %s در فرمت %s"
 
 #~ msgid "View Custom Languages"
 #~ msgstr "مشاهده زبانهای سفارشی"
 
-#~ msgid "You must set a valid language code"
-#~ msgstr "شما باید یک کد زبان معتبر وارد کنید"
-
-#~ msgid ""
-#~ "failed to delete %s from cache directory after opening sounds archive."
+#~ msgid "failed to delete %s from cache directory after opening sounds archive."
 #~ msgstr "شکست در حذف %s از دایرکتوری کش بعد از باز کردن بایگانی صداها."
