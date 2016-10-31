@@ -9,11 +9,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-25 06:04+0000\n"
+"POT-Creation-Date: 2016-10-31 12:34-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -118,7 +117,12 @@ msgstr ""
 msgid "Convert To"
 msgstr ""
 
-#: Soundlang.class.php:1026
+#: assets/js/soundlang.js:281
+#, perl-format
+msgid "Copying %s to %s"
+msgstr ""
+
+#: Soundlang.class.php:1025
 #, php-format
 msgid "Could not untar %s to %s"
 msgstr ""
@@ -156,7 +160,7 @@ msgid "Description"
 msgstr ""
 
 #: install.php:102
-#: install.php:147
+#: install.php:155
 msgid "Done"
 msgstr ""
 
@@ -184,7 +188,7 @@ msgstr ""
 msgid "Error: You should never see this"
 msgstr ""
 
-#: Soundlang.class.php:1182
+#: Soundlang.class.php:1181
 #, php-format
 msgid "Failed to get remote file, error was:"
 msgstr ""
@@ -254,6 +258,12 @@ msgstr ""
 msgid "ID"
 msgstr ""
 
+#: assets/js/soundlang.js:242
+msgid ""
+"If you are doing media conversions this can take a very long time, is that "
+"ok?"
+msgstr ""
+
 #: Soundlang.class.php:561
 msgid "India"
 msgstr ""
@@ -271,12 +281,12 @@ msgstr ""
 msgid "Installing %s..."
 msgstr ""
 
-#: install.php:124
+#: install.php:131
 #, php-format
 msgid "Installing additional package %s..."
 msgstr ""
 
-#: install.php:145
+#: install.php:153
 #, php-format
 msgid "Installing/updating packages for %s..."
 msgstr ""
@@ -332,6 +342,10 @@ msgstr ""
 
 #: assets/js/soundlang.js:32
 msgid "License Could Not be Retrieved"
+msgstr ""
+
+#: views/licensemodal.php:17
+msgid "Loading..."
 msgstr ""
 
 #: soundlang.i18n.php:8
@@ -396,6 +410,11 @@ msgstr ""
 
 #: Soundlang.class.php:529
 msgid "Portuguese"
+msgstr ""
+
+#: assets/js/soundlang.js:279
+#, perl-format
+msgid "Processing %s for %s in format %s"
 msgstr ""
 
 #: Soundlang.class.php:257
@@ -509,6 +528,10 @@ msgstr ""
 msgid "Turkish"
 msgstr ""
 
+#: assets/js/soundlang.js:40
+msgid "Uninstalling. Please wait for the page to refresh"
+msgstr ""
+
 #: Soundlang.class.php:557
 msgid "United Kingdom"
 msgstr ""
@@ -537,7 +560,11 @@ msgid ""
 "files"
 msgstr ""
 
-#: Soundlang.class.php:1025
+#: assets/js/soundlang.js:229
+msgid "You must set a valid language code"
+msgstr ""
+
+#: Soundlang.class.php:1024
 #, php-format
 msgid "failed to open %s sounds archive."
 msgstr ""
