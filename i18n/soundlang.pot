@@ -9,13 +9,13 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-25 06:07+0000\n"
+"POT-Creation-Date: 2016-10-31 21:18+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: Soundlang.class.php:500
@@ -50,7 +50,8 @@ msgstr ""
 msgid "Add New Custom Language"
 msgstr ""
 
-#: soundlang.i18n.php:6 soundlang.i18n.php:12
+#: soundlang.i18n.php:6
+#: soundlang.i18n.php:12
 msgid "Admin"
 msgstr ""
 
@@ -92,7 +93,9 @@ msgid "Canada"
 msgstr ""
 
 #: views/customlang.php:126
-msgid "Check all file formats you would like this system recording to be encoded into"
+msgid ""
+"Check all file formats you would like this system recording to be encoded "
+"into"
 msgstr ""
 
 #: Soundlang.class.php:550
@@ -115,12 +118,13 @@ msgstr ""
 msgid "Convert To"
 msgstr ""
 
-#: Soundlang.class.php:1026
+#: Soundlang.class.php:1025
 #, php-format
 msgid "Could not untar %s to %s"
 msgstr ""
 
-#: views/packages.php:8 views/rnav.php:3
+#: views/packages.php:8
+#: views/rnav.php:3
 msgid "Custom Languages"
 msgstr ""
 
@@ -132,7 +136,8 @@ msgstr ""
 msgid "Czech Republic"
 msgstr ""
 
-#: Soundlang.class.php:269 assets/js/soundlang.js:96
+#: Soundlang.class.php:269
+#: assets/js/soundlang.js:96
 #: assets/js/soundlang.js:102
 msgid "Delete"
 msgstr ""
@@ -145,11 +150,13 @@ msgstr ""
 msgid "Deleting..."
 msgstr ""
 
-#: views/customlang.php:55 views/customlangs.php:22
+#: views/customlang.php:55
+#: views/customlangs.php:22
 msgid "Description"
 msgstr ""
 
-#: install.php:102 install.php:147
+#: install.php:102
+#: install.php:155
 msgid "Done"
 msgstr ""
 
@@ -177,7 +184,7 @@ msgstr ""
 msgid "Error: You should never see this"
 msgstr ""
 
-#: Soundlang.class.php:1182
+#: Soundlang.class.php:1181
 #, php-format
 msgid "Failed to get remote file, error was:"
 msgstr ""
@@ -198,7 +205,8 @@ msgstr ""
 msgid "Finished installing default sounds"
 msgstr ""
 
-#: assets/js/soundlang.js:312 assets/js/soundlang.js:317
+#: assets/js/soundlang.js:312
+#: assets/js/soundlang.js:317
 msgid "Finished!"
 msgstr ""
 
@@ -263,12 +271,12 @@ msgstr ""
 msgid "Installing %s..."
 msgstr ""
 
-#: install.php:124
+#: install.php:131
 #, php-format
 msgid "Installing additional package %s..."
 msgstr ""
 
-#: install.php:145
+#: install.php:153
 #, php-format
 msgid "Installing/updating packages for %s..."
 msgstr ""
@@ -297,7 +305,8 @@ msgstr ""
 msgid "Japanese"
 msgstr ""
 
-#: views/customlangs.php:21 views/packages.php:13
+#: views/customlangs.php:21
+#: views/packages.php:13
 msgid "Language"
 msgstr ""
 
@@ -323,6 +332,10 @@ msgstr ""
 
 #: assets/js/soundlang.js:32
 msgid "License Could Not be Retrieved"
+msgstr ""
+
+#: views/licensemodal.php:17
+msgid "Loading..."
 msgstr ""
 
 #: soundlang.i18n.php:8
@@ -389,7 +402,9 @@ msgstr ""
 msgid "Portuguese"
 msgstr ""
 
-#: Soundlang.class.php:257 Soundlang.class.php:274 Soundlang.class.php:286
+#: Soundlang.class.php:257
+#: Soundlang.class.php:274
+#: Soundlang.class.php:286
 msgid "Reset"
 msgstr ""
 
@@ -397,7 +412,9 @@ msgstr ""
 msgid "Russian"
 msgstr ""
 
-#: views/packages.php:7 views/rnav.php:4 views/settings.php:4
+#: views/packages.php:7
+#: views/rnav.php:4
+#: views/settings.php:4
 msgid "Settings"
 msgstr ""
 
@@ -405,7 +422,8 @@ msgstr ""
 msgid "Sound Language Prompts"
 msgstr ""
 
-#: soundlang.i18n.php:4 soundlang.i18n.php:10
+#: soundlang.i18n.php:4
+#: soundlang.i18n.php:10
 msgid "Sound Languages"
 msgstr ""
 
@@ -421,7 +439,9 @@ msgstr ""
 msgid "Spanish"
 msgstr ""
 
-#: Soundlang.class.php:262 Soundlang.class.php:279 Soundlang.class.php:291
+#: Soundlang.class.php:262
+#: Soundlang.class.php:279
+#: Soundlang.class.php:291
 msgid "Submit"
 msgstr ""
 
@@ -456,17 +476,21 @@ msgstr ""
 msgid "Taiwan"
 msgstr ""
 
-#: Console/Soundlang.class.php:54 Console/Soundlang.class.php:68
+#: Console/Soundlang.class.php:54
+#: Console/Soundlang.class.php:68
 #: Console/Soundlang.class.php:95
 msgid "That is not a valid ID"
 msgstr ""
 
-#: Console/Soundlang.class.php:49 Console/Soundlang.class.php:63
+#: Console/Soundlang.class.php:49
+#: Console/Soundlang.class.php:63
 msgid "The command provided is not valid"
 msgstr ""
 
 #: Soundlang.class.php:485
-msgid "The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in the HTML form"
+msgid ""
+"The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in "
+"the HTML form"
 msgstr ""
 
 #: Soundlang.class.php:482
@@ -487,6 +511,10 @@ msgstr ""
 
 #: Soundlang.class.php:532
 msgid "Turkish"
+msgstr ""
+
+#: assets/js/soundlang.js:40
+msgid "Uninstalling. Please wait for the page to refresh"
 msgstr ""
 
 #: Soundlang.class.php:557
@@ -511,36 +539,13 @@ msgstr ""
 
 #: views/customlang.php:98
 #, php-format
-msgid "Upload files from your local system. Supported upload formats are: %s. This includes archives (that include multiple files, such as %s) and multiple files"
+msgid ""
+"Upload files from your local system. Supported upload formats are: %s. This "
+"includes archives (that include multiple files, such as %s) and multiple "
+"files"
 msgstr ""
 
-#: Soundlang.class.php:1025
+#: Soundlang.class.php:1024
 #, php-format
 msgid "failed to open %s sounds archive."
-msgstr ""
-
-#: assets/js/soundlang.js:281
-#, perl-format
-msgid "Copying %s to %s"
-msgstr ""
-
-#: assets/js/soundlang.js:242
-msgid "If you are doing media conversions this can take a very long time, is that ok?"
-msgstr ""
-
-#: views/licensemodal.php:17
-msgid "Loading..."
-msgstr ""
-
-#: assets/js/soundlang.js:279
-#, perl-format
-msgid "Processing %s for %s in format %s"
-msgstr ""
-
-#: assets/js/soundlang.js:40
-msgid "Uninstalling. Please wait for the page to refresh"
-msgstr ""
-
-#: assets/js/soundlang.js:229
-msgid "You must set a valid language code"
 msgstr ""

@@ -9,10 +9,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-25 06:07+0000\n"
+"POT-Creation-Date: 2016-10-31 21:18+0000\n"
 "PO-Revision-Date: 2016-02-04 23:02+0200\n"
 "Last-Translator: Nicolas Riendeau <freepbx@riendeau.org>\n"
-"Language-Team: French <http://weblate.freepbx.org/projects/freepbx/soundlang/fr_FR/>\n"
+"Language-Team: French <http://weblate.freepbx.org/projects/freepbx/soundlang/"
+"fr_FR/>\n"
 "Language: fr_FR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -94,7 +95,9 @@ msgid "Canada"
 msgstr "Canada"
 
 #: views/customlang.php:126
-msgid "Check all file formats you would like this system recording to be encoded into"
+msgid ""
+"Check all file formats you would like this system recording to be encoded "
+"into"
 msgstr ""
 
 #: Soundlang.class.php:550
@@ -117,7 +120,7 @@ msgstr ""
 msgid "Convert To"
 msgstr ""
 
-#: Soundlang.class.php:1026
+#: Soundlang.class.php:1025
 #, php-format
 msgid "Could not untar %s to %s"
 msgstr "Ne peut décompresser %s vers %s"
@@ -151,7 +154,7 @@ msgstr "Suppression en cours..."
 msgid "Description"
 msgstr "Description"
 
-#: install.php:102 install.php:147
+#: install.php:102 install.php:155
 msgid "Done"
 msgstr "Terminé"
 
@@ -179,7 +182,7 @@ msgstr "Anglais"
 msgid "Error: You should never see this"
 msgstr "Erreur : Vous ne devriez jamais voir ceci"
 
-#: Soundlang.class.php:1182
+#: Soundlang.class.php:1181
 #, php-format
 msgid "Failed to get remote file, error was:"
 msgstr "Échec lors de l'obtention du fichier distant, l'erreur était :"
@@ -265,12 +268,12 @@ msgstr ""
 msgid "Installing %s..."
 msgstr ""
 
-#: install.php:124
+#: install.php:131
 #, php-format
 msgid "Installing additional package %s..."
 msgstr ""
 
-#: install.php:145
+#: install.php:153
 #, php-format
 msgid "Installing/updating packages for %s..."
 msgstr ""
@@ -327,6 +330,10 @@ msgstr ""
 msgid "License Could Not be Retrieved"
 msgstr ""
 
+#: views/licensemodal.php:17
+msgid "Loading..."
+msgstr ""
+
 #: soundlang.i18n.php:8
 msgid "Management of sound prompt languages."
 msgstr "Gestion des langues de message."
@@ -353,7 +360,9 @@ msgstr "Nouvelle Zélande"
 
 #: install.php:92
 msgid "New install, downloading default english language set..."
-msgstr "Il s'agit d'une nouvelle installation, téléchargement des fichiers de langue anglaise par défaut..."
+msgstr ""
+"Il s'agit d'une nouvelle installation, téléchargement des fichiers de langue "
+"anglaise par défaut..."
 
 #: assets/js/soundlang.js:199
 msgid "No Suitable files were found in the archive!"
@@ -468,7 +477,9 @@ msgid "The command provided is not valid"
 msgstr "La commande fournie n'est pas valide"
 
 #: Soundlang.class.php:485
-msgid "The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in the HTML form"
+msgid ""
+"The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in "
+"the HTML form"
 msgstr ""
 
 #: Soundlang.class.php:482
@@ -489,6 +500,10 @@ msgstr ""
 
 #: Soundlang.class.php:532
 msgid "Turkish"
+msgstr ""
+
+#: assets/js/soundlang.js:40
+msgid "Uninstalling. Please wait for the page to refresh"
 msgstr ""
 
 #: Soundlang.class.php:557
@@ -513,45 +528,26 @@ msgstr ""
 
 #: views/customlang.php:98
 #, php-format
-msgid "Upload files from your local system. Supported upload formats are: %s. This includes archives (that include multiple files, such as %s) and multiple files"
+msgid ""
+"Upload files from your local system. Supported upload formats are: %s. This "
+"includes archives (that include multiple files, such as %s) and multiple "
+"files"
 msgstr ""
 
-#: Soundlang.class.php:1025
+#: Soundlang.class.php:1024
 #, php-format
 msgid "failed to open %s sounds archive."
 msgstr "échec d'ouverture de l'archive de sons %s."
-
-#: assets/js/soundlang.js:281
-#, perl-format
-msgid "Copying %s to %s"
-msgstr ""
-
-#: assets/js/soundlang.js:242
-msgid "If you are doing media conversions this can take a very long time, is that ok?"
-msgstr ""
-
-#: views/licensemodal.php:17
-msgid "Loading..."
-msgstr ""
-
-#: assets/js/soundlang.js:279
-#, perl-format
-msgid "Processing %s for %s in format %s"
-msgstr ""
-
-#: assets/js/soundlang.js:40
-msgid "Uninstalling. Please wait for the page to refresh"
-msgstr ""
-
-#: assets/js/soundlang.js:229
-msgid "You must set a valid language code"
-msgstr ""
 
 #~ msgid "Add"
 #~ msgstr "Ajouter"
 
 #~ msgid "Not Found. You will need to install languages manually in the module"
-#~ msgstr "Non trouvés. Vous devrez installer les langues manuellement dans le module"
+#~ msgstr ""
+#~ "Non trouvés. Vous devrez installer les langues manuellement dans le module"
 
-#~ msgid "failed to delete %s from cache directory after opening sounds archive."
-#~ msgstr "%s n'a pu être supprimé du répertoire de cache après l'ouverture de l'archive de sons."
+#~ msgid ""
+#~ "failed to delete %s from cache directory after opening sounds archive."
+#~ msgstr ""
+#~ "%s n'a pu être supprimé du répertoire de cache après l'ouverture de "
+#~ "l'archive de sons."
