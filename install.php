@@ -155,4 +155,3 @@ if ($online) {
 		out(_("Done"));
 	}
 }
-

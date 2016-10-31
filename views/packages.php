@@ -29,7 +29,7 @@
 									}
 
 								?>
-									<a href="config.php?display=soundlang&action=language&lang=<?php echo $language; ?>"><?php echo $name; ?></a>
+									<a href="config.php?display=soundlang&amp;action=language&amp;lang=<?php echo $language; ?>"><?php echo $name; ?></a>
 								</td>
 								<td>
 								<?php
