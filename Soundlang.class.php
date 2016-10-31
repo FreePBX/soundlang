@@ -638,15 +638,7 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 			}
 		}
 
-		$customlangs = array();
-		$customs = $this->getCustomLanguages();
-		if (!empty($customs)) {
-			foreach ($customs as $customlang) {
-				$customlangs[$customlang['language']] = $customlang['description'];
-			}
-		}
-
-		$languages = array_merge($packagelangs, $customlangs);
+		$languages = $packagelangs;
 		if (empty($languages)) {
 			$languages = array('en' => $names['en']);
 		}
@@ -666,6 +658,13 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 				if (!empty($package['installed'])) {
 					$installed[$package['language']] = $languages[$package['language']];
 				}
+			}
+		}
+
+		$customs = $this->getCustomLanguages();
+		if (!empty($customs)) {
+			foreach ($customs as $customlang) {
+				$installed[$customlang['language']] = $customlang['description'];
 			}
 		}
 
