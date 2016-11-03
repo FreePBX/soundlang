@@ -69,7 +69,7 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 		$request = $_REQUEST;
 		$action = !empty($request['action']) ? $request['action'] : '';
 
-		$html .= load_view(dirname(__FILE__).'/views/main.php', array('message' => $this->message));
+		$html = load_view(dirname(__FILE__).'/views/main.php', array('message' => $this->message));
 
 		switch ($action) {
 		case 'settings':
@@ -922,6 +922,7 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 			$sth = $this->db->prepare($sql);
 			foreach ($available as $package) {
 				$id = NULL;
+				$package['installed'] = NULL;
 				foreach ($packages as $k => $v) {
 					if ($package['type'] == $v['type'] && $package['module'] == $v['module'] && $package['language'] == $v['language'] && $package['format'] == $v['format']) {
 						/* Package already exists.  Use existing id/installed version. */
@@ -935,9 +936,9 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 					':type' => $package['type'],
 					':module' => $package['module'],
 					':language' => $package['language'],
-					':license' => $package['license'],
-					':author' => $package['author'],
-					':authorlink' => $package['authorlink'],
+					':license' => isset($package['license'])?$package['license']:'',
+					':author' => isset($package['author'])?$package['author']:'',
+					':authorlink' => isset($package['authorlink'])?$package['authorlink']:'',
 					':format' => $package['format'],
 					':version' => $package['version'],
 					':installed' => $package['installed'],
