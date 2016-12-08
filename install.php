@@ -155,3 +155,10 @@ if ($online) {
 		out(_("Done"));
 	}
 }
+
+$o = \FreePBX::OOBE();
+$c = $o->getConfig('completed');
+if(!empty($c) && is_array($c)) {
+	$c['soundlang'] = 'soundlang';
+	$o->setConfig('completed',$c);
+}

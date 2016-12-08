@@ -2,11 +2,12 @@
 	<rawname>soundlang</rawname>
 	<repo>standard</repo>
 	<name>Sound Languages</name>
-	<version>13.0.23.4</version>
+	<version>13.0.23.5</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
 	<changelog>
+		*13.0.23.5* Add OOBE to select Timezones and languages
 		*13.0.23.4* FREEPBX-13488 cant set global to custom, FREEPBX-13468 already installed not detecting on first install
 		*13.0.23.3* Fix potential crash on upgrade
 		*13.0.23.2* Require core
@@ -48,6 +49,7 @@
 		<module>core 13.0.114.2</module>
 		<version>13.0.0</version>
 	</depends>
+	<oobe method="oobeHook" priority="150" />
 	<menuitems>
 		<soundlang>Sound Languages</soundlang>
 	</menuitems>

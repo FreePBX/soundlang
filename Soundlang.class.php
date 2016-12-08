@@ -51,6 +51,12 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 
 	}
 
+	public function oobeHook() {
+		include __DIR__.'/Oobe.class.php';
+		$o = new Soundlang\OOBE($this);
+		return $o->oobeRequest();
+	}
+
 	public function doDialplanHook(&$ext, $engine, $priority) {
 		$language = $this->getLanguage();
 		if ($language != "") {
@@ -310,6 +316,7 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 			case "install":
 			case "uninstall":
 			case "licenseText":
+			case "oobe":
 				return true;
 			break;
 			default:
@@ -324,6 +331,10 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 	public function ajaxHandler(){
 		$request = $_REQUEST;
 		switch($request['command']){
+			case "oobe":
+				set_time_limit(0);
+				return array("status" => true);
+			break;
 			case "install":
 				$this->installLanguage($request['lang']);
 				return array("status" => true);
