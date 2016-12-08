@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-07 20:41-0800\n"
+"POT-Creation-Date: 2016-12-07 21:06-0800\n"
 "PO-Revision-Date: 2016-11-25 04:11+0200\n"
 "Last-Translator: Pascal <pascal.noyel@ipexia.com>\n"
 "Language-Team: French <http://weblate.freepbx.org/projects/freepbx/soundlang/"
@@ -78,7 +78,7 @@ msgstr ""
 msgid "Available"
 msgstr "Disponible"
 
-#: views/oobe.php:3
+#: views/oobe.php:5
 msgid "Based on your locale your language and timezone have been pre-selected."
 msgstr ""
 
@@ -399,7 +399,7 @@ msgstr ""
 msgid "Norwegian"
 msgstr ""
 
-#: views/oobe.php:2
+#: views/oobe.php:4
 msgid "Please Select the default locales of the PBX"
 msgstr ""
 
@@ -444,7 +444,7 @@ msgstr "Messages de langue"
 msgid "Sound Languages"
 msgstr "Langues"
 
-#: views/oobe.php:6
+#: views/oobe.php:15
 msgid "Sound Prompts Language"
 msgstr ""
 
@@ -461,7 +461,7 @@ msgid "Spanish"
 msgstr "Espagnol"
 
 #: Soundlang.class.php:268 Soundlang.class.php:285 Soundlang.class.php:297
-#: views/oobe.php:32
+#: views/oobe.php:89
 msgid "Submit"
 msgstr "Envoyer"
 
@@ -492,7 +492,7 @@ msgstr "Suèdois"
 msgid "Switzerland"
 msgstr "Suisse"
 
-#: views/oobe.php:15
+#: views/oobe.php:41
 msgid "System Language"
 msgstr ""
 
@@ -527,25 +527,25 @@ msgstr ""
 msgid "There was an error, See the console for more details"
 msgstr ""
 
-#: views/oobe.php:21
+#: views/oobe.php:57
 msgid ""
 "This language will be used for the GUI and CLI commands for your PBX. You "
 "can change it later by navigating to 'Advanced Settings'"
 msgstr ""
 
-#: views/oobe.php:12
+#: views/oobe.php:31
 msgid ""
 "This language will be used for the prompts when you call in to your PBX. You "
 "can change it later by navigating to the 'Sound Languages' module"
 msgstr ""
 
-#: views/oobe.php:30
+#: views/oobe.php:83
 msgid ""
 "This will set the global timezone for the PBX. You can change it later by "
 "navigating to 'Advanced Settings'"
 msgstr ""
 
-#: views/oobe.php:24
+#: views/oobe.php:67
 msgid "Timezone"
 msgstr ""
 
