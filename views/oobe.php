@@ -1,36 +1,95 @@
-<div class='container-fluid'>
-	<h2><?php echo _("Please Select the default locales of the PBX"); ?></h2>
-	<h3><?php echo _("Based on your locale your language and timezone have been pre-selected.")?></h3>
-	<form method="post" id="localeForm">
-		<div class="form-group">
-			<label for="oobeSoundLang"><?php echo _('Sound Prompts Language')?></label>
-			<select class="form-control" id="oobeSoundLang" name="oobeSoundLang">
-			<?php foreach($langs as $key => $lang) {?>
-				<option value="<?php echo $key?>"><?php echo $lang?></option>
-			<?php } ?>
-			</select>
-			<p><?php echo _("This language will be used for the prompts when you call in to your PBX. You can change it later by navigating to the 'Sound Languages' module")?></p>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-sm-12">
+			<h2><?php echo _("Please Select the default locales of the PBX"); ?></h2>
+			<h3><?php echo _("Based on your locale your language and timezone have been pre-selected.")?></h3>
+			<div class="fpbx-container">
+				<div class="display full-border">
+					<form method="POST" id="localeForm">
+						<div class="element-container">
+							<div class="row">
+								<div class="col-md-12">
+									<div class="row">
+										<div class="form-group">
+											<div class="col-md-3">
+												<label class="control-label" for="oobeSoundLang"><?php echo _('Sound Prompts Language')?></label>
+												<i class="fa fa-question-circle fpbx-help-icon" data-for="oobeSoundLang"></i>
+											</div>
+											<div class="col-md-9">
+												<select class="form-control" id="oobeSoundLang" name="oobeSoundLang">
+												<?php foreach($langs as $key => $lang) {?>
+													<option value="<?php echo $key?>"><?php echo $lang?></option>
+												<?php } ?>
+												</select>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-12">
+									<span id="oobeSoundLang-help" class="help-block fpbx-help-block"><?php echo _("This language will be used for the prompts when you call in to your PBX. You can change it later by navigating to the 'Sound Languages' module")?></span>
+								</div>
+							</div>
+						</div>
+						<div class="element-container">
+							<div class="row">
+								<div class="col-md-12">
+									<div class="row">
+										<div class="form-group">
+											<div class="col-md-3">
+												<label class="control-label" for="oobeGuiLang"><?php echo _('System Language')?></label>
+												<i class="fa fa-question-circle fpbx-help-icon" data-for="oobeGuiLang"></i>
+											</div>
+											<div class="col-md-9">
+												<select class="form-control" id="oobeGuiLang" name="oobeGuiLang">
+													<?php foreach($langlist as $key => $value) {?>
+														<option value="<?php echo $key?>"><?php echo $value?></option>
+													<?php } ?>
+												</select>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-12">
+									<span id="oobeGuiLang-help" class="help-block fpbx-help-block"><?php echo _("This language will be used for the GUI and CLI commands for your PBX. You can change it later by navigating to 'Advanced Settings'")?></span>
+								</div>
+							</div>
+						</div>
+						<div class="element-container">
+							<div class="row">
+								<div class="col-md-12">
+									<div class="row">
+										<div class="form-group">
+											<div class="col-md-3">
+												<label class="control-label" for="oobeTimezone"><?php echo _('Timezone')?></label>
+												<i class="fa fa-question-circle fpbx-help-icon" data-for="oobeTimezone"></i>
+											</div>
+											<div class="col-md-9">
+												<select class="form-control" id="oobeTimezone" name="oobeTimezone">
+												<?php foreach($timezones as $key => $value) {?>
+													<option value="<?php echo $key?>"><?php echo $value?></option>
+												<?php } ?>
+												</select>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-12">
+									<span id="oobeTimezone-help" class="help-block fpbx-help-block"><?php echo _("This will set the global timezone for the PBX. You can change it later by navigating to 'Advanced Settings'")?></span>
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
+				<button id="submitOobe" class="btn btn-default"><?php echo _("Submit")?></button>
+			</div>
 		</div>
-		<div class="form-group">
-			<label for="oobeGuiLang"><?php echo _('System Language')?></label>
-			<select class="form-control" id="oobeGuiLang" name="oobeGuiLang">
-			<?php foreach($langlist as $key => $value) {?>
-				<option value="<?php echo $key?>"><?php echo $value?></option>
-			<?php } ?>
-			</select>
-			<p><?php echo _("This language will be used for the GUI and CLI commands for your PBX. You can change it later by navigating to 'Advanced Settings'")?></p>
-		</div>
-		<div class="form-group">
-			<label for="oobeTimezone"><?php echo _('Timezone')?></label>
-			<select class="form-control" id="oobeTimezone" name="oobeTimezone">
-			<?php foreach($timezones as $key => $value) {?>
-				<option value="<?php echo $key?>"><?php echo $value?></option>
-			<?php } ?>
-			</select>
-			<p><?php echo _("This will set the global timezone for the PBX. You can change it later by navigating to 'Advanced Settings'")?></p>
-		</div>
-		<button id="submitOobe" class="btn btn-default"><?php echo _("Submit")?></button>
-	</form>
+	</div>
 </div>
 <script>
 	/* jstz.min.js Version: 1.0.6 Build date: 2015-11-04 */
@@ -52,6 +111,15 @@
 		$("#oobeSoundLang").val(oobeSoundLanguage);
 	}
 	$("#submitOobe").click(function(e) {
+		if($("#oobeGuiLang").val() === "") {
+			return warnInvalid($("#oobeGuiLang"),_("Please select a valid language"));
+		}
+		if($("#oobeTimezone").val() === "") {
+			return warnInvalid($("#oobeTimezone"),_("Please select a valid timezone"));
+		}
+		if($("#oobeSoundLang").val() === "") {
+			return warnInvalid($("#oobeSoundLang"),_("Please select a valid language"));
+		}
 		$.cookie("lang",$("#oobeGuiLang").val());
 		$(this).prop("disabled",true);
 		$(this).text(_("Processing. This may take some time. Please be patient"));
