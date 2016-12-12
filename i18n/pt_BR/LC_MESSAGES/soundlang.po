@@ -10,17 +10,20 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-12-07 21:06-0800\n"
-"PO-Revision-Date: 2016-12-07 21:06-0800\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2016-12-12 04:50+0200\n"
+"Last-Translator: Alexander <alexander.schley@paranagua.pr.gov.br>\n"
+"Language-Team: Portuguese (Brazil) "
+"<http://weblate.freepbx.org/projects/freepbx/soundlang/pt_BR/>\n"
+"Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2.4\n"
 
 #: Soundlang.class.php:511
 msgid "A PHP extension stopped the file upload"
-msgstr ""
+msgstr "Uma extensão PHP parou o carregamento do arquivo"
 
 #: views/customlang.php:67
 msgid "A brief description for this Custom Language."
@@ -40,7 +43,7 @@ msgstr ""
 
 #: views/packages.php:15
 msgid "Actions"
-msgstr ""
+msgstr "Ações"
 
 #: views/customlang.php:6
 msgid "Add Custom Language"
@@ -89,7 +92,7 @@ msgstr ""
 
 #: views/customlang.php:83
 msgid "Browse"
-msgstr ""
+msgstr "Visualizar"
 
 #: Soundlang.class.php:559
 msgid "Canada"
