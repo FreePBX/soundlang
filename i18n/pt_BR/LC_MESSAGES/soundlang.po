@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-12-15 09:25-0600\n"
-"PO-Revision-Date: 2016-12-16 01:50+0200\n"
+"PO-Revision-Date: 2016-12-16 21:59+0200\n"
 "Last-Translator: Alexander <alexander.schley@paranagua.pr.gov.br>\n"
 "Language-Team: Portuguese (Brazil) "
 "<http://weblate.freepbx.org/projects/freepbx/soundlang/pt_BR/>\n"
@@ -103,6 +103,8 @@ msgid ""
 "Check all file formats you would like this system recording to be encoded "
 "into"
 msgstr ""
+"Verifique todos os formatos de arquivo em que você gostaria que esta "
+"gravação do sistema fossem codificados"
 
 #: Soundlang.class.php:562
 msgid "China"
@@ -122,12 +124,12 @@ msgstr ""
 
 #: views/customlang.php:110
 msgid "Convert To"
-msgstr ""
+msgstr "Converter Para"
 
 #: assets/js/soundlang.js:281
 #, perl-format
 msgid "Copying %s to %s"
-msgstr ""
+msgstr "Copiando  %s para %s"
 
 #: Soundlang.class.php:1040
 #, php-format
@@ -173,7 +175,7 @@ msgstr ""
 
 #: views/customlang.php:91
 msgid "Drop Multiple Files or Archives Here"
-msgstr ""
+msgstr "Solte Vários Arquivos ou Arquivos Compactados Aqui"
 
 #: Soundlang.class.php:538
 msgid "Dutch"
@@ -214,7 +216,7 @@ msgstr ""
 
 #: assets/js/soundlang.js:312 assets/js/soundlang.js:317
 msgid "Finished!"
-msgstr ""
+msgstr "Concluído!"
 
 #: Soundlang.class.php:567
 msgid "Finland"
@@ -265,6 +267,8 @@ msgid ""
 "If you are doing media conversions this can take a very long time, is that "
 "ok?"
 msgstr ""
+"Se você estiver fazendo conversões de mídia isso poderá levar muito tempo, "
+"ok?"
 
 #: Soundlang.class.php:573
 msgid "India"
@@ -363,7 +367,7 @@ msgstr ""
 
 #: Soundlang.class.php:505
 msgid "Missing a temporary folder"
-msgstr ""
+msgstr "Faltando uma pasta temporária"
 
 #: views/language.php:11
 msgid "Module"
@@ -387,7 +391,7 @@ msgstr ""
 
 #: Soundlang.class.php:502
 msgid "No file was uploaded"
-msgstr ""
+msgstr "Nenhum arquivo foi carregado"
 
 #: Soundlang.class.php:419
 msgid "No files were sent to the server"
@@ -428,7 +432,7 @@ msgstr ""
 #: assets/js/soundlang.js:279
 #, perl-format
 msgid "Processing %s for %s in format %s"
-msgstr ""
+msgstr "Processando %s para %s no formato %s"
 
 #: Soundlang.class.php:263 Soundlang.class.php:280 Soundlang.class.php:292
 msgid "Reset"
@@ -448,7 +452,7 @@ msgstr ""
 
 #: soundlang.i18n.php:4 soundlang.i18n.php:10
 msgid "Sound Languages"
-msgstr ""
+msgstr "Idiomas de Som"
 
 #: views/oobe.php:15
 msgid "Sound Prompts Language"
@@ -520,18 +524,20 @@ msgid ""
 "The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in "
 "the HTML form"
 msgstr ""
+"O arquivo enviado excede a diretiva MAX_FILE_SIZE que foi especificada no "
+"formulário HTML"
 
 #: Soundlang.class.php:493
 msgid "The uploaded file exceeds the upload_max_filesize directive in php.ini"
-msgstr ""
+msgstr "O arquivo carregado excede a diretiva upload_max_filesize no php.ini"
 
 #: Soundlang.class.php:499
 msgid "The uploaded file was only partially uploaded"
-msgstr ""
+msgstr "O arquivo enviado foi carregado parcialmente"
 
 #: assets/js/soundlang.js:307
 msgid "There was an error, See the console for more details"
-msgstr ""
+msgstr "Ocorreu um erro, consulte o console para obter mais detalhes"
 
 #: views/oobe.php:57
 msgid ""
