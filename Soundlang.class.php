@@ -104,12 +104,13 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 			break;
 		case '':
 		case 'packages':
-			$this->getOnlinePackages();
+			try {
+				$online = $this->getOnlinePackages();
+			} catch(\Exception $e) {
+				$html .= '<div class="alert alert-danger text-center">'.sprintf(_("Unable to get online sound packages. Error was: [%s] %s"),$e->getCode(), $e->getMessage()).'</div>';
+			}
 
 			$packages = $this->getPackages();
-			if (empty($packages)) {
-				break;
-			}
 
 			$formats = $this->getFormatPref();
 
@@ -350,10 +351,14 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 				foreach ($packages as $package) {
 					if ($package['language'] == $request['lang']) {
 						$filename = $package['type'] . '-' . $package['module'] . '-' . $package['language'] . '-license.txt';
-						$filedata = $this->getRemoteFile("/sounds/" . $filename);
-						if (!empty($filedata)) {
-							return array("status" => true, "license" => $filedata);
-						} else {
+						try {
+							$filedata = $this->getRemoteFile("/sounds/" . $filename);
+							if (!empty($filedata)) {
+								return array("status" => true, "license" => $filedata);
+							} else {
+								return array("status" => true);
+							}
+						} catch(\Exception $e) {
 							return array("status" => true);
 						}
 					}
@@ -1180,21 +1185,33 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 		$params['sv'] = 2; // Stats version
 		$params['soundlangver'] = 2;
 
+		$exceptions = array();
 		foreach($mirrors['mirrors'] as $url) {
+			$url = "http://thingfdsfdfdsfdsf.com";
 			set_time_limit($this->maxTimeLimit);
 
-			try{
-				$pest = \FreePBX::Curl()->pest($url);
+			$pest = \FreePBX::Curl()->pest($url);
+			try {
 				$contents = $pest->post($url . $path, $params);
-				if (isset($pest->last_headers['x-regenerate-id'])) {
-					$modulef->_regenerate_unique_id();
-				}
-				if (!empty($contents)) {
-					return $contents;
-				}
-			} catch (\Exception $e) {
-				freepbx_log(FPBX_LOG_ERROR, sprintf(_('Failed to get remote file, error was:'), (string)$e->getMessage()));
+			} catch(\Exception $e) {
+				$exceptions[] = $e;
 			}
+			if (!empty($contents)) {
+				return $contents;
+			}
+		}
+		if(!empty($exceptions)) {
+			$message = '';
+			$code = '';
+			foreach($exceptions as $e) {
+				$message .= $e->getMessage() . ", ";
+				$code = $e->getCode();
+			}
+			$message = rtrim(trim($message),",");
+
+			throw new \Exception($message,$code);
+		} else {
+			throw new \Exception(sprtinf(_("Unknown Error. Response was empty from %s"),json_encode($mirrors['mirrors'])),0);
 		}
 	}
 	public function getRightNav($request) {

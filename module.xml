@@ -2,11 +2,12 @@
 	<rawname>soundlang</rawname>
 	<repo>standard</repo>
 	<name>Sound Languages</name>
-	<version>13.0.24</version>
+	<version>13.0.24.1</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
 	<changelog>
+		*13.0.24.1* Fix blank page issues if urls are not accessible
 		*13.0.24* Add additional language and location names
 		*13.0.23.6* Make OOBE look nicer
 		*13.0.23.5* Add OOBE to select Timezones and languages

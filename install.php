@@ -82,12 +82,19 @@ foreach ($sql as $statement){
 }
 
 $soundlang = \FreePBX::create()->Soundlang;
-$online = $soundlang->getOnlinePackages();
+try {
+	$online = $soundlang->getOnlinePackages();
+} catch(\Exception $e) {
+	out(sprintf(_("Unable to get online sound packages. Error was: [%s] %s. Continuing..."),$e->getCode(), $e->getMessage()));
+	$online = false;
+}
+
 
 if($first_install) {
 	$vlsd = FreePBX::Config()->get("ASTVARLIBDIR")."/sounds";
 
 	$alreadyinstalled = array();
+	$list = array();
 	if($online) {
 		out(_("New install, downloading default english language set..."));
 		$list = $soundlang->getPackages();
