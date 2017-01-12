@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-12 10:57-0800\n"
+"POT-Creation-Date: 2017-01-12 11:15-0800\n"
 "PO-Revision-Date: 2016-11-25 04:11+0200\n"
 "Last-Translator: Pascal <pascal.noyel@ipexia.com>\n"
 "Language-Team: French <http://weblate.freepbx.org/projects/freepbx/soundlang/"
@@ -582,7 +582,7 @@ msgstr "Royaume-Uni"
 msgid "United States"
 msgstr "États-Unis"
 
-#: Soundlang.class.php:1214
+#: Soundlang.class.php:1213
 #, php-format
 msgid "Unknown Error. Response was empty from %s"
 msgstr ""

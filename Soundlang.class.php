@@ -1187,7 +1187,6 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 
 		$exceptions = array();
 		foreach($mirrors['mirrors'] as $url) {
-			$url = "http://thingfdsfdfdsfdsf.com";
 			set_time_limit($this->maxTimeLimit);
 
 			$pest = \FreePBX::Curl()->pest($url);
