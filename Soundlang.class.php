@@ -317,6 +317,7 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 			case "install":
 			case "uninstall":
 			case "licenseText":
+			case "deletetemps":
 			case "oobe":
 				return true;
 			break;
@@ -373,10 +374,23 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 				}
 				return array("status" => true);
 			break;
+			case "deletetemps":
+				$temps = $_POST['temps'];
+				foreach($temps as $temporary) {
+					$temporary = str_replace("..","",$temporary);
+					$temporary = $this->temp."/".$temporary;
+					if(!file_exists($temporary)) {
+						@unlink($temporary);
+					}
+				}
+				return array("status" => true);
+			break;
 			case "convert":
 				set_time_limit(0);
 				$media = $this->FreePBX->Media;
 				$temporary = $_POST['temporary'];
+				$temporary = str_replace("..","",$temporary);
+				$temporary = $this->temp."/".$temporary;
 				$name = basename($_POST['name']);
 				$codec = $_POST['codec'];
 				$lang = $_POST['language'];
@@ -393,7 +407,7 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 					$media->load($temporary);
 					try {
 						$media->convert($path."/".$name.".".$codec);
-						unlink($temporary);
+						//unlink($temporary);
 					} catch(\Exception $e) {
 						return array("status" => false, "message" => $e->getMessage()." [".$path."/".$name.".".$codec."]");
 					}
@@ -467,7 +481,7 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 											$bfiles[] = array(
 												"directory" => $dir,
 												"filename" => (!empty($dir) ? $dir."/" : "").$dname,
-												"localfilename" => $file,
+												"localfilename" => str_replace($this->temp,"",$file),
 												"id" => ""
 											);
 											continue;
@@ -475,7 +489,7 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 										$gfiles[] = array(
 											"directory" => $dir,
 											"filename" => (!empty($dir) ? $dir."/" : "").$dname,
-											"localfilename" => $file,
+											"localfilename" => str_replace($this->temp,"",$file),
 											"id" => ""
 										);
 									}
@@ -484,7 +498,7 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 									$gfiles[] = array(
 										"directory" => "",
 										"filename" => pathinfo($dname,PATHINFO_FILENAME),
-										"localfilename" => $this->temp."/".$name,
+										"localfilename" => $name,
 										"id" => $id
 									);
 								}
