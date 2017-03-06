@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-20 15:28-0800\n"
+"POT-Creation-Date: 2017-03-06 13:35-0800\n"
 "PO-Revision-Date: 2016-10-08 12:44+0200\n"
 "Last-Translator: psdk <hyavari26@gmail.com>\n"
 "Language-Team: Persian (Iran) <http://weblate.freepbx.org/projects/freepbx/"
@@ -53,7 +53,7 @@ msgstr "افزودن زبان سفارشی"
 msgid "Add New Custom Language"
 msgstr "افزودن زبان سفارشی جدید"
 
-#: soundlang.i18n.php:6 soundlang.i18n.php:12
+#: soundlang.i18n.php:6
 msgid "Admin"
 msgstr "مدیر"
 
@@ -192,6 +192,11 @@ msgstr "ویرایش زبان سفارشی"
 #: Soundlang.class.php:549
 msgid "English"
 msgstr "انگلیسی"
+
+#: Soundlang.class.php:1222
+#, php-format
+msgid "Error %s returned from remote servers %s"
+msgstr ""
 
 #: Soundlang.class.php:536
 msgid "Error: You should never see this"
@@ -588,7 +593,7 @@ msgstr "انگلستان"
 msgid "United States"
 msgstr "آمریکا"
 
-#: Soundlang.class.php:1227
+#: Soundlang.class.php:1229
 #, php-format
 msgid "Unknown Error. Response was empty from %s"
 msgstr ""

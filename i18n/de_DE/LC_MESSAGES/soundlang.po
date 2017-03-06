@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-20 15:28-0800\n"
+"POT-Creation-Date: 2017-03-06 13:35-0800\n"
 "PO-Revision-Date: 2017-01-20 15:28-0800\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -50,7 +50,7 @@ msgstr ""
 msgid "Add New Custom Language"
 msgstr ""
 
-#: soundlang.i18n.php:6 soundlang.i18n.php:12
+#: soundlang.i18n.php:6
 msgid "Admin"
 msgstr ""
 
@@ -186,6 +186,11 @@ msgstr ""
 
 #: Soundlang.class.php:549
 msgid "English"
+msgstr ""
+
+#: Soundlang.class.php:1222
+#, php-format
+msgid "Error %s returned from remote servers %s"
 msgstr ""
 
 #: Soundlang.class.php:536
@@ -581,7 +586,7 @@ msgstr ""
 msgid "United States"
 msgstr ""
 
-#: Soundlang.class.php:1227
+#: Soundlang.class.php:1229
 #, php-format
 msgid "Unknown Error. Response was empty from %s"
 msgstr ""
