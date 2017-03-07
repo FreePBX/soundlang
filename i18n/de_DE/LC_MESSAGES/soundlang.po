@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-01-20 15:28-0800\n"
-"PO-Revision-Date: 2017-03-07 03:01+0200\n"
+"PO-Revision-Date: 2017-03-07 17:25+0200\n"
 "Last-Translator: hammer125 <auswertung@aon.at>\n"
 "Language-Team: German "
 "<http://weblate.freepbx.org/projects/freepbx/soundlang/de_DE/>\n"
@@ -360,7 +360,7 @@ msgstr "Laden..."
 
 #: soundlang.i18n.php:8
 msgid "Management of sound prompt languages."
-msgstr "Verwaltung von Soundaufforderungen in verschiedenen Sprachen."
+msgstr "Verwaltung von Sprachansagen in verschiedenen Sprachen."
 
 #: Soundlang.class.php:599
 msgid "Mexico"
@@ -448,8 +448,9 @@ msgid "Settings"
 msgstr "Einstellungen"
 
 #: Console/Soundlang.class.php:21
+#, fuzzy
 msgid "Sound Language Prompts"
-msgstr "Sprache der Aufforderungsklänge"
+msgstr "Sprache der Sprachansagen"
 
 #: soundlang.i18n.php:4 soundlang.i18n.php:10
 #, fuzzy
@@ -458,7 +459,7 @@ msgstr "Klangsprachen"
 
 #: views/oobe.php:15
 msgid "Sound Prompts Language"
-msgstr "Sprache der Aufforderungsklänge"
+msgstr "Sprache der Sprachansage"
 
 #: Soundlang.class.php:606
 msgid "South Africa"
