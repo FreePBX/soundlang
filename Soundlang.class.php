@@ -51,6 +51,12 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 
 	}
 
+	public function oobeHook() {
+		include __DIR__.'/Oobe.class.php';
+		$o = new Soundlang\OOBE($this);
+		return $o->oobeRequest();
+	}
+
 	public function doDialplanHook(&$ext, $engine, $priority) {
 		$language = $this->getLanguage();
 		if ($language != "") {
@@ -69,7 +75,7 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 		$request = $_REQUEST;
 		$action = !empty($request['action']) ? $request['action'] : '';
 
-		$html .= load_view(dirname(__FILE__).'/views/main.php', array('message' => $this->message));
+		$html = load_view(dirname(__FILE__).'/views/main.php', array('message' => $this->message));
 
 		switch ($action) {
 		case 'settings':
@@ -98,12 +104,13 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 			break;
 		case '':
 		case 'packages':
-			$this->getOnlinePackages();
+			try {
+				$online = $this->getOnlinePackages();
+			} catch(\Exception $e) {
+				$html .= '<div class="alert alert-danger text-center">'.sprintf(_("Unable to get online sound packages. Error was: [%s] %s"),$e->getCode(), $e->getMessage()).'</div>';
+			}
 
 			$packages = $this->getPackages();
-			if (empty($packages)) {
-				break;
-			}
 
 			$formats = $this->getFormatPref();
 
@@ -310,6 +317,8 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 			case "install":
 			case "uninstall":
 			case "licenseText":
+			case "deletetemps":
+			case "oobe":
 				return true;
 			break;
 			default:
@@ -324,6 +333,10 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 	public function ajaxHandler(){
 		$request = $_REQUEST;
 		switch($request['command']){
+			case "oobe":
+				set_time_limit(0);
+				return array("status" => true);
+			break;
 			case "install":
 				$this->installLanguage($request['lang']);
 				return array("status" => true);
@@ -339,10 +352,14 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 				foreach ($packages as $package) {
 					if ($package['language'] == $request['lang']) {
 						$filename = $package['type'] . '-' . $package['module'] . '-' . $package['language'] . '-license.txt';
-						$filedata = $this->getRemoteFile("/sounds/" . $filename);
-						if (!empty($filedata)) {
-							return array("status" => true, "license" => $filedata);
-						} else {
+						try {
+							$filedata = $this->getRemoteFile("/sounds/" . $filename);
+							if (!empty($filedata)) {
+								return array("status" => true, "license" => $filedata);
+							} else {
+								return array("status" => true);
+							}
+						} catch(\Exception $e) {
 							return array("status" => true);
 						}
 					}
@@ -357,10 +374,23 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 				}
 				return array("status" => true);
 			break;
+			case "deletetemps":
+				$temps = $_POST['temps'];
+				foreach($temps as $temporary) {
+					$temporary = str_replace("..","",$temporary);
+					$temporary = $this->temp."/".$temporary;
+					if(!file_exists($temporary)) {
+						@unlink($temporary);
+					}
+				}
+				return array("status" => true);
+			break;
 			case "convert":
 				set_time_limit(0);
 				$media = $this->FreePBX->Media;
 				$temporary = $_POST['temporary'];
+				$temporary = str_replace("..","",$temporary);
+				$temporary = $this->temp."/".$temporary;
 				$name = basename($_POST['name']);
 				$codec = $_POST['codec'];
 				$lang = $_POST['language'];
@@ -377,7 +407,7 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 					$media->load($temporary);
 					try {
 						$media->convert($path."/".$name.".".$codec);
-						unlink($temporary);
+						//unlink($temporary);
 					} catch(\Exception $e) {
 						return array("status" => false, "message" => $e->getMessage()." [".$path."/".$name.".".$codec."]");
 					}
@@ -451,7 +481,7 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 											$bfiles[] = array(
 												"directory" => $dir,
 												"filename" => (!empty($dir) ? $dir."/" : "").$dname,
-												"localfilename" => $file,
+												"localfilename" => str_replace($this->temp,"",$file),
 												"id" => ""
 											);
 											continue;
@@ -459,7 +489,7 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 										$gfiles[] = array(
 											"directory" => $dir,
 											"filename" => (!empty($dir) ? $dir."/" : "").$dname,
-											"localfilename" => $file,
+											"localfilename" => str_replace($this->temp,"",$file),
 											"id" => ""
 										);
 									}
@@ -468,7 +498,7 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 									$gfiles[] = array(
 										"directory" => "",
 										"filename" => pathinfo($dname,PATHINFO_FILENAME),
-										"localfilename" => $this->temp."/".$name,
+										"localfilename" => $name,
 										"id" => $id
 									);
 								}
@@ -518,6 +548,7 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 			'de' => _('German'),
 			'en' => _('English'),
 			'es' => _('Spanish'),
+			'fa' => _('Persian'),
 			'fi' => _('Finish'),
 			'fr' => _('French'),
 			'he' => _('Hebrew'),
@@ -559,6 +590,7 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 			'IE' => _('Ireland'),
 			'IL' => _('Israel'),
 			'IN' => _('India'),
+			'IR' => _('Iran'),
 			'IT' => _('Italy'),
 			'JA' => _('Japan'),
 			'NL' => _('Netherlands'),
@@ -583,6 +615,7 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 			'de' => 'DE',
 			'en' => 'US',
 			'es' => 'ES',
+			'fa' => 'IR',
 			'fi' => 'FI',
 			'fr' => 'FR',
 			'he' => 'IL',
@@ -922,6 +955,7 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 			$sth = $this->db->prepare($sql);
 			foreach ($available as $package) {
 				$id = NULL;
+				$package['installed'] = NULL;
 				foreach ($packages as $k => $v) {
 					if ($package['type'] == $v['type'] && $package['module'] == $v['module'] && $package['language'] == $v['language'] && $package['format'] == $v['format']) {
 						/* Package already exists.  Use existing id/installed version. */
@@ -935,9 +969,9 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 					':type' => $package['type'],
 					':module' => $package['module'],
 					':language' => $package['language'],
-					':license' => $package['license'],
-					':author' => $package['author'],
-					':authorlink' => $package['authorlink'],
+					':license' => isset($package['license'])?$package['license']:'',
+					':author' => isset($package['author'])?$package['author']:'',
+					':authorlink' => isset($package['authorlink'])?$package['authorlink']:'',
 					':format' => $package['format'],
 					':version' => $package['version'],
 					':installed' => $package['installed'],
@@ -1165,21 +1199,34 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 		$params['sv'] = 2; // Stats version
 		$params['soundlangver'] = 2;
 
+		$exceptions = array();
 		foreach($mirrors['mirrors'] as $url) {
 			set_time_limit($this->maxTimeLimit);
 
-			try{
-				$pest = \FreePBX::Curl()->pest($url);
+			$pest = \FreePBX::Curl()->pest($url);
+			try {
 				$contents = $pest->post($url . $path, $params);
-				if (isset($pest->last_headers['x-regenerate-id'])) {
-					$modulef->_regenerate_unique_id();
-				}
-				if (!empty($contents)) {
-					return $contents;
-				}
-			} catch (\Exception $e) {
-				freepbx_log(FPBX_LOG_ERROR, sprintf(_('Failed to get remote file, error was:'), (string)$e->getMessage()));
+			} catch(\Exception $e) {
+				$exceptions[] = $e;
 			}
+			if (!empty($contents)) {
+				return $contents;
+			}
+		}
+		if(!empty($exceptions)) {
+			$message = '';
+			$code = '';
+			foreach($exceptions as $e) {
+				$code = $e->getCode();
+				$msg = $e->getMessage();
+				$message .= !empty($msg) ? $msg : sprintf(_("Error %s returned from remote servers %s"),$code,json_encode($mirrors['mirrors']));
+				$message .= ", ";
+			}
+			$message = rtrim(trim($message),",");
+
+			throw new \Exception($message,$code);
+		} else {
+			throw new \Exception(sprtinf(_("Unknown Error. Response was empty from %s"),json_encode($mirrors['mirrors'])),0);
 		}
 	}
 	public function getRightNav($request) {

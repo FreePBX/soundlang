@@ -22,7 +22,7 @@
 								<?php
 									$name = $language;
 									$lang = explode('_', $language, 2);
-									if (!empty($languagelocations[$lang[1]]) && !empty($languagenames[$lang[0]])) {
+									if (count($lang) > 1 && !empty($languagelocations[$lang[1]]) && !empty($languagenames[$lang[0]])) {
 										$name = $languagenames[$lang[0]] . ' - ' . $languagelocations[$lang[1]] . ' (' . $language . ')';
 									} else if (!empty($languagenames[$lang[0]])) {
 										$name = $languagenames[$lang[0]] . ' (' . $language . ')';

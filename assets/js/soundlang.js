@@ -272,6 +272,7 @@ $("#customlang-frm").submit(function(e) {
 		$("#recscreen .progress-bar").prop("aria-valuenow",0);
 		$("#recscreen .progress-bar").css("width",0+"px");
 		$("#recscreen").removeClass("hidden");
+		var temps = [];
 		async.forEachOfSeries(process, function (value, key, callback) {
 			value.command = "convert";
 			value.module = "soundlang";
@@ -288,6 +289,7 @@ $("#customlang-frm").submit(function(e) {
 				timeout: 240000
 			}).done(function(data) {
 				if(data.status) {
+					temps.push(value.temporary);
 					callback();
 				} else {
 					console.error(data);
@@ -309,8 +311,23 @@ $("#customlang-frm").submit(function(e) {
 				$("#action-buttons input").prop("disabled", false);
 				$("#recscreen").addClass("hidden");
 			} else {
-				$("#recscreen label").text(_("Finished!"));
-				saveCustomLang(data.id, data.language, data.description);
+				$("#recscreen label").text(_("Deleting Temporary Files..."));
+				$.ajax({
+					type: 'POST',
+					url: "ajax.php",
+					data: {"module":"soundlang","command":"deletetemps","temps":temps},
+					dataType: 'json',
+					timeout: 240000
+				}).done(function(d) {
+					if(d.status) {
+						$("#recscreen label").text(_("Finished!"));
+						saveCustomLang(data.id, data.language, data.description);
+					} else {
+						alert(d.message);
+					}
+				}).fail(function(data) {
+					alert(data);
+				});
 			}
 		});
 	} else {
@@ -321,7 +338,7 @@ $("#customlang-frm").submit(function(e) {
 function saveCustomLang(id, language, description) {
 	$.post( "ajax.php", {module: "soundlang", command: "saveCustomLang", id: id, language: language, description: description}, function( data ) {
 		if(data.status) {
-			window.location = "config.php?display=soundlang";
+			window.location = "?display=soundlang&action=customlangs";
 		} else {
 			alert(data.message);
 			$("#recscreen").addClass("hidden");
