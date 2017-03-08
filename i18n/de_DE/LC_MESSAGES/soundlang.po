@@ -9,11 +9,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-20 15:28-0800\n"
+"POT-Creation-Date: 2017-03-08 09:58-0800\n"
 "PO-Revision-Date: 2017-03-07 17:25+0200\n"
 "Last-Translator: hammer125 <auswertung@aon.at>\n"
-"Language-Team: German "
-"<http://weblate.freepbx.org/projects/freepbx/soundlang/de_DE/>\n"
+"Language-Team: German <http://weblate.freepbx.org/projects/freepbx/soundlang/"
+"de_DE/>\n"
 "Language: de_DE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -126,11 +126,6 @@ msgstr "Kolumbien"
 #: views/customlang.php:110
 msgid "Convert To"
 msgstr "Konvertieren in"
-
-#: assets/js/soundlang.js:282
-#, perl-format
-msgid "Copying %s to %s"
-msgstr "Kopiere %s in %s"
 
 #: Soundlang.class.php:1059
 #, php-format
@@ -267,14 +262,6 @@ msgstr "Hongkong"
 #: views/customlangs.php:20
 msgid "ID"
 msgstr "ID"
-
-#: assets/js/soundlang.js:242
-msgid ""
-"If you are doing media conversions this can take a very long time, is that "
-"ok?"
-msgstr ""
-"Sollten Sie eine Konvertierung von Medien machen kann dieser Vorgang sehr "
-"lange dauern, Sind Sie damit einverstanden?"
 
 #: Soundlang.class.php:592
 msgid "India"
@@ -434,11 +421,6 @@ msgstr "Portugal"
 #: Soundlang.class.php:560
 msgid "Portuguese"
 msgstr "Portugiesisch"
-
-#: assets/js/soundlang.js:280
-#, perl-format
-msgid "Processing %s for %s in format %s"
-msgstr "Verarbeite %s für %s in das Format %s"
 
 #: Soundlang.class.php:264 Soundlang.class.php:281 Soundlang.class.php:293
 msgid "Reset"
@@ -638,11 +620,23 @@ msgstr ""
 "Das beinhaltet auch Archive (die verschiedene Dateien, wie %s) enthalten und "
 "mehrere Dateien"
 
-#: assets/js/soundlang.js:229
-msgid "You must set a valid language code"
-msgstr "Sie müssen einen gültigen Sprachcode wählen"
-
 #: Soundlang.class.php:1058
 #, php-format
 msgid "failed to open %s sounds archive."
 msgstr "konnte %s Soundarchive nicht öffnen."
+
+#~ msgid "Copying %s to %s"
+#~ msgstr "Kopiere %s in %s"
+
+#~ msgid ""
+#~ "If you are doing media conversions this can take a very long time, is "
+#~ "that ok?"
+#~ msgstr ""
+#~ "Sollten Sie eine Konvertierung von Medien machen kann dieser Vorgang sehr "
+#~ "lange dauern, Sind Sie damit einverstanden?"
+
+#~ msgid "Processing %s for %s in format %s"
+#~ msgstr "Verarbeite %s für %s in das Format %s"
+
+#~ msgid "You must set a valid language code"
+#~ msgstr "Sie müssen einen gültigen Sprachcode wählen"

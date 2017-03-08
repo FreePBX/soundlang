@@ -9,15 +9,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-20 15:28-0800\n"
+"POT-Creation-Date: 2017-03-08 09:58-0800\n"
 "PO-Revision-Date: 2017-03-08 21:32+0200\n"
 "Last-Translator: Kingvoice <suporte@kingvoice.com.br>\n"
 "Language-Team: Portuguese (Brazil) <http://weblate.freepbx.org/projects/"
 "freepbx/soundlang/pt_BR/>\n"
+"Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: pt_BR\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 2.4\n"
 
@@ -126,11 +126,6 @@ msgstr "Colômbia"
 #: views/customlang.php:110
 msgid "Convert To"
 msgstr "Converter Para"
-
-#: assets/js/soundlang.js:282
-#, perl-format
-msgid "Copying %s to %s"
-msgstr "Copiando  %s para %s"
 
 #: Soundlang.class.php:1059
 #, php-format
@@ -266,14 +261,6 @@ msgstr "Hong Kong"
 #: views/customlangs.php:20
 msgid "ID"
 msgstr "ID"
-
-#: assets/js/soundlang.js:242
-msgid ""
-"If you are doing media conversions this can take a very long time, is that "
-"ok?"
-msgstr ""
-"Se você estiver fazendo conversões de mídia isso poderá levar muito tempo, "
-"ok?"
 
 #: Soundlang.class.php:592
 msgid "India"
@@ -433,11 +420,6 @@ msgstr "Portugal"
 #: Soundlang.class.php:560
 msgid "Portuguese"
 msgstr "Português"
-
-#: assets/js/soundlang.js:280
-#, perl-format
-msgid "Processing %s for %s in format %s"
-msgstr "Processando %s para %s no formato %s"
 
 #: Soundlang.class.php:264 Soundlang.class.php:281 Soundlang.class.php:293
 msgid "Reset"
@@ -629,18 +611,30 @@ msgid ""
 "includes archives (that include multiple files, such as %s) and multiple "
 "files"
 msgstr ""
-"Envie arquivos do seu sistema local. Os formatos de upload suportados são: %"
-"s. Isso inclui arquivos (que incluem vários arquivos, como %s) e vários "
+"Envie arquivos do seu sistema local. Os formatos de upload suportados são: "
+"%s. Isso inclui arquivos (que incluem vários arquivos, como %s) e vários "
 "arquivos"
-
-#: assets/js/soundlang.js:229
-msgid "You must set a valid language code"
-msgstr "Você deve definir um código de idioma válido"
 
 #: Soundlang.class.php:1058
 #, php-format
 msgid "failed to open %s sounds archive."
 msgstr "falhou ao abrir %s arquivos de som."
+
+#~ msgid "Copying %s to %s"
+#~ msgstr "Copiando  %s para %s"
+
+#~ msgid ""
+#~ "If you are doing media conversions this can take a very long time, is "
+#~ "that ok?"
+#~ msgstr ""
+#~ "Se você estiver fazendo conversões de mídia isso poderá levar muito "
+#~ "tempo, ok?"
+
+#~ msgid "Processing %s for %s in format %s"
+#~ msgstr "Processando %s para %s no formato %s"
+
+#~ msgid "You must set a valid language code"
+#~ msgstr "Você deve definir um código de idioma válido"
 
 #~ msgid "Failed to get remote file, error was:"
 #~ msgstr "Falha ao obter o arquivo remoto, o erro foi:"
