@@ -53,7 +53,7 @@ msgstr "fremde Sprache hinzufügen"
 msgid "Add New Custom Language"
 msgstr "Neue fremde Sprache hinzufügen"
 
-#: soundlang.i18n.php:6 soundlang.i18n.php:12
+#: soundlang.i18n.php:6
 msgid "Admin"
 msgstr "Administrator"
 
@@ -193,6 +193,11 @@ msgstr "Fremde Sprache bearbeiten"
 #: Soundlang.class.php:549
 msgid "English"
 msgstr "Englisch"
+
+#: Soundlang.class.php:1222
+#, php-format
+msgid "Error %s returned from remote servers %s"
+msgstr ""
 
 #: Soundlang.class.php:536
 msgid "Error: You should never see this"
@@ -605,7 +610,7 @@ msgstr "Großbritannien"
 msgid "United States"
 msgstr "Vereinigte Staaten von Amerika"
 
-#: Soundlang.class.php:1227
+#: Soundlang.class.php:1229
 #, php-format
 msgid "Unknown Error. Response was empty from %s"
 msgstr "Unbekannter Fehler. Die Antwort von %s war leer"

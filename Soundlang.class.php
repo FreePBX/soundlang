@@ -1217,8 +1217,10 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 			$message = '';
 			$code = '';
 			foreach($exceptions as $e) {
-				$message .= $e->getMessage() . ", ";
 				$code = $e->getCode();
+				$msg = $e->getMessage();
+				$message .= !empty($msg) ? $msg : sprintf(_("Error %s returned from remote servers %s"),$code,json_encode($mirrors['mirrors']));
+				$message .= ", ";
 			}
 			$message = rtrim(trim($message),",");
 
