@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-01-20 15:28-0800\n"
-"PO-Revision-Date: 2017-03-06 17:51+0200\n"
+"PO-Revision-Date: 2017-03-08 21:32+0200\n"
 "Last-Translator: Kingvoice <suporte@kingvoice.com.br>\n"
 "Language-Team: Portuguese (Brazil) "
 "<http://weblate.freepbx.org/projects/freepbx/soundlang/pt_BR/>\n"
@@ -55,7 +55,7 @@ msgstr "Adicionar Novo Idioma Personalizado"
 
 #: soundlang.i18n.php:6 soundlang.i18n.php:12
 msgid "Admin"
-msgstr "Administrador"
+msgstr "Admin"
 
 #: assets/js/soundlang.js:123
 msgid "Are you sure you want to delete this custom language?"
@@ -93,7 +93,7 @@ msgstr "Brasil"
 
 #: views/customlang.php:83
 msgid "Browse"
-msgstr "Visualizar"
+msgstr "Localizar"
 
 #: Soundlang.class.php:579
 msgid "Canada"
@@ -160,7 +160,7 @@ msgstr "Apagar Idioma Personalizado"
 
 #: assets/js/soundlang.js:314
 msgid "Deleting Temporary Files..."
-msgstr ""
+msgstr "Apagando Arquivos Temporários..."
 
 #: assets/js/soundlang.js:92
 msgid "Deleting..."
@@ -580,12 +580,13 @@ msgstr "Turco"
 #: Soundlang.class.php:110
 #, php-format
 msgid "Unable to get online sound packages. Error was: [%s] %s"
-msgstr ""
+msgstr "Incapaz de pegar pacotes de sons online. O erro foi: [%s] %s"
 
 #: install.php:88
 #, php-format
 msgid "Unable to get online sound packages. Error was: [%s] %s. Continuing..."
 msgstr ""
+"Incapaz de pegar pacotes de sons online. O erro foi: [%s] %s. Continuando..."
 
 #: assets/js/soundlang.js:40
 msgid "Uninstalling. Please wait for the page to refresh"
@@ -602,7 +603,7 @@ msgstr "Estados Unidos"
 #: Soundlang.class.php:1227
 #, php-format
 msgid "Unknown Error. Response was empty from %s"
-msgstr ""
+msgstr "Erro Desconhecido. Resposta foi vazia de %s"
 
 #: Soundlang.class.php:507
 msgid "Unsupported file format"
