@@ -10,8 +10,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-01-20 15:28-0800\n"
-"PO-Revision-Date: 2017-03-12 19:43+0200\n"
-"Last-Translator: Nicolas <freepbx@riendeau.org>\n"
+"PO-Revision-Date: 2017-03-12 20:58+0200\n"
+"Last-Translator: Francis <fbinet@solist.ca>\n"
 "Language-Team: French "
 "<http://weblate.freepbx.org/projects/freepbx/soundlang/fr_FR/>\n"
 "Language: fr_FR\n"
@@ -598,7 +598,7 @@ msgstr ""
 
 #: Soundlang.class.php:507
 msgid "Unsupported file format"
-msgstr ""
+msgstr "Format de fichier non supporté"
 
 #: assets/js/soundlang.js:180
 msgid "Unsupported file type"
