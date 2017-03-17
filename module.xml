@@ -2,11 +2,12 @@
 	<rawname>soundlang</rawname>
 	<repo>standard</repo>
 	<name>Sound Languages</name>
-	<version>14.0.3</version>
+	<version>14.0.3.1</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
 	<changelog>
+		*14.0.3.1* Add XML database tables
 		*14.0.2.2* Merge from 13
 		*14.0.2* Don't download unneccesarily.
 		*14.0.1* Use new Languages
@@ -36,11 +37,50 @@
 		Management of sound prompt languages.
 	</description>
 	<depends>
-		<version>14.0.0</version>
+		<version>14.0.1rc1.2</version>
 	</depends>
 	<menuitems>
 		<soundlang>Sound Languages</soundlang>
 	</menuitems>
+	<database>
+		<table name="soundlang_packages">
+			<field name="id" type="bigint" primarykey="true" autoincrement="true"/>
+			<field name="type" type="string" length="20"/>
+			<field name="module" type="string" length="80"/>
+			<field name="language" type="string" length="20"/>
+			<field name="license" type="blob" notnull="false"/>
+			<field name="author" type="string" length="80" notnull="false"/>
+			<field name="authorlink" type="string" length="256" notnull="false"/>
+			<field name="format" type="string" length="20"/>
+			<field name="version" type="string" length="20" notnull="false"/>
+			<field name="installed" type="string" length="20" notnull="false"/>
+			<key name="id" type="unique">
+				<column name="id"/>
+			</key>
+			<key name="unique" type="unique">
+				<column name="type"/>
+				<column name="module"/>
+				<column name="language"/>
+				<column name="format"/>
+			</key>
+		</table>
+		<table name="soundlang_settings">
+			<field name="keyword" type="string" length="20" primarykey="true"/>
+			<field name="value" type="string" length="80"/>
+		</table>
+		<table name="soundlang_customlangs">
+			<field name="id" type="integer" primarykey="true" autoincrement="true"/>
+			<field name="language" type="string" length="20"/>
+			<field name="description" type="string" length="80"/>
+		</table>
+		<table name="soundlang_prompts">
+			<field name="type" type="string" length="20"/>
+			<field name="module" type="string" length="80"/>
+			<field name="language" type="string" length="20"/>
+			<field name="format" type="string" length="20"/>
+			<field name="filename" type="string" length="80" notnull="false"/>
+		</table>
+	</database>
 	<supported>
 		<version>14.0</version>
 	</supported>

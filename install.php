@@ -2,55 +2,8 @@
 if (!defined('FREEPBX_IS_AUTH')) { die('No direct script access allowed'); }
 global $db;
 
-$first_install = db_e($db->getAll('SELECT * FROM soundlang_settings'), '');
-
-$m = \FreePBX::Database()->migrate('soundlang_packages');
-$cols = array(
-	"id" => array( "type" => "bigint", "primaryKey" => true, "autoincrement" => true, "notnull" => true ),
-	"type" => array( "type" => "string", "length" => 20, "notnull" => true ),
-	"module" => array( "type" => "string", "length" => 80, "notnull" => true ),
-	"language" => array( "type" => "string", "length" => 20, "notnull" => true ),
-	"license" => array( "type" => "blob", "notnull" => false ),
-	"author" => array( "type" => "string", "length" => 80, "notnull" => false ),
-	"authorlink" => array( "type" => "string", "length" => 256, "notnull" => false ),
-	"format" => array( "type" => "string", "length" => 20, "notnull" => true ),
-	"version" => array( "type" => "string", "length" => 20, "notnull" => false ),
-	"installed" => array( "type" => "string", "length" => 20, "notnull" => false ),
-);
-
-$ind = array(
-	"id" => array(
-		"type" => "unique",
-		"cols" => array( "id" ),
-	),
-	"unique" => array(
-		"type" => "unique",
-		"cols" => array( "type", "module", "language", "format" ),
-	),
-);
-
-$m->modify($cols, $ind);
-
-$sql[] = 'CREATE TABLE IF NOT EXISTS `soundlang_settings` (
- `keyword` varchar(20) NOT NULL,
- `value` varchar(80) NOT NULL,
- PRIMARY KEY (`keyword`)
-);';
-
-$sql[] = 'CREATE TABLE IF NOT EXISTS `soundlang_customlangs` (
- `id` int(11) NOT NULL AUTO_INCREMENT,
- `language` varchar(20) NOT NULL,
- `description` varchar(80) NOT NULL,
- PRIMARY KEY (`id`)
-);';
-
-$sql[] = 'CREATE TABLE IF NOT EXISTS `soundlang_prompts` (
- `type` varchar(20) NOT NULL,
- `module` varchar(80) NOT NULL,
- `language` varchar(20) NOT NULL,
- `format` varchar(20) NOT NULL,
- `filename` varchar(80) DEFAULT NULL
-);';
+$info = FreePBX::Modules()->getinfo("soundlang");
+$first_install = ($info['soundlang']['status'] == MODULE_STATUS_NOTINSTALLED);
 
 if ($first_install) {
 	$language = $db->getOne("SELECT data FROM sipsettings WHERE keyword = 'language' OR keyword = 'sip_language'");
@@ -61,23 +14,13 @@ if ($first_install) {
 	$db->query("DELETE FROM sipsettings WHERE keyword = 'language' OR keyword = 'sip_language'");
 	$db->query("DELETE FROM iaxsettings WHERE keyword = 'language' OR keyword = 'sip_language'");
 
-	$sql[] = "INSERT INTO soundlang_settings (keyword, value) VALUES
-			('language', '$language'),
-			('formats', 'ulaw,g722')
-	";
+	$db->query("INSERT INTO soundlang_settings (keyword, value) VALUES ('language', '$language'), ('formats', 'ulaw,g722')");
 } else {
 	try {
 		$db->query("INSERT INTO soundlang_packages (type, module, language, format, version, installed) SELECT type, module, language, format, version, installed FROM soundlang_packs");
 		$db->query("DROP TABLE soundlang_packs");
 	} catch (\Exception $e) {
 		// Ignore errors
-	}
-}
-
-foreach ($sql as $statement){
-	$check = $db->query($statement);
-	if (DB::IsError($check)){
-		die_freepbx("Can not execute $statement : " . $check->getMessage() .  "\n");
 	}
 }
 
@@ -100,8 +43,8 @@ if($first_install) {
 		$list = $soundlang->getPackages();
 		foreach($list as $id => $package) {
 			if($package['language'] == 'en' &&
-				in_array($package['module'], array('core-sounds','extra-sounds','module-sounds')) &&
-				in_array($package['format'], array("ulaw","g722"))) {
+			in_array($package['module'], array('core-sounds','extra-sounds','module-sounds')) &&
+			in_array($package['format'], array("ulaw","g722"))) {
 
 				outn(sprintf(_("Installing %s..."),$package['module']."-".$package['format']));
 				$soundlang->installPackage($package['id']);
@@ -135,8 +78,9 @@ if($first_install) {
 				}
 			}
 			if(!empty($package['id'])) {
-				out(sprintf(_("Installing additional package %s..."),$package['module']."-".$package['format']));
+				outn(sprintf(_("Installing additional package %s..."),$package['module']."-".$package['format']));
 				$soundlang->installPackage($package['id']);
+				out(_("Done"));
 			}
 		}
 	}
@@ -157,7 +101,7 @@ if ($online) {
 
 	/* Update any installed languages. */
 	foreach ($languages as $language) {
-		out(sprintf(_("Installing/updating packages for %s..."), $language));
+		outn(sprintf(_("Installing/updating packages for %s..."), $language));
 		$soundlang->installLanguage($language);
 		out(_("Done"));
 	}
