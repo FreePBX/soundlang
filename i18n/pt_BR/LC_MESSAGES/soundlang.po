@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-08 09:58-0800\n"
+"POT-Creation-Date: 2017-03-17 11:08-0700\n"
 "PO-Revision-Date: 2017-03-08 21:32+0200\n"
 "Last-Translator: Kingvoice <suporte@kingvoice.com.br>\n"
 "Language-Team: Portuguese (Brazil) <http://weblate.freepbx.org/projects/"
@@ -165,7 +165,7 @@ msgstr "Apagando..."
 msgid "Description"
 msgstr "Descrição"
 
-#: install.php:109 install.php:162
+#: install.php:52 install.php:83 install.php:106
 msgid "Done"
 msgstr "Concluído"
 
@@ -210,7 +210,7 @@ msgstr "Arquivos a serem carregados"
 msgid "Finish"
 msgstr "Concluir"
 
-#: install.php:112
+#: install.php:55
 msgid "Finished installing default sounds"
 msgstr "Terminou a instalação de sons padrão"
 
@@ -274,17 +274,17 @@ msgstr "Instalado"
 msgid "Installing"
 msgstr "Instalando"
 
-#: install.php:106
+#: install.php:49
 #, php-format
 msgid "Installing %s..."
 msgstr "Instalando %s..."
 
-#: install.php:138
+#: install.php:81
 #, php-format
 msgid "Installing additional package %s..."
 msgstr "Instalando pacote adicional %s..."
 
-#: install.php:160
+#: install.php:104
 #, php-format
 msgid "Installing/updating packages for %s..."
 msgstr "Instalando/atualizando pacotes para %s ..."
@@ -373,7 +373,7 @@ msgstr "Países Baixos"
 msgid "New Zealand"
 msgstr "Nova Zelândia"
 
-#: install.php:99
+#: install.php:42
 msgid "New install, downloading default english language set..."
 msgstr "Nova instalação, baixando o conjunto de idioma padrão inglês..."
 
@@ -569,7 +569,7 @@ msgstr "Turco"
 msgid "Unable to get online sound packages. Error was: [%s] %s"
 msgstr "Incapaz de pegar pacotes de sons online. O erro foi: [%s] %s"
 
-#: install.php:88
+#: install.php:31
 #, php-format
 msgid "Unable to get online sound packages. Error was: [%s] %s. Continuing..."
 msgstr ""

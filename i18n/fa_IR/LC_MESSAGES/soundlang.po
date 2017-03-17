@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-08 09:58-0800\n"
+"POT-Creation-Date: 2017-03-17 11:08-0700\n"
 "PO-Revision-Date: 2016-07-06 05:16+0200\n"
 "Last-Translator: Media <mousavi.media@gmail.com>\n"
 "Language-Team: Persian (Iran) <http://weblate.freepbx.org/projects/freepbx/"
@@ -164,7 +164,7 @@ msgstr "در حال حذف..."
 msgid "Description"
 msgstr "توضیحات"
 
-#: install.php:109 install.php:162
+#: install.php:52 install.php:83 install.php:106
 msgid "Done"
 msgstr "انجام شد"
 
@@ -209,7 +209,7 @@ msgstr "فایلها برای بارگذاری"
 msgid "Finish"
 msgstr "پایان"
 
-#: install.php:112
+#: install.php:55
 msgid "Finished installing default sounds"
 msgstr "نصب فایلهای صدای پیشفرض پایان یافت"
 
@@ -273,17 +273,17 @@ msgstr "نصب شده"
 msgid "Installing"
 msgstr ""
 
-#: install.php:106
+#: install.php:49
 #, php-format
 msgid "Installing %s..."
 msgstr "در حال نصب %s..."
 
-#: install.php:138
+#: install.php:81
 #, php-format
 msgid "Installing additional package %s..."
 msgstr "در حال نصب پکیج اضافی %s..."
 
-#: install.php:160
+#: install.php:104
 #, php-format
 msgid "Installing/updating packages for %s..."
 msgstr ""
@@ -372,7 +372,7 @@ msgstr "هلند"
 msgid "New Zealand"
 msgstr "نیوزلند"
 
-#: install.php:99
+#: install.php:42
 msgid "New install, downloading default english language set..."
 msgstr "نصب جدید، در حال دانلود زبان انگلیسی به عنوان پیشفرض..."
 
@@ -559,7 +559,7 @@ msgstr ""
 msgid "Unable to get online sound packages. Error was: [%s] %s"
 msgstr ""
 
-#: install.php:88
+#: install.php:31
 #, php-format
 msgid "Unable to get online sound packages. Error was: [%s] %s. Continuing..."
 msgstr ""

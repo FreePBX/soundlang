@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-08 09:58-0800\n"
+"POT-Creation-Date: 2017-03-17 11:08-0700\n"
 "PO-Revision-Date: 2016-02-04 23:02+0200\n"
 "Last-Translator: Nicolas Riendeau <freepbx@riendeau.org>\n"
 "Language-Team: French <http://weblate.freepbx.org/projects/freepbx/soundlang/"
@@ -162,7 +162,7 @@ msgstr "Suppression en cours..."
 msgid "Description"
 msgstr "Description"
 
-#: install.php:109 install.php:162
+#: install.php:52 install.php:83 install.php:106
 msgid "Done"
 msgstr "Terminé"
 
@@ -207,7 +207,7 @@ msgstr ""
 msgid "Finish"
 msgstr "Terminer"
 
-#: install.php:112
+#: install.php:55
 msgid "Finished installing default sounds"
 msgstr ""
 
@@ -271,17 +271,17 @@ msgstr "Installé"
 msgid "Installing"
 msgstr ""
 
-#: install.php:106
+#: install.php:49
 #, php-format
 msgid "Installing %s..."
 msgstr ""
 
-#: install.php:138
+#: install.php:81
 #, php-format
 msgid "Installing additional package %s..."
 msgstr ""
 
-#: install.php:160
+#: install.php:104
 #, php-format
 msgid "Installing/updating packages for %s..."
 msgstr ""
@@ -370,7 +370,7 @@ msgstr "Pays bas"
 msgid "New Zealand"
 msgstr "Nouvelle Zélande"
 
-#: install.php:99
+#: install.php:42
 msgid "New install, downloading default english language set..."
 msgstr ""
 "Il s'agit d'une nouvelle installation, téléchargement des fichiers de langue "
@@ -558,7 +558,7 @@ msgstr ""
 msgid "Unable to get online sound packages. Error was: [%s] %s"
 msgstr ""
 
-#: install.php:88
+#: install.php:31
 #, php-format
 msgid "Unable to get online sound packages. Error was: [%s] %s. Continuing..."
 msgstr ""
