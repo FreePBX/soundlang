@@ -104,6 +104,11 @@
 	$("#oobeTimezone").val(oobeTimezone);
 	oobeSoundLanguage = oobeSoundLanguage.replace("-","_");
 	$("#oobeGuiLang").val(oobeSoundLanguage);
+	// If that wasn't matched, set it to en_US
+	if (!$("#oobeGuiLang").val()) {
+		$("#oobeGuiLang").val("en_US");
+		oobeSoundLanguage="en_US";
+	}
 	if(typeof soundLangs[oobeSoundLanguage] !== "undefined") {
 		$("#oobeSoundLang").val(oobeSoundLanguage);
 	} else {
@@ -120,7 +125,7 @@
 		if($("#oobeSoundLang").val() === "") {
 			return warnInvalid($("#oobeSoundLang"),_("Please select a valid language"));
 		}
-		$.cookie("lang",$("#oobeGuiLang").val());
+		Cookies.set("lang",$("#oobeGuiLang").val());
 		$(this).prop("disabled",true);
 		$(this).text(_("Processing. This may take some time. Please be patient"));
 		e.preventDefault();
