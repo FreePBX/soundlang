@@ -2,11 +2,12 @@
 	<rawname>soundlang</rawname>
 	<repo>standard</repo>
 	<name>Sound Languages</name>
-	<version>14.0.3.1</version>
+	<version>14.0.4</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
 	<changelog>
+		*14.0.4* Add missing OOBE Hook
 		*14.0.3.1* Add XML database tables
 		*14.0.2.2* Merge from 13
 		*14.0.2* Don't download unneccesarily.
@@ -42,6 +43,7 @@
 	<menuitems>
 		<soundlang>Sound Languages</soundlang>
 	</menuitems>
+	<oobe method="oobeHook" priority="150" />
 	<database>
 		<table name="soundlang_packages">
 			<field name="id" type="bigint" primarykey="true" autoincrement="true"/>

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-17 11:08-0700\n"
+"POT-Creation-Date: 2017-06-29 22:10+0000\n"
 "PO-Revision-Date: 2017-03-08 21:32+0200\n"
 "Last-Translator: Kingvoice <suporte@kingvoice.com.br>\n"
 "Language-Team: Portuguese (Brazil) <http://weblate.freepbx.org/projects/"
@@ -52,10 +52,6 @@ msgstr "Adicionar Idioma Personalizado"
 #: views/customlangs.php:10
 msgid "Add New Custom Language"
 msgstr "Adicionar Novo Idioma Personalizado"
-
-#: soundlang.i18n.php:6
-msgid "Admin"
-msgstr "Admin"
 
 #: assets/js/soundlang.js:123
 msgid "Are you sure you want to delete this custom language?"
@@ -349,10 +345,6 @@ msgstr "A Licença não Pôde ser Recuperada"
 msgid "Loading..."
 msgstr "Carregando..."
 
-#: soundlang.i18n.php:8
-msgid "Management of sound prompt languages."
-msgstr "Gerenciamento de linguagens de mensagens de som."
-
 #: Soundlang.class.php:599
 msgid "Mexico"
 msgstr "México"
@@ -436,10 +428,6 @@ msgstr "Configurações"
 #: Console/Soundlang.class.php:21
 msgid "Sound Language Prompts"
 msgstr "Mensagens de Idioma de Som"
-
-#: soundlang.i18n.php:4 soundlang.i18n.php:10
-msgid "Sound Languages"
-msgstr "Idiomas de Som"
 
 #: views/oobe.php:15
 msgid "Sound Prompts Language"
@@ -619,6 +607,15 @@ msgstr ""
 #, php-format
 msgid "failed to open %s sounds archive."
 msgstr "falhou ao abrir %s arquivos de som."
+
+#~ msgid "Admin"
+#~ msgstr "Admin"
+
+#~ msgid "Management of sound prompt languages."
+#~ msgstr "Gerenciamento de linguagens de mensagens de som."
+
+#~ msgid "Sound Languages"
+#~ msgstr "Idiomas de Som"
 
 #~ msgid "Copying %s to %s"
 #~ msgstr "Copiando  %s para %s"
