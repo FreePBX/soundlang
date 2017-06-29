@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-29 22:10+0000\n"
+"POT-Creation-Date: 2017-06-29 23:46+0000\n"
 "PO-Revision-Date: 2017-03-07 17:25+0200\n"
 "Last-Translator: hammer125 <auswertung@aon.at>\n"
 "Language-Team: German <http://weblate.freepbx.org/projects/freepbx/soundlang/"
@@ -52,6 +52,10 @@ msgstr "fremde Sprache hinzufügen"
 #: views/customlangs.php:10
 msgid "Add New Custom Language"
 msgstr "Neue fremde Sprache hinzufügen"
+
+#: soundlang.i18n.php:6
+msgid "Admin"
+msgstr "Administrator"
 
 #: assets/js/soundlang.js:123
 msgid "Are you sure you want to delete this custom language?"
@@ -346,6 +350,10 @@ msgstr "Lizenz konnte nicht erhalten werden"
 msgid "Loading..."
 msgstr "Laden..."
 
+#: soundlang.i18n.php:8
+msgid "Management of sound prompt languages."
+msgstr "Verwaltung von Sprachansagen in verschiedenen Sprachen."
+
 #: Soundlang.class.php:599
 msgid "Mexico"
 msgstr "Mexiko"
@@ -430,6 +438,11 @@ msgstr "Einstellungen"
 #, fuzzy
 msgid "Sound Language Prompts"
 msgstr "Sprache der Sprachansagen"
+
+#: soundlang.i18n.php:4 soundlang.i18n.php:10
+#, fuzzy
+msgid "Sound Languages"
+msgstr "Klangsprachen"
 
 #: views/oobe.php:15
 msgid "Sound Prompts Language"
@@ -611,16 +624,6 @@ msgstr ""
 #, php-format
 msgid "failed to open %s sounds archive."
 msgstr "konnte %s Soundarchive nicht öffnen."
-
-#~ msgid "Admin"
-#~ msgstr "Administrator"
-
-#~ msgid "Management of sound prompt languages."
-#~ msgstr "Verwaltung von Sprachansagen in verschiedenen Sprachen."
-
-#, fuzzy
-#~ msgid "Sound Languages"
-#~ msgstr "Klangsprachen"
 
 #~ msgid "Copying %s to %s"
 #~ msgstr "Kopiere %s in %s"

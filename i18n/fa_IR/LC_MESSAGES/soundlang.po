@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-29 22:10+0000\n"
+"POT-Creation-Date: 2017-06-29 23:46+0000\n"
 "PO-Revision-Date: 2016-07-06 05:16+0200\n"
 "Last-Translator: Media <mousavi.media@gmail.com>\n"
 "Language-Team: Persian (Iran) <http://weblate.freepbx.org/projects/freepbx/"
@@ -52,6 +52,10 @@ msgstr "افزودن زبان سفارشی"
 #: views/customlangs.php:10
 msgid "Add New Custom Language"
 msgstr "افزودن زبان سفارشی جدید"
+
+#: soundlang.i18n.php:6
+msgid "Admin"
+msgstr "مدیر"
 
 #: assets/js/soundlang.js:123
 msgid "Are you sure you want to delete this custom language?"
@@ -344,6 +348,10 @@ msgstr ""
 msgid "Loading..."
 msgstr ""
 
+#: soundlang.i18n.php:8
+msgid "Management of sound prompt languages."
+msgstr "مدیریت زبان صداهای سیستم."
+
 #: Soundlang.class.php:599
 msgid "Mexico"
 msgstr "مکزیک"
@@ -427,6 +435,10 @@ msgstr ""
 #: Console/Soundlang.class.php:21
 msgid "Sound Language Prompts"
 msgstr "زبان صدای فرامین"
+
+#: soundlang.i18n.php:4 soundlang.i18n.php:10
+msgid "Sound Languages"
+msgstr "صدای زبان ها"
 
 #: views/oobe.php:15
 msgid "Sound Prompts Language"
@@ -595,15 +607,6 @@ msgstr ""
 #, php-format
 msgid "failed to open %s sounds archive."
 msgstr "شکست در باز کردن %s از بایگانی صداها."
-
-#~ msgid "Admin"
-#~ msgstr "مدیر"
-
-#~ msgid "Management of sound prompt languages."
-#~ msgstr "مدیریت زبان صداهای سیستم."
-
-#~ msgid "Sound Languages"
-#~ msgstr "صدای زبان ها"
 
 #~ msgid "Failed to get remote file, error was:"
 #~ msgstr "عدم حذف فایل، خطا:"

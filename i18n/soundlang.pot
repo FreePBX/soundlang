@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-29 22:10+0000\n"
+"POT-Creation-Date: 2017-06-29 23:46+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -48,6 +48,10 @@ msgstr ""
 
 #: views/customlangs.php:10
 msgid "Add New Custom Language"
+msgstr ""
+
+#: soundlang.i18n.php:6
+msgid "Admin"
 msgstr ""
 
 #: assets/js/soundlang.js:123
@@ -346,6 +350,10 @@ msgstr ""
 msgid "Loading..."
 msgstr ""
 
+#: soundlang.i18n.php:8
+msgid "Management of sound prompt languages."
+msgstr ""
+
 #: Soundlang.class.php:599
 msgid "Mexico"
 msgstr ""
@@ -432,6 +440,11 @@ msgstr ""
 
 #: Console/Soundlang.class.php:21
 msgid "Sound Language Prompts"
+msgstr ""
+
+#: soundlang.i18n.php:4
+#: soundlang.i18n.php:10
+msgid "Sound Languages"
 msgstr ""
 
 #: views/oobe.php:15
