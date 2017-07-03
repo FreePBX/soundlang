@@ -1036,6 +1036,7 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 
 		// Does this sound language package already exist on this machine?
 		$txtfile = $soundsdir.'/'.$package['language'].'/'.$package['module'].'-'.$package['language'].'.txt';
+
 		if ($force || !file_exists("$soundsdir/.$basename") || !file_exists($txtfile)) {
 			// No. We need to fetch it.
 
@@ -1057,6 +1058,13 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 			if ($exitcode != 0) {
 				freepbx_log(FPBX_LOG_ERROR, sprintf(_("failed to open %s sounds archive."), $filename));
 				return array(sprintf(_('Could not untar %s to %s'), $filename, $destdir));
+			}
+
+			//https://issues.freepbx.org/browse/FREEPBX-14426
+			$txtfilenoext = $soundsdir.'/'.$package['language'].'/'.$package['module'].'-'.$package['language'];
+			if(!file_exists($txtfile) && file_exists($txtfilenoext)) {
+				//missing .txt
+				rename($txtfilenoext, $txtfile);
 			}
 
 			// If the txt file doesn't exist, there's something wrong with the package.
