@@ -9,15 +9,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-06 13:35-0800\n"
-"PO-Revision-Date: 2017-03-05 21:14+0200\n"
+"POT-Creation-Date: 2017-01-20 15:28-0800\n"
+"PO-Revision-Date: 2017-03-12 20:58+0200\n"
 "Last-Translator: Francis <fbinet@solist.ca>\n"
-"Language-Team: French <http://weblate.freepbx.org/projects/freepbx/soundlang/"
-"fr_FR/>\n"
+"Language-Team: French "
+"<http://weblate.freepbx.org/projects/freepbx/soundlang/fr_FR/>\n"
+"Language: fr_FR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: fr_FR\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
 "X-Generator: Weblate 2.4\n"
 
@@ -51,7 +51,7 @@ msgstr "Ajouter un langage personnalisé"
 
 #: views/customlangs.php:10
 msgid "Add New Custom Language"
-msgstr ""
+msgstr "Ajouter un langage personnalisé"
 
 #: soundlang.i18n.php:6
 msgid "Admin"
@@ -72,7 +72,7 @@ msgstr "Australie"
 
 #: views/packages.php:14
 msgid "Author"
-msgstr ""
+msgstr "Auteur"
 
 #: views/language.php:13
 msgid "Available"
@@ -114,7 +114,7 @@ msgstr "Chinois"
 
 #: views/licensemodal.php:26
 msgid "Close"
-msgstr ""
+msgstr "Fermer"
 
 #: Soundlang.class.php:582
 msgid "Colombia"
@@ -149,7 +149,7 @@ msgstr ""
 #: Soundlang.class.php:276 assets/js/soundlang.js:96
 #: assets/js/soundlang.js:102
 msgid "Delete"
-msgstr "Supprime"
+msgstr "Supprimer"
 
 #: views/customlangs.php:13
 msgid "Delete Custom Language"
@@ -438,7 +438,7 @@ msgstr ""
 
 #: Soundlang.class.php:264 Soundlang.class.php:281 Soundlang.class.php:293
 msgid "Reset"
-msgstr "Remise à zéro"
+msgstr "Réinitialiser"
 
 #: Soundlang.class.php:561
 msgid "Russian"
@@ -475,7 +475,7 @@ msgstr "Espagnol"
 #: Soundlang.class.php:269 Soundlang.class.php:286 Soundlang.class.php:298
 #: views/oobe.php:89
 msgid "Submit"
-msgstr "Envoyer"
+msgstr "Soumettre"
 
 #: Console/Soundlang.class.php:58
 #, php-format
@@ -559,7 +559,7 @@ msgstr ""
 
 #: views/oobe.php:67
 msgid "Timezone"
-msgstr ""
+msgstr "Fuseau horaire"
 
 #: Soundlang.class.php:603
 msgid "Turkey"
@@ -598,7 +598,7 @@ msgstr ""
 
 #: Soundlang.class.php:507
 msgid "Unsupported file format"
-msgstr ""
+msgstr "Format de fichier non supporté"
 
 #: assets/js/soundlang.js:180
 msgid "Unsupported file type"
