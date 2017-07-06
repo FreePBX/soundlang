@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-29 23:46+0000\n"
+"POT-Creation-Date: 2017-07-06 09:38-0700\n"
 "PO-Revision-Date: 2016-02-04 23:02+0200\n"
 "Last-Translator: Nicolas Riendeau <freepbx@riendeau.org>\n"
 "Language-Team: French <http://weblate.freepbx.org/projects/freepbx/soundlang/"
@@ -124,7 +124,7 @@ msgstr ""
 msgid "Convert To"
 msgstr ""
 
-#: Soundlang.class.php:1059
+#: Soundlang.class.php:1060
 #, php-format
 msgid "Could not untar %s to %s"
 msgstr "Ne peut décompresser %s vers %s"
@@ -186,7 +186,7 @@ msgstr "Éditer un langage personnalisé"
 msgid "English"
 msgstr "Anglais"
 
-#: Soundlang.class.php:1222
+#: Soundlang.class.php:1230
 #, php-format
 msgid "Error %s returned from remote servers %s"
 msgstr ""
@@ -575,7 +575,7 @@ msgstr "Royaume-Uni"
 msgid "United States"
 msgstr "États-Unis"
 
-#: Soundlang.class.php:1229
+#: Soundlang.class.php:1237
 #, php-format
 msgid "Unknown Error. Response was empty from %s"
 msgstr ""
@@ -600,7 +600,7 @@ msgid ""
 "files"
 msgstr ""
 
-#: Soundlang.class.php:1058
+#: Soundlang.class.php:1059
 #, php-format
 msgid "failed to open %s sounds archive."
 msgstr "échec d'ouverture de l'archive de sons %s."

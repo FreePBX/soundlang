@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-29 23:46+0000\n"
+"POT-Creation-Date: 2017-07-06 09:38-0700\n"
 "PO-Revision-Date: 2016-07-06 05:16+0200\n"
 "Last-Translator: Media <mousavi.media@gmail.com>\n"
 "Language-Team: Persian (Iran) <http://weblate.freepbx.org/projects/freepbx/"
@@ -126,7 +126,7 @@ msgstr ""
 msgid "Convert To"
 msgstr "تبدیل به"
 
-#: Soundlang.class.php:1059
+#: Soundlang.class.php:1060
 #, php-format
 msgid "Could not untar %s to %s"
 msgstr "امکان خروج از فشرده سازی %s به %s وجود ندارد"
@@ -188,7 +188,7 @@ msgstr "ویرایش زبان سفارشی"
 msgid "English"
 msgstr "انگلیسی"
 
-#: Soundlang.class.php:1222
+#: Soundlang.class.php:1230
 #, php-format
 msgid "Error %s returned from remote servers %s"
 msgstr ""
@@ -576,7 +576,7 @@ msgstr "انگلستان"
 msgid "United States"
 msgstr "آمریکا"
 
-#: Soundlang.class.php:1229
+#: Soundlang.class.php:1237
 #, php-format
 msgid "Unknown Error. Response was empty from %s"
 msgstr ""
@@ -603,7 +603,7 @@ msgstr ""
 "بارگذاری فایلها از سیستم محلی. فرمت های قابل قبول عبارتند ار: %s. این مورد "
 "شامل فایلهای فشرده (چندین فایل، مانند %s) هم میشود"
 
-#: Soundlang.class.php:1058
+#: Soundlang.class.php:1059
 #, php-format
 msgid "failed to open %s sounds archive."
 msgstr "شکست در باز کردن %s از بایگانی صداها."
