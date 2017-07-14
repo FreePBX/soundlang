@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-07-03 14:17-0400\n"
-"PO-Revision-Date: 2017-07-14 14:18+0200\n"
+"PO-Revision-Date: 2017-07-14 14:19+0200\n"
 "Last-Translator: PETER <ftek@ymail.com>\n"
 "Language-Team: Vietnamese "
 "<http://weblate.freepbx.org/projects/freepbx/soundlang/vi/>\n"
@@ -452,7 +452,7 @@ msgstr "Các cài đặt"
 
 #: Console/Soundlang.class.php:21
 msgid "Sound Language Prompts"
-msgstr "Sound Language Prompts"
+msgstr "Sound Language Prompts (Các nhắc nhở ngôn ngữ âm thanh)"
 
 #: soundlang.i18n.php:4 soundlang.i18n.php:10
 msgid "Sound Languages"
