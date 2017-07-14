@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-07-03 14:17-0400\n"
-"PO-Revision-Date: 2017-07-14 10:21+0200\n"
+"PO-Revision-Date: 2017-07-14 14:18+0200\n"
 "Last-Translator: PETER <ftek@ymail.com>\n"
 "Language-Team: Vietnamese "
 "<http://weblate.freepbx.org/projects/freepbx/soundlang/vi/>\n"
@@ -134,7 +134,7 @@ msgstr "Đang sao chép %s đến %s"
 #: Soundlang.class.php:1060
 #, php-format
 msgid "Could not untar %s to %s"
-msgstr ""
+msgstr "Không thể phân bổ %s đến %s"
 
 #: views/packages.php:8 views/rnav.php:3
 msgid "Custom Languages"
@@ -415,28 +415,28 @@ msgstr "Tiếng Ba Tư"
 
 #: views/oobe.php:4
 msgid "Please Select the default locales of the PBX"
-msgstr ""
+msgstr "Vui lòng chọn vị trí mặc định của PBX"
 
 #: Soundlang.class.php:600
 msgid "Poland"
-msgstr ""
+msgstr "Nước Ba Lan"
 
 #: Soundlang.class.php:559
 msgid "Polish"
-msgstr ""
+msgstr "Tiếng Ba Lan"
 
 #: Soundlang.class.php:601
 msgid "Portugal"
-msgstr ""
+msgstr "Nước Bồ Đào Nha"
 
 #: Soundlang.class.php:560
 msgid "Portuguese"
-msgstr ""
+msgstr "Tiếng Bồ Đào Nha"
 
 #: assets/js/soundlang.js:280
 #, perl-format
 msgid "Processing %s for %s in format %s"
-msgstr ""
+msgstr "Đang xử lý %s chi %s ở định dạng %s"
 
 #: Soundlang.class.php:264 Soundlang.class.php:281 Soundlang.class.php:293
 msgid "Reset"
@@ -444,7 +444,7 @@ msgstr "Cài đặt lại"
 
 #: Soundlang.class.php:561
 msgid "Russian"
-msgstr ""
+msgstr "Tiếng Nga"
 
 #: views/packages.php:7 views/rnav.php:4 views/settings.php:4
 msgid "Settings"
@@ -452,11 +452,11 @@ msgstr "Các cài đặt"
 
 #: Console/Soundlang.class.php:21
 msgid "Sound Language Prompts"
-msgstr ""
+msgstr "Sound Language Prompts"
 
 #: soundlang.i18n.php:4 soundlang.i18n.php:10
 msgid "Sound Languages"
-msgstr ""
+msgstr "Ngôn ngữ âm thanh"
 
 #: views/oobe.php:15
 msgid "Sound Prompts Language"
@@ -464,15 +464,15 @@ msgstr "Ngôn ngữ của Sound Prompt"
 
 #: Soundlang.class.php:606
 msgid "South Africa"
-msgstr ""
+msgstr "Nước Nam Phi"
 
 #: Soundlang.class.php:585
 msgid "Spain"
-msgstr ""
+msgstr "Nước Tây Ban Nha"
 
 #: Soundlang.class.php:550
 msgid "Spanish"
-msgstr ""
+msgstr "Tiếng Tây Ban Nha"
 
 #: Soundlang.class.php:269 Soundlang.class.php:286 Soundlang.class.php:298
 #: views/oobe.php:89
@@ -482,37 +482,37 @@ msgstr "Gửi đi"
 #: Console/Soundlang.class.php:58
 #, php-format
 msgid "Successfully installed %s"
-msgstr ""
+msgstr "Đã cài đặt %s thành công"
 
 #: Console/Soundlang.class.php:99
 #, php-format
 msgid "Successfully set default language to %s, you will need to reload"
-msgstr ""
+msgstr "Cài đặt ngôn ngữ mặc định %s thành công, bạn cần phải tải lại"
 
 #: Console/Soundlang.class.php:72
 #, php-format
 msgid "Successfully uninstalled %s"
-msgstr ""
+msgstr "Gỡ bỏ %s thành công"
 
 #: Soundlang.class.php:602
 msgid "Sweden"
-msgstr ""
+msgstr "Thụy Điển"
 
 #: Soundlang.class.php:562
 msgid "Swedish"
-msgstr ""
+msgstr "Tiếng Thụy Điển"
 
 #: Soundlang.class.php:580
 msgid "Switzerland"
-msgstr ""
+msgstr "Nước Thụy Sĩ"
 
 #: views/oobe.php:41
 msgid "System Language"
-msgstr ""
+msgstr "Ngôn ngữ hệ thống"
 
 #: Soundlang.class.php:604
 msgid "Taiwan"
-msgstr ""
+msgstr "Đài Loan"
 
 #: Console/Soundlang.class.php:54 Console/Soundlang.class.php:68
 #: Console/Soundlang.class.php:95
@@ -540,64 +540,72 @@ msgstr "Tệp tải lên đã chỉ được tải lên từng phần"
 
 #: assets/js/soundlang.js:309
 msgid "There was an error, See the console for more details"
-msgstr ""
+msgstr "Đã xảy ra một lỗi, xem bảng điều khiển để biết thêm chi tiết"
 
 #: views/oobe.php:57
 msgid ""
 "This language will be used for the GUI and CLI commands for your PBX. You "
 "can change it later by navigating to 'Advanced Settings'"
 msgstr ""
+"Ngôn ngữ này sẽ được sử dụng cho các lệnh GUI và CLI của PBX. Bạn có thể "
+"thay đổi nó sau đó bằng cách điều hướng đến 'Advanced Settings'"
 
 #: views/oobe.php:31
 msgid ""
 "This language will be used for the prompts when you call in to your PBX. You "
 "can change it later by navigating to the 'Sound Languages' module"
 msgstr ""
+"Ngôn ngữ này được sử dụng cho các prompt khi bạn gọi đến PBX. Bạn có thể "
+"thay đổi nó sau đó bằng cách điều hướng đến mô đun 'Sound Languages'"
 
 #: views/oobe.php:83
 msgid ""
 "This will set the global timezone for the PBX. You can change it later by "
 "navigating to 'Advanced Settings'"
 msgstr ""
+"Điều này sẽ thiết lập múi giờ toàn cầu cho PBX. Bạn có thể thay đổi nó sau "
+"đó bằng cách điều hướng tới 'Advanced Settings'"
 
 #: views/oobe.php:67
 msgid "Timezone"
-msgstr ""
+msgstr "Múi giờ"
 
 #: Soundlang.class.php:603
 msgid "Turkey"
-msgstr ""
+msgstr "Thổ Nhĩ Kỳ"
 
 #: Soundlang.class.php:563
 msgid "Turkish"
-msgstr ""
+msgstr "Tiếng Thổ Nhĩ Kỳ"
 
 #: Soundlang.class.php:110
 #, php-format
 msgid "Unable to get online sound packages. Error was: [%s] %s"
-msgstr ""
+msgstr "Không thể có được các gói âm thanh trực tuyến. Lỗi đã xảy ra: [%s] %s"
 
 #: install.php:88
 #, php-format
 msgid "Unable to get online sound packages. Error was: [%s] %s. Continuing..."
 msgstr ""
+"Không thể có được các gói âm thanh trực tuyến. Lỗi đã xảy ra: [%s] %s. Đang "
+"tiếp tục..."
 
 #: assets/js/soundlang.js:40
 msgid "Uninstalling. Please wait for the page to refresh"
-msgstr ""
+msgstr "Đang gỡ bỏ. Vui lòng đợi cho trang làm mới"
 
 #: Soundlang.class.php:588
 msgid "United Kingdom"
-msgstr ""
+msgstr "Nước Anh"
 
 #: Soundlang.class.php:605
 msgid "United States"
-msgstr ""
+msgstr "Nước Mỹ"
 
 #: Soundlang.class.php:1237
 #, php-format
 msgid "Unknown Error. Response was empty from %s"
-msgstr ""
+msgstr "Lỗi không xác định. Không có phản hồi từ %s"
 
 #: Soundlang.class.php:507
 msgid "Unsupported file format"
@@ -609,7 +617,7 @@ msgstr "Kiểu tệp không được hỗ trợ"
 
 #: views/customlang.php:78
 msgid "Upload Recording"
-msgstr ""
+msgstr "Tải lên ghi âm"
 
 #: views/customlang.php:98
 #, php-format
@@ -618,12 +626,15 @@ msgid ""
 "includes archives (that include multiple files, such as %s) and multiple "
 "files"
 msgstr ""
+"Tải lên các tệp từ hệ thống tại chỗ của bạn. Các định dạng được hỗ trợ là: %"
+"s. Mô đun này bao gồm các tệp nén ( có chứa nhiều tệp ví dụ %s) và nhiều tệp "
+"khác"
 
 #: assets/js/soundlang.js:229
 msgid "You must set a valid language code"
-msgstr ""
+msgstr "Bạn phải thiết lập một mã ngôn ngữ hợp lệ"
 
 #: Soundlang.class.php:1059
 #, php-format
 msgid "failed to open %s sounds archive."
-msgstr ""
+msgstr "Không mở được tệp nén âm thanh %s."
