@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-07-03 14:17-0400\n"
-"PO-Revision-Date: 2017-07-14 09:59+0200\n"
+"PO-Revision-Date: 2017-07-14 10:21+0200\n"
 "Last-Translator: PETER <ftek@ymail.com>\n"
 "Language-Team: Vietnamese "
 "<http://weblate.freepbx.org/projects/freepbx/soundlang/vi/>\n"
@@ -440,7 +440,7 @@ msgstr ""
 
 #: Soundlang.class.php:264 Soundlang.class.php:281 Soundlang.class.php:293
 msgid "Reset"
-msgstr ""
+msgstr "Cài đặt lại"
 
 #: Soundlang.class.php:561
 msgid "Russian"
@@ -448,7 +448,7 @@ msgstr ""
 
 #: views/packages.php:7 views/rnav.php:4 views/settings.php:4
 msgid "Settings"
-msgstr ""
+msgstr "Các cài đặt"
 
 #: Console/Soundlang.class.php:21
 msgid "Sound Language Prompts"
@@ -477,7 +477,7 @@ msgstr ""
 #: Soundlang.class.php:269 Soundlang.class.php:286 Soundlang.class.php:298
 #: views/oobe.php:89
 msgid "Submit"
-msgstr ""
+msgstr "Gửi đi"
 
 #: Console/Soundlang.class.php:58
 #, php-format
@@ -517,25 +517,26 @@ msgstr ""
 #: Console/Soundlang.class.php:54 Console/Soundlang.class.php:68
 #: Console/Soundlang.class.php:95
 msgid "That is not a valid ID"
-msgstr ""
+msgstr "Đó không phải là một ID hợp lệ"
 
 #: Console/Soundlang.class.php:49 Console/Soundlang.class.php:63
 msgid "The command provided is not valid"
-msgstr ""
+msgstr "Lệnh đã cung cấp không hợp lệ"
 
 #: Soundlang.class.php:515
 msgid ""
 "The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in "
 "the HTML form"
-msgstr ""
+msgstr "Tệp được tải lên quá dung lượng tệp tối đa được quy định trong mẫu HTML"
 
 #: Soundlang.class.php:512
 msgid "The uploaded file exceeds the upload_max_filesize directive in php.ini"
 msgstr ""
+"Tệp được tải lên vượt quá dung lượng tệp tối đa đã quy định trong php.ini"
 
 #: Soundlang.class.php:518
 msgid "The uploaded file was only partially uploaded"
-msgstr ""
+msgstr "Tệp tải lên đã chỉ được tải lên từng phần"
 
 #: assets/js/soundlang.js:309
 msgid "There was an error, See the console for more details"
@@ -600,11 +601,11 @@ msgstr ""
 
 #: Soundlang.class.php:507
 msgid "Unsupported file format"
-msgstr ""
+msgstr "Định dạng tệp không được hỗ trợ"
 
 #: assets/js/soundlang.js:180
 msgid "Unsupported file type"
-msgstr ""
+msgstr "Kiểu tệp không được hỗ trợ"
 
 #: views/customlang.php:78
 msgid "Upload Recording"
