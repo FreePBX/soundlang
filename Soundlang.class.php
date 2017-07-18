@@ -932,11 +932,16 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 		$base_version = $matches[1];
 
 		$packages = $this->getPackages();
-
 		$xml = $this->getRemoteFile("/sounds-" . $base_version . ".xml");
 		if(!empty($xml)) {
+			libxml_use_internal_errors(true);
 			$soundsobj = simplexml_load_string($xml);
-
+			if($soundsobj === false){
+				foreach(libxml_get_errors() as $error) {
+					dbug(sprintf("Soundlang Response: %s",$error->message));
+				}
+				$soundsobj = json_encode(array());
+			}
 			/* Convert to an associative array */
 			$sounds = json_decode(json_encode($soundsobj), true);
 			if (empty($sounds) || empty($sounds['sounds']) || empty($sounds['sounds']['package'])) {
