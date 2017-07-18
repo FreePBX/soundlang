@@ -2,11 +2,12 @@
 	<rawname>soundlang</rawname>
 	<repo>standard</repo>
 	<name>Sound Languages</name>
-	<version>13.0.24.4</version>
+	<version>13.0.24.5</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
 	<changelog>
+		*13.0.24.5* Catch errors on invalid xml
 		*13.0.24.4* FREEPBX-14426 cannot install swedish language
 		*13.0.24.3* FREEPBX-14294 better output during errors
 		*13.0.24.2* FREEPBX-13723 Sound Languages fails when outputting to multiple formats
