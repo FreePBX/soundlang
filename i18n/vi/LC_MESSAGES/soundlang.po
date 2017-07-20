@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-07-18 16:49-0400\n"
-"PO-Revision-Date: 2017-07-20 07:51+0200\n"
+"PO-Revision-Date: 2017-07-20 10:19+0200\n"
 "Last-Translator: PETER <ftek@ymail.com>\n"
 "Language-Team: Vietnamese "
 "<http://weblate.freepbx.org/projects/freepbx/soundlang/vi/>\n"
@@ -43,7 +43,7 @@ msgstr "Tháo tác"
 
 #: views/packages.php:15
 msgid "Actions"
-msgstr "Các thao tác"
+msgstr "Thao tác"
 
 #: views/customlang.php:6
 msgid "Add Custom Language"
@@ -167,7 +167,7 @@ msgstr "Đang xóa..."
 
 #: views/customlang.php:55 views/customlangs.php:22
 msgid "Description"
-msgstr "Mô tả"
+msgstr "Mô Tả"
 
 #: install.php:109 install.php:162
 msgid "Done"
