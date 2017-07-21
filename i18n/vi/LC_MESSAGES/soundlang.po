@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-07-18 16:49-0400\n"
-"PO-Revision-Date: 2017-07-20 14:30+0200\n"
+"PO-Revision-Date: 2017-07-21 10:22+0200\n"
 "Last-Translator: PETER <ftek@ymail.com>\n"
 "Language-Team: Vietnamese "
 "<http://weblate.freepbx.org/projects/freepbx/soundlang/vi/>\n"
@@ -43,7 +43,7 @@ msgstr "Tháo tác"
 
 #: views/packages.php:15
 msgid "Actions"
-msgstr "Thao tác"
+msgstr "Các Thao tác"
 
 #: views/customlang.php:6
 msgid "Add Custom Language"
@@ -103,8 +103,8 @@ msgid ""
 "Check all file formats you would like this system recording to be encoded "
 "into"
 msgstr ""
-"Đánh dấu check vào tất cả các định dạng tệp mà bạn muốn trình ghi âm hệ "
-"thống được mã hóa vào"
+"Đánh dấu check vào tất cả các định dạng tệp mà bạn muốn bản ghi hệ thống "
+"được mã hóa"
 
 #: Soundlang.class.php:581
 msgid "China"
@@ -347,7 +347,7 @@ msgstr "Các gói ngôn ngữ"
 
 #: views/settings.php:33
 msgid "Language to be used for sound prompts throughout the system"
-msgstr "Ngôn ngữ được sử dụng cho các sound prompt thông qua hệ thống"
+msgstr "Ngôn ngữ được sử dụng cho các nhắc nhở âm thanh thông qua hệ thống"
 
 #: views/licensemodal.php:7
 msgid "License Agreement"
