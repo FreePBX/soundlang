@@ -1212,6 +1212,7 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 			set_time_limit($this->maxTimeLimit);
 
 			$pest = \FreePBX::Curl()->pest($url);
+			$pest->curl_opts[\CURLOPT_TIMEOUT] = $this->maxTimeLimit;
 			try {
 				$contents = $pest->post($url . $path, $params);
 			} catch(\Exception $e) {
