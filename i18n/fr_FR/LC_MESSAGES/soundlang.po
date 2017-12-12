@@ -10,8 +10,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-07-18 16:49-0400\n"
-"PO-Revision-Date: 2017-12-01 23:43+0200\n"
-"Last-Translator: CATTAN Jérémie <jeremie@famillecattan.com>\n"
+"PO-Revision-Date: 2017-12-11 23:18+0200\n"
+"Last-Translator: JCattan <jeremie@famillecattan.com>\n"
 "Language-Team: French "
 "<http://weblate.freepbx.org/projects/freepbx/soundlang/fr_FR/>\n"
 "Language: fr_FR\n"
@@ -177,7 +177,7 @@ msgstr ""
 
 #: views/customlang.php:91
 msgid "Drop Multiple Files or Archives Here"
-msgstr ""
+msgstr "Déposer plusieurs fichiers ou archives ici"
 
 #: Soundlang.class.php:557
 msgid "Dutch"
@@ -269,6 +269,8 @@ msgid ""
 "If you are doing media conversions this can take a very long time, is that "
 "ok?"
 msgstr ""
+"Si vous effectuez des conversions de médias, cela peut prendre beaucoup de "
+"temps, compris?"
 
 #: Soundlang.class.php:592
 msgid "India"
@@ -393,7 +395,7 @@ msgstr ""
 
 #: Soundlang.class.php:521
 msgid "No file was uploaded"
-msgstr ""
+msgstr "Pas de fichier envoyé"
 
 #: Soundlang.class.php:438
 msgid "No files were sent to the server"
@@ -438,7 +440,7 @@ msgstr ""
 
 #: Soundlang.class.php:264 Soundlang.class.php:281 Soundlang.class.php:293
 msgid "Reset"
-msgstr "Réinitialiser"
+msgstr "Reset"
 
 #: Soundlang.class.php:561
 msgid "Russian"
@@ -475,7 +477,7 @@ msgstr "Espagnol"
 #: Soundlang.class.php:269 Soundlang.class.php:286 Soundlang.class.php:298
 #: views/oobe.php:89
 msgid "Submit"
-msgstr "Valider"
+msgstr "Envoyer"
 
 #: Console/Soundlang.class.php:58
 #, php-format
@@ -526,14 +528,17 @@ msgid ""
 "The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in "
 "the HTML form"
 msgstr ""
+"Le fichier téléchargé dépasse la directive MAX_FILE_SIZE spécifiée dans le "
+"formulaire HTML"
 
 #: Soundlang.class.php:512
 msgid "The uploaded file exceeds the upload_max_filesize directive in php.ini"
 msgstr ""
+"Le fichier téléchargé dépasse la directive upload_max_filesize dans php.ini"
 
 #: Soundlang.class.php:518
 msgid "The uploaded file was only partially uploaded"
-msgstr ""
+msgstr "Le fichier téléchargé n'a été que partiellement téléchargé"
 
 #: assets/js/soundlang.js:309
 msgid "There was an error, See the console for more details"
@@ -606,7 +611,7 @@ msgstr "Type de fichier non supporté"
 
 #: views/customlang.php:78
 msgid "Upload Recording"
-msgstr ""
+msgstr "Envoyer Enregistrement"
 
 #: views/customlang.php:98
 #, php-format
