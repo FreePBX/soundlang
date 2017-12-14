@@ -10,8 +10,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-07-18 16:49-0400\n"
-"PO-Revision-Date: 2017-10-15 22:21+0200\n"
-"Last-Translator: hammer125 <auswertung@aon.at>\n"
+"PO-Revision-Date: 2017-12-14 16:45+0200\n"
+"Last-Translator: tranlsated <noemi@translated.net>\n"
 "Language-Team: German "
 "<http://weblate.freepbx.org/projects/freepbx/soundlang/de_DE/>\n"
 "Language: de_DE\n"
@@ -55,7 +55,7 @@ msgstr "Neue fremde Sprache hinzufügen"
 
 #: soundlang.i18n.php:6
 msgid "Admin"
-msgstr "Administrator"
+msgstr "Admin"
 
 #: assets/js/soundlang.js:123
 msgid "Are you sure you want to delete this custom language?"
@@ -172,7 +172,7 @@ msgstr "Beschreibung"
 
 #: install.php:109 install.php:162
 msgid "Done"
-msgstr "Erledigt"
+msgstr "Fertig"
 
 #: views/settings.php:42
 msgid "Download Formats"
