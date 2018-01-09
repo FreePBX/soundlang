@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-06 09:38-0700\n"
+"POT-Creation-Date: 2018-01-09 15:26-0500\n"
 "PO-Revision-Date: 2017-03-07 17:25+0200\n"
 "Last-Translator: hammer125 <auswertung@aon.at>\n"
 "Language-Team: German <http://weblate.freepbx.org/projects/freepbx/soundlang/"
@@ -127,7 +127,7 @@ msgstr "Kolumbien"
 msgid "Convert To"
 msgstr "Konvertieren in"
 
-#: Soundlang.class.php:1060
+#: Soundlang.class.php:1065
 #, php-format
 msgid "Could not untar %s to %s"
 msgstr "Konnte %s nicht in %s entpacken (tar)"
@@ -144,8 +144,7 @@ msgstr "Tschechisch"
 msgid "Czech Republic"
 msgstr "Tschechien"
 
-#: Soundlang.class.php:276 assets/js/soundlang.js:96
-#: assets/js/soundlang.js:102
+#: Soundlang.class.php:276 assets/js/soundlang.js:96 assets/js/soundlang.js:102
 msgid "Delete"
 msgstr "Löschen"
 
@@ -189,7 +188,7 @@ msgstr "Fremde Sprache bearbeiten"
 msgid "English"
 msgstr "Englisch"
 
-#: Soundlang.class.php:1230
+#: Soundlang.class.php:1236
 #, php-format
 msgid "Error %s returned from remote servers %s"
 msgstr ""
@@ -592,7 +591,7 @@ msgstr "Großbritannien"
 msgid "United States"
 msgstr "Vereinigte Staaten von Amerika"
 
-#: Soundlang.class.php:1237
+#: Soundlang.class.php:1243
 #, php-format
 msgid "Unknown Error. Response was empty from %s"
 msgstr "Unbekannter Fehler. Die Antwort von %s war leer"
@@ -620,7 +619,7 @@ msgstr ""
 "Das beinhaltet auch Archive (die verschiedene Dateien, wie %s) enthalten und "
 "mehrere Dateien"
 
-#: Soundlang.class.php:1059
+#: Soundlang.class.php:1064
 #, php-format
 msgid "failed to open %s sounds archive."
 msgstr "konnte %s Soundarchive nicht öffnen."
