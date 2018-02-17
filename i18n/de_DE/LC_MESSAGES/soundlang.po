@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-07-18 16:49-0400\n"
-"PO-Revision-Date: 2018-02-16 18:10+0200\n"
+"PO-Revision-Date: 2018-02-16 20:01+0200\n"
 "Last-Translator: Nils <Nils@heckenkamp.info>\n"
 "Language-Team: German "
 "<http://weblate.freepbx.org/projects/freepbx/soundlang/de_DE/>\n"
@@ -55,7 +55,7 @@ msgstr "Neue fremde Sprache hinzufügen"
 
 #: soundlang.i18n.php:6
 msgid "Admin"
-msgstr "Admin"
+msgstr "Administrator"
 
 #: assets/js/soundlang.js:123
 msgid "Are you sure you want to delete this custom language?"
@@ -104,8 +104,8 @@ msgid ""
 "Check all file formats you would like this system recording to be encoded "
 "into"
 msgstr ""
-"Haken Sie alle Dateiformate an, in die diese Systemaufnahmen kodiert werden "
-"sollen"
+"Haken Sie alle Dateiformate an, in die diese Systemaufnahme kodiert werden "
+"soll"
 
 #: Soundlang.class.php:581
 msgid "China"
@@ -480,7 +480,7 @@ msgstr "Spanisch"
 #: Soundlang.class.php:269 Soundlang.class.php:286 Soundlang.class.php:298
 #: views/oobe.php:89
 msgid "Submit"
-msgstr "Bestätigen"
+msgstr "Absenden"
 
 #: Console/Soundlang.class.php:58
 #, php-format
