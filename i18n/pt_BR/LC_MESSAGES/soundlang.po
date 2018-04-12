@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-09 15:26-0500\n"
+"POT-Creation-Date: 2018-04-11 22:39-0400\n"
 "PO-Revision-Date: 2017-03-08 21:32+0200\n"
 "Last-Translator: Kingvoice <suporte@kingvoice.com.br>\n"
 "Language-Team: Portuguese (Brazil) <http://weblate.freepbx.org/projects/"
@@ -188,7 +188,7 @@ msgstr "Editar Idioma Personalizado"
 msgid "English"
 msgstr "Inglês"
 
-#: Soundlang.class.php:1236
+#: Soundlang.class.php:1241
 #, php-format
 msgid "Error %s returned from remote servers %s"
 msgstr ""
@@ -507,6 +507,13 @@ msgstr "Não é um ID válido"
 msgid "The command provided is not valid"
 msgstr "O comando fornecido não é válido"
 
+#: Soundlang.class.php:1237
+msgid ""
+"The mirror server did not return the correct response and has been changed "
+"from the default server(s), it has now been reset back to the default. "
+"Please try again"
+msgstr ""
+
 #: Soundlang.class.php:515
 msgid ""
 "The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in "
@@ -586,7 +593,7 @@ msgstr "Reino Unido"
 msgid "United States"
 msgstr "Estados Unidos"
 
-#: Soundlang.class.php:1243
+#: Soundlang.class.php:1250
 #, php-format
 msgid "Unknown Error. Response was empty from %s"
 msgstr "Erro Desconhecido. Resposta foi vazia de %s"

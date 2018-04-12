@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-11 22:38-0400\n"
+"POT-Creation-Date: 2018-04-11 22:39-0400\n"
 "PO-Revision-Date: 2018-02-16 20:01+0200\n"
 "Last-Translator: Nils <Nils@heckenkamp.info>\n"
 "Language-Team: German <http://weblate.freepbx.org/projects/freepbx/soundlang/"
@@ -164,7 +164,7 @@ msgstr "Löschen..."
 msgid "Description"
 msgstr "Beschreibung"
 
-#: install.php:109 install.php:162
+#: install.php:52 install.php:83 install.php:106
 msgid "Done"
 msgstr "Erledigt"
 
@@ -188,7 +188,7 @@ msgstr "Fremde Sprache bearbeiten"
 msgid "English"
 msgstr "Englisch"
 
-#: Soundlang.class.php:1240
+#: Soundlang.class.php:1241
 #, php-format
 msgid "Error %s returned from remote servers %s"
 msgstr "Fehler %s wird vom Remote-Server %s wiedergegeben"
@@ -209,7 +209,7 @@ msgstr "Dateien zum uploaden"
 msgid "Finish"
 msgstr "Beenden"
 
-#: install.php:112
+#: install.php:55
 msgid "Finished installing default sounds"
 msgstr "Installation der Standard-Klänge beendet"
 
@@ -274,17 +274,17 @@ msgstr "Installiert"
 msgid "Installing"
 msgstr "Installiere"
 
-#: install.php:106
+#: install.php:49
 #, php-format
 msgid "Installing %s..."
 msgstr "Installiere %s..."
 
-#: install.php:138
+#: install.php:81
 #, php-format
 msgid "Installing additional package %s..."
 msgstr "Installiere zusätzliches Paket %s..."
 
-#: install.php:160
+#: install.php:104
 #, php-format
 msgid "Installing/updating packages for %s..."
 msgstr "Installiere/aktualisiere Pakete für %s..."
@@ -373,7 +373,7 @@ msgstr "Niederlande"
 msgid "New Zealand"
 msgstr "Neuseeland"
 
-#: install.php:99
+#: install.php:42
 msgid "New install, downloading default english language set..."
 msgstr "Neue Installation, lade den englischen Standardsprachsatz herunter..."
 
@@ -507,7 +507,7 @@ msgstr "Das ist keine gültige ID"
 msgid "The command provided is not valid"
 msgstr "Der verwendete Befehl ist nicht gültig"
 
-#: Soundlang.class.php:1236
+#: Soundlang.class.php:1237
 msgid ""
 "The mirror server did not return the correct response and has been changed "
 "from the default server(s), it has now been reset back to the default. "
@@ -578,7 +578,7 @@ msgstr "Türkisch"
 msgid "Unable to get online sound packages. Error was: [%s] %s"
 msgstr "Nicht möglich, Soundpakete online zu erhalten. Der Fehler war: [%s] %s"
 
-#: install.php:88
+#: install.php:31
 #, php-format
 msgid "Unable to get online sound packages. Error was: [%s] %s. Continuing..."
 msgstr ""
@@ -597,7 +597,7 @@ msgstr "Großbritannien"
 msgid "United States"
 msgstr "Vereinigte Staaten von Amerika"
 
-#: Soundlang.class.php:1249
+#: Soundlang.class.php:1250
 #, php-format
 msgid "Unknown Error. Response was empty from %s"
 msgstr "Unbekannter Fehler. Die Antwort von %s war leer"

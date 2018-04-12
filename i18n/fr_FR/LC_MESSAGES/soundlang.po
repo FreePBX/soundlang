@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-09 15:26-0500\n"
+"POT-Creation-Date: 2018-04-11 22:39-0400\n"
 "PO-Revision-Date: 2016-02-04 23:02+0200\n"
 "Last-Translator: Nicolas Riendeau <freepbx@riendeau.org>\n"
 "Language-Team: French <http://weblate.freepbx.org/projects/freepbx/soundlang/"
@@ -185,7 +185,7 @@ msgstr "Éditer un langage personnalisé"
 msgid "English"
 msgstr "Anglais"
 
-#: Soundlang.class.php:1236
+#: Soundlang.class.php:1241
 #, php-format
 msgid "Error %s returned from remote servers %s"
 msgstr ""
@@ -504,6 +504,13 @@ msgstr "Ce n'est pas un ID valide"
 msgid "The command provided is not valid"
 msgstr "La commande fournie n'est pas valide"
 
+#: Soundlang.class.php:1237
+msgid ""
+"The mirror server did not return the correct response and has been changed "
+"from the default server(s), it has now been reset back to the default. "
+"Please try again"
+msgstr ""
+
 #: Soundlang.class.php:515
 msgid ""
 "The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in "
@@ -574,7 +581,7 @@ msgstr "Royaume-Uni"
 msgid "United States"
 msgstr "États-Unis"
 
-#: Soundlang.class.php:1243
+#: Soundlang.class.php:1250
 #, php-format
 msgid "Unknown Error. Response was empty from %s"
 msgstr ""
