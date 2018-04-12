@@ -9,11 +9,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-18 16:49-0400\n"
+"POT-Creation-Date: 2018-04-11 22:38-0400\n"
 "PO-Revision-Date: 2017-12-11 23:18+0200\n"
 "Last-Translator: JCattan <jeremie@famillecattan.com>\n"
-"Language-Team: French "
-"<http://weblate.freepbx.org/projects/freepbx/soundlang/fr_FR/>\n"
+"Language-Team: French <http://weblate.freepbx.org/projects/freepbx/soundlang/"
+"fr_FR/>\n"
 "Language: fr_FR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -124,11 +124,6 @@ msgstr ""
 msgid "Convert To"
 msgstr ""
 
-#: assets/js/soundlang.js:282
-#, perl-format
-msgid "Copying %s to %s"
-msgstr ""
-
 #: Soundlang.class.php:1065
 #, php-format
 msgid "Could not untar %s to %s"
@@ -146,8 +141,7 @@ msgstr ""
 msgid "Czech Republic"
 msgstr ""
 
-#: Soundlang.class.php:276 assets/js/soundlang.js:96
-#: assets/js/soundlang.js:102
+#: Soundlang.class.php:276 assets/js/soundlang.js:96 assets/js/soundlang.js:102
 msgid "Delete"
 msgstr "Supprimer"
 
@@ -191,7 +185,7 @@ msgstr "Éditer un langage personnalisé"
 msgid "English"
 msgstr "Anglais"
 
-#: Soundlang.class.php:1235
+#: Soundlang.class.php:1240
 #, php-format
 msgid "Error %s returned from remote servers %s"
 msgstr ""
@@ -263,14 +257,6 @@ msgstr "Hong Kong"
 #: views/customlangs.php:20
 msgid "ID"
 msgstr "ID"
-
-#: assets/js/soundlang.js:242
-msgid ""
-"If you are doing media conversions this can take a very long time, is that "
-"ok?"
-msgstr ""
-"Si vous effectuez des conversions de médias, cela peut prendre beaucoup de "
-"temps, compris?"
 
 #: Soundlang.class.php:592
 msgid "India"
@@ -433,11 +419,6 @@ msgstr "Portugal"
 msgid "Portuguese"
 msgstr "Portugais"
 
-#: assets/js/soundlang.js:280
-#, perl-format
-msgid "Processing %s for %s in format %s"
-msgstr ""
-
 #: Soundlang.class.php:264 Soundlang.class.php:281 Soundlang.class.php:293
 msgid "Reset"
 msgstr "Reset"
@@ -523,6 +504,13 @@ msgstr "Ce n'est pas un ID valide"
 msgid "The command provided is not valid"
 msgstr "La commande fournie n'est pas valide"
 
+#: Soundlang.class.php:1236
+msgid ""
+"The mirror server did not return the correct response and has been changed "
+"from the default server(s), it has now been reset back to the default. "
+"Please try again"
+msgstr ""
+
 #: Soundlang.class.php:515
 msgid ""
 "The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in "
@@ -596,7 +584,7 @@ msgstr "Royaume-Uni"
 msgid "United States"
 msgstr "États-Unis"
 
-#: Soundlang.class.php:1242
+#: Soundlang.class.php:1249
 #, php-format
 msgid "Unknown Error. Response was empty from %s"
 msgstr ""
@@ -621,14 +609,17 @@ msgid ""
 "files"
 msgstr ""
 
-#: assets/js/soundlang.js:229
-msgid "You must set a valid language code"
-msgstr ""
-
 #: Soundlang.class.php:1064
 #, php-format
 msgid "failed to open %s sounds archive."
 msgstr "échec d'ouverture de l'archive de sons %s."
+
+#~ msgid ""
+#~ "If you are doing media conversions this can take a very long time, is "
+#~ "that ok?"
+#~ msgstr ""
+#~ "Si vous effectuez des conversions de médias, cela peut prendre beaucoup "
+#~ "de temps, compris?"
 
 #~ msgid "Failed to get remote file, error was:"
 #~ msgstr "Échec lors de l'obtention du fichier distant, l'erreur était :"

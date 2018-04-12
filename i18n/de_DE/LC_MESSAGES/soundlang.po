@@ -9,11 +9,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-18 16:49-0400\n"
+"POT-Creation-Date: 2018-04-11 22:38-0400\n"
 "PO-Revision-Date: 2018-02-16 20:01+0200\n"
 "Last-Translator: Nils <Nils@heckenkamp.info>\n"
-"Language-Team: German "
-"<http://weblate.freepbx.org/projects/freepbx/soundlang/de_DE/>\n"
+"Language-Team: German <http://weblate.freepbx.org/projects/freepbx/soundlang/"
+"de_DE/>\n"
 "Language: de_DE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -127,11 +127,6 @@ msgstr "Kolumbien"
 msgid "Convert To"
 msgstr "Konvertieren in"
 
-#: assets/js/soundlang.js:282
-#, perl-format
-msgid "Copying %s to %s"
-msgstr "Kopiere %s in %s"
-
 #: Soundlang.class.php:1065
 #, php-format
 msgid "Could not untar %s to %s"
@@ -149,8 +144,7 @@ msgstr "Tschechisch"
 msgid "Czech Republic"
 msgstr "Tschechien"
 
-#: Soundlang.class.php:276 assets/js/soundlang.js:96
-#: assets/js/soundlang.js:102
+#: Soundlang.class.php:276 assets/js/soundlang.js:96 assets/js/soundlang.js:102
 msgid "Delete"
 msgstr "Löschen"
 
@@ -194,7 +188,7 @@ msgstr "Fremde Sprache bearbeiten"
 msgid "English"
 msgstr "Englisch"
 
-#: Soundlang.class.php:1235
+#: Soundlang.class.php:1240
 #, php-format
 msgid "Error %s returned from remote servers %s"
 msgstr "Fehler %s wird vom Remote-Server %s wiedergegeben"
@@ -267,14 +261,6 @@ msgstr "Hongkong"
 #: views/customlangs.php:20
 msgid "ID"
 msgstr "ID"
-
-#: assets/js/soundlang.js:242
-msgid ""
-"If you are doing media conversions this can take a very long time, is that "
-"ok?"
-msgstr ""
-"Sollten Sie eine Konvertierung von Medien machen kann dieser Vorgang sehr "
-"lange dauern, Sind Sie damit einverstanden?"
 
 #: Soundlang.class.php:592
 msgid "India"
@@ -435,11 +421,6 @@ msgstr "Portugal"
 msgid "Portuguese"
 msgstr "Portugiesisch"
 
-#: assets/js/soundlang.js:280
-#, perl-format
-msgid "Processing %s for %s in format %s"
-msgstr "Verarbeite %s für %s in das Format %s"
-
 #: Soundlang.class.php:264 Soundlang.class.php:281 Soundlang.class.php:293
 msgid "Reset"
 msgstr "Zurücksetzen"
@@ -526,6 +507,13 @@ msgstr "Das ist keine gültige ID"
 msgid "The command provided is not valid"
 msgstr "Der verwendete Befehl ist nicht gültig"
 
+#: Soundlang.class.php:1236
+msgid ""
+"The mirror server did not return the correct response and has been changed "
+"from the default server(s), it has now been reset back to the default. "
+"Please try again"
+msgstr ""
+
 #: Soundlang.class.php:515
 msgid ""
 "The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in "
@@ -609,7 +597,7 @@ msgstr "Großbritannien"
 msgid "United States"
 msgstr "Vereinigte Staaten von Amerika"
 
-#: Soundlang.class.php:1242
+#: Soundlang.class.php:1249
 #, php-format
 msgid "Unknown Error. Response was empty from %s"
 msgstr "Unbekannter Fehler. Die Antwort von %s war leer"
@@ -637,11 +625,23 @@ msgstr ""
 "Das beinhaltet auch Archive (die verschiedene Dateien, wie %s) enthalten und "
 "mehrere Dateien"
 
-#: assets/js/soundlang.js:229
-msgid "You must set a valid language code"
-msgstr "Sie müssen einen gültigen Sprachcode wählen"
-
 #: Soundlang.class.php:1064
 #, php-format
 msgid "failed to open %s sounds archive."
 msgstr "konnte %s Soundarchive nicht öffnen."
+
+#~ msgid "Copying %s to %s"
+#~ msgstr "Kopiere %s in %s"
+
+#~ msgid ""
+#~ "If you are doing media conversions this can take a very long time, is "
+#~ "that ok?"
+#~ msgstr ""
+#~ "Sollten Sie eine Konvertierung von Medien machen kann dieser Vorgang sehr "
+#~ "lange dauern, Sind Sie damit einverstanden?"
+
+#~ msgid "Processing %s for %s in format %s"
+#~ msgstr "Verarbeite %s für %s in das Format %s"
+
+#~ msgid "You must set a valid language code"
+#~ msgstr "Sie müssen einen gültigen Sprachcode wählen"

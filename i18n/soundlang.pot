@@ -3,16 +3,17 @@
 # For licensing information, please see the file named LICENSE located in the module directory
 #
 # FreePBX language template for soundlang
-# Copyright (C) 2008-2017 Sangoma Technologies, Inc.
+# Copyright (C) 2008-2018 Sangoma Technologies, Inc.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-18 16:49-0400\n"
+"POT-Creation-Date: 2018-04-11 22:38-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -120,11 +121,6 @@ msgstr ""
 msgid "Convert To"
 msgstr ""
 
-#: assets/js/soundlang.js:282
-#, perl-format
-msgid "Copying %s to %s"
-msgstr ""
-
 #: Soundlang.class.php:1065
 #, php-format
 msgid "Could not untar %s to %s"
@@ -191,7 +187,7 @@ msgstr ""
 msgid "English"
 msgstr ""
 
-#: Soundlang.class.php:1235
+#: Soundlang.class.php:1240
 #, php-format
 msgid "Error %s returned from remote servers %s"
 msgstr ""
@@ -263,12 +259,6 @@ msgstr ""
 
 #: views/customlangs.php:20
 msgid "ID"
-msgstr ""
-
-#: assets/js/soundlang.js:242
-msgid ""
-"If you are doing media conversions this can take a very long time, is that "
-"ok?"
 msgstr ""
 
 #: Soundlang.class.php:592
@@ -431,11 +421,6 @@ msgstr ""
 msgid "Portuguese"
 msgstr ""
 
-#: assets/js/soundlang.js:280
-#, perl-format
-msgid "Processing %s for %s in format %s"
-msgstr ""
-
 #: Soundlang.class.php:264
 #: Soundlang.class.php:281
 #: Soundlang.class.php:293
@@ -530,6 +515,13 @@ msgstr ""
 msgid "The command provided is not valid"
 msgstr ""
 
+#: Soundlang.class.php:1236
+msgid ""
+"The mirror server did not return the correct response and has been changed "
+"from the default server(s), it has now been reset back to the default. "
+"Please try again"
+msgstr ""
+
 #: Soundlang.class.php:515
 msgid ""
 "The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in "
@@ -600,7 +592,7 @@ msgstr ""
 msgid "United States"
 msgstr ""
 
-#: Soundlang.class.php:1242
+#: Soundlang.class.php:1249
 #, php-format
 msgid "Unknown Error. Response was empty from %s"
 msgstr ""
@@ -623,10 +615,6 @@ msgid ""
 "Upload files from your local system. Supported upload formats are: %s. This "
 "includes archives (that include multiple files, such as %s) and multiple "
 "files"
-msgstr ""
-
-#: assets/js/soundlang.js:229
-msgid "You must set a valid language code"
 msgstr ""
 
 #: Soundlang.class.php:1064
