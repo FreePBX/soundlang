@@ -2,11 +2,12 @@
 	<rawname>soundlang</rawname>
 	<repo>standard</repo>
 	<name>Sound Languages</name>
-	<version>14.0.4.3</version>
+	<version>14.0.4.4</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
 	<changelog>
+		*14.0.4.4* If there is an error and the mirror servers are different reset them back
 		*14.0.4.3* Set timeout on curl downloads
 		*14.0.4.2* FREEPBX-15281
 		*14.0.4.1* Add missing OOBE Hook
