@@ -1234,7 +1234,7 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 				if($this->FreePBX->Config->get('MODULE_REPO') !== $this->FreePBX->Config->get_conf_default_setting('MODULE_REPO')) {
 					$this->FreePBX->Config->reset_conf_settings(array('MODULE_REPO'),true);
 					$code = 500;
-					$message = _("The mirror server did not return the correct response and has been changed from the default server(s), it has now been reset back to the default. Please try again");
+					$message = _("The mirror server did not return the correct response and had been previously changed from the default server(s), it has now been reset back to the standard default. Please try again");
 				} else {
 					$code = $e->getCode();
 					$msg = $e->getMessage();
