@@ -9,9 +9,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-09 15:26-0500\n"
-"PO-Revision-Date: 2017-03-07 17:25+0200\n"
-"Last-Translator: hammer125 <auswertung@aon.at>\n"
+"POT-Creation-Date: 2018-04-11 22:38-0400\n"
+"PO-Revision-Date: 2018-02-16 20:01+0200\n"
+"Last-Translator: Nils <Nils@heckenkamp.info>\n"
 "Language-Team: German <http://weblate.freepbx.org/projects/freepbx/soundlang/"
 "de_DE/>\n"
 "Language: de_DE\n"
@@ -23,7 +23,7 @@ msgstr ""
 
 #: Soundlang.class.php:530
 msgid "A PHP extension stopped the file upload"
-msgstr "Eine PHP-Erweiterung hat den Datei-Upload gestoppt"
+msgstr "Eine PHP Erweiterung hat den Datei Upload gestoppt"
 
 #: views/customlang.php:67
 msgid "A brief description for this Custom Language."
@@ -104,8 +104,8 @@ msgid ""
 "Check all file formats you would like this system recording to be encoded "
 "into"
 msgstr ""
-"Haken Sie alle Dateiformate an, in die diese Systemaufnahmen kodiert werden "
-"sollen"
+"Haken Sie alle Dateiformate an, in die diese Systemaufnahme kodiert werden "
+"soll"
 
 #: Soundlang.class.php:581
 msgid "China"
@@ -164,7 +164,7 @@ msgstr "Löschen..."
 msgid "Description"
 msgstr "Beschreibung"
 
-#: install.php:52 install.php:83 install.php:106
+#: install.php:109 install.php:162
 msgid "Done"
 msgstr "Erledigt"
 
@@ -188,10 +188,10 @@ msgstr "Fremde Sprache bearbeiten"
 msgid "English"
 msgstr "Englisch"
 
-#: Soundlang.class.php:1236
+#: Soundlang.class.php:1240
 #, php-format
 msgid "Error %s returned from remote servers %s"
-msgstr ""
+msgstr "Fehler %s wird vom Remote-Server %s wiedergegeben"
 
 #: Soundlang.class.php:536
 msgid "Error: You should never see this"
@@ -209,7 +209,7 @@ msgstr "Dateien zum uploaden"
 msgid "Finish"
 msgstr "Beenden"
 
-#: install.php:55
+#: install.php:112
 msgid "Finished installing default sounds"
 msgstr "Installation der Standard-Klänge beendet"
 
@@ -274,17 +274,17 @@ msgstr "Installiert"
 msgid "Installing"
 msgstr "Installiere"
 
-#: install.php:49
+#: install.php:106
 #, php-format
 msgid "Installing %s..."
 msgstr "Installiere %s..."
 
-#: install.php:81
+#: install.php:138
 #, php-format
 msgid "Installing additional package %s..."
 msgstr "Installiere zusätzliches Paket %s..."
 
-#: install.php:104
+#: install.php:160
 #, php-format
 msgid "Installing/updating packages for %s..."
 msgstr "Installiere/aktualisiere Pakete für %s..."
@@ -373,7 +373,7 @@ msgstr "Niederlande"
 msgid "New Zealand"
 msgstr "Neuseeland"
 
-#: install.php:42
+#: install.php:99
 msgid "New install, downloading default english language set..."
 msgstr "Neue Installation, lade den englischen Standardsprachsatz herunter..."
 
@@ -431,7 +431,7 @@ msgstr "Russisch"
 
 #: views/packages.php:7 views/rnav.php:4 views/settings.php:4
 msgid "Settings"
-msgstr "Einstellungen"
+msgstr "Einstellung"
 
 #: Console/Soundlang.class.php:21
 #, fuzzy
@@ -439,7 +439,6 @@ msgid "Sound Language Prompts"
 msgstr "Sprache der Sprachansagen"
 
 #: soundlang.i18n.php:4 soundlang.i18n.php:10
-#, fuzzy
 msgid "Sound Languages"
 msgstr "Klangsprachen"
 
@@ -462,7 +461,7 @@ msgstr "Spanisch"
 #: Soundlang.class.php:269 Soundlang.class.php:286 Soundlang.class.php:298
 #: views/oobe.php:89
 msgid "Submit"
-msgstr "absenden"
+msgstr "Absenden"
 
 #: Console/Soundlang.class.php:58
 #, php-format
@@ -507,6 +506,13 @@ msgstr "Das ist keine gültige ID"
 #: Console/Soundlang.class.php:49 Console/Soundlang.class.php:63
 msgid "The command provided is not valid"
 msgstr "Der verwendete Befehl ist nicht gültig"
+
+#: Soundlang.class.php:1236
+msgid ""
+"The mirror server did not return the correct response and has been changed "
+"from the default server(s), it has now been reset back to the default. "
+"Please try again"
+msgstr ""
 
 #: Soundlang.class.php:515
 msgid ""
@@ -572,7 +578,7 @@ msgstr "Türkisch"
 msgid "Unable to get online sound packages. Error was: [%s] %s"
 msgstr "Nicht möglich, Soundpakete online zu erhalten. Der Fehler war: [%s] %s"
 
-#: install.php:31
+#: install.php:88
 #, php-format
 msgid "Unable to get online sound packages. Error was: [%s] %s. Continuing..."
 msgstr ""
@@ -591,14 +597,14 @@ msgstr "Großbritannien"
 msgid "United States"
 msgstr "Vereinigte Staaten von Amerika"
 
-#: Soundlang.class.php:1243
+#: Soundlang.class.php:1249
 #, php-format
 msgid "Unknown Error. Response was empty from %s"
 msgstr "Unbekannter Fehler. Die Antwort von %s war leer"
 
 #: Soundlang.class.php:507
 msgid "Unsupported file format"
-msgstr "Nicht unterstütztes Datei Format"
+msgstr "Nicht unterstütztes Dateiformat"
 
 #: assets/js/soundlang.js:180
 msgid "Unsupported file type"
