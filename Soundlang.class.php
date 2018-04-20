@@ -58,9 +58,12 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 	}
 
 	public function doDialplanHook(&$ext, $engine, $priority) {
+		global $core_conf;
 		$language = $this->getLanguage();
 		if ($language != "") {
 			$ext->addGlobal('SIPLANG',$language);
+			$core_conf->addSipGeneral('language', $language);
+			$core_conf->addIaxGeneral('language', $language);
 		}
 	}
 
