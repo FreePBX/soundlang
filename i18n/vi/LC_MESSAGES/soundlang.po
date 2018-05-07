@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-11 22:38-0400\n"
+"POT-Creation-Date: 2018-05-07 16:00+0530\n"
 "PO-Revision-Date: 2017-08-08 16:34+0200\n"
 "Last-Translator: PETER <ftek@ymail.com>\n"
 "Language-Team: Vietnamese <http://weblate.freepbx.org/projects/freepbx/"
@@ -21,7 +21,7 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Weblate 2.4\n"
 
-#: Soundlang.class.php:530
+#: Soundlang.class.php:533
 msgid "A PHP extension stopped the file upload"
 msgstr "Một máy nhánh PHP vừa dừng việc tải tệp lên"
 
@@ -66,7 +66,7 @@ msgstr "Bạn có chắc muốn xóa Tùy chỉnh ngôn ngữ này?"
 msgid "Are you sure you wish to delete this %s?"
 msgstr "Bạn có chắc muốn xóa %s này?"
 
-#: Soundlang.class.php:576
+#: Soundlang.class.php:579
 msgid "Australia"
 msgstr "Nước Úc"
 
@@ -82,11 +82,11 @@ msgstr "Khả dụng"
 msgid "Based on your locale your language and timezone have been pre-selected."
 msgstr "Dựa trên vị trí của bạn, ngôn ngữ và múi giờ vừa được chọn lại."
 
-#: Soundlang.class.php:577
+#: Soundlang.class.php:580
 msgid "Belgium"
 msgstr "Nước Bỉ"
 
-#: Soundlang.class.php:578
+#: Soundlang.class.php:581
 msgid "Brazil"
 msgstr "Nước Brazil"
 
@@ -94,7 +94,7 @@ msgstr "Nước Brazil"
 msgid "Browse"
 msgstr "Trình duyệt"
 
-#: Soundlang.class.php:579
+#: Soundlang.class.php:582
 msgid "Canada"
 msgstr "Nước Canada"
 
@@ -106,11 +106,11 @@ msgstr ""
 "Đánh dấu check vào tất cả các định dạng tệp mà bạn muốn bản ghi hệ thống "
 "được mã hóa"
 
-#: Soundlang.class.php:581
+#: Soundlang.class.php:584
 msgid "China"
 msgstr "Nước Trung Quốc"
 
-#: Soundlang.class.php:564
+#: Soundlang.class.php:567
 msgid "Chinese"
 msgstr "Tiếng Trung Quốc"
 
@@ -118,7 +118,7 @@ msgstr "Tiếng Trung Quốc"
 msgid "Close"
 msgstr "Đóng"
 
-#: Soundlang.class.php:582
+#: Soundlang.class.php:585
 msgid "Colombia"
 msgstr "Nước Colombia"
 
@@ -126,7 +126,7 @@ msgstr "Nước Colombia"
 msgid "Convert To"
 msgstr "Chuyển đổi thành"
 
-#: Soundlang.class.php:1065
+#: Soundlang.class.php:1068
 #, php-format
 msgid "Could not untar %s to %s"
 msgstr "Không thể phân bổ %s đến %s"
@@ -135,15 +135,15 @@ msgstr "Không thể phân bổ %s đến %s"
 msgid "Custom Languages"
 msgstr "Tùy chỉnh ngôn ngữ"
 
-#: Soundlang.class.php:547
+#: Soundlang.class.php:550
 msgid "Czech"
 msgstr "Séc"
 
-#: Soundlang.class.php:583
+#: Soundlang.class.php:586
 msgid "Czech Republic"
 msgstr "Cộng Hòa Séc"
 
-#: Soundlang.class.php:276 assets/js/soundlang.js:96 assets/js/soundlang.js:102
+#: Soundlang.class.php:279 assets/js/soundlang.js:96 assets/js/soundlang.js:102
 msgid "Delete"
 msgstr "Xóa"
 
@@ -175,7 +175,7 @@ msgstr "Dowload các định dạng"
 msgid "Drop Multiple Files or Archives Here"
 msgstr "Thả nhiều tệp hoặc tệp nén ở đây"
 
-#: Soundlang.class.php:557
+#: Soundlang.class.php:560
 msgid "Dutch"
 msgstr "Nước Hà Lan"
 
@@ -183,20 +183,20 @@ msgstr "Nước Hà Lan"
 msgid "Edit Custom Language"
 msgstr "Chỉnh sửa trong Tùy chỉnh ngôn ngữ"
 
-#: Soundlang.class.php:549
+#: Soundlang.class.php:552
 msgid "English"
 msgstr "Tiếng anh"
 
-#: Soundlang.class.php:1240
+#: Soundlang.class.php:1243
 #, php-format
 msgid "Error %s returned from remote servers %s"
 msgstr "Lỗi %s được trả về từ máy chủ %s từ xa"
 
-#: Soundlang.class.php:536
+#: Soundlang.class.php:539
 msgid "Error: You should never see this"
 msgstr "Lỗi: Bạn không nên bao giờ xem điều này"
 
-#: Soundlang.class.php:527
+#: Soundlang.class.php:530
 msgid "Failed to write file to disk"
 msgstr "Ghi tệp vào đĩa không thành công"
 
@@ -204,7 +204,7 @@ msgstr "Ghi tệp vào đĩa không thành công"
 msgid "Files to upload"
 msgstr "Các tệp để tải lên"
 
-#: Soundlang.class.php:552
+#: Soundlang.class.php:555
 msgid "Finish"
 msgstr "Hoàn thành"
 
@@ -216,7 +216,7 @@ msgstr "Cài đặt âm thanh mặc định đã hoàn thành"
 msgid "Finished!"
 msgstr "Đã hoàn thành!"
 
-#: Soundlang.class.php:586
+#: Soundlang.class.php:589
 msgid "Finland"
 msgstr "Phần Lan"
 
@@ -228,19 +228,19 @@ msgstr "Định dạng"
 msgid "Formats (codecs) to download when installing a language pack"
 msgstr "Các định dạng ( codecs) cần tải xuống khi cài đặt một gói ngôn ngữ"
 
-#: Soundlang.class.php:587
+#: Soundlang.class.php:590
 msgid "France"
 msgstr "Pháp"
 
-#: Soundlang.class.php:553
+#: Soundlang.class.php:556
 msgid "French"
 msgstr "Tiếng Pháp"
 
-#: Soundlang.class.php:548
+#: Soundlang.class.php:551
 msgid "German"
 msgstr "Đức"
 
-#: Soundlang.class.php:584
+#: Soundlang.class.php:587
 msgid "Germany"
 msgstr "Tiếng Đức"
 
@@ -248,11 +248,11 @@ msgstr "Tiếng Đức"
 msgid "Global Language"
 msgstr "Ngôn ngữ toàn cầu"
 
-#: Soundlang.class.php:554
+#: Soundlang.class.php:557
 msgid "Hebrew"
 msgstr "Tiếng Do Thái"
 
-#: Soundlang.class.php:589
+#: Soundlang.class.php:592
 msgid "Hong Kong"
 msgstr "Hồng Kông"
 
@@ -260,7 +260,7 @@ msgstr "Hồng Kông"
 msgid "ID"
 msgstr "ID"
 
-#: Soundlang.class.php:592
+#: Soundlang.class.php:595
 msgid "India"
 msgstr "Ấn Độ"
 
@@ -287,31 +287,31 @@ msgstr "Đang cài đặt các gói bổ sung %s..."
 msgid "Installing/updating packages for %s..."
 msgstr "Đang cài đặt/ cập nhật các gói cho %s..."
 
-#: Soundlang.class.php:593
+#: Soundlang.class.php:596
 msgid "Iran"
 msgstr "Nước Iran"
 
-#: Soundlang.class.php:590
+#: Soundlang.class.php:593
 msgid "Ireland"
 msgstr "Nước Ireland"
 
-#: Soundlang.class.php:591
+#: Soundlang.class.php:594
 msgid "Israel"
 msgstr "Nước Israel"
 
-#: Soundlang.class.php:555
+#: Soundlang.class.php:558
 msgid "Italian"
 msgstr "Tiếng Italia"
 
-#: Soundlang.class.php:594
+#: Soundlang.class.php:597
 msgid "Italy"
 msgstr "Nước Ý"
 
-#: Soundlang.class.php:595
+#: Soundlang.class.php:598
 msgid "Japan"
 msgstr "Nước Nhật"
 
-#: Soundlang.class.php:556
+#: Soundlang.class.php:559
 msgid "Japanese"
 msgstr "Tiếng Nhật"
 
@@ -351,11 +351,11 @@ msgstr "Đang tải..."
 msgid "Management of sound prompt languages."
 msgstr "Quản lý ngôn ngữ của sound prompt."
 
-#: Soundlang.class.php:599
+#: Soundlang.class.php:602
 msgid "Mexico"
 msgstr "Nước Mexico"
 
-#: Soundlang.class.php:524
+#: Soundlang.class.php:527
 msgid "Missing a temporary folder"
 msgstr "Thiếu một tệp tạm thời"
 
@@ -363,11 +363,11 @@ msgstr "Thiếu một tệp tạm thời"
 msgid "Module"
 msgstr "Mô đun"
 
-#: Soundlang.class.php:596
+#: Soundlang.class.php:599
 msgid "Netherlands"
 msgstr "Nước Netherland"
 
-#: Soundlang.class.php:598
+#: Soundlang.class.php:601
 msgid "New Zealand"
 msgstr "Nước New Zealand"
 
@@ -379,23 +379,23 @@ msgstr "Cài đặt mới, đang tải cài đặt ngôn ngữ Tiếng anh mặc
 msgid "No Suitable files were found in the archive!"
 msgstr "Không tìm thấy tệp nào phù hợp trong tệp nén!"
 
-#: Soundlang.class.php:521
+#: Soundlang.class.php:524
 msgid "No file was uploaded"
 msgstr "Không có tệp nào được tải lên"
 
-#: Soundlang.class.php:438
+#: Soundlang.class.php:441
 msgid "No files were sent to the server"
 msgstr "Không có tệp nào được gửi tới máy chủ này"
 
-#: Soundlang.class.php:597
+#: Soundlang.class.php:600
 msgid "Norway"
 msgstr "Nước Na Uy"
 
-#: Soundlang.class.php:558
+#: Soundlang.class.php:561
 msgid "Norwegian"
 msgstr "Tiếng Na Uy"
 
-#: Soundlang.class.php:551
+#: Soundlang.class.php:554
 msgid "Persian"
 msgstr "Tiếng Ba Tư"
 
@@ -403,27 +403,27 @@ msgstr "Tiếng Ba Tư"
 msgid "Please Select the default locales of the PBX"
 msgstr "Vui lòng chọn vị trí mặc định của PBX"
 
-#: Soundlang.class.php:600
+#: Soundlang.class.php:603
 msgid "Poland"
 msgstr "Nước Ba Lan"
 
-#: Soundlang.class.php:559
+#: Soundlang.class.php:562
 msgid "Polish"
 msgstr "Tiếng Ba Lan"
 
-#: Soundlang.class.php:601
+#: Soundlang.class.php:604
 msgid "Portugal"
 msgstr "Nước Bồ Đào Nha"
 
-#: Soundlang.class.php:560
+#: Soundlang.class.php:563
 msgid "Portuguese"
 msgstr "Tiếng Bồ Đào Nha"
 
-#: Soundlang.class.php:264 Soundlang.class.php:281 Soundlang.class.php:293
+#: Soundlang.class.php:267 Soundlang.class.php:284 Soundlang.class.php:296
 msgid "Reset"
 msgstr "Cài đặt lại"
 
-#: Soundlang.class.php:561
+#: Soundlang.class.php:564
 msgid "Russian"
 msgstr "Tiếng Nga"
 
@@ -443,19 +443,19 @@ msgstr "Ngôn ngữ âm thanh"
 msgid "Sound Prompts Language"
 msgstr "Ngôn ngữ của Sound Prompt"
 
-#: Soundlang.class.php:606
+#: Soundlang.class.php:609
 msgid "South Africa"
 msgstr "Nước Nam Phi"
 
-#: Soundlang.class.php:585
+#: Soundlang.class.php:588
 msgid "Spain"
 msgstr "Nước Tây Ban Nha"
 
-#: Soundlang.class.php:550
+#: Soundlang.class.php:553
 msgid "Spanish"
 msgstr "Tiếng Tây Ban Nha"
 
-#: Soundlang.class.php:269 Soundlang.class.php:286 Soundlang.class.php:298
+#: Soundlang.class.php:272 Soundlang.class.php:289 Soundlang.class.php:301
 #: views/oobe.php:89
 msgid "Submit"
 msgstr "Gửi đi"
@@ -475,15 +475,15 @@ msgstr "Cài đặt ngôn ngữ mặc định %s thành công, bạn cần phả
 msgid "Successfully uninstalled %s"
 msgstr "Gỡ bỏ %s thành công"
 
-#: Soundlang.class.php:602
+#: Soundlang.class.php:605
 msgid "Sweden"
 msgstr "Thụy Điển"
 
-#: Soundlang.class.php:562
+#: Soundlang.class.php:565
 msgid "Swedish"
 msgstr "Tiếng Thụy Điển"
 
-#: Soundlang.class.php:580
+#: Soundlang.class.php:583
 msgid "Switzerland"
 msgstr "Nước Thụy Sĩ"
 
@@ -491,7 +491,7 @@ msgstr "Nước Thụy Sĩ"
 msgid "System Language"
 msgstr "Ngôn ngữ hệ thống"
 
-#: Soundlang.class.php:604
+#: Soundlang.class.php:607
 msgid "Taiwan"
 msgstr "Đài Loan"
 
@@ -504,26 +504,26 @@ msgstr "Đó không phải là một ID hợp lệ"
 msgid "The command provided is not valid"
 msgstr "Lệnh đã cung cấp không hợp lệ"
 
-#: Soundlang.class.php:1236
+#: Soundlang.class.php:1239
 msgid ""
-"The mirror server did not return the correct response and has been changed "
-"from the default server(s), it has now been reset back to the default. "
-"Please try again"
+"The mirror server did not return the correct response and had been "
+"previously changed from the default server(s), it has now been reset back to "
+"the standard default. Please try again"
 msgstr ""
 
-#: Soundlang.class.php:515
+#: Soundlang.class.php:518
 msgid ""
 "The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in "
 "the HTML form"
 msgstr ""
 "Tệp được tải lên quá dung lượng tệp tối đa được quy định trong mẫu HTML"
 
-#: Soundlang.class.php:512
+#: Soundlang.class.php:515
 msgid "The uploaded file exceeds the upload_max_filesize directive in php.ini"
 msgstr ""
 "Tệp được tải lên vượt quá dung lượng tệp tối đa đã quy định trong php.ini"
 
-#: Soundlang.class.php:518
+#: Soundlang.class.php:521
 msgid "The uploaded file was only partially uploaded"
 msgstr "Tệp đã tải lên chỉ được tải lên từng phần"
 
@@ -559,15 +559,15 @@ msgstr ""
 msgid "Timezone"
 msgstr "Múi giờ"
 
-#: Soundlang.class.php:603
+#: Soundlang.class.php:606
 msgid "Turkey"
 msgstr "Thổ Nhĩ Kỳ"
 
-#: Soundlang.class.php:563
+#: Soundlang.class.php:566
 msgid "Turkish"
 msgstr "Tiếng Thổ Nhĩ Kỳ"
 
-#: Soundlang.class.php:110
+#: Soundlang.class.php:113
 #, php-format
 msgid "Unable to get online sound packages. Error was: [%s] %s"
 msgstr "Không thể có được các gói âm thanh trực tuyến. Lỗi đã xảy ra: [%s] %s"
@@ -583,20 +583,20 @@ msgstr ""
 msgid "Uninstalling. Please wait for the page to refresh"
 msgstr "Đang gỡ bỏ. Vui lòng đợi cho trang làm mới"
 
-#: Soundlang.class.php:588
+#: Soundlang.class.php:591
 msgid "United Kingdom"
 msgstr "Nước Anh"
 
-#: Soundlang.class.php:605
+#: Soundlang.class.php:608
 msgid "United States"
 msgstr "Nước Mỹ"
 
-#: Soundlang.class.php:1249
+#: Soundlang.class.php:1252
 #, php-format
 msgid "Unknown Error. Response was empty from %s"
 msgstr "Lỗi không xác định. Không có phản hồi từ %s"
 
-#: Soundlang.class.php:507
+#: Soundlang.class.php:510
 msgid "Unsupported file format"
 msgstr "Định dạng tệp không được hỗ trợ"
 
@@ -619,7 +619,7 @@ msgstr ""
 "%s. Mô đun này bao gồm các tệp nén ( có chứa nhiều tệp ví dụ %s) và nhiều "
 "tệp khác"
 
-#: Soundlang.class.php:1064
+#: Soundlang.class.php:1067
 #, php-format
 msgid "failed to open %s sounds archive."
 msgstr "Không mở được tệp nén âm thanh %s."
