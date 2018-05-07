@@ -1249,7 +1249,7 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 
 			throw new \Exception($message,$code);
 		} else {
-			throw new \Exception(sprtinf(_("Unknown Error. Response was empty from %s"),json_encode($mirrors['mirrors'])),0);
+			throw new \Exception(sprintf(_("Unknown Error. Response was empty from %s"),json_encode($mirrors['mirrors'])),0);
 		}
 	}
 	public function getRightNav($request) {
