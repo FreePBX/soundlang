@@ -403,7 +403,10 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 					$path = $path ."/".$directory;
 				}
 				if(!file_exists($path)) {
-					mkdir($path);
+					if(!@mkdir($path)){
+						$error = error_get_last();						
+						return array("status" => false, "message" => _("The file is not formatted correctly. Please try again..."));
+					}
 				}
 				$name = preg_replace("/\s+|'+|`+|\"+|<+|>+|\?+|\*|\.+|&+/","-",$name);
 				if(!empty($codec)) {
