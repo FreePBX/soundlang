@@ -2,11 +2,12 @@
 	<rawname>soundlang</rawname>
 	<repo>standard</repo>
 	<name>Sound Languages</name>
-	<version>14.0.4.5</version>
+	<version>14.0.4.6</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
 	<changelog>
+		*14.0.4.6* FREEPBX-17221 Uploading tarball for custom Sound Language can fail 
 		*14.0.4.5* Fixing FREEPBX-17433 Whoops error due to typo error in sprintf 
 		*14.0.4.4* If there is an error and the mirror servers are different reset them back
 		*14.0.4.3* Set timeout on curl downloads
