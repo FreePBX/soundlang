@@ -2,11 +2,13 @@
 	<rawname>soundlang</rawname>
 	<repo>standard</repo>
 	<name>Sound Languages</name>
-	<version>13.0.24.5</version>
+	<version>13.0.24.7</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
 	<changelog>
+		*13.0.24.7* Fixing FREEPBX-17433 Whoops error due to typo error in sprintf 
+		*13.0.24.6* If there is an error and the mirror servers are different reset them back
 		*13.0.24.5* Catch errors on invalid xml
 		*13.0.24.4* FREEPBX-14426 cannot install swedish language
 		*13.0.24.3* FREEPBX-14294 better output during errors
@@ -56,7 +58,7 @@
 		<module>core 13.0.114.2</module>
 		<version>13.0.0</version>
 	</depends>
-	<oobe method="oobeHook" priority="150" />
+	<oobe method="oobeHook" priority="150"/>
 	<menuitems>
 		<soundlang>Sound Languages</soundlang>
 	</menuitems>

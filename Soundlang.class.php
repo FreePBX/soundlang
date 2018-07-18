@@ -58,9 +58,12 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 	}
 
 	public function doDialplanHook(&$ext, $engine, $priority) {
+		global $core_conf;
 		$language = $this->getLanguage();
 		if ($language != "") {
 			$ext->addGlobal('SIPLANG',$language);
+			$core_conf->addSipGeneral('language', $language);
+			$core_conf->addIaxGeneral('language', $language);
 		}
 	}
 
@@ -1230,16 +1233,23 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 			$message = '';
 			$code = '';
 			foreach($exceptions as $e) {
-				$code = $e->getCode();
-				$msg = $e->getMessage();
-				$message .= !empty($msg) ? $msg : sprintf(_("Error %s returned from remote servers %s"),$code,json_encode($mirrors['mirrors']));
-				$message .= ", ";
+				if($this->FreePBX->Config->get('MODULE_REPO') !== $this->FreePBX->Config->get_conf_default_setting('MODULE_REPO')) {
+					$this->FreePBX->Config->reset_conf_settings(array('MODULE_REPO'),true);
+					$code = 500;
+					$message = _("The mirror server did not return the correct response and had been previously changed from the default server(s), it has now been reset back to the standard default. Please try again");
+				} else {
+					$code = $e->getCode();
+					$msg = $e->getMessage();
+					$message .= !empty($msg) ? $msg : sprintf(_("Error %s returned from remote servers %s"),$code,json_encode($mirrors['mirrors']));
+					$message .= ", ";
+				}
+
 			}
 			$message = rtrim(trim($message),",");
 
 			throw new \Exception($message,$code);
 		} else {
-			throw new \Exception(sprtinf(_("Unknown Error. Response was empty from %s"),json_encode($mirrors['mirrors'])),0);
+			throw new \Exception(sprintf(_("Unknown Error. Response was empty from %s"),json_encode($mirrors['mirrors'])),0);
 		}
 	}
 	public function getRightNav($request) {
