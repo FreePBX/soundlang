@@ -292,6 +292,7 @@ $("#customlang-frm").submit(function(e) {
 					temps.push(value.temporary);
 					callback();
 				} else {
+					fpbxToast(data.message,'Error','error');
 					console.error(data);
 					callback(data.message);
 				}

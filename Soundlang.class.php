@@ -403,7 +403,10 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 					$path = $path ."/".$directory;
 				}
 				if(!file_exists($path)) {
-					mkdir($path);
+					if(!@mkdir($path)){
+						$error = error_get_last();						
+						return array("status" => false, "message" => _("The file is not formatted correctly. Please try again..."));
+					}
 				}
 				$name = preg_replace("/\s+|'+|`+|\"+|<+|>+|\?+|\*|\.+|&+/","-",$name);
 				if(!empty($codec)) {
@@ -658,7 +661,7 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 			foreach ($packages as $package) {
 				//Try to use locale_get_display_name if it's installed
 				if(function_exists('locale_get_display_name')) {
-					$language = set_language();
+					$language = \FreePBX::View()->setLanguage();
 					$name = locale_get_display_name($package['language'], $language);
 				} else {
 					$lang = explode('_', $package['language'], 2);
@@ -1220,6 +1223,7 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 			set_time_limit($this->maxTimeLimit);
 
 			$pest = \FreePBX::Curl()->pest($url);
+			$pest->curl_opts[\CURLOPT_TIMEOUT] = $this->maxTimeLimit;
 			try {
 				$contents = $pest->post($url . $path, $params);
 			} catch(\Exception $e) {

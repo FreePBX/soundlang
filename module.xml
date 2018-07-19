@@ -2,32 +2,21 @@
 	<rawname>soundlang</rawname>
 	<repo>standard</repo>
 	<name>Sound Languages</name>
-	<version>13.0.24.7</version>
+	<version>14.0.4.6</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
 	<changelog>
-		*13.0.24.7* Fixing FREEPBX-17433 Whoops error due to typo error in sprintf 
-		*13.0.24.6* If there is an error and the mirror servers are different reset them back
-		*13.0.24.5* Catch errors on invalid xml
-		*13.0.24.4* FREEPBX-14426 cannot install swedish language
-		*13.0.24.3* FREEPBX-14294 better output during errors
-		*13.0.24.2* FREEPBX-13723 Sound Languages fails when outputting to multiple formats
-		*13.0.24.1* Fix blank page issues if urls are not accessible
-		*13.0.24* Add additional language and location names
-		*13.0.23.6* Make OOBE look nicer
-		*13.0.23.5* Add OOBE to select Timezones and languages
-		*13.0.23.4* FREEPBX-13488 cant set global to custom, FREEPBX-13468 already installed not detecting on first install
-		*13.0.23.3* Fix potential crash on upgrade
-		*13.0.23.2* Require core
-		*13.0.23.1* Require framework
-		*13.0.23* FREEPBX-12949 Allow listing of all available languages
-		*13.0.22* FREEPBX-13336 Install missing packages for installed languages on module updates
-		*13.0.21* FREEPBX-13335 Fix issue with saving settings when no languages are installed
-		*13.0.19* FREEPBX-13330 ISO language codes are incorrect for Hebrew and Turkish.
-		*13.0.18* FREEPBX-13042 Show authors/licenses for prompts and redesign packages page
-		*13.0.17* FREEPBX-12620
-		*13.0.16* Check to see if sounds were previously installed before installing
+		*14.0.4.6* FREEPBX-17221 Uploading tarball for custom Sound Language can fail 
+		*14.0.4.5* Fixing FREEPBX-17433 Whoops error due to typo error in sprintf 
+		*14.0.4.4* If there is an error and the mirror servers are different reset them back
+		*14.0.4.3* Set timeout on curl downloads
+		*14.0.4.2* FREEPBX-15281
+		*14.0.4.1* Add missing OOBE Hook
+		*14.0.3.1* Add XML database tables
+		*14.0.2.2* Merge from 13
+		*14.0.2* Don't download unneccesarily.
+		*14.0.1* Use new Languages
 		*13.0.15* FREEPBX-12606 Absolute paths used in some modules.
 		*13.0.14* Use Zip not Tar for zip files
 		*13.0.13* FREEPBX-12287 Display message on invalid upload
@@ -54,15 +43,52 @@
 		Management of sound prompt languages.
 	</description>
 	<depends>
-		<module>framework ge 13.0.121</module>
-		<module>core 13.0.114.2</module>
-		<version>13.0.0</version>
+		<version>14.0.1rc1.2</version>
 	</depends>
-	<oobe method="oobeHook" priority="150"/>
 	<menuitems>
 		<soundlang>Sound Languages</soundlang>
 	</menuitems>
+	<oobe method="oobeHook" priority="150"/>
+	<database>
+		<table name="soundlang_packages">
+			<field name="id" type="bigint" primarykey="true" autoincrement="true"/>
+			<field name="type" type="string" length="20"/>
+			<field name="module" type="string" length="80"/>
+			<field name="language" type="string" length="20"/>
+			<field name="license" type="blob" notnull="false"/>
+			<field name="author" type="string" length="80" notnull="false"/>
+			<field name="authorlink" type="string" length="256" notnull="false"/>
+			<field name="format" type="string" length="20"/>
+			<field name="version" type="string" length="20" notnull="false"/>
+			<field name="installed" type="string" length="20" notnull="false"/>
+			<key name="id" type="unique">
+				<column name="id"/>
+			</key>
+			<key name="unique" type="unique">
+				<column name="type"/>
+				<column name="module"/>
+				<column name="language"/>
+				<column name="format"/>
+			</key>
+		</table>
+		<table name="soundlang_settings">
+			<field name="keyword" type="string" length="20" primarykey="true"/>
+			<field name="value" type="string" length="80"/>
+		</table>
+		<table name="soundlang_customlangs">
+			<field name="id" type="integer" primarykey="true" autoincrement="true"/>
+			<field name="language" type="string" length="20"/>
+			<field name="description" type="string" length="80"/>
+		</table>
+		<table name="soundlang_prompts">
+			<field name="type" type="string" length="20"/>
+			<field name="module" type="string" length="80"/>
+			<field name="language" type="string" length="20"/>
+			<field name="format" type="string" length="20"/>
+			<field name="filename" type="string" length="80" notnull="false"/>
+		</table>
+	</database>
 	<supported>
-		<version>13.0</version>
+		<version>14.0</version>
 	</supported>
 </module>
