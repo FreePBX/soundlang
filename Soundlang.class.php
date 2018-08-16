@@ -1217,6 +1217,7 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 		$params = $mirrors['options'];
 		$params['sv'] = 2; // Stats version
 		$params['soundlangver'] = 2;
+		$params['canredirect'] = 1;
 
 		$exceptions = array();
 		foreach($mirrors['mirrors'] as $url) {
@@ -1226,6 +1227,22 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 			$pest->curl_opts[\CURLOPT_TIMEOUT] = $this->maxTimeLimit;
 			try {
 				$contents = $pest->post($url . $path, $params);
+				// If we were redirected to a different CDN, use that instead.
+				if (!$contents && !empty($pest->last_response['meta']['redirect_url'])) {
+					$newurl = $pest->last_response['meta']['redirect_url'];
+					$urlarr = parse_url($newurl);
+
+					$host = $urlarr['scheme']."://".$urlarr['host'];
+					if (!empty($urlarr['port'])) {
+						$host .= ":".$urlarr['port'];
+					}
+
+					$path = $urlarr['path'];
+
+					$pest = \FreePBX::Curl()->pest($host);
+					$pest->curl_opts[\CURLOPT_TIMEOUT] = $this->maxTimeLimit;
+					$contents = $pest->get($path);
+				}
 			} catch(\Exception $e) {
 				$exceptions[] = $e;
 			}
