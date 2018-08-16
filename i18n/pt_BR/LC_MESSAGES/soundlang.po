@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-13 18:00-0400\n"
+"POT-Creation-Date: 2018-08-16 19:20-0300\n"
 "PO-Revision-Date: 2017-03-08 21:32+0200\n"
 "Last-Translator: Kingvoice <suporte@kingvoice.com.br>\n"
 "Language-Team: Portuguese (Brazil) <http://weblate.freepbx.org/projects/"
@@ -188,7 +188,7 @@ msgstr "Editar Idioma Personalizado"
 msgid "English"
 msgstr "Inglês"
 
-#: Soundlang.class.php:1247
+#: Soundlang.class.php:1264
 #, php-format
 msgid "Error %s returned from remote servers %s"
 msgstr ""
@@ -511,7 +511,7 @@ msgstr "O comando fornecido não é válido"
 msgid "The file is not formatted correctly. Please try again..."
 msgstr ""
 
-#: Soundlang.class.php:1243
+#: Soundlang.class.php:1260
 msgid ""
 "The mirror server did not return the correct response and had been "
 "previously changed from the default server(s), it has now been reset back to "
@@ -597,7 +597,7 @@ msgstr "Reino Unido"
 msgid "United States"
 msgstr "Estados Unidos"
 
-#: Soundlang.class.php:1256
+#: Soundlang.class.php:1273
 #, php-format
 msgid "Unknown Error. Response was empty from %s"
 msgstr "Erro Desconhecido. Resposta foi vazia de %s"
