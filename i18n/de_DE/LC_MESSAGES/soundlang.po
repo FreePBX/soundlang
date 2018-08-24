@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-08-16 19:20-0300\n"
-"PO-Revision-Date: 2018-07-28 08:00+0000\n"
+"PO-Revision-Date: 2018-08-24 14:45+0000\n"
 "Last-Translator: Bastian Mertgen <b.mertgen@bastian-mertgen.de>\n"
 "Language-Team: German <http://*/projects/freepbx/soundlang/de/>\n"
 "Language: de_DE\n"
@@ -433,9 +433,8 @@ msgid "Settings"
 msgstr "Einstellung"
 
 #: Console/Soundlang.class.php:21
-#, fuzzy
 msgid "Sound Language Prompts"
-msgstr "Sprache der Sprachansagen"
+msgstr "Tonsprachansagen"
 
 #: soundlang.i18n.php:4 soundlang.i18n.php:10
 msgid "Sound Languages"
@@ -508,7 +507,7 @@ msgstr "Der verwendete Befehl ist nicht gültig"
 
 #: Soundlang.class.php:408
 msgid "The file is not formatted correctly. Please try again..."
-msgstr ""
+msgstr "Die Datei hat nicht das richtige Format, bitte versuchen Sie es erneut…"
 
 #: Soundlang.class.php:1260
 msgid ""
@@ -516,20 +515,23 @@ msgid ""
 "previously changed from the default server(s), it has now been reset back to "
 "the standard default. Please try again"
 msgstr ""
+"Der Spiegelserver hat nicht korrekt geantwortet und war zuvor geändert "
+"worden, er wurde jetzt auf die Standardeinstellungen zurückgesetzt. Bitte "
+"versuchen Sie es erneut"
 
 #: Soundlang.class.php:521
 msgid ""
 "The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in "
 "the HTML form"
 msgstr ""
-"Die hochgeladene Datei überschreitet die Maximal zulässige Dateigröße welche "
-"als Wert \"MAX_FILE_SIZE\" in der HTML definiert wurde"
+"Die hochgeladene Datei überschreitet die maximal zulässige Dateigröße, die "
+"als Wert \"MAX_FILE_SIZE\" im HTML-Formular festgelegt wurde"
 
 #: Soundlang.class.php:518
 msgid "The uploaded file exceeds the upload_max_filesize directive in php.ini"
 msgstr ""
-"Die hochgeladene Datei überschreitet die maximal zulässige Dateigröße welche "
-"als Wert \"upload_max_filesize\" in der php.ini definiert wurde"
+"Die hochgeladene Datei überschreitet die maximal zulässige Dateigröße, die "
+"in der 'upload_max_filesize'-Direktive in der php.ini festgelegt wurde"
 
 #: Soundlang.class.php:524
 msgid "The uploaded file was only partially uploaded"
