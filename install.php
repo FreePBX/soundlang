@@ -1,8 +1,8 @@
 <?php
 if (!defined('FREEPBX_IS_AUTH')) { die('No direct script access allowed'); }
 global $db;
-
-$info = FreePBX::Modules()->getinfo("soundlang");
+$FreePBX = FreePBX::Create();
+$info = $FreePBX->Modules->getinfo("soundlang");
 $first_install = ($info['soundlang']['status'] == MODULE_STATUS_NOTINSTALLED);
 
 if ($first_install) {
@@ -24,7 +24,7 @@ if ($first_install) {
 	}
 }
 
-$soundlang = \FreePBX::create()->Soundlang;
+$soundlang = $FreePBX->Soundlang;
 try {
 	$online = $soundlang->getOnlinePackages();
 } catch(\Exception $e) {
@@ -34,7 +34,7 @@ try {
 
 
 if($first_install) {
-	$vlsd = FreePBX::Config()->get("ASTVARLIBDIR")."/sounds";
+	$vlsd = $FreePBX->Config->get("ASTVARLIBDIR")."/sounds";
 
 	$alreadyinstalled = array();
 	$list = array();
@@ -107,7 +107,7 @@ if ($online) {
 	}
 }
 
-$o = \FreePBX::OOBE();
+$o = $FreePBX->OOBE;
 $c = $o->getConfig('completed');
 if(!empty($c) && is_array($c)) {
 	$c['soundlang'] = 'soundlang';
