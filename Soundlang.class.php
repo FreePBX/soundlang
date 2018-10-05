@@ -44,11 +44,15 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 	public function uninstall() {
 
 	}
-	public function backup(){
 
+	public function setDatabase($pdo){
+		$this->db = $pdo;
+		return $this;
 	}
-	public function restore($backup){
-
+	
+	public function resetDatabase(){
+		$this->db = $this->FreePBX->Database;
+		return $this;
 	}
 
 	public function oobeHook() {
@@ -661,7 +665,7 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 			foreach ($packages as $package) {
 				//Try to use locale_get_display_name if it's installed
 				if(function_exists('locale_get_display_name')) {
-					$language = \FreePBX::View()->setLanguage();
+					$language = $this->FreePBX->View->setLanguage();
 					$name = locale_get_display_name($package['language'], $language);
 				} else {
 					$lang = explode('_', $package['language'], 2);
@@ -902,8 +906,11 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 	 * Get list of all locally known packages
 	 * @return array Array of package information(s)
 	 */
-	public function getPackages() {
+	public function getPackages($installedOnly = false) {
 		$sql = "SELECT * FROM soundlang_packages";
+		if($installedOnly){
+			$sql .= " WHERE installed IS NOT NULL";
+		}
 		$sth = $this->db->prepare($sql);
 		$sth->execute();
 
@@ -1040,7 +1047,6 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 			return;
 		}
 
-		//var_dump($package);
 
 		$basename = $package['type'].'-'.$package['module'].'-'.$package['language'].'-'.$package['format'] .'-'.$package['version'];
 		$soundsdir = $amp_conf['ASTVARLIBDIR'] . "/sounds";
@@ -1223,7 +1229,7 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 		foreach($mirrors['mirrors'] as $url) {
 			set_time_limit($this->maxTimeLimit);
 
-			$pest = \FreePBX::Curl()->pest($url);
+			$pest = $this->FreePBX->Curl->pest($url);
 			$pest->curl_opts[\CURLOPT_TIMEOUT] = $this->maxTimeLimit;
 			try {
 				$contents = $pest->post($url . $path, $params);
@@ -1239,7 +1245,7 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 
 					$path = $urlarr['path'];
 
-					$pest = \FreePBX::Curl()->pest($host);
+					$pest = $this->FreePBX->Curl->pest($host);
 					$pest->curl_opts[\CURLOPT_TIMEOUT] = $this->maxTimeLimit;
 					$contents = $pest->get($path);
 				}
@@ -1275,5 +1281,17 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 	}
 	public function getRightNav($request) {
 		return load_view(dirname(__FILE__).'/views/rnav.php',array());
+	}
+
+	public function dumpSettings($pdo){
+		$sql = "SELECT * FROM soundlang_settings";
+		return $pdo->query($sql)->fetchAll(\PDO::FETCH_ASSOC);
+	}
+	public function loadSettings($settings){
+		$stmt = $this->db->prepare('REPLACE INTO soundlang_settings (`keyword`,`value`) VALUES (:keyword, :value)');
+		foreach ($settings as $setting) {
+			$stmt->execute(['keyword' => $setting['keyword'], 'value' => $setting['value']]);
+		}
+		return $this;
 	}
 }
