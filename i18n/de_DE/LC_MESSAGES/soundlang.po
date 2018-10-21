@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-08-16 19:20-0300\n"
-"PO-Revision-Date: 2018-10-19 15:00+0000\n"
+"PO-Revision-Date: 2018-10-23 22:00+0000\n"
 "Last-Translator: Bastian Mertgen <b.mertgen@bastian-mertgen.de>\n"
 "Language-Team: German <http://*/projects/freepbx/soundlang/de/>\n"
 "Language: de_DE\n"
@@ -104,7 +104,7 @@ msgid ""
 "Check all file formats you would like this system recording to be encoded "
 "into"
 msgstr ""
-"Haken Sie alle Dateiformate an, in die diese Systemaufnahme kodiert werden "
+"Markieren Sie alle Dateiformate, in die diese Systemaufnahme kodiert werden "
 "soll"
 
 #: Soundlang.class.php:587
@@ -540,7 +540,9 @@ msgstr "Die hochgeladene Datei wurde nur teilweise hochgeladen"
 
 #: assets/js/soundlang.js:310
 msgid "There was an error, See the console for more details"
-msgstr "Es gab einen Fehler, für Details lesen Sie in der Konsole"
+msgstr ""
+"Es ist ein Fehler aufgetreten; schauen Sie auf der Konsole nach, um Näheres "
+"zu erfahren"
 
 #: views/oobe.php:57
 msgid ""
