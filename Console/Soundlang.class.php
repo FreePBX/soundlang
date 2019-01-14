@@ -11,107 +11,186 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 // Tables
-use Symfony\Component\Console\Helper\TableHelper;
+use Symfony\Component\Console\Helper\Table;
 // Process
 use Symfony\Component\Process\Process;
+
+use Symfony\Component\Console\Command\HelpCommand;
+
+use Symfony\Component\Console\Question\ConfirmationQuestion;
 
 class Soundlang extends Command {
 	protected function configure(){
 		$this->setName('sounds')
 			->setDescription(_('Sound Language Prompts'))
 			->setDefinition(array(
-				new InputArgument('args', InputArgument::IS_ARRAY, null, null),));
+				new InputOption('list', null, InputOption::VALUE_NONE, _('List Process')),
+				new InputOption('listglobal', null, InputOption::VALUE_NONE, _('Delete Process')),
+				new InputOption('install', null, InputOption::VALUE_REQUIRED, _('Stop Process')),
+				new InputOption('uninstall', null, InputOption::VALUE_REQUIRED, _('Restart Process')),
+				new InputOption('global', null, InputOption::VALUE_REQUIRED, _('Save processes, kill PM2 and restore processes')),
+			));
 	}
 	protected function execute(InputInterface $input, OutputInterface $output){
-		$args = $input->getArgument('args');
-		$command = isset($args[0])?$args[0]:'';
-		$soundlang = \FreePBX::create()->Soundlang;
-		switch ($command) {
-			case "list":
-				$soundlang->getOnlinePackages();
-				$list = $soundlang->getPackages();
-				$rows = array();
-				$names = $soundlang->getLanguageNames();
-				$localenames = $soundlang->getLocationNames();
-				foreach ($list as $key => $value) {
-					$parts = explode('_',$value['language']);
-					$lang = $names[$parts[0]] . (isset($parts[1]) ? ' - '.$localenames[$parts[1]] : '');
-					$rows[] = array($key, $value['module'],$lang,$value['format'],$value['version'],$value['installed']);
-				}
-				$table = $this->getHelper('table');
-				$table->setHeaders(array("ID", "Module","Language","Format","Available","Installed"));
-				$table->setRows($rows);
-				$table->render($output);
-				break;
-			case "install":
-				$list = $soundlang->getPackages();
-				if(!isset($args[1])) {
-					$output->writeln("<error>"._("The command provided is not valid")."</error>");
-					exit(4);
-				}
-				$id = $args[1];
-				if(!isset($list[$id])) {
-					$output->writeln("<error>"._("That is not a valid ID")."</error>");
-					exit(4);
-				}
-				$soundlang->installPackage($list[$id]);
-				$output->writeln(sprintf(_("Successfully installed %s"),$list[$id]['module']."-".$list[$id]['language']."-".$list[$id]['format']."-".$list[$id]['version']));
-				break;
-			case "uninstall":
-				$list = $soundlang->getPackages();
-				if(!isset($args[1])) {
-					$output->writeln("<error>"._("The command provided is not valid")."</error>");
-					exit(4);
-				}
-				$id = $args[1];
-				if(!isset($list[$id])) {
-					$output->writeln("<error>"._("That is not a valid ID")."</error>");
-					exit(4);
-				}
-				$soundlang->uninstallPackage($list[$id]);
-				$output->writeln(sprintf(_("Successfully uninstalled %s"),$list[$id]['module']."-".$list[$id]['language']."-".$list[$id]['format']."-".$list[$id]['version']));
-				break;
-			case "global":
-				if(!isset($args[1])) {
-					$lang = $soundlang->getLanguage();
-					$output->writeln($lang);
-				} else {
-					switch($args[1]) {
-						case "list":
-							$list = $soundlang->getLanguages();
-							$default = $soundlang->getLanguage();
-							foreach ($list as $key => $value) {
-								$def = ($key == $default) ? "X" : "";
-								$rows[] = array($key, $value, $def);
-							}
-							$table = $this->getHelper('table');
-							$table->setHeaders(array("ID", "Name", "Default"));
-							$table->setRows($rows);
-							$table->render($output);
-						break;
-						default:
-							$list = $soundlang->getLanguages();
-							if(!isset($list[$args[1]])) {
-								$output->writeln("<error>"._("That is not a valid ID")."</error>");
-								exit(4);
-							}
-							$soundlang->setLanguage($args[1]);
-							$output->writeln(sprintf(_("Successfully set default language to %s, you will need to reload"),$args[1]));
-							needreload();
-						break;
-					}
-				}
-				break;
-			default:
-				$output->writeln("<error>The command provided is not valid.</error>");
-				$output->writeln("Available commands are:");
-				$output->writeln("<info>list</info> - List all language packages");
-				$output->writeln("<info>install <id></info> - Install language pack by ID");
-				$output->writeln("<info>uninstall <id></info> - Uninstall language pack by ID");
-				$output->writeln("<info>global list</info> - List the available global languages");
-				$output->writeln("<info>global <id></info> - Set the global language by ID");
-				exit(4);
-				break;
+		set_time_limit(0);
+		$this->soundlang = \FreePBX::create()->Soundlang;
+		if($input->getOption('list')){
+			$this->listSounds($input, $output);
+			exit();
 		}
+
+		if($input->getOption('install')){
+			$this->installSounds($input, $output);
+			exit();
+		}
+
+		if($input->getOption('uninstall')){
+			$this->uninstallSounds($input, $output);
+			exit();
+		}
+
+		if($input->getOption('listglobal')){
+			$this->listGlobalSounds($input, $output);
+			exit();
+		}
+
+		if($input->getOption('global')){
+			$this->setGlobal($input, $output);
+			exit();
+		}
+	}
+
+	private function setGlobal(InputInterface $input, OutputInterface $output)	 {
+		$code = $input->getOption('global');
+		$list = $this->soundlang->getLanguages();
+		if(!isset($list[$code])) {
+			$output->writeln("<error>"._("That is not a valid ID")."</error>");
+			exit(4);
+		}
+		$this->soundlang->setLanguage($code);
+		$output->writeln(sprintf(_("Successfully set default language to %s, you will need to reload"),$code));
+		needreload();
+	}
+
+	private function listGlobalSounds(InputInterface $input, OutputInterface $output)	 {
+		$list = $this->soundlang->getLanguages();
+		$default = $this->soundlang->getLanguage();
+		foreach ($list as $key => $value) {
+			$def = ($key == $default) ? "X" : "";
+			$rows[] = array($key, $value, $def);
+		}
+		$table = new Table($output);
+		$table->setHeaders(array("ID", "Name", "Default"));
+		$table->setRows($rows);
+		$table->render();
+	}
+
+	private function uninstallSounds(InputInterface $input, OutputInterface $output)	 {
+		$code = $input->getOption('uninstall');
+		$list = $this->listValidLangCodes();
+		if(!in_array($code,$list)) {
+			$output->writeln("<error>"._("That is not a valid ID")."</error>");
+			exit(4);
+		}
+		$output->write("Uninstalling $code...");
+		$this->soundlang->uninstallLanguage($code);
+		$output->writeln("Done");
+	}
+
+	private function installSounds(InputInterface $input, OutputInterface $output)	 {
+		$code = $input->getOption('install');
+		$list = $this->listValidLangCodes();
+		if(!in_array($code,$list)) {
+			$output->writeln("<error>"._("That is not a valid ID")."</error>");
+			exit(4);
+		}
+		$license = $this->soundlang->getLanguageLicense($code);
+		if(is_string($license)) {
+			$output->writeln($license);
+			$helper = $this->getHelper('question');
+			$question = new ConfirmationQuestion('Accept License Agreement? [y/n]', false);
+
+			if (!$helper->ask($input, $output, $question)) {
+				exit;
+			}
+		}
+		$output->write("Installing $code...");
+		$this->soundlang->installLanguage($code);
+		$output->writeln("Done");
+	}
+
+	private function listValidLangCodes() {
+		$this->soundlang->getOnlinePackages();
+		$packages = $this->soundlang->getPackages();
+		$codes = array();
+		foreach ($packages as $package) {
+			if(in_array($package['language'],$codes)) {
+				continue;
+			}
+			$codes[] = $package['language'];
+		}
+		return $codes;
+	}
+
+	private function listSounds(InputInterface $input, OutputInterface $output)	 {
+		$this->soundlang->getOnlinePackages();
+		$packages = $this->soundlang->getPackages();
+		$formats = $this->soundlang->getFormatPref();
+		$languagenames = $this->soundlang->getLanguageNames();
+		$languagelocations = $this->soundlang->getLocationNames();
+		$languages = array();
+		foreach ($packages as $package) {
+			if (isset($languages[$package['language']])) {
+				$language = $languages[$package['language']];
+			} else {
+				$parts = explode("_",$package['language']);
+				$language = array(
+					'code' => $package['language'],
+					'author' => $package['author'],
+					'authorlink' => $package['authorlink'],
+					'license' => $package['license'],
+					'installed' => true,
+					'lang' => array(
+						'name' => isset($languagenames[$parts[0]]) ? $languagenames[$parts[0]] : $parts[0],
+						'locale' => isset($languagelocations[$parts[1]]) ? $languagelocations[$parts[1]] : (!empty($parts[1]) ? $parts[1] : ''),
+					),
+				);
+			}
+
+			if (in_array($package['format'], $formats)) {
+				if (empty($package['installed']) || $package['installed'] < $package['version']) {
+					$language['installed'] = false;
+				}
+			}
+			$languages[$package['language']] = $language;
+		}
+
+		ksort($languages);
+
+		$table = new Table($output);
+		$table->setHeaders(array("ID","Language","Author","Installed"));
+		$rows = array();
+		foreach($languages as $item) {
+			$rows[] = array(
+				$item['code'],
+				$item['lang']['name'] . (!empty($item['lang']['locale']) ? ' - '.$item['lang']['locale'] : '') . " (".$item['code'].")",
+				$item['author'],
+				$item['installed'] ? 'X' : ''
+			);
+		}
+		$table->setRows($rows);
+		$table->render();
+	}
+
+	/**
+	 * @param InputInterface $input
+	 * @param OutputInterface $output
+	 * @return int
+	 * @throws \Symfony\Component\Console\Exception\ExceptionInterface
+	 */
+	protected function outputHelp(InputInterface $input, OutputInterface $output)	 {
+		$help = new HelpCommand();
+		$help->setCommand($this);
+		return $help->run($input, $output);
 	}
 }
