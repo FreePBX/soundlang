@@ -123,7 +123,6 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 					$language = $languages[$package['language']];
 				} else {
 					$language = array(
-						'installed' => 0,
 						'author' => $package['author'],
 						'authorlink' => $package['authorlink'],
 						'license' => $package['license'],
@@ -347,28 +346,11 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 				$this->uninstallLanguage($request['lang']);
 				return array("status" => true);
 			case "licenseText":
-				$packages = $this->getPackages();
-				if (empty($packages)) {
-					return array("status" => false);
+				$out = $this->getLanguageLicense($request['lang']);
+				if(is_string($out)) {
+					return array("status" => true, "license" => $out);
 				}
-
-				foreach ($packages as $package) {
-					if ($package['language'] == $request['lang']) {
-						$filename = $package['type'] . '-' . $package['module'] . '-' . $package['language'] . '-license.txt';
-						try {
-							$filedata = $this->getRemoteFile("/sounds/" . $filename);
-							if (!empty($filedata)) {
-								return array("status" => true, "license" => $filedata);
-							} else {
-								return array("status" => true);
-							}
-						} catch(\Exception $e) {
-							return array("status" => true);
-						}
-					}
-				}
-
-				return array("status" => true);
+				return array("status" => $out);
 			case "saveCustomLang":
 				if (empty($_POST['id'])) {
 					$this->addCustomLanguage($_POST['language'], $_POST['description']);
@@ -403,7 +385,10 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 					$path = $path ."/".$directory;
 				}
 				if(!file_exists($path)) {
-					mkdir($path);
+					if(!@mkdir($path)){
+						$error = error_get_last();
+						return array("status" => false, "message" => _("The file is not formatted correctly. Please try again..."));
+					}
 				}
 				$name = preg_replace("/\s+|'+|`+|\"+|<+|>+|\?+|\*|\.+|&+/","-",$name);
 				if(!empty($codec)) {
@@ -539,6 +524,30 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 				echo json_encode(_("Error: You should never see this"));
 			break;
 		}
+	}
+
+	public function getLanguageLicense($lang) {
+		$packages = $this->getPackages();
+		if (empty($packages)) {
+			return false;
+		}
+
+		foreach ($packages as $package) {
+			if ($package['language'] == $lang) {
+				$filename = $package['type'] . '-' . $package['module'] . '-' . $package['language'] . '-license.txt';
+				try {
+					$filedata = $this->getRemoteFile("/sounds/" . $filename);
+					if (!empty($filedata)) {
+						return $filedata;
+					} else {
+						return true;
+					}
+				} catch(\Exception $e) {
+					return true;
+				}
+			}
+		}
+		return false;
 	}
 
 	/**
@@ -1221,6 +1230,7 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 			set_time_limit($this->maxTimeLimit);
 
 			$pest = \FreePBX::Curl()->pest($url);
+			$pest->curl_opts[\CURLOPT_TIMEOUT] = $this->maxTimeLimit;
 			try {
 				$contents = $pest->post($url . $path, $params);
 				// If we were redirected to a different CDN, use that instead.
