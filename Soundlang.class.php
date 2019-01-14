@@ -127,7 +127,6 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 					$language = $languages[$package['language']];
 				} else {
 					$language = array(
-						'installed' => 0,
 						'author' => $package['author'],
 						'authorlink' => $package['authorlink'],
 						'license' => $package['license'],
@@ -351,28 +350,11 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 				$this->uninstallLanguage($request['lang']);
 				return array("status" => true);
 			case "licenseText":
-				$packages = $this->getPackages();
-				if (empty($packages)) {
-					return array("status" => false);
+				$out = $this->getLanguageLicense($request['lang']);
+				if(is_string($out)) {
+					return array("status" => true, "license" => $out);
 				}
-
-				foreach ($packages as $package) {
-					if ($package['language'] == $request['lang']) {
-						$filename = $package['type'] . '-' . $package['module'] . '-' . $package['language'] . '-license.txt';
-						try {
-							$filedata = $this->getRemoteFile("/sounds/" . $filename);
-							if (!empty($filedata)) {
-								return array("status" => true, "license" => $filedata);
-							} else {
-								return array("status" => true);
-							}
-						} catch(\Exception $e) {
-							return array("status" => true);
-						}
-					}
-				}
-
-				return array("status" => true);
+				return array("status" => $out);
 			case "saveCustomLang":
 				if (empty($_POST['id'])) {
 					$this->addCustomLanguage($_POST['language'], $_POST['description']);
@@ -408,7 +390,7 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 				}
 				if(!file_exists($path)) {
 					if(!@mkdir($path)){
-						$error = error_get_last();						
+						$error = error_get_last();
 						return array("status" => false, "message" => _("The file is not formatted correctly. Please try again..."));
 					}
 				}
@@ -546,6 +528,30 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 				echo json_encode(_("Error: You should never see this"));
 			break;
 		}
+	}
+
+	public function getLanguageLicense($lang) {
+		$packages = $this->getPackages();
+		if (empty($packages)) {
+			return false;
+		}
+
+		foreach ($packages as $package) {
+			if ($package['language'] == $lang) {
+				$filename = $package['type'] . '-' . $package['module'] . '-' . $package['language'] . '-license.txt';
+				try {
+					$filedata = $this->getRemoteFile("/sounds/" . $filename);
+					if (!empty($filedata)) {
+						return $filedata;
+					} else {
+						return true;
+					}
+				} catch(\Exception $e) {
+					return true;
+				}
+			}
+		}
+		return false;
 	}
 
 	/**
