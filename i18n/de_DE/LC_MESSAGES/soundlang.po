@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-08-16 19:20-0300\n"
-"PO-Revision-Date: 2018-07-28 08:00+0000\n"
+"PO-Revision-Date: 2018-10-23 22:00+0000\n"
 "Last-Translator: Bastian Mertgen <b.mertgen@bastian-mertgen.de>\n"
 "Language-Team: German <http://*/projects/freepbx/soundlang/de/>\n"
 "Language: de_DE\n"
@@ -22,11 +22,11 @@ msgstr ""
 
 #: Soundlang.class.php:536
 msgid "A PHP extension stopped the file upload"
-msgstr "Eine PHP Erweiterung hat den Datei Upload gestoppt"
+msgstr "Eine PHP-Erweiterung hat den Datei Upload gestoppt"
 
 #: views/customlang.php:67
 msgid "A brief description for this Custom Language."
-msgstr "Eine kurze Beschreibung für diese fremde Sprache."
+msgstr "Eine kurze Beschreibung für diese benutzerdefinierte Sprache."
 
 #: views/licensemodal.php:27
 msgid "Accept License"
@@ -46,11 +46,11 @@ msgstr "Aktionen"
 
 #: views/customlang.php:6
 msgid "Add Custom Language"
-msgstr "fremde Sprache hinzufügen"
+msgstr "Benutzerdefinierte Sprache hinzufügen"
 
 #: views/customlangs.php:10
 msgid "Add New Custom Language"
-msgstr "Neue fremde Sprache hinzufügen"
+msgstr "Neue benutzerdefinierte Sprache hinzufügen"
 
 #: soundlang.i18n.php:6
 msgid "Admin"
@@ -58,7 +58,8 @@ msgstr "Administrator"
 
 #: assets/js/soundlang.js:123
 msgid "Are you sure you want to delete this custom language?"
-msgstr "Sind Sie sicher, dass Sie diese fremde Sprache löschen möchten?"
+msgstr ""
+"Sind Sie sicher, dass Sie diese benutzerdefinierte Sprache löschen möchten?"
 
 #: assets/js/soundlang.js:91
 #, perl-format
@@ -103,7 +104,7 @@ msgid ""
 "Check all file formats you would like this system recording to be encoded "
 "into"
 msgstr ""
-"Haken Sie alle Dateiformate an, in die diese Systemaufnahme kodiert werden "
+"Markieren Sie alle Dateiformate, in die diese Systemaufnahme kodiert werden "
 "soll"
 
 #: Soundlang.class.php:587
@@ -133,7 +134,7 @@ msgstr "Konnte %s nicht in %s entpacken (tar)"
 
 #: views/packages.php:8 views/rnav.php:3
 msgid "Custom Languages"
-msgstr "Fremde Sprachen"
+msgstr "Benutzerdefinierte Sprachen"
 
 #: Soundlang.class.php:553
 msgid "Czech"
@@ -149,7 +150,7 @@ msgstr "Löschen"
 
 #: views/customlangs.php:13
 msgid "Delete Custom Language"
-msgstr "Fremde Sprache löschen"
+msgstr "Benutzerdefinierte Sprache löschen"
 
 #: assets/js/soundlang.js:315
 msgid "Deleting Temporary Files..."
@@ -181,7 +182,7 @@ msgstr "Holländisch"
 
 #: views/customlang.php:3
 msgid "Edit Custom Language"
-msgstr "Fremde Sprache bearbeiten"
+msgstr "Benutzerdefinierte Sprache bearbeiten"
 
 #: Soundlang.class.php:555
 msgid "English"
@@ -430,12 +431,11 @@ msgstr "Russisch"
 
 #: views/packages.php:7 views/rnav.php:4 views/settings.php:4
 msgid "Settings"
-msgstr "Einstellung"
+msgstr "Einstellungen"
 
 #: Console/Soundlang.class.php:21
-#, fuzzy
 msgid "Sound Language Prompts"
-msgstr "Sprache der Sprachansagen"
+msgstr "Tonsprachansagen"
 
 #: soundlang.i18n.php:4 soundlang.i18n.php:10
 msgid "Sound Languages"
@@ -508,7 +508,7 @@ msgstr "Der verwendete Befehl ist nicht gültig"
 
 #: Soundlang.class.php:408
 msgid "The file is not formatted correctly. Please try again..."
-msgstr ""
+msgstr "Die Datei hat nicht das richtige Format, bitte versuchen Sie es erneut…"
 
 #: Soundlang.class.php:1260
 msgid ""
@@ -516,20 +516,23 @@ msgid ""
 "previously changed from the default server(s), it has now been reset back to "
 "the standard default. Please try again"
 msgstr ""
+"Der Spiegelserver hat nicht korrekt geantwortet und war zuvor geändert "
+"worden, er wurde jetzt auf die Standardeinstellungen zurückgesetzt. Bitte "
+"versuchen Sie es erneut"
 
 #: Soundlang.class.php:521
 msgid ""
 "The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in "
 "the HTML form"
 msgstr ""
-"Die hochgeladene Datei überschreitet die Maximal zulässige Dateigröße welche "
-"als Wert \"MAX_FILE_SIZE\" in der HTML definiert wurde"
+"Die hochgeladene Datei überschreitet die maximal zulässige Dateigröße, die "
+"als Wert \"MAX_FILE_SIZE\" im HTML-Formular festgelegt wurde"
 
 #: Soundlang.class.php:518
 msgid "The uploaded file exceeds the upload_max_filesize directive in php.ini"
 msgstr ""
-"Die hochgeladene Datei überschreitet die maximal zulässige Dateigröße welche "
-"als Wert \"upload_max_filesize\" in der php.ini definiert wurde"
+"Die hochgeladene Datei überschreitet die maximal zulässige Dateigröße, die "
+"in der 'upload_max_filesize'-Direktive in der php.ini festgelegt wurde"
 
 #: Soundlang.class.php:524
 msgid "The uploaded file was only partially uploaded"
@@ -537,7 +540,9 @@ msgstr "Die hochgeladene Datei wurde nur teilweise hochgeladen"
 
 #: assets/js/soundlang.js:310
 msgid "There was an error, See the console for more details"
-msgstr "Es gab einen Fehler, für Details lesen Sie in der Konsole"
+msgstr ""
+"Es ist ein Fehler aufgetreten; schauen Sie auf der Konsole nach, um Näheres "
+"zu erfahren"
 
 #: views/oobe.php:57
 msgid ""
