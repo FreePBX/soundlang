@@ -2,11 +2,12 @@
 	<rawname>soundlang</rawname>
 	<repo>standard</repo>
 	<name>Sound Languages</name>
-	<version>13.0.24.7</version>
+	<version>13.0.25</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
 	<changelog>
+		*13.0.25* Change how fwconsole works for lanaguges to match web interface
 		*13.0.24.7* Fixing FREEPBX-17433 Whoops error due to typo error in sprintf 
 		*13.0.24.6* If there is an error and the mirror servers are different reset them back
 		*13.0.24.5* Catch errors on invalid xml
