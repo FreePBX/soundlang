@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-14 15:41-0500\n"
-"PO-Revision-Date: 2019-01-25 16:05+0000\n"
+"PO-Revision-Date: 2019-01-26 17:00+0000\n"
 "Last-Translator: Media Mousavi <mousavi.media@gmail.com>\n"
 "Language-Team: Persian <http://*/projects/freepbx/soundlang/fa/>\n"
 "Language: fa_IR\n"
@@ -602,7 +602,7 @@ msgstr "آمریکا"
 #: Soundlang.class.php:1279
 #, php-format
 msgid "Unknown Error. Response was empty from %s"
-msgstr "خطای ناشناخته. پاسخ از ٪ s1 خالی بود"
+msgstr "خطای ناشناخته. پاسخ از ٪s1 خالی بود"
 
 #: Soundlang.class.php:495
 msgid "Unsupported file format"
