@@ -10,16 +10,15 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-14 15:41-0500\n"
-"PO-Revision-Date: 2016-07-06 05:16+0200\n"
-"Last-Translator: Media <mousavi.media@gmail.com>\n"
-"Language-Team: Persian (Iran) <http://weblate.freepbx.org/projects/freepbx/"
-"soundlang/fa_IR/>\n"
+"PO-Revision-Date: 2019-01-26 17:00+0000\n"
+"Last-Translator: Media Mousavi <mousavi.media@gmail.com>\n"
+"Language-Team: Persian <http://*/projects/freepbx/soundlang/fa/>\n"
 "Language: fa_IR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.4\n"
+"X-Generator: Weblate 3.0.1\n"
 
 #: Soundlang.class.php:518
 msgid "A PHP extension stopped the file upload"
@@ -31,11 +30,11 @@ msgstr "توضیح مختصر برای زبان سفارشی."
 
 #: views/licensemodal.php:27
 msgid "Accept License"
-msgstr ""
+msgstr "قبول مجوز"
 
 #: assets/js/soundlang.js:28
 msgid "Accept License Agreement"
-msgstr ""
+msgstr "موافقتنامه مجوز را قبول کنید"
 
 #: views/customlangs.php:23
 msgid "Action"
@@ -72,7 +71,7 @@ msgstr "استرالیا"
 
 #: views/packages.php:14
 msgid "Author"
-msgstr ""
+msgstr "نویسنده"
 
 #: views/language.php:13
 msgid "Available"
@@ -80,7 +79,7 @@ msgstr "در دسترس"
 
 #: views/oobe.php:5
 msgid "Based on your locale your language and timezone have been pre-selected."
-msgstr ""
+msgstr "بر اساس زبان محلی، زبان و منطقه زمانی شما از قبل انتخاب شده اند."
 
 #: Soundlang.class.php:589
 msgid "Belgium"
@@ -116,11 +115,11 @@ msgstr "چینی"
 
 #: views/licensemodal.php:26
 msgid "Close"
-msgstr ""
+msgstr "بستن"
 
 #: Soundlang.class.php:594
 msgid "Colombia"
-msgstr ""
+msgstr "کلمبیا"
 
 #: views/customlang.php:110
 msgid "Convert To"
@@ -137,11 +136,11 @@ msgstr "زبان های سفارشی"
 
 #: Soundlang.class.php:559
 msgid "Czech"
-msgstr ""
+msgstr "چک"
 
 #: Soundlang.class.php:595
 msgid "Czech Republic"
-msgstr ""
+msgstr "جمهوری چک"
 
 #: Soundlang.class.php:278 assets/js/soundlang.js:96 assets/js/soundlang.js:102
 msgid "Delete"
@@ -153,11 +152,11 @@ msgstr "حذف زبان سفارشی"
 
 #: Console/Soundlang.class.php:28
 msgid "Delete Process"
-msgstr ""
+msgstr "فرآیند حذف"
 
 #: assets/js/soundlang.js:315
 msgid "Deleting Temporary Files..."
-msgstr ""
+msgstr "حذف فایل های موقتی..."
 
 #: assets/js/soundlang.js:92
 msgid "Deleting..."
@@ -173,7 +172,7 @@ msgstr "انجام شد"
 
 #: views/settings.php:42
 msgid "Download Formats"
-msgstr ""
+msgstr "دانلود فرمت ها"
 
 #: views/customlang.php:91
 msgid "Drop Multiple Files or Archives Here"
@@ -194,7 +193,7 @@ msgstr "انگلیسی"
 #: Soundlang.class.php:1270
 #, php-format
 msgid "Error %s returned from remote servers %s"
-msgstr ""
+msgstr "خطای ٪ s1 از سرورهای راه دور٪ s2 بازگشته است"
 
 #: Soundlang.class.php:524
 msgid "Error: You should never see this"
@@ -230,7 +229,7 @@ msgstr "فرمت"
 
 #: views/settings.php:59
 msgid "Formats (codecs) to download when installing a language pack"
-msgstr ""
+msgstr "فرمت ها (کدک ها) برای بارگیری بسته های زبان را دانلود کنید"
 
 #: Soundlang.class.php:599
 msgid "France"
@@ -254,7 +253,7 @@ msgstr "زبان عمومی"
 
 #: Soundlang.class.php:566
 msgid "Hebrew"
-msgstr ""
+msgstr "عبری"
 
 #: Soundlang.class.php:601
 msgid "Hong Kong"
@@ -266,7 +265,7 @@ msgstr "شناسه"
 
 #: Soundlang.class.php:604
 msgid "India"
-msgstr ""
+msgstr "هند"
 
 #: views/language.php:14
 msgid "Installed"
@@ -274,7 +273,7 @@ msgstr "نصب شده"
 
 #: assets/js/soundlang.js:58
 msgid "Installing"
-msgstr ""
+msgstr "نصب"
 
 #: install.php:49
 #, php-format
@@ -289,19 +288,19 @@ msgstr "در حال نصب پکیج اضافی %s..."
 #: install.php:104
 #, php-format
 msgid "Installing/updating packages for %s..."
-msgstr ""
+msgstr "نصب / به روز رسانی بسته ها برای ٪ s1..."
 
 #: Soundlang.class.php:605
 msgid "Iran"
-msgstr ""
+msgstr "ایران"
 
 #: Soundlang.class.php:602
 msgid "Ireland"
-msgstr ""
+msgstr "ایرلند"
 
 #: Soundlang.class.php:603
 msgid "Israel"
-msgstr ""
+msgstr "اسرائیل"
 
 #: Soundlang.class.php:567
 msgid "Italian"
@@ -341,19 +340,19 @@ msgstr "زبان مورد استفاده سیستم برای پخش پیام ه�
 
 #: views/licensemodal.php:7
 msgid "License Agreement"
-msgstr ""
+msgstr "توافقنامه مجوز"
 
 #: assets/js/soundlang.js:32
 msgid "License Could Not be Retrieved"
-msgstr ""
+msgstr "مجوز قابل بازیابی نیست"
 
 #: Console/Soundlang.class.php:27
 msgid "List Process"
-msgstr ""
+msgstr "لیست فرآیند"
 
 #: views/licensemodal.php:17
 msgid "Loading..."
-msgstr ""
+msgstr "بارگذاری..."
 
 #: soundlang.i18n.php:8
 msgid "Management of sound prompt languages."
@@ -397,27 +396,27 @@ msgstr "هیچ فایلی برای ارسال به سرور وجود ندارد"
 
 #: Soundlang.class.php:609
 msgid "Norway"
-msgstr ""
+msgstr "نروژ"
 
 #: Soundlang.class.php:570
 msgid "Norwegian"
-msgstr ""
+msgstr "نروژی"
 
 #: Soundlang.class.php:563
 msgid "Persian"
-msgstr ""
+msgstr "فارسی"
 
 #: views/oobe.php:4
 msgid "Please Select the default locales of the PBX"
-msgstr ""
+msgstr "لطفا محل های پیش فرض PBX را انتخاب کنید"
 
 #: Soundlang.class.php:612
 msgid "Poland"
-msgstr ""
+msgstr "هلند"
 
 #: Soundlang.class.php:571
 msgid "Polish"
-msgstr ""
+msgstr "لهستانی"
 
 #: Soundlang.class.php:613
 msgid "Portugal"
@@ -433,7 +432,7 @@ msgstr "بازنشانی"
 
 #: Console/Soundlang.class.php:30
 msgid "Restart Process"
-msgstr ""
+msgstr "راه اندازی مجدد فرایند"
 
 #: Soundlang.class.php:573
 msgid "Russian"
@@ -441,11 +440,11 @@ msgstr "روسی"
 
 #: Console/Soundlang.class.php:31
 msgid "Save processes, kill PM2 and restore processes"
-msgstr ""
+msgstr "صرفه جویی در فرایندها، PM2 را بکشید و پروسه ها را بازیابی کنید"
 
 #: views/packages.php:7 views/rnav.php:4 views/settings.php:4
 msgid "Settings"
-msgstr ""
+msgstr "تنظیمات"
 
 #: Console/Soundlang.class.php:25
 msgid "Sound Language Prompts"
@@ -457,7 +456,7 @@ msgstr "صدای زبان ها"
 
 #: views/oobe.php:15
 msgid "Sound Prompts Language"
-msgstr ""
+msgstr "صدای زبان"
 
 #: Soundlang.class.php:618
 msgid "South Africa"
@@ -473,7 +472,7 @@ msgstr "اسپانیولی"
 
 #: Console/Soundlang.class.php:29
 msgid "Stop Process"
-msgstr ""
+msgstr "توقف فرآیند"
 
 #: Soundlang.class.php:271 Soundlang.class.php:288 Soundlang.class.php:300
 #: views/oobe.php:89
@@ -499,7 +498,7 @@ msgstr "سوئیس"
 
 #: views/oobe.php:41
 msgid "System Language"
-msgstr ""
+msgstr "زبان سیستم"
 
 #: Soundlang.class.php:616
 msgid "Taiwan"
@@ -512,7 +511,7 @@ msgstr "این یک شناسه معتبر نیست"
 
 #: Soundlang.class.php:390
 msgid "The file is not formatted correctly. Please try again..."
-msgstr ""
+msgstr "فایل به طور صحیح فرمت نشده است. لطفا دوباره تلاش کنید..."
 
 #: Soundlang.class.php:1266
 msgid ""
@@ -520,6 +519,8 @@ msgid ""
 "previously changed from the default server(s), it has now been reset back to "
 "the standard default. Please try again"
 msgstr ""
+"سرور آینه پاسخ صحیح را دریافت نکرده و قبلا از سرور پیش فرض تغییر کرده است، "
+"اکنون به طور پیش فرض استاندارد بازنشانی شده است. لطفا دوباره تلاش کنید"
 
 #: Soundlang.class.php:503
 msgid ""
@@ -545,44 +546,50 @@ msgid ""
 "This language will be used for the GUI and CLI commands for your PBX. You "
 "can change it later by navigating to 'Advanced Settings'"
 msgstr ""
+"این زبان برای دستورات GUI و CLI برای PBX شما استفاده می شود. بعدا می توانید "
+"آن را با رفتن به «تنظیمات پیشرفته» تغییر دهید"
 
 #: views/oobe.php:31
 msgid ""
 "This language will be used for the prompts when you call in to your PBX. You "
 "can change it later by navigating to the 'Sound Languages' module"
 msgstr ""
+"هنگامی که شما به PBX خود تماس می گیرید، این زبان برای دعوت استفاده می شود. "
+"بعدا می توانید با رفتن به ماژول «زبان های صوتی»، آن را تغییر دهید"
 
 #: views/oobe.php:83
 msgid ""
 "This will set the global timezone for the PBX. You can change it later by "
 "navigating to 'Advanced Settings'"
 msgstr ""
+"این منطقه زمانی جهانی را برای PBX تنظیم می کند. بعدا می توانید آن را با رفتن "
+"به «تنظیمات پیشرفته» تغییر دهید"
 
 #: views/oobe.php:67
 msgid "Timezone"
-msgstr ""
+msgstr "منطقه زمانی"
 
 #: Soundlang.class.php:615
 msgid "Turkey"
-msgstr ""
+msgstr "ترکیه"
 
 #: Soundlang.class.php:575
 msgid "Turkish"
-msgstr ""
+msgstr "ترکی"
 
 #: Soundlang.class.php:113
 #, php-format
 msgid "Unable to get online sound packages. Error was: [%s] %s"
-msgstr ""
+msgstr "قادر به دریافت بسته های صوتی آنلاین نیست خطا: [٪ s1] ٪ s2"
 
 #: install.php:31
 #, php-format
 msgid "Unable to get online sound packages. Error was: [%s] %s. Continuing..."
-msgstr ""
+msgstr "قادر به دریافت بسته های صوتی آنلاین نیست خطا: [٪ s1]٪ s2. ادامه ..."
 
 #: assets/js/soundlang.js:40
 msgid "Uninstalling. Please wait for the page to refresh"
-msgstr ""
+msgstr "حذف کردن لطفا صبر کنید تا صفحه به روز شود"
 
 #: Soundlang.class.php:600
 msgid "United Kingdom"
@@ -595,7 +602,7 @@ msgstr "آمریکا"
 #: Soundlang.class.php:1279
 #, php-format
 msgid "Unknown Error. Response was empty from %s"
-msgstr ""
+msgstr "خطای ناشناخته. پاسخ از ٪s1 خالی بود"
 
 #: Soundlang.class.php:495
 msgid "Unsupported file format"
