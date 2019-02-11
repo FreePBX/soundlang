@@ -3,7 +3,7 @@ namespace FreePBX\modules\Soundlang;
 use FreePBX\modules\Backup as Base;
 class Restore Extends Base\RestoreBase{
   public function runRestore($jobid){
-    $configs = reset($this->getConfigs());
+    $configs = $this->getConfigs();
     $this->FreePBX->Soundlang->loadSettings($configs['settings']);
     foreach($configs['packages'] as $package){
       $this->FreePBX->Soundlang->installPackage($package['id']);
