@@ -45,16 +45,6 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 
 	}
 
-	public function setDatabase($pdo){
-		$this->db = $pdo;
-		return $this;
-	}
-	
-	public function resetDatabase(){
-		$this->db = $this->FreePBX->Database;
-		return $this;
-	}
-
 	public function oobeHook() {
 		include __DIR__.'/Oobe.class.php';
 		$o = new Soundlang\OOBE($this);
@@ -1287,17 +1277,5 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 	}
 	public function getRightNav($request) {
 		return load_view(dirname(__FILE__).'/views/rnav.php',array());
-	}
-
-	public function dumpSettings($pdo){
-		$sql = "SELECT * FROM soundlang_settings";
-		return $pdo->query($sql)->fetchAll(\PDO::FETCH_ASSOC);
-	}
-	public function loadSettings($settings){
-		$stmt = $this->db->prepare('REPLACE INTO soundlang_settings (`keyword`,`value`) VALUES (:keyword, :value)');
-		foreach ($settings as $setting) {
-			$stmt->execute(['keyword' => $setting['keyword'], 'value' => $setting['value']]);
-		}
-		return $this;
 	}
 }
