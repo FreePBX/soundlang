@@ -1241,6 +1241,7 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 
 					$path = $urlarr['path'];
 
+					print_r($host.$path);
 					$pest = $this->FreePBX->Curl->pest($host);
 					$pest->curl_opts[\CURLOPT_TIMEOUT] = $this->maxTimeLimit;
 					$contents = $pest->get($path);

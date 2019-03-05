@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-02-21 23:55-0500\n"
+"POT-Creation-Date: 2019-03-04 19:17-0500\n"
 "PO-Revision-Date: 2017-08-08 16:34+0200\n"
 "Last-Translator: PETER <ftek@ymail.com>\n"
 "Language-Team: Vietnamese <http://weblate.freepbx.org/projects/freepbx/"
@@ -191,7 +191,7 @@ msgstr "Chỉnh sửa trong Tùy chỉnh ngôn ngữ"
 msgid "English"
 msgstr "Tiếng anh"
 
-#: Soundlang.class.php:1266
+#: Soundlang.class.php:1267
 #, php-format
 msgid "Error %s returned from remote servers %s"
 msgstr "Lỗi %s được trả về từ máy chủ %s từ xa"
@@ -523,7 +523,7 @@ msgstr "Đó không phải là một ID hợp lệ"
 msgid "The file is not formatted correctly. Please try again..."
 msgstr ""
 
-#: Soundlang.class.php:1262
+#: Soundlang.class.php:1263
 msgid ""
 "The mirror server did not return the correct response and had been "
 "previously changed from the default server(s), it has now been reset back to "
@@ -610,7 +610,7 @@ msgstr "Nước Anh"
 msgid "United States"
 msgstr "Nước Mỹ"
 
-#: Soundlang.class.php:1275
+#: Soundlang.class.php:1276
 #, php-format
 msgid "Unknown Error. Response was empty from %s"
 msgstr "Lỗi không xác định. Không có phản hồi từ %s"
