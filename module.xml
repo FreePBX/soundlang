@@ -2,18 +2,18 @@
 	<rawname>soundlang</rawname>
 	<repo>standard</repo>
 	<name>Sound Languages</name>
-	<version>15.0.5</version>
+	<version>15.0.5.1</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
 	<changelog>
 		*15.0.5* Use lazy loading console commands
 		*15.0.4* FREEPBX-19029 Reset Button under Sound Languages --&amp;gt; Settings page is not working
-		*15.0.3.3* Fixing legacy restore 
-		*15.0.3.2* fixing legacy restore 
+		*15.0.3.3* Fixing legacy restore
+		*15.0.3.2* fixing legacy restore
 		*15.0.3.1* Backup and Restore
 		*15.0.3* Fix fwconsole to match GUI
-		*15.0.2* Backup and restore for 15.0 
+		*15.0.2* Backup and restore for 15.0
 		*15.0.1* Branch from 14.0.5
 	</changelog>
 	<category>Admin</category>
@@ -69,4 +69,10 @@
 	<supported>
 		<version>15.0</version>
 	</supported>
+	<console>
+		<command>
+			<name>sounds</name>
+			<class>Soundlang</class>
+		</command>
+	</console>
 </module>
