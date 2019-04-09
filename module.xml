@@ -7,11 +7,12 @@
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
 	<changelog>
-		*14.0.7* FREEPBX-19029 Reset Button under Sound Languages --&amp;gt; Settings page is not working 
+		*14.0.8* Use lazy loading console commands
+		*14.0.7* FREEPBX-19029 Reset Button under Sound Languages --&amp;gt; Settings page is not working
 		*14.0.6* Fix fwconsole to have better options that match the GUI
 		*14.0.5* Add support for new CDN
-		*14.0.4.6* FREEPBX-17221 Uploading tarball for custom Sound Language can fail 
-		*14.0.4.5* Fixing FREEPBX-17433 Whoops error due to typo error in sprintf 
+		*14.0.4.6* FREEPBX-17221 Uploading tarball for custom Sound Language can fail
+		*14.0.4.5* Fixing FREEPBX-17433 Whoops error due to typo error in sprintf
 		*14.0.4.4* If there is an error and the mirror servers are different reset them back
 		*14.0.4.3* Set timeout on curl downloads
 		*14.0.4.2* FREEPBX-15281
@@ -46,7 +47,7 @@
 		Management of sound prompt languages.
 	</description>
 	<depends>
-		<version>14.0.1rc1.2</version>
+		<version>14.0.8</version>
 	</depends>
 	<menuitems>
 		<soundlang>Sound Languages</soundlang>
@@ -91,6 +92,12 @@
 			<field name="filename" type="string" length="80" notnull="false"/>
 		</table>
 	</database>
+	<console>
+		<command>
+			<name>sounds</name>
+			<class>Soundlang</class>
+		</command>
+	</console>
 	<supported>
 		<version>14.0</version>
 	</supported>
