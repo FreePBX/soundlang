@@ -10,8 +10,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-14 15:41-0500\n"
-"PO-Revision-Date: 2018-10-23 22:00+0000\n"
-"Last-Translator: Bastian Mertgen <b.mertgen@bastian-mertgen.de>\n"
+"PO-Revision-Date: 2019-04-10 07:30+0000\n"
+"Last-Translator: florian alberts <alberts@ar-systems.de>\n"
 "Language-Team: German <http://*/projects/freepbx/soundlang/de/>\n"
 "Language: de_DE\n"
 "MIME-Version: 1.0\n"
@@ -154,7 +154,7 @@ msgstr "Benutzerdefinierte Sprache löschen"
 
 #: Console/Soundlang.class.php:28
 msgid "Delete Process"
-msgstr ""
+msgstr "Lösche Vorgang"
 
 #: assets/js/soundlang.js:315
 msgid "Deleting Temporary Files..."
@@ -351,7 +351,7 @@ msgstr "Lizenz konnte nicht erhalten werden"
 
 #: Console/Soundlang.class.php:27
 msgid "List Process"
-msgstr ""
+msgstr "Zeige Vorgang"
 
 #: views/licensemodal.php:17
 msgid "Loading..."
@@ -435,7 +435,7 @@ msgstr "Zurücksetzen"
 
 #: Console/Soundlang.class.php:30
 msgid "Restart Process"
-msgstr ""
+msgstr "Starte Vorgang erneut"
 
 #: Soundlang.class.php:573
 msgid "Russian"
@@ -443,7 +443,7 @@ msgstr "Russisch"
 
 #: Console/Soundlang.class.php:31
 msgid "Save processes, kill PM2 and restore processes"
-msgstr ""
+msgstr "Speichere Vorgang, töte PM2 und stelle Vorgang wieder her"
 
 #: views/packages.php:7 views/rnav.php:4 views/settings.php:4
 msgid "Settings"
@@ -475,7 +475,7 @@ msgstr "Spanisch"
 
 #: Console/Soundlang.class.php:29
 msgid "Stop Process"
-msgstr ""
+msgstr "Stoppe Vorgang"
 
 #: Soundlang.class.php:271 Soundlang.class.php:288 Soundlang.class.php:300
 #: views/oobe.php:89
