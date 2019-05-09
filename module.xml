@@ -7,6 +7,7 @@
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
 	<changelog>
+		*15.0.5.1* FREEPBX-19951
 		*15.0.5* Use lazy loading console commands
 		*15.0.4* FREEPBX-19029 Reset Button under Sound Languages --&amp;gt; Settings page is not working
 		*15.0.3.3* Fixing legacy restore
