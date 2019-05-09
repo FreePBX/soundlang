@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-04 19:17-0500\n"
+"POT-Creation-Date: 2019-05-09 14:20-0400\n"
 "PO-Revision-Date: 2018-08-25 15:00+0000\n"
 "Last-Translator: Bastian Mertgen <b.mertgen@bastian-mertgen.de>\n"
 "Language-Team: German <http://*/projects/freepbx/soundlang/de/>\n"
@@ -192,7 +192,7 @@ msgstr "Benutzerdefinierte Sprache bearbeiten"
 msgid "English"
 msgstr "Englisch"
 
-#: Soundlang.class.php:1267
+#: Soundlang.class.php:1266
 #, php-format
 msgid "Error %s returned from remote servers %s"
 msgstr "Fehler %s wird vom Remote-Server %s wiedergegeben"
@@ -526,7 +526,7 @@ msgid "The file is not formatted correctly. Please try again..."
 msgstr ""
 "Die Datei hat nicht das richtige Format, bitte versuchen Sie es erneut…"
 
-#: Soundlang.class.php:1263
+#: Soundlang.class.php:1262
 msgid ""
 "The mirror server did not return the correct response and had been "
 "previously changed from the default server(s), it has now been reset back to "
@@ -619,7 +619,7 @@ msgstr "Großbritannien"
 msgid "United States"
 msgstr "Vereinigte Staaten von Amerika"
 
-#: Soundlang.class.php:1276
+#: Soundlang.class.php:1275
 #, php-format
 msgid "Unknown Error. Response was empty from %s"
 msgstr "Unbekannter Fehler. Die Antwort von %s war leer"
