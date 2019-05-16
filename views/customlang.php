@@ -32,7 +32,7 @@ echo $heading;
 												<i class="fa fa-question-circle fpbx-help-icon" data-for="language"></i>
 											</div>
 											<div class="col-md-9">
-												<input type="text" class="form-control" id="language" name="language" value="<?php echo !empty($customlang['language']) ? $customlang['language'] : ''; ?>">
+												<input type="text" class="form-control" id="language" name="language" value="<?php echo !empty($customlang['language']) ? $customlang['language'] : ''; ?>" <?php echo !empty($customlang['id'])?'readonly':''; ?> >
 											</div>
 										</div>
 									</div>
