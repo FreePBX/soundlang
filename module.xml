@@ -2,11 +2,12 @@
 	<rawname>soundlang</rawname>
 	<repo>standard</repo>
 	<name>Sound Languages</name>
-	<version>14.0.8</version>
+	<version>14.0.9</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
 	<changelog>
+		*14.0.9* FREEPBX-19953 Editing the language code of the custom language is not updating in the backend. 
 		*14.0.8* Use lazy loading console commands
 		*14.0.7* FREEPBX-19029 Reset Button under Sound Languages --&amp;gt; Settings page is not working
 		*14.0.6* Fix fwconsole to have better options that match the GUI
