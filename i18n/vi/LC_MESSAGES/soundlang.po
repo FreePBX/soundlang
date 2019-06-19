@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-05-09 14:20-0400\n"
+"POT-Creation-Date: 2019-06-19 20:41+0530\n"
 "PO-Revision-Date: 2017-08-08 16:34+0200\n"
 "Last-Translator: PETER <ftek@ymail.com>\n"
 "Language-Team: Vietnamese <http://weblate.freepbx.org/projects/freepbx/"
@@ -248,7 +248,7 @@ msgstr "Đức"
 msgid "Germany"
 msgstr "Tiếng Đức"
 
-#: Restore.php:28
+#: Restore.php:46
 msgid "Getting online packages..."
 msgstr ""
 
@@ -431,7 +431,7 @@ msgstr "Nước Bồ Đào Nha"
 msgid "Portuguese"
 msgstr "Tiếng Bồ Đào Nha"
 
-#: Restore.php:31
+#: Restore.php:49
 #, php-format
 msgid "Redownloading %s-%s.%s"
 msgstr ""
@@ -585,6 +585,12 @@ msgstr "Thổ Nhĩ Kỳ"
 #: Soundlang.class.php:569
 msgid "Turkish"
 msgstr "Tiếng Thổ Nhĩ Kỳ"
+
+#: Restore.php:27
+msgid ""
+"Unable to download the some dependencies for restoring. Please enable "
+"internet access and try restoring again."
+msgstr ""
 
 #: Soundlang.class.php:107
 #, php-format

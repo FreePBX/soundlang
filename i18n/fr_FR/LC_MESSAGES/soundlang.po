@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-05-09 14:20-0400\n"
+"POT-Creation-Date: 2019-06-19 20:41+0530\n"
 "PO-Revision-Date: 2016-02-04 23:02+0200\n"
 "Last-Translator: Nicolas Riendeau <freepbx@riendeau.org>\n"
 "Language-Team: French <http://weblate.freepbx.org/projects/freepbx/soundlang/"
@@ -246,7 +246,7 @@ msgstr "Allemand"
 msgid "Germany"
 msgstr "Allemagne"
 
-#: Restore.php:28
+#: Restore.php:46
 msgid "Getting online packages..."
 msgstr ""
 
@@ -431,7 +431,7 @@ msgstr "Portugal"
 msgid "Portuguese"
 msgstr "Portugais"
 
-#: Restore.php:31
+#: Restore.php:49
 #, php-format
 msgid "Redownloading %s-%s.%s"
 msgstr ""
@@ -576,6 +576,12 @@ msgstr ""
 
 #: Soundlang.class.php:569
 msgid "Turkish"
+msgstr ""
+
+#: Restore.php:27
+msgid ""
+"Unable to download the some dependencies for restoring. Please enable "
+"internet access and try restoring again."
 msgstr ""
 
 #: Soundlang.class.php:107
