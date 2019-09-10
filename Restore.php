@@ -14,7 +14,7 @@ class Restore Extends Base\RestoreBase{
       return $result;		
 	}
 
-	public function runRestore($jobid){
+	public function runRestore(){
 		if($this->repos_alive()){
 			$configs = $this->getConfigs();
 			$this->addDataToTableFromArray('soundlang_customlangs', $configs['customlangs']);
