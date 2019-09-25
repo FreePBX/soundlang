@@ -30,14 +30,16 @@ class Restore Extends Base\RestoreBase{
 	}
 
 	public function processLegacy($pdo, $data, $tablelist, $unknowntables){
-		$packages = $pdo->query("SELECT * FROM soundlang_packages WHERE installed IS NOT NULL")->fetchAll(\PDO::FETCH_ASSOC);
-		$this->addDataToTableFromArray('soundlang_packages', $packages);
+		if(version_compare_freepbx($this->getVersion(),"12","ge")) {
+			$packages = $pdo->query("SELECT * FROM soundlang_packages WHERE installed IS NOT NULL")->fetchAll(\PDO::FETCH_ASSOC);
+			$this->addDataToTableFromArray('soundlang_packages', $packages);
 
-		$settings = $pdo->query("SELECT * FROM soundlang_settings")->fetchAll(\PDO::FETCH_ASSOC);
-		$this->addDataToTableFromArray('soundlang_settings', $settings);
+			$settings = $pdo->query("SELECT * FROM soundlang_settings")->fetchAll(\PDO::FETCH_ASSOC);
+			$this->addDataToTableFromArray('soundlang_settings', $settings);
 
-		$customlangs = $pdo->query("SELECT * FROM soundlang_customlangs")->fetchAll(\PDO::FETCH_ASSOC);
-		$this->addDataToTableFromArray('soundlang_customlangs', $customlangs);
+			$customlangs = $pdo->query("SELECT * FROM soundlang_customlangs")->fetchAll(\PDO::FETCH_ASSOC);
+			$this->addDataToTableFromArray('soundlang_customlangs', $customlangs);
+		}
 
 		$this->redownloadPackages();
 	}
