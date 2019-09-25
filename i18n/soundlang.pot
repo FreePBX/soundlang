@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-10 23:13+0530\n"
+"POT-Creation-Date: 2019-09-25 18:56+0530\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -250,7 +250,7 @@ msgstr ""
 msgid "Germany"
 msgstr ""
 
-#: Restore.php:46
+#: Restore.php:48
 msgid "Getting online packages..."
 msgstr ""
 
@@ -434,7 +434,7 @@ msgstr ""
 msgid "Portuguese"
 msgstr ""
 
-#: Restore.php:49
+#: Restore.php:51
 #, php-format
 msgid "Redownloading %s-%s.%s"
 msgstr ""

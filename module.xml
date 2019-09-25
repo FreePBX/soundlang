@@ -2,11 +2,12 @@
 	<rawname>soundlang</rawname>
 	<repo>standard</repo>
 	<name>Sound Languages</name>
-	<version>15.0.5.5</version>
+	<version>15.0.5.6</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
 	<changelog>
+		*15.0.5.6* FREEPBX-20578 Restoring legacy(FreePBX 12) Backup into FreePBX 15 system is giving sql error. 
 		*15.0.5.5* Related to FREEPBX-20414: removed $jobid from runRestore() 
 		*15.0.5.4* FREEPBX-20107 Sound Languages module gives exception error on restore when the system is not connected to internet 
 		*15.0.5.3* FREEPBX-19953 Editing the language code of the custom language is not updating in the backend. 

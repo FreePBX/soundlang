@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-19 20:41+0530\n"
+"POT-Creation-Date: 2019-09-25 18:56+0530\n"
 "PO-Revision-Date: 2017-03-08 21:32+0200\n"
 "Last-Translator: Kingvoice <suporte@kingvoice.com.br>\n"
 "Language-Team: Portuguese (Brazil) <http://weblate.freepbx.org/projects/"
@@ -249,7 +249,7 @@ msgstr "Alemão"
 msgid "Germany"
 msgstr "Alemanha"
 
-#: Restore.php:46
+#: Restore.php:48
 msgid "Getting online packages..."
 msgstr ""
 
@@ -432,7 +432,7 @@ msgstr "Portugal"
 msgid "Portuguese"
 msgstr "Português"
 
-#: Restore.php:49
+#: Restore.php:51
 #, php-format
 msgid "Redownloading %s-%s.%s"
 msgstr ""
