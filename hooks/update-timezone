@@ -8,14 +8,17 @@ if (empty($argv[1])) {
 
 // Underp the base64 that the param is using.
 $b = str_replace('_', '/', $argv[1]);
-$settings = @json_decode(gzuncompress(@base64_decode($b)), true);
+$settings = json_decode(gzuncompress(base64_decode($b)), true);
 
+if (empty($settings['timezone'])) {
+	throw new \Exception("Invalid parameters");
+}
 $zone = $settings['timezone'];
 
 $src = "/usr/share/zoneinfo/$zone";
 
 if (!file_exists($src)) {
-	print "Unknown region $src\n";
+	throw new \Exception("Unknown region $src");
 }
 
 // Is it already a link? If so, link it back
