@@ -1282,4 +1282,96 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 	public function getRightNav($request) {
 		return load_view(dirname(__FILE__).'/views/rnav.php',array());
 	}
+
+	public function runHook($hookname,$params = false) {
+		// Runs a new style Syadmin hook
+		if (!file_exists("/etc/incron.d/sysadmin")) {
+			throw new \Exception("Sysadmin RPM not up to date, or not a known OS.");
+		}
+
+		$basedir = "/var/spool/asterisk/incron";
+		if (!is_dir($basedir)) {
+			throw new \Exception("$basedir is not a directory");
+		}
+
+		// Does our hook actually exist?
+		if (!file_exists(__DIR__."/hooks/$hookname")) {
+			throw new \Exception("Hook $hookname doesn't exist");
+		}
+
+		// So this is the hook I want to run
+		$filename = "$basedir/soundlang.$hookname";
+
+		// If we have a modern sysadmin_rpm, we can put the params
+		// INSIDE the hook file, rather than as part of the filename
+		if (file_exists("/etc/sysadmin_contents_max")) {
+			$fh = fopen("/etc/sysadmin_contents_max", "r");
+			if ($fh) {
+				$max = (int) fgets($fh);
+				fclose($fh);
+			}
+		} else {
+			$max = false;
+		}
+
+		if ($max > 65535 || $max < 128) {
+			$max = false;
+		}
+
+		// Do I have any params?
+		$contents = "";
+		if ($params) {
+			// Oh. I do. If it's an array, json encode and base64
+			if (is_array($params)) {
+				$b = base64_encode(gzcompress(json_encode($params)));
+				// Note we derp the base64, changing / to _, because this may be used as a filepath.
+				if ($max) {
+					if (strlen($b) > $max) {
+						throw new \Exception("Contents too big for current sysadmin-rpm. This is possibly a bug!");
+					}
+					$contents = $b;
+					$filename .= ".CONTENTS";
+				} else {
+					$filename .= ".".str_replace('/', '_', $b);
+					if (strlen($filename) > 200) {
+						throw new \Exception("Too much data, and old sysadmin rpm. Please run 'yum update'");
+					}
+				}
+			} elseif (is_object($params)) {
+				throw new \Exception("Can't pass objects to hooks");
+			} else {
+				// Cast it to a string if it's anything else, and then make sure
+				// it doesn't have any spaces.
+				$filename .= ".".preg_replace("/[[:blank:]]+/", "", (string) $params);
+			}
+		}
+
+		$fh = fopen($filename, "w+");
+		if ($fh === false) {
+			// WTF, unable to create file?
+			throw new \Exception("Unable to create hook trigger '$filename'");
+		}
+
+		// Put our contents there, if there are any.
+		fwrite($fh, $contents);
+
+		// As soon as we close it, incron does its thing.
+		fclose($fh);
+
+		// Wait for up to 5 seconds and make sure it's been deleted.
+		$maxloops = 10;
+		$deleted = false;
+		while ($maxloops--) {
+			if (!file_exists($filename)) {
+				$deleted = true;
+				break;
+			}
+			usleep(500000);
+		}
+
+		if (!$deleted) {
+			throw new \Exception("Hook file '$filename' was not picked up by Incron after 5 seconds. Is it not running?");
+		}
+		return true;
+	}
 }

@@ -16,6 +16,8 @@ class OOBE {
 			} catch(\Exception $e) {}
 
 			\FreePBX::Config()->set_conf_values(array('UIDEFAULTLANG' => $_POST['oobeGuiLang'], 'PHPTIMEZONE' => $_POST['oobeTimezone'], 'SHOWLANGUAGE' => true), true, true);
+			date_default_timezone_set($_POST['oobeTimezone']);
+			$this->sl->runHook("update-timezone", array('timezone'=>$_POST['oobeTimezone']));
 			return true;
 		} else {
 			$idents = \DateTimeZone::listIdentifiers();

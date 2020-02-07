@@ -1,0 +1,46 @@
+#!/usr/bin/env php
+<?php
+
+// Make sure we have a param
+if (empty($argv[1])) {
+	throw new \Exception("Needs a param");
+}
+
+// Underp the base64 that the param is using.
+$b = str_replace('_', '/', $argv[1]);
+$settings = @json_decode(gzuncompress(@base64_decode($b)), true);
+
+$zone = $settings['timezone'];
+
+$src = "/usr/share/zoneinfo/$zone";
+
+if (!file_exists($src)) {
+	print "Unknown region $src\n";
+}
+
+// Is it already a link? If so, link it back
+if (is_link("/etc/localtime")) {
+	@unlink("/etc/localtime");
+	symlink($src, "/etc/localtime");
+} else {
+	@unlink("/etc/localtime");
+	copy($src, "/etc/localtime");
+}
+
+// Write out the new sysconfig/clock file
+$clock = "ZONE=$zone\n";
+if ($zone == "UTC") {
+	$clock .= "UTC=true\n";
+}
+
+file_put_contents("/etc/sysconfig/clock", $clock);
+
+// update setting in php.ini
+$ini = file_get_contents("/etc/php.ini");
+
+$tzline = "date.timezone = \"$zone\" ;;;; Automatically updated by Soundlang";
+
+// Replace the date.timezone line
+$ini = preg_replace('/^;*date.timezone.+$/m', $tzline, $ini);
+
+file_put_contents("/etc/php.ini", $ini);
