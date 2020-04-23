@@ -2,24 +2,12 @@
 	<rawname>soundlang</rawname>
 	<repo>standard</repo>
 	<name>Sound Languages</name>
-	<version>15.0.5.6</version>
+	<version>16.0.1</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
 	<changelog>
-		*15.0.5.6* FREEPBX-20578 Restoring legacy(FreePBX 12) Backup into FreePBX 15 system is giving sql error. 
-		*15.0.5.5* Related to FREEPBX-20414: removed $jobid from runRestore() 
-		*15.0.5.4* FREEPBX-20107 Sound Languages module gives exception error on restore when the system is not connected to internet 
-		*15.0.5.3* FREEPBX-19953 Editing the language code of the custom language is not updating in the backend. 
-		*15.0.5.2* FREEPBX-19951
-		*15.0.5* Use lazy loading console commands
-		*15.0.4* FREEPBX-19029 Reset Button under Sound Languages --&amp;gt; Settings page is not working
-		*15.0.3.3* Fixing legacy restore
-		*15.0.3.2* fixing legacy restore
-		*15.0.3.1* Backup and Restore
-		*15.0.3* Fix fwconsole to match GUI
-		*15.0.2* Backup and restore for 15.0
-		*15.0.1* Branch from 14.0.5
+		*16.0.1alpha* 16.0.1 alpha release
 	</changelog>
 	<category>Admin</category>
 	<description>
@@ -72,7 +60,7 @@
 		</table>
 	</database>
 	<supported>
-		<version>15.0</version>
+		<version>16.0</version>
 	</supported>
 	<console>
 		<command>
