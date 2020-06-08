@@ -2,11 +2,12 @@
 	<rawname>soundlang</rawname>
 	<repo>standard</repo>
 	<name>Sound Languages</name>
-	<version>14.0.9</version>
+	<version>14.0.10</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
 	<changelog>
+		*14.0.10* FREEPBX-20981 Increasing 'filename' column length
 		*14.0.9* FREEPBX-19953 Editing the language code of the custom language is not updating in the backend. 
 		*14.0.8* Use lazy loading console commands
 		*14.0.7* FREEPBX-19029 Reset Button under Sound Languages --&amp;gt; Settings page is not working
@@ -90,7 +91,7 @@
 			<field name="module" type="string" length="80"/>
 			<field name="language" type="string" length="20"/>
 			<field name="format" type="string" length="20"/>
-			<field name="filename" type="string" length="80" notnull="false"/>
+			<field name="filename" type="string" length="120" notnull="false"/>
 		</table>
 	</database>
 	<console>
