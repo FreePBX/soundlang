@@ -2,11 +2,12 @@
 	<rawname>soundlang</rawname>
 	<repo>standard</repo>
 	<name>Sound Languages</name>
-	<version>14.0.10</version>
+	<version>14.0.11</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
 	<changelog>
+		*14.0.11* Packaging of ver 14.0.11
 		*14.0.10* FREEPBX-20981 Increasing 'filename' column length
 		*14.0.9* FREEPBX-19953 Editing the language code of the custom language is not updating in the backend. 
 		*14.0.8* Use lazy loading console commands
@@ -48,6 +49,7 @@
 	<description>
 		Management of sound prompt languages.
 	</description>
+  	<more-info>https://wiki.freepbx.org/display/FPG/Sound+Languages</more-info>
 	<depends>
 		<version>14.0.8</version>
 	</depends>
