@@ -74,10 +74,11 @@ class FileInfo
     }
 
     /**
-     * @return int
+     * @return int the filesize. always 0 for directories
      */
     public function getSize()
     {
+        if($this->isdir) return 0;
         return $this->size;
     }
 
@@ -287,7 +288,6 @@ class FileInfo
      * the prefix will be stripped. It is recommended to give prefixes with a trailing slash.
      *
      * @param  int|string $strip
-     * @return FileInfo
      */
     public function strip($strip)
     {
@@ -338,6 +338,3 @@ class FileInfo
     }
 }
 
-class FileInfoException extends \Exception
-{
-}
