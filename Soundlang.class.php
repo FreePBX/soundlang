@@ -4,7 +4,6 @@
 //	Copyright 2015 Schmooze Com Inc.
 //
 namespace FreePBX\modules;
-include(__DIR__."/vendor/autoload.php");
 use splitbrain\PHPArchive\Tar;
 use splitbrain\PHPArchive\Zip;
 class Soundlang extends \FreePBX_Helpers implements \BMO {
