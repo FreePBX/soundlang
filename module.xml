@@ -2,11 +2,12 @@
 	<rawname>soundlang</rawname>
 	<repo>standard</repo>
 	<name>Sound Languages</name>
-	<version>15.0.5.8</version>
+	<version>15.0.5.9</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
 	<changelog>
+		*15.0.5.9* FREEPBX-21773 Backup "Whoops" error, backup job ends without creating file 
 		*15.0.5.8* Packaging of ver 15.0.5.8
 		*15.0.5.7* FREEPBX-20981 Increasing 'filename' column length
 		*15.0.5.6* FREEPBX-20578 Restoring legacy(FreePBX 12) Backup into FreePBX 15 system is giving sql error. 
