@@ -9,20 +9,16 @@ class OOBE {
 	}
 
 	public function oobeRequest() {
-		if(isset($_POST['oobeTimezone'])) {
+		if(isset($_POST['oobeSoundLang']) && isset($_POST['oobeGuiLang'])) {
 			try {
 				\FreePBX::Soundlang()->installLanguage($_POST['oobeSoundLang']);
 				\FreePBX::Soundlang()->setLanguage($_POST['oobeSoundLang']);
 			} catch(\Exception $e) {}
 
-			\FreePBX::Config()->set_conf_values(array('UIDEFAULTLANG' => $_POST['oobeGuiLang'], 'PHPTIMEZONE' => $_POST['oobeTimezone'], 'SHOWLANGUAGE' => true), true, true);
+			\FreePBX::Config()->set_conf_values(array('UIDEFAULTLANG' => $_POST['oobeGuiLang'], 'SHOWLANGUAGE' => true), true, true);
 			return true;
 		} else {
-			$idents = \DateTimeZone::listIdentifiers();
-			$timezones = array_combine($idents, $idents);
-
 			$locale = set_language();
-
 			$langlist = array();
 			$langlist['en_US'] = function_exists('locale_get_display_name') ? locale_get_display_name('en_US', $locale) : 'en_US';
 			foreach(glob(\FreePBX::Config()->get("AMPWEBROOT")."/admin/i18n/*",GLOB_ONLYDIR) as $langDir) {
@@ -31,7 +27,7 @@ class OOBE {
 			}
 
 			$langs = $this->sl->getAvailableLanguages();
-			show_view(__DIR__."/views/oobe.php",array("langs" => $langs, "langlist" => $langlist, "timezones" => $timezones));
+			show_view(__DIR__."/views/oobe.php",array("langs" => $langs, "langlist" => $langlist));
 		}
 		return false;
 	}
