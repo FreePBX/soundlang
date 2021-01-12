@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-02 09:56+0000\n"
+"POT-Creation-Date: 2021-01-12 10:09+0000\n"
 "PO-Revision-Date: 2017-08-08 16:34+0200\n"
 "Last-Translator: PETER <ftek@ymail.com>\n"
 "Language-Team: Vietnamese <http://weblate.freepbx.org/projects/freepbx/"
@@ -485,7 +485,7 @@ msgid "Stop Process"
 msgstr ""
 
 #: Soundlang.class.php:264 Soundlang.class.php:281 Soundlang.class.php:293
-#: views/oobe.php:89
+#: views/oobe.php:65
 msgid "Submit"
 msgstr "Gửi đi"
 
@@ -566,18 +566,6 @@ msgstr ""
 "Ngôn ngữ này được sử dụng cho các prompt khi bạn gọi đến PBX. Bạn có thể "
 "thay đổi nó sau đó bằng cách điều hướng đến mô đun 'Sound Languages'"
 
-#: views/oobe.php:83
-msgid ""
-"This will set the global timezone for the PBX. You can change it later by "
-"navigating to 'Advanced Settings'"
-msgstr ""
-"Điều này sẽ thiết lập múi giờ toàn cầu cho PBX. Bạn có thể thay đổi nó sau "
-"đó bằng cách điều hướng tới 'Advanced Settings'"
-
-#: views/oobe.php:67
-msgid "Timezone"
-msgstr "Múi giờ"
-
 #: Soundlang.class.php:608
 msgid "Turkey"
 msgstr "Thổ Nhĩ Kỳ"
@@ -648,6 +636,16 @@ msgstr ""
 #, php-format
 msgid "failed to open %s sounds archive."
 msgstr "Không mở được tệp nén âm thanh %s."
+
+#~ msgid ""
+#~ "This will set the global timezone for the PBX. You can change it later by "
+#~ "navigating to 'Advanced Settings'"
+#~ msgstr ""
+#~ "Điều này sẽ thiết lập múi giờ toàn cầu cho PBX. Bạn có thể thay đổi nó "
+#~ "sau đó bằng cách điều hướng tới 'Advanced Settings'"
+
+#~ msgid "Timezone"
+#~ msgstr "Múi giờ"
 
 #~ msgid "Successfully installed %s"
 #~ msgstr "Đã cài đặt %s thành công"
