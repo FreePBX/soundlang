@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-14 15:41-0500\n"
+"POT-Creation-Date: 2021-01-12 10:09+0000\n"
 "PO-Revision-Date: 2019-01-26 17:00+0000\n"
 "Last-Translator: Media Mousavi <mousavi.media@gmail.com>\n"
 "Language-Team: Persian <http://*/projects/freepbx/soundlang/fa/>\n"
@@ -475,7 +475,7 @@ msgid "Stop Process"
 msgstr "توقف فرآیند"
 
 #: Soundlang.class.php:271 Soundlang.class.php:288 Soundlang.class.php:300
-#: views/oobe.php:89
+#: views/oobe.php:65
 msgid "Submit"
 msgstr "ثبت"
 
@@ -557,18 +557,6 @@ msgstr ""
 "هنگامی که شما به PBX خود تماس می گیرید، این زبان برای دعوت استفاده می شود. "
 "بعدا می توانید با رفتن به ماژول «زبان های صوتی»، آن را تغییر دهید"
 
-#: views/oobe.php:83
-msgid ""
-"This will set the global timezone for the PBX. You can change it later by "
-"navigating to 'Advanced Settings'"
-msgstr ""
-"این منطقه زمانی جهانی را برای PBX تنظیم می کند. بعدا می توانید آن را با رفتن "
-"به «تنظیمات پیشرفته» تغییر دهید"
-
-#: views/oobe.php:67
-msgid "Timezone"
-msgstr "منطقه زمانی"
-
 #: Soundlang.class.php:615
 msgid "Turkey"
 msgstr "ترکیه"
@@ -630,6 +618,16 @@ msgstr ""
 #, php-format
 msgid "failed to open %s sounds archive."
 msgstr "شکست در باز کردن %s از بایگانی صداها."
+
+#~ msgid ""
+#~ "This will set the global timezone for the PBX. You can change it later by "
+#~ "navigating to 'Advanced Settings'"
+#~ msgstr ""
+#~ "این منطقه زمانی جهانی را برای PBX تنظیم می کند. بعدا می توانید آن را با "
+#~ "رفتن به «تنظیمات پیشرفته» تغییر دهید"
+
+#~ msgid "Timezone"
+#~ msgstr "منطقه زمانی"
 
 #~ msgid "Successfully installed %s"
 #~ msgstr "نصب موفق %s"

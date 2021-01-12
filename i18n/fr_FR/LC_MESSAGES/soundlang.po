@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-14 15:41-0500\n"
+"POT-Creation-Date: 2021-01-12 10:09+0000\n"
 "PO-Revision-Date: 2016-02-04 23:02+0200\n"
 "Last-Translator: Nicolas Riendeau <freepbx@riendeau.org>\n"
 "Language-Team: French <http://weblate.freepbx.org/projects/freepbx/soundlang/"
@@ -476,7 +476,7 @@ msgid "Stop Process"
 msgstr ""
 
 #: Soundlang.class.php:271 Soundlang.class.php:288 Soundlang.class.php:300
-#: views/oobe.php:89
+#: views/oobe.php:65
 msgid "Submit"
 msgstr "Soumettre"
 
@@ -549,16 +549,6 @@ msgstr ""
 msgid ""
 "This language will be used for the prompts when you call in to your PBX. You "
 "can change it later by navigating to the 'Sound Languages' module"
-msgstr ""
-
-#: views/oobe.php:83
-msgid ""
-"This will set the global timezone for the PBX. You can change it later by "
-"navigating to 'Advanced Settings'"
-msgstr ""
-
-#: views/oobe.php:67
-msgid "Timezone"
 msgstr ""
 
 #: Soundlang.class.php:615
