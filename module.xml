@@ -2,11 +2,12 @@
 	<rawname>soundlang</rawname>
 	<repo>standard</repo>
 	<name>Sound Languages</name>
-	<version>16.0.5</version>
+	<version>16.0.6</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
 	<changelog>
+		*16.0.6* Packaging of ver 16.0.6
 		*16.0.5* Packaging of ver 16.0.5
 		*16.0.4* FREEI-2431 Remove timezone setting from OOBE 
 		*16.0.3* FREEPBX-21773 Backup "Whoops" error, backup job ends without creating file 
@@ -19,7 +20,7 @@
 	</description>
   	<more-info>https://wiki.freepbx.org/display/FPG/Sound+Languages</more-info>
 	<depends>
-		<version>15.0.6.18</version>
+		<version>16.0.10.27</version>
 	</depends>
 	<menuitems>
 		<soundlang>Sound Languages</soundlang>
