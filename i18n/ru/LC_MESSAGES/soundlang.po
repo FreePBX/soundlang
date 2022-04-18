@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-05-16 17:39+0530\n"
-"PO-Revision-Date: 2022-04-18 12:52+0000\n"
+"PO-Revision-Date: 2022-04-19 05:32+0000\n"
 "Last-Translator: Dmitriy Q <krotesk@ya.ru>\n"
 "Language-Team: Russian <http://weblate.freepbx.org/projects/freepbx/"
 "soundlang/ru/>\n"
@@ -337,7 +337,7 @@ msgstr "Языковой код"
 
 #: views/customlang.php:43
 msgid "Language Code (e.g. 'en')."
-msgstr "Языковой код (напр. 'ru')"
+msgstr "Языковой код (напр. 'ru')."
 
 #: views/rnav.php:2
 msgid "Language Packs"
