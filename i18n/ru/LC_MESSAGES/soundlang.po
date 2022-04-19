@@ -337,7 +337,7 @@ msgstr "Языковой код"
 
 #: views/customlang.php:43
 msgid "Language Code (e.g. 'en')."
-msgstr "Языковой код (напр. 'ru')."
+msgstr "Языковой код (напр. 'ru')"
 
 #: views/rnav.php:2
 msgid "Language Packs"
