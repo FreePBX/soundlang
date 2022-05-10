@@ -10,8 +10,8 @@
 						<div class="element-container">
 							<div class="row">
 								<div class="col-md-12">
-									<div class="row">
-										<div class="form-group">
+									<div class="">
+										<div class="form-group row">
 											<div class="col-md-3">
 												<label class="control-label" for="language"><?php echo _("Global Language") ?></label>
 												<i class="fa fa-question-circle fpbx-help-icon" data-for="language"></i>
@@ -36,8 +36,8 @@
 						<div class="element-container">
 							<div class="row">
 								<div class="col-md-12">
-									<div class="row">
-										<div class="form-group">
+									<div class="">
+										<div class="form-group row">
 											<div class="col-md-3">
 												<label class="control-label" for="formats"><?php echo _("Download Formats") ?></label>
 												<i class="fa fa-question-circle fpbx-help-icon" data-for="formats"></i>
