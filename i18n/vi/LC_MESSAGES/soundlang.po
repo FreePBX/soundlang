@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-12 10:09+0000\n"
+"POT-Creation-Date: 2022-05-10 10:26+0000\n"
 "PO-Revision-Date: 2017-08-08 16:34+0200\n"
 "Last-Translator: PETER <ftek@ymail.com>\n"
 "Language-Team: Vietnamese <http://weblate.freepbx.org/projects/freepbx/"
@@ -29,7 +29,7 @@ msgstr "Một máy nhánh PHP vừa dừng việc tải tệp lên"
 msgid "A brief description for this Custom Language."
 msgstr "Mô tả ngắn gọn cho Tùy chỉnh ngôn ngữ ( Custom language) này."
 
-#: views/licensemodal.php:27
+#: views/licensemodal.php:29
 msgid "Accept License"
 msgstr "Chấp nhận giấy phép"
 
@@ -114,7 +114,7 @@ msgstr "Nước Trung Quốc"
 msgid "Chinese"
 msgstr "Tiếng Trung Quốc"
 
-#: views/licensemodal.php:26
+#: views/licensemodal.php:28
 msgid "Close"
 msgstr "Đóng"
 
@@ -343,7 +343,7 @@ msgstr "Các gói ngôn ngữ"
 msgid "Language to be used for sound prompts throughout the system"
 msgstr "Ngôn ngữ được sử dụng cho các nhắc nhở âm thanh thông qua hệ thống"
 
-#: views/licensemodal.php:7
+#: views/licensemodal.php:6
 msgid "License Agreement"
 msgstr "Thảo thuận cấp phép"
 
@@ -355,7 +355,7 @@ msgstr "Giấy phép không được cấp lại"
 msgid "List Process"
 msgstr ""
 
-#: views/licensemodal.php:17
+#: views/licensemodal.php:19
 msgid "Loading..."
 msgstr "Đang tải..."
 

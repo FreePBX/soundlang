@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-12 10:09+0000\n"
+"POT-Creation-Date: 2022-05-10 10:26+0000\n"
 "PO-Revision-Date: 2018-08-25 15:00+0000\n"
 "Last-Translator: Bastian Mertgen <b.mertgen@bastian-mertgen.de>\n"
 "Language-Team: German <http://*/projects/freepbx/soundlang/de/>\n"
@@ -28,7 +28,7 @@ msgstr "Eine PHP-Erweiterung hat den Datei Upload gestoppt"
 msgid "A brief description for this Custom Language."
 msgstr "Eine kurze Beschreibung für diese benutzerdefinierte Sprache."
 
-#: views/licensemodal.php:27
+#: views/licensemodal.php:29
 msgid "Accept License"
 msgstr "Lizenz akzeptieren"
 
@@ -115,7 +115,7 @@ msgstr "China"
 msgid "Chinese"
 msgstr "Chinesisch"
 
-#: views/licensemodal.php:26
+#: views/licensemodal.php:28
 msgid "Close"
 msgstr "Schließen"
 
@@ -345,7 +345,7 @@ msgstr "Sprachpakete"
 msgid "Language to be used for sound prompts throughout the system"
 msgstr "Sprache, die Klangaufforderungen durch das System verwendet wird"
 
-#: views/licensemodal.php:7
+#: views/licensemodal.php:6
 msgid "License Agreement"
 msgstr "Lizenzvereinbarung"
 
@@ -357,7 +357,7 @@ msgstr "Lizenz konnte nicht erhalten werden"
 msgid "List Process"
 msgstr ""
 
-#: views/licensemodal.php:17
+#: views/licensemodal.php:19
 msgid "Loading..."
 msgstr "Laden..."
 

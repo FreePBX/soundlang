@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-12 10:09+0000\n"
+"POT-Creation-Date: 2022-05-10 10:26+0000\n"
 "PO-Revision-Date: 2016-02-04 23:02+0200\n"
 "Last-Translator: Nicolas Riendeau <freepbx@riendeau.org>\n"
 "Language-Team: French <http://weblate.freepbx.org/projects/freepbx/soundlang/"
@@ -29,7 +29,7 @@ msgstr ""
 msgid "A brief description for this Custom Language."
 msgstr "Une brève description de ce langage personnalisé."
 
-#: views/licensemodal.php:27
+#: views/licensemodal.php:29
 msgid "Accept License"
 msgstr ""
 
@@ -112,7 +112,7 @@ msgstr "Chine"
 msgid "Chinese"
 msgstr "Chinois"
 
-#: views/licensemodal.php:26
+#: views/licensemodal.php:28
 msgid "Close"
 msgstr ""
 
@@ -341,7 +341,7 @@ msgstr "Paquet de langue"
 msgid "Language to be used for sound prompts throughout the system"
 msgstr "La langue à utiliser pour les messages système"
 
-#: views/licensemodal.php:7
+#: views/licensemodal.php:6
 msgid "License Agreement"
 msgstr ""
 
@@ -353,7 +353,7 @@ msgstr ""
 msgid "List Process"
 msgstr ""
 
-#: views/licensemodal.php:17
+#: views/licensemodal.php:19
 msgid "Loading..."
 msgstr ""
 
