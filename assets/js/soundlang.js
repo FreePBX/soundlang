@@ -271,7 +271,7 @@ $("#customlang-frm").submit(function(e) {
 		var total = process.length, count = 0;
 		$("#recscreen .progress-bar").prop("aria-valuenow",0);
 		$("#recscreen .progress-bar").css("width",0+"px");
-		$("#recscreen").removeClass("hidden");
+		$("#recscreen").removeClass("d-none");
 		var temps = [];
 		async.forEachOfSeries(process, function (value, key, callback) {
 			value.command = "convert";
@@ -310,7 +310,7 @@ $("#customlang-frm").submit(function(e) {
 				alert(_("There was an error, See the console for more details"));
 				console.error(err);
 				$("#action-buttons input").prop("disabled", false);
-				$("#recscreen").addClass("hidden");
+				$("#recscreen").addClass("d-none");
 			} else {
 				$("#recscreen label").text(_("Deleting Temporary Files..."));
 				$.ajax({
@@ -342,7 +342,7 @@ function saveCustomLang(id, language, description) {
 			window.location = "?display=soundlang&action=customlangs";
 		} else {
 			alert(data.message);
-			$("#recscreen").addClass("hidden");
+			$("#recscreen").addClass("d-none");
 			$("#action-buttons input").prop("disabled", false);
 		}
 	});

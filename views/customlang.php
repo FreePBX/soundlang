@@ -25,8 +25,8 @@ echo $heading;
 						<div class="element-container">
 							<div class="row">
 								<div class="col-md-12">
-									<div class="row">
-										<div class="form-group">
+									<div class="">
+										<div class="form-group row">
 											<div class="col-md-3">
 												<label class="control-label" for="language"><?php echo _("Language Code")?></label>
 												<i class="fa fa-question-circle fpbx-help-icon" data-for="language"></i>
@@ -49,8 +49,8 @@ echo $heading;
 						<div class="element-container">
 							<div class="row">
 								<div class="col-md-12">
-									<div class="row">
-										<div class="form-group">
+									<div class="">
+										<div class="form-group row">
 											<div class="col-md-3">
 												<label class="control-label" for="description"><?php echo _("Description")?></label>
 												<i class="fa fa-question-circle fpbx-help-icon" data-for="description"></i>
@@ -72,8 +72,8 @@ echo $heading;
 						<div class="element-container">
 							<div class="row">
 								<div class="col-md-12">
-									<div class="row">
-										<div class="form-group">
+									<div class="">
+										<div class="form-group row">
 											<div class="col-md-3">
 												<label class="control-label" for="fileupload"><?php echo _("Upload Recording")?></label>
 												<i class="fa fa-question-circle fpbx-help-icon" data-for="fileupload"></i>
@@ -104,8 +104,8 @@ echo $heading;
 						<div class="element-container">
 							<div class="row">
 								<div class="col-md-12">
-									<div class="row">
-										<div class="form-group">
+									<div class="">
+										<div class="form-group row">
 											<div class="col-md-3">
 												<label class="control-label" for="convert"><?php echo _("Convert To")?></label>
 												<i class="fa fa-question-circle fpbx-help-icon" data-for="convert"></i>
@@ -135,7 +135,7 @@ echo $heading;
 		</div>
 	</div>
 </div>
-<div id="recscreen" class="hidden">
+<div id="recscreen" class="d-none">
 	<div class="holder">
 		<label></label>
 		<div class="progress">

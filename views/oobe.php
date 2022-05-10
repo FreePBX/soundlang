@@ -9,8 +9,8 @@
 						<div class="element-container">
 							<div class="row">
 								<div class="col-md-12">
-									<div class="row">
-										<div class="form-group">
+									<div class="">
+										<div class="form-group row">
 											<div class="col-md-3">
 												<label class="control-label" for="oobeSoundLang"><?php echo _('Sound Prompts Language')?></label>
 												<i class="fa fa-question-circle fpbx-help-icon" data-for="oobeSoundLang"></i>
@@ -35,8 +35,8 @@
 						<div class="element-container">
 							<div class="row">
 								<div class="col-md-12">
-									<div class="row">
-										<div class="form-group">
+									<div class="">
+										<div class="form-group row">
 											<div class="col-md-3">
 												<label class="control-label" for="oobeGuiLang"><?php echo _('System Language')?></label>
 												<i class="fa fa-question-circle fpbx-help-icon" data-for="oobeGuiLang"></i>
