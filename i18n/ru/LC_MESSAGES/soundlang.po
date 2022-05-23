@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-10 10:26+0000\n"
+"POT-Creation-Date: 2022-05-23 10:22+0000\n"
 "PO-Revision-Date: 2022-04-19 05:32+0000\n"
 "Last-Translator: Dmitriy Q <krotesk@ya.ru>\n"
 "Language-Team: Russian <http://weblate.freepbx.org/projects/freepbx/"
@@ -27,7 +27,7 @@ msgstr "Расширение PHP остановило загрузку файл�
 msgid "A brief description for this Custom Language."
 msgstr "Краткое описание этого пользовательского языка."
 
-#: views/licensemodal.php:29
+#: views/licensemodal.php:27
 msgid "Accept License"
 msgstr "Принять лицензию"
 
@@ -114,7 +114,7 @@ msgstr "Китай"
 msgid "Chinese"
 msgstr "Китайский"
 
-#: views/licensemodal.php:28
+#: views/licensemodal.php:26
 msgid "Close"
 msgstr "Закрыть"
 
@@ -343,7 +343,7 @@ msgstr "Языковой код"
 msgid "Language to be used for sound prompts throughout the system"
 msgstr "Язык, используемый для звуковых подсказок по всей системе"
 
-#: views/licensemodal.php:6
+#: views/licensemodal.php:7
 msgid "License Agreement"
 msgstr "Лицензионное соглашение"
 
@@ -355,7 +355,7 @@ msgstr "Лицензия не может быть получена"
 msgid "List Process"
 msgstr "Список процессов"
 
-#: views/licensemodal.php:19
+#: views/licensemodal.php:17
 msgid "Loading..."
 msgstr "Загрузка..."
 
