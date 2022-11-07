@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-10 10:26+0000\n"
+"POT-Creation-Date: 2022-05-23 10:22+0000\n"
 "PO-Revision-Date: 2016-07-06 05:16+0200\n"
 "Last-Translator: Media <mousavi.media@gmail.com>\n"
 "Language-Team: Persian (Iran) <http://weblate.freepbx.org/projects/freepbx/"
@@ -29,7 +29,7 @@ msgstr "بارگذاری فایل توسط PHP متوقف شد"
 msgid "A brief description for this Custom Language."
 msgstr "توضیح مختصر برای زبان سفارشی."
 
-#: views/licensemodal.php:29
+#: views/licensemodal.php:27
 msgid "Accept License"
 msgstr ""
 
@@ -114,7 +114,7 @@ msgstr "چین"
 msgid "Chinese"
 msgstr "چینی"
 
-#: views/licensemodal.php:28
+#: views/licensemodal.php:26
 msgid "Close"
 msgstr ""
 
@@ -343,7 +343,7 @@ msgstr "بسته های زبان"
 msgid "Language to be used for sound prompts throughout the system"
 msgstr "زبان مورد استفاده سیستم برای پخش پیام ها"
 
-#: views/licensemodal.php:6
+#: views/licensemodal.php:7
 msgid "License Agreement"
 msgstr ""
 
@@ -355,7 +355,7 @@ msgstr ""
 msgid "List Process"
 msgstr ""
 
-#: views/licensemodal.php:19
+#: views/licensemodal.php:17
 msgid "Loading..."
 msgstr ""
 

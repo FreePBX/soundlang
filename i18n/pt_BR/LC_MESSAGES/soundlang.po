@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-10 10:26+0000\n"
+"POT-Creation-Date: 2022-05-23 10:22+0000\n"
 "PO-Revision-Date: 2017-03-08 21:32+0200\n"
 "Last-Translator: Kingvoice <suporte@kingvoice.com.br>\n"
 "Language-Team: Portuguese (Brazil) <http://weblate.freepbx.org/projects/"
@@ -29,7 +29,7 @@ msgstr "Uma extensão PHP parou o carregamento do arquivo"
 msgid "A brief description for this Custom Language."
 msgstr "Uma breve descrição para este Idioma Personalizado."
 
-#: views/licensemodal.php:29
+#: views/licensemodal.php:27
 msgid "Accept License"
 msgstr "Aceitar Licença"
 
@@ -115,7 +115,7 @@ msgstr "China"
 msgid "Chinese"
 msgstr "Chinês"
 
-#: views/licensemodal.php:28
+#: views/licensemodal.php:26
 msgid "Close"
 msgstr "Fechar"
 
@@ -344,7 +344,7 @@ msgstr "Pacotes de Idiomas"
 msgid "Language to be used for sound prompts throughout the system"
 msgstr "Idioma a ser usado para mensagens sonoras em todo o sistema"
 
-#: views/licensemodal.php:6
+#: views/licensemodal.php:7
 msgid "License Agreement"
 msgstr "Termos de Licença"
 
@@ -356,7 +356,7 @@ msgstr "A Licença não Pôde ser Recuperada"
 msgid "List Process"
 msgstr ""
 
-#: views/licensemodal.php:19
+#: views/licensemodal.php:17
 msgid "Loading..."
 msgstr "Carregando..."
 

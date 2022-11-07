@@ -3,18 +3,16 @@
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
 				<h4 class="modal-title"><?php echo _("License Agreement")?></h4>
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-					<span aria-hidden="true">&times;</span>
-				</button>
 			</div>
 			<div class="modal-body">
 				<input type="hidden" id="langid" value=""/>
 				<div class="element-container">
 					<div class="row">
 						<div class="col-md-12">
-							<div class="">
-								<div class="form-group row">
+							<div class="row">
+								<div class="form-group">
 									<div class="col-md-12">
 										<pre id="licensetext" name="licensetext"><?php echo _("Loading...")?></pre>
 									</div>

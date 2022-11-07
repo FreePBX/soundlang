@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-10 10:26+0000\n"
+"POT-Creation-Date: 2022-05-23 10:22+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,7 +26,7 @@ msgstr ""
 msgid "A brief description for this Custom Language."
 msgstr ""
 
-#: views/licensemodal.php:29
+#: views/licensemodal.php:27
 msgid "Accept License"
 msgstr ""
 
@@ -109,7 +109,7 @@ msgstr ""
 msgid "Chinese"
 msgstr ""
 
-#: views/licensemodal.php:28
+#: views/licensemodal.php:26
 msgid "Close"
 msgstr ""
 
@@ -346,7 +346,7 @@ msgstr ""
 msgid "Language to be used for sound prompts throughout the system"
 msgstr ""
 
-#: views/licensemodal.php:6
+#: views/licensemodal.php:7
 msgid "License Agreement"
 msgstr ""
 
@@ -358,7 +358,7 @@ msgstr ""
 msgid "List Process"
 msgstr ""
 
-#: views/licensemodal.php:19
+#: views/licensemodal.php:17
 msgid "Loading..."
 msgstr ""
 
