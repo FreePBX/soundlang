@@ -1,59 +1,47 @@
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-sm-12">
+			<h2><?php echo _("Language Packs")?></h2>
+
 			<div class="fpbx-container">
 				<div class="display no-border">
 					<div id="toolbar-all">
-						<a class="btn btn-primary" href="?display=soundlang&amp;action=settings"><i class="fa fa-cog"></i> <?php echo _("Settings")?></a>
-						<a class="btn btn-primary" href="?display=soundlang&amp;action=customlangs"><i class="fa fa-globe"></i> <?php echo _("Custom Languages")?></a>
+						<button type="button" id="btnUpdatePackages" class="btn btn-primary">
+							<i class="fa fa-cloud-download"></i>&nbsp;<?php echo _("Check Languages Online")?>
+    					</button>
+
+						<button type="button" id="refreshshowall" class="btn btn-primary">
+							<i class="fa fa-globe"></i>&nbsp;<?php echo _("Show All Languages")?>
+    					</button>
+						<button type="button" id="refreshshowinstalled" class="btn btn-primary">
+							<i class="fa fa-filter"></i>&nbsp;<?php echo _("Show Installed Languages")?>
+    					</button>
 					</div>
-					<table data-toolbar="#toolbar-all" data-toggle="table" data-pagination="true" data-show-columns="true" data-show-toggle="true" data-search="true" data-cookie="true" data-cookie-id-table="soundlangscookie"  class="table table-striped">
+					<table id="soundlang-packages-list" class="table table-striped"
+						data-type="soundlang"
+						data-toolbar="#toolbar-all" 
+						data-toggle="table" 
+						data-pagination="true" 
+						data-show-columns="true" 
+						data-show-toggle="true" 
+						data-show-refresh="true"
+						data-search="true" 
+						data-cookie="true" 
+						data-cookie-id-table="soundlangscookie" 
+						data-cache="false"
+						data-url="ajax.php?module=soundlang&amp;command=packages&amp;tabledata=yes">
 						<thead>
 							<tr>
-								<th data-sortable="true"><?php echo _("Language")?></th>
-								<th data-sortable="true"><?php echo _("Author")?></th>
-								<th><?php echo _("Actions")?></th>
+								<th data-formatter='soundLangPackagesColName' data-sortable="true" data-field="name"><?php echo _("Language")?></th>
+								<th data-formatter='soundLangPackagesColAuthor' data-sortable="true" data-field="author"><?php echo _("Author")?></th>
+								<th data-field="version_i" data-width="150px" data-align="center"><?php echo _("Installed Version")?></th>
+								<th data-field="version_o" data-width="150px" data-align="center"><?php echo _("Online Version")?></th>
+								<th data-formatter='soundLangPackagesColActions' data-width="160px" data-align="center"><?php echo _("Actions")?></th>
 							</tr>
 						</thead>
-						<tbody>
-							<?php foreach ($languages as $language => $package) { ?>
-							<tr>
-								<td>
-								<?php
-									$name = $language;
-									$lang = explode('_', $language, 2);
-									if (count($lang) > 1 && !empty($languagelocations[$lang[1]]) && !empty($languagenames[$lang[0]])) {
-										$name = $languagenames[$lang[0]] . ' - ' . $languagelocations[$lang[1]] . ' (' . $language . ')';
-									} else if (!empty($languagenames[$lang[0]])) {
-										$name = $languagenames[$lang[0]] . ' (' . $language . ')';
-									}
-
-								?>
-									<a href="config.php?display=soundlang&amp;action=language&amp;lang=<?php echo $language; ?>"><?php echo $name; ?></a>
-								</td>
-								<td>
-								<?php
-									if (!empty($package['authorlink'])) {
-								?>
-										<a href="<?php echo $package['authorlink']; ?>" target="#"><?php echo $package['author']; ?></a>
-								<?php
-									} else {
-										echo $package['author'];
-									}
-								?>
-								</td>
-								<td>
-								<?php if ($package['installed']) { ?>
-									<a href="#" data-langid="<?php echo $language; ?>" id="licenselink<?php echo $language; ?>"><i class="fa fa-ban fa-fw"></i></a>
-								<?php } else { ?>
-									<a href="#" data-toggle="modal" data-langid="<?php echo $language ;?>" data-target="#licensemodal" id="licenselink<?php echo $language; ?>" data-licenselink="<?php echo $package['license']; ?>" class="clickable"><i class="fa fa-download fa-fw"></i></a>
-								<?php } ?>
-								</td>
-							</tr>
-							<?php } ?>
-						</tbody>
 					</table>
-					<?php echo load_view(dirname(__FILE__).'/licensemodal.php')?>
+					<?php echo load_view(dirname(__FILE__).'/packages.licensemodal.php')?>
+					<?php echo load_view(dirname(__FILE__).'/packages.language.php')?>
 				</div>
 			</div>
 		</div>

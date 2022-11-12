@@ -5,7 +5,7 @@
 
 			<div class="fpbx-container">
 				<div class="display full-border">
-					<form method="POST" class="fpbx-submit" name="settings">
+					<form method="POST" class="fpbx-submit" name="settings" id="formSoundLangSettings">
 						<input type="hidden" name="action" value="savesettings">
 						<div class="element-container">
 							<div class="row">
