@@ -5,23 +5,21 @@
 # FreePBX language template for soundlang
 # Copyright (C) 2008-2021 Sangoma Technologies, Inc.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-11-20 13:47+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2022-11-20 13:51+0100\n"
+"Last-Translator: Javier Pastor <jpastor@cerebelum.net>\n"
+"Language-Team: Spanish <http://weblate.freepbx.org/projects/freepbx/"
+"soundlang/es/>\n"
+"Language: es_ES\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.2\n"
-"X-Poedit-Basepath: ..\n"
-"X-Poedit-SearchPath-0: .\n"
-"X-Poedit-SearchPathExcluded-0: .git\n"
-"X-Poedit-SearchPathExcluded-1: i18n\n"
 
 #: Console/Soundlang.class.php:25
 msgid "Sound Language Prompts"
@@ -29,509 +27,518 @@ msgstr ""
 
 #: Console/Soundlang.class.php:27
 msgid "List of available packages."
-msgstr ""
+msgstr "Lista de paquetes disponibles."
 
 #: Console/Soundlang.class.php:28
 msgid "List of installed packages and which is the default."
-msgstr ""
+msgstr "Lista de paquetes instalados y cuál es el predeterminado."
 
 #: Console/Soundlang.class.php:29
 msgid "Installs the language pack that we specify."
-msgstr ""
+msgstr "Instala el paquete de idiomas que especifiquemos."
 
 #: Console/Soundlang.class.php:30
 msgid "Uninstalls the language pack that we specify."
-msgstr ""
+msgstr "Desinstala el paquete de idiomas que especifiquemos."
 
 #: Console/Soundlang.class.php:31
 msgid "We define the default language."
-msgstr ""
+msgstr "Definimos el idioma por defecto."
 
 #: Console/Soundlang.class.php:32
 msgid ""
 "Download the information of the latest version available online of the "
 "language packs."
 msgstr ""
+"Descargue la información de la última versión disponible en línea de los "
+"paquetes de idiomas."
 
 #: Console/Soundlang.class.php:74 Console/Soundlang.class.php:100
 #: Console/Soundlang.class.php:112
 msgid "That is not a valid ID"
-msgstr ""
+msgstr "Este no es un ID Valido"
 
 #: Console/Soundlang.class.php:78
 #, php-format
 msgid "Successfully set default language to [%s], you will need to reload."
 msgstr ""
+"Se ha configurado con éxito el idioma por defecto a [%s], tendrá que volver "
+"a cargar."
 
 #: Console/Soundlang.class.php:91 Console/Soundlang.class.php:193
 #: views/customlangs.php:21 views/packages.php:35
 msgid "Language"
-msgstr ""
+msgstr "Idioma"
 
 #: Console/Soundlang.class.php:91
 msgid "Default"
-msgstr ""
+msgstr "Por defecto"
 
 #: Console/Soundlang.class.php:103
 #, php-format
 msgid "Uninstalling %s..."
-msgstr ""
+msgstr "Desinstalando %s..."
 
 #: Console/Soundlang.class.php:105 Console/Soundlang.class.php:127
 #: Console/Soundlang.class.php:146 install.php:52 install.php:83
 #: install.php:106
 msgid "Done"
-msgstr ""
+msgstr "Hecho"
 
 #: Console/Soundlang.class.php:119
 msgid "Accept License Agreement?"
-msgstr ""
+msgstr "¿Aceptar el acuerdo de licencia?"
 
 #: Console/Soundlang.class.php:125 install.php:49
 #, php-format
 msgid "Installing %s..."
-msgstr ""
+msgstr "Instalando %s..."
 
 #: Console/Soundlang.class.php:144
 msgid "Sync info..."
-msgstr ""
+msgstr "Sincronizar información..."
 
 #: Console/Soundlang.class.php:193 views/packages.php:36
 msgid "Author"
-msgstr ""
+msgstr "Autor"
 
 #: Console/Soundlang.class.php:193 views/packages.language.php:24
 msgid "Installed"
-msgstr ""
+msgstr "Instalado"
 
 #: Restore.php:27
 msgid ""
 "Unable to download the some dependencies for restoring. Please enable "
 "internet access and try restoring again."
 msgstr ""
+"No se han podido descargar algunas dependencias para la restauración. Por "
+"favor, active el acceso a Internet e intente restaurar de nuevo."
 
 #: Restore.php:48
 msgid "Getting online packages..."
-msgstr ""
+msgstr "Obtener paquetes en línea..."
 
 #: Restore.php:51
 #, php-format
 msgid "Redownloading %s-%s.%s"
-msgstr ""
+msgstr "Volviendo a descargar %s-%s.%s"
 
 #: Soundlang.class.php:199 Soundlang.class.php:216 Soundlang.class.php:228
 msgid "Reset"
-msgstr ""
+msgstr "Reiniciar"
 
 #: Soundlang.class.php:204 Soundlang.class.php:221 Soundlang.class.php:233
 #: views/oobe.php:65
 msgid "Submit"
-msgstr ""
+msgstr "Enviar"
 
 #: Soundlang.class.php:211 assets/js/soundlang.js:171
 #: assets/js/soundlang.js:177
 msgid "Delete"
-msgstr ""
+msgstr "Eliminar"
 
 #: Soundlang.class.php:296
 msgid "Ok!"
-msgstr ""
+msgstr "Ok!"
 
 #: Soundlang.class.php:297
 msgid "Error!"
-msgstr ""
+msgstr "Error!"
 
 #: Soundlang.class.php:340
 msgid "Update completed."
-msgstr ""
+msgstr "Actualización completada."
 
 #: Soundlang.class.php:342
 msgid "Wait while languages ​​are updated"
-msgstr ""
+msgstr "Esperar mientras se actualizan los idiomas"
 
 #: Soundlang.class.php:354
 #, php-format
 msgid "Removed the [%s] format of the language [%s]..."
-msgstr ""
+msgstr "Eliminado el formato [%s] del idioma [%s]..."
 
 #: Soundlang.class.php:368
 #, php-format
 msgid "Updating the language [%s]..."
-msgstr ""
+msgstr "Actualizando el idioma [%s]..."
 
 #: Soundlang.class.php:382
 msgid "Installation completed."
-msgstr ""
+msgstr "Instalación completada."
 
 #: Soundlang.class.php:387
 msgid "Error: No language specified!"
-msgstr ""
+msgstr "Error: No se ha especificado ningún idioma!"
 
 #: Soundlang.class.php:395
 msgid "Error: No languages ​​detected to install!"
-msgstr ""
+msgstr "Error: No se ha detectado ningún idioma para instalar!"
 
 #: Soundlang.class.php:424
 #, php-format
 msgid "Wait while the language [%s] is installed"
-msgstr ""
+msgstr "Espera mientras se instala el idioma [%s]"
 
 #: Soundlang.class.php:428
 msgid "Everything is installed and update."
-msgstr ""
+msgstr "Todo está instalado y actualizado."
 
 #: Soundlang.class.php:436
 #, php-format
 msgid "Installing module [%s]:"
-msgstr ""
+msgstr "Instalando el módulo [%s]:"
 
 #: Soundlang.class.php:454
 #, php-format
 msgid "Downloading [%s]..."
-msgstr ""
+msgstr "Descargando [%s]..."
 
 #: Soundlang.class.php:461
 #, php-format
 msgid "Extracting [%s]..."
-msgstr ""
+msgstr "Extrayendo [%s]..."
 
 #: Soundlang.class.php:474
 #, php-format
 msgid "Error: %s"
-msgstr ""
+msgstr "Error: %s"
 
 #: Soundlang.class.php:493
 #, php-format
 msgid "Error: Couldn't find [%s] - not in archive [%s]?"
-msgstr ""
+msgstr "Error: No se pudo encontrar [%s] - no en el archivo [%s]?"
 
 #: Soundlang.class.php:520
 #, php-format
 msgid "Unable to find any soundfiles in [%s] package!"
-msgstr ""
+msgstr "No se puede encontrar ningún archivo de sonido en el paquete [%s]!"
 
 #: Soundlang.class.php:527
 #, php-format
 msgid "Updating data in database [%s]..."
-msgstr ""
+msgstr "Actualizando datos en la base de datos [%s]..."
 
 #: Soundlang.class.php:576 views/packages.licensemodal.php:26
 msgid "Close"
-msgstr ""
+msgstr "Cerrar"
 
 #: Soundlang.class.php:605
 msgid "Data update completed successfully."
-msgstr ""
+msgstr "La actualización de datos se ha completado con éxito."
 
 #: Soundlang.class.php:612
 msgid "Error: No data fetched from server!"
-msgstr ""
+msgstr "Error: No se han obtenido datos del servidor!"
 
 #: Soundlang.class.php:618
 #, php-format
 msgid "Unable to get online sound packages. Error was: [%s] %s"
-msgstr ""
+msgstr "No se pueden obtener paquetes de sonido en línea. Error: [%s] %s"
 
 #: Soundlang.class.php:736 Soundlang.class.php:750 Soundlang.class.php:764
 #: Soundlang.class.php:795
 msgid "No language specified!"
-msgstr ""
+msgstr "No se especifica el idioma!"
 
 #: Soundlang.class.php:741
 msgid "Installation completed successfully."
-msgstr ""
+msgstr "La instalación se completó correctamente."
 
 #: Soundlang.class.php:741
 msgid "Failed installation process!"
-msgstr ""
+msgstr "Proceso de instalación fallido!"
 
 #: Soundlang.class.php:755
 msgid "Uninstall completed successfully."
-msgstr ""
+msgstr "La desinstalación se ha completado con éxito."
 
 #: Soundlang.class.php:755
 msgid "Uninstall process failed!"
-msgstr ""
+msgstr "El proceso de desinstalación ha fallado!"
 
 #: Soundlang.class.php:802
 msgid "No formats specified!"
-msgstr ""
+msgstr "No se especifican los formatos!"
 
 #: Soundlang.class.php:842
 msgid "Successful Update."
-msgstr ""
+msgstr "Actualización con existo."
 
 #: Soundlang.class.php:884
 msgid "The file is not formatted correctly. Please try again..."
 msgstr ""
+"El archivo no está formateado correctamente. Por favor, inténtelo de nuevo..."
 
 #: Soundlang.class.php:920
 msgid "No files were sent to the server"
-msgstr ""
+msgstr "No se enviaron archivos al servidor"
 
 #: Soundlang.class.php:989
 msgid "Unsupported file format"
-msgstr ""
+msgstr "Formato de archivo no soportado"
 
 #: Soundlang.class.php:994
 msgid "The uploaded file exceeds the upload_max_filesize directive in php.ini"
-msgstr ""
+msgstr "El archivo subido excede la directiva upload_max_filesize en php.ini"
 
 #: Soundlang.class.php:997
 msgid ""
 "The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in "
 "the HTML form"
 msgstr ""
+"El archivo subido excede la directiva MAX_FILE_SIZE que se especificó en el "
+"formulario HTML"
 
 #: Soundlang.class.php:1000
 msgid "The uploaded file was only partially uploaded"
-msgstr ""
+msgstr "El archivo fue sólo parcialmente subido"
 
 #: Soundlang.class.php:1003
 msgid "No file was uploaded"
-msgstr ""
+msgstr "No se subió ningún archivo"
 
 #: Soundlang.class.php:1006
 msgid "Missing a temporary folder"
-msgstr ""
+msgstr "Falta la carpeta temporal"
 
 #: Soundlang.class.php:1009
 msgid "Failed to write file to disk"
-msgstr ""
+msgstr "No se pudo escribir el archivo en el disco"
 
 #: Soundlang.class.php:1012
 msgid "A PHP extension stopped the file upload"
-msgstr ""
+msgstr "Una extensión de PHP detuvo la carga del archivo"
 
 #: Soundlang.class.php:1018
 msgid "Error: You should never see this"
-msgstr ""
+msgstr "Error: No debería ver esto nunca"
 
 #: Soundlang.class.php:1053
 msgid "Czech"
-msgstr ""
+msgstr "Checo"
 
 #: Soundlang.class.php:1054
 msgid "German"
-msgstr ""
+msgstr "German"
 
 #: Soundlang.class.php:1055
 msgid "English"
-msgstr ""
+msgstr "Inglés"
 
 #: Soundlang.class.php:1056
 msgid "Spanish"
-msgstr ""
+msgstr "Español"
 
 #: Soundlang.class.php:1057
 msgid "Persian"
-msgstr ""
+msgstr "Persa"
 
 #: Soundlang.class.php:1058
 msgid "Finish"
-msgstr ""
+msgstr "Finalizar"
 
 #: Soundlang.class.php:1059
 msgid "French"
-msgstr ""
+msgstr "French"
 
 #: Soundlang.class.php:1060
 msgid "Hebrew"
-msgstr ""
+msgstr "Hebreo"
 
 #: Soundlang.class.php:1061
 msgid "Italian"
-msgstr ""
+msgstr "Italian"
 
 #: Soundlang.class.php:1062
 msgid "Japanese"
-msgstr ""
+msgstr "Japonés"
 
 #: Soundlang.class.php:1063
 msgid "Dutch"
-msgstr ""
+msgstr "Dutch"
 
 #: Soundlang.class.php:1064
 msgid "Norwegian"
-msgstr ""
+msgstr "Norwegian"
 
 #: Soundlang.class.php:1065
 msgid "Polish"
-msgstr ""
+msgstr "Polish"
 
 #: Soundlang.class.php:1066
 msgid "Portuguese"
-msgstr ""
+msgstr "Portuguese"
 
 #: Soundlang.class.php:1067
 msgid "Russian"
-msgstr ""
+msgstr "Russian"
 
 #: Soundlang.class.php:1068
 msgid "Swedish"
-msgstr ""
+msgstr "Swedish"
 
 #: Soundlang.class.php:1069
 msgid "Turkish"
-msgstr ""
+msgstr "Turco"
 
 #: Soundlang.class.php:1070
 msgid "Chinese"
-msgstr ""
+msgstr "Chino"
 
 #: Soundlang.class.php:1081
 msgid "Australia"
-msgstr ""
+msgstr "Australia"
 
 #: Soundlang.class.php:1082
 msgid "Belgium"
-msgstr ""
+msgstr "Bélgica"
 
 #: Soundlang.class.php:1083
 msgid "Brazil"
-msgstr ""
+msgstr "Brasil"
 
 #: Soundlang.class.php:1084
 msgid "Canada"
-msgstr ""
+msgstr "Canadá"
 
 #: Soundlang.class.php:1085
 msgid "Switzerland"
-msgstr ""
+msgstr "Switzerland"
 
 #: Soundlang.class.php:1086
 msgid "China"
-msgstr ""
+msgstr "China"
 
 #: Soundlang.class.php:1087
 msgid "Colombia"
-msgstr ""
+msgstr "Colombia"
 
 #: Soundlang.class.php:1088
 msgid "Czech Republic"
-msgstr ""
+msgstr "República Checa"
 
 #: Soundlang.class.php:1089
 msgid "Germany"
-msgstr ""
+msgstr "Alemania"
 
 #: Soundlang.class.php:1090
 msgid "Spain"
-msgstr ""
+msgstr "España"
 
 #: Soundlang.class.php:1091
 msgid "Finland"
-msgstr ""
+msgstr "Finland"
 
 #: Soundlang.class.php:1092
 msgid "France"
-msgstr ""
+msgstr "France"
 
 #: Soundlang.class.php:1093
 msgid "United Kingdom"
-msgstr ""
+msgstr "United Kingdom"
 
 #: Soundlang.class.php:1094
 msgid "Hong Kong"
-msgstr ""
+msgstr "Hong Kong"
 
 #: Soundlang.class.php:1095
 msgid "Ireland"
-msgstr ""
+msgstr "Irlanda"
 
 #: Soundlang.class.php:1096
 msgid "Israel"
-msgstr ""
+msgstr "Israel"
 
 #: Soundlang.class.php:1097
 msgid "India"
-msgstr ""
+msgstr "India"
 
 #: Soundlang.class.php:1098
 msgid "Iran"
-msgstr ""
+msgstr "Iran"
 
 #: Soundlang.class.php:1099
 msgid "Italy"
-msgstr ""
+msgstr "Italia"
 
 #: Soundlang.class.php:1100
 msgid "Japan"
-msgstr ""
+msgstr "Japon"
 
 #: Soundlang.class.php:1101
 msgid "Netherlands"
-msgstr ""
+msgstr "Netherlands"
 
 #: Soundlang.class.php:1102
 msgid "Norway"
-msgstr ""
+msgstr "Norway"
 
 #: Soundlang.class.php:1103
 msgid "New Zealand"
-msgstr ""
+msgstr "New Zealand"
 
 #: Soundlang.class.php:1104
 msgid "Mexico"
-msgstr ""
+msgstr "México"
 
 #: Soundlang.class.php:1105
 msgid "Poland"
-msgstr ""
+msgstr "Poland"
 
 #: Soundlang.class.php:1106
 msgid "Portugal"
-msgstr ""
+msgstr "Portugal"
 
 #: Soundlang.class.php:1107
 msgid "Sweden"
-msgstr ""
+msgstr "Sweden"
 
 #: Soundlang.class.php:1108
 msgid "Turkey"
-msgstr ""
+msgstr "Turquía"
 
 #: Soundlang.class.php:1109
 msgid "Taiwan"
-msgstr ""
+msgstr "Taiwan"
 
 #: Soundlang.class.php:1110
 msgid "United States"
-msgstr ""
+msgstr "Estados Unidos"
 
 #: Soundlang.class.php:1111
 msgid "South Africa"
-msgstr ""
+msgstr "South Africa"
 
 #: Soundlang.class.php:1430
 #, php-format
 msgid "%s->%s - Soundlang Response: %s"
-msgstr ""
+msgstr "%s->%s - Respuesta de Soundlang: %s"
 
 #: Soundlang.class.php:1524
 #, php-format
 msgid "%s->%s - Error uninstalling package %s (%s)"
-msgstr ""
+msgstr "%s->%s - Error al desinstalar el paquete %s (%s)"
 
 #: Soundlang.class.php:1570
 #, php-format
 msgid "%s->%s - Failed to open %s sounds archive."
-msgstr ""
+msgstr "%s->%s - Fallo al abrir el archivo de sonidos %s."
 
 #: Soundlang.class.php:1573
 #, php-format
 msgid "Could not untar %s to %s"
-msgstr ""
+msgstr "No se pudo descomprimir %s a %s"
 
 #: Soundlang.class.php:1586
 #, php-format
 msgid "Couldn't find %s - not in archive %s?"
-msgstr ""
+msgstr "No se encuentra %s - no en el archivo %s?"
 
 #: Soundlang.class.php:1606
 #, php-format
 msgid "Unable to find any soundfiles in %s package"
-msgstr ""
+msgstr "No se puede encontrar ningún archivo de sonido en el paquete %s"
 
 #: Soundlang.class.php:1765
 msgid ""
@@ -539,129 +546,137 @@ msgid ""
 "previously changed from the default server(s), it has now been reset back to "
 "the standard default. Please try again"
 msgstr ""
+"El servidor de réplica no devolvió la respuesta correcta y había sido "
+"cambiado previamente del servidor(es) por defecto, ahora ha sido "
+"restablecido al estándar por defecto. Por favor, inténtelo de nuevo"
 
 #: Soundlang.class.php:1769
 #, php-format
 msgid "Error %s returned from remote servers %s"
-msgstr ""
+msgstr "Error %s devuelto desde servidores remotos %s"
 
 #: Soundlang.class.php:1778
 #, php-format
 msgid "Unknown Error. Response was empty from %s"
-msgstr ""
+msgstr "Error desconocido. La respuesta estaba vacía desde %s"
 
 #: assets/js/soundlang.js:28
 msgid "Accept License Agreement"
-msgstr ""
+msgstr "Aceptar Acuerdo de Licencia"
 
 #: assets/js/soundlang.js:39
 msgid "License Could Not be Retrieved"
-msgstr ""
+msgstr "No se pudo Recuperar la Licencia"
 
 #: assets/js/soundlang.js:49
 #, javascript-format
 msgid "Are you sure you want to uninstall the \"%s\" language audio pack?"
 msgstr ""
+"¿Estás seguro de que quieres desinstalar el paquete de audio del idioma \"%s"
+"\"?"
 
 #: assets/js/soundlang.js:50
 msgid "Yes"
-msgstr ""
+msgstr "Si"
 
 #: assets/js/soundlang.js:50
 msgid "No"
-msgstr ""
+msgstr "No"
 
 #: assets/js/soundlang.js:83
 msgid "Installing"
-msgstr ""
+msgstr "Instalando"
 
 #: assets/js/soundlang.js:97
 msgid "Installing Package"
-msgstr ""
+msgstr "Instalando el paquete"
 
 #: assets/js/soundlang.js:106
 msgid "Loading.."
-msgstr ""
+msgstr "Cargando.."
 
 #: assets/js/soundlang.js:166
 #, javascript-format
 msgid "Are you sure you wish to delete this %s?"
-msgstr ""
+msgstr "¿Está seguro de que desea eliminar este %s?"
 
 #: assets/js/soundlang.js:167
 msgid "Deleting..."
-msgstr ""
+msgstr "Borrando..."
 
 #: assets/js/soundlang.js:198
 msgid "Are you sure you want to delete this custom language?"
-msgstr ""
+msgstr "¿Está seguro de que desea eliminar este idioma personalizado?"
 
 #: assets/js/soundlang.js:255
 msgid "Unsupported file type"
-msgstr ""
+msgstr "Tipo de Archivo no soportado"
 
 #: install.php:31
 #, php-format
 msgid "Unable to get online sound packages. Error was: [%s] %s. Continuing..."
 msgstr ""
+"No se pueden obtener paquetes de sonido en línea. El error fue: [%s] %s. "
+"Continuando..."
 
 #: install.php:42
 msgid "New install, downloading default english language set..."
 msgstr ""
+"Nueva instalación, descargando el conjunto de idioma Inglés predeterminado..."
 
 #: install.php:55
 msgid "Finished installing default sounds"
-msgstr ""
+msgstr "Termine de instalar los sonidos predeterminados"
 
 #: install.php:81
 #, php-format
 msgid "Installing additional package %s..."
-msgstr ""
+msgstr "Instalando el paquete adicional %s..."
 
 #: install.php:104
 #, php-format
 msgid "Installing/updating packages for %s..."
-msgstr ""
+msgstr "Instalando/actualizando paquetes para %s..."
 
 #: views/customlang.php:3
 msgid "Edit Custom Language"
-msgstr ""
+msgstr "Editar Idioma Personalizado"
 
 #: views/customlang.php:6
 msgid "Add Custom Language"
-msgstr ""
+msgstr "Añadir Idioma Personalizado"
 
 #: views/customlang.php:31
 msgid "Language Code"
-msgstr ""
+msgstr "Código Idioma"
 
 #: views/customlang.php:43
 msgid "Language Code (e.g. 'en')."
-msgstr ""
+msgstr "Código de idioma (por ejemplo, 'en')."
 
 #: views/customlang.php:55 views/customlangs.php:22
 msgid "Description"
-msgstr ""
+msgstr "Descripción"
 
 #: views/customlang.php:67
 msgid "A brief description for this Custom Language."
-msgstr ""
+msgstr "Una breve descripción de este idioma personalizado."
 
 #: views/customlang.php:78
 msgid "Upload Recording"
-msgstr ""
+msgstr "Cargar la grabación"
 
 #: views/customlang.php:83
 msgid "Browse"
-msgstr ""
+msgstr "Explorar"
 
 #: views/customlang.php:86
 msgid "Files to upload"
-msgstr ""
+msgstr "Archivos para subir"
 
 #: views/customlang.php:91
 msgid "Drop Multiple Files or Archives Here"
-msgstr ""
+msgstr "Dejar varios archivos o ficheros aquí"
 
 #: views/customlang.php:98
 #, php-format
@@ -670,141 +685,177 @@ msgid ""
 "includes archives (that include multiple files, such as %s) and multiple "
 "files"
 msgstr ""
+"Sube archivos desde tu sistema local. Los formatos de carga soportados son: "
+"%s. Esto incluye archivos (que incluyen múltiples archivos, como %s) y "
+"múltiples archivos"
 
 #: views/customlang.php:110
 msgid "Convert To"
-msgstr ""
+msgstr "Convertir a"
 
 #: views/customlang.php:126
 msgid ""
 "Check all file formats you would like this system recording to be encoded "
 "into"
 msgstr ""
+"Compruebe todos los formatos de archivo que desee que esta grabación del "
+"sistema sea codificado"
 
 #: views/customlangs.php:10
 msgid "Add New Custom Language"
-msgstr ""
+msgstr "Agregar Nuevo Idioma Personalizado"
 
 #: views/customlangs.php:13
 msgid "Delete Custom Language"
-msgstr ""
+msgstr "Eliminar Idioma Personalizado"
 
 #: views/customlangs.php:20
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #: views/customlangs.php:23
 msgid "Action"
-msgstr ""
+msgstr "Acción"
 
 #: views/main.php:13
 msgid "Updating, Please Wait..."
-msgstr ""
+msgstr "Actualizando, Por favor espere..."
 
 #: views/oobe.php:4
 msgid "Please Select the default locales of the PBX"
-msgstr ""
+msgstr "Seleccione las configuraciones regionales predeterminadas del PBX"
 
 #: views/oobe.php:5
 msgid "Based on your locale your language and timezone have been pre-selected."
 msgstr ""
+"En función de su configuración regional, su idioma y zona horaria han sido "
+"preseleccionados."
 
 #: views/oobe.php:15
 msgid "Sound Prompts Language"
-msgstr ""
+msgstr "Sonido de la lengua de los avisos"
 
 #: views/oobe.php:31
 msgid ""
 "This language will be used for the prompts when you call in to your PBX. You "
 "can change it later by navigating to the 'Sound Languages' module"
 msgstr ""
+"Este idioma se utilizará para los avisos cuando llame a su PBX. Puede "
+"cambiarlo más tarde navegando por el módulo \"Sonido de Idiomas\""
 
 #: views/oobe.php:41
 msgid "System Language"
-msgstr ""
+msgstr "Lenguaje del Sistema"
 
 #: views/oobe.php:57
 msgid ""
 "This language will be used for the GUI and CLI commands for your PBX. You "
 "can change it later by navigating to 'Advanced Settings'"
 msgstr ""
+"Este idioma se utilizará para la GUI y los comandos CLI de su PBX. Puede "
+"cambiarlo más tarde navegando a 'Configuración Avanzada'"
 
 #: views/packages.language.php:7
 msgid "Formats Installed"
-msgstr ""
+msgstr "Formatos Instalados"
 
 #: views/packages.language.php:21
 msgid "Module"
-msgstr ""
+msgstr "Módulo"
 
 #: views/packages.language.php:22
 msgid "Format"
-msgstr ""
+msgstr "Formato"
 
 #: views/packages.language.php:23
 msgid "Available"
-msgstr ""
+msgstr "Disponible"
 
 #: views/packages.licensemodal.php:7
 msgid "License Agreement"
-msgstr ""
+msgstr "Acuerdo de Licencia"
 
 #: views/packages.licensemodal.php:17
 msgid "Loading..."
-msgstr ""
+msgstr "Cargando..."
 
 #: views/packages.licensemodal.php:27
 msgid "Accept License"
-msgstr ""
+msgstr "Aceptar Licencia"
 
 #: views/packages.php:4 views/rnav.php:3
 msgid "Language Packs"
-msgstr ""
+msgstr "Paquetes de Idiomas"
 
 #: views/packages.php:10
 msgid "Check Languages Online"
-msgstr ""
+msgstr "Obtener los Idiomas en Línea"
 
 #: views/packages.php:14
 msgid "Show All Languages"
-msgstr ""
+msgstr "Mostrar Todos los Idiomas"
 
 #: views/packages.php:17
 msgid "Show Installed Languages"
-msgstr ""
+msgstr "Mostrar Idiomas Instalados"
 
 #: views/packages.php:37
 msgid "Installed Version"
-msgstr ""
+msgstr "Versión Instalada"
 
 #: views/packages.php:38
 msgid "Online Version"
-msgstr ""
+msgstr "Versión en Línea"
 
 #: views/packages.php:39
 msgid "Actions"
-msgstr ""
+msgstr "Acciones"
 
 #: views/rnav.php:4
 msgid "Custom Languages"
-msgstr ""
+msgstr "Idiomas Personalizados"
 
 #: views/rnav.php:5 views/settings.php:4
 msgid "Settings"
-msgstr ""
+msgstr "Configuración"
 
 #: views/settings.php:16
 msgid "Global Language"
-msgstr ""
+msgstr "Lenguaje Global"
 
 #: views/settings.php:33
 msgid "Language to be used for sound prompts throughout the system"
 msgstr ""
+"Idioma que se utilizará para las indicaciones sonoras en todo el sistema"
 
 #: views/settings.php:42
 msgid "Download Formats"
-msgstr ""
+msgstr "Descargar Formatos"
 
 #: views/settings.php:59
 msgid "Formats (codecs) to download when installing a language pack"
-msgstr ""
+msgstr "Formatos (códecs) para descargar al instalar un paquete de idioma"
+
+#~ msgid "Admin"
+#~ msgstr "Administrador"
+
+#~ msgid "Delete Process"
+#~ msgstr "Eliminar Proceso"
+
+#~ msgid "Deleting Temporary Files..."
+#~ msgstr "Eliminando Archivos Temporales..."
+
+#~ msgid "Finished!"
+#~ msgstr "¡Acabado!"
+
+#~ msgid "List Process"
+#~ msgstr "Lista de Proceso"
+
+#~ msgid "Management of sound prompt languages."
+#~ msgstr "Gestión de lenguajes de avisos sonoros."
+
+#~ msgid "No Suitable files were found in the archive!"
+#~ msgstr "¡No se encontraron archivos adecuados en el archivo!"
+
+#~ msgid "Sound Languages"
+#~ msgstr "Sonidos de Idioma"
