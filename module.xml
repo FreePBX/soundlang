@@ -2,11 +2,12 @@
 	<rawname>soundlang</rawname>
 	<repo>standard</repo>
 	<name>Sound Languages</name>
-	<version>16.0.8</version>
+	<version>16.0.9</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
 	<changelog>
+		*16.0.9* FREEPBX-23827 
 		*16.0.8* Reverting Bootstrap and dependent libs fixes 
 		*16.0.7* FREEI-4793 
 		*16.0.6* Packaging of ver 16.0.6
