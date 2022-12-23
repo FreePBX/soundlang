@@ -10,8 +10,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-01-12 10:09+0000\n"
-"PO-Revision-Date: 2022-11-14 19:00+0000\n"
-"Last-Translator: Javier Pastor <jpastor@cerebelum.net>\n"
+"PO-Revision-Date: 2022-12-23 14:00+0000\n"
+"Last-Translator: Santiago Pioli <spioli@sangoma.com>\n"
 "Language-Team: Spanish <http://weblate.freepbx.org/projects/freepbx/"
 "soundlang/es/>\n"
 "Language: es\n"
@@ -181,7 +181,7 @@ msgstr "Hecho"
 
 #: views/settings.php:42
 msgid "Download Formats"
-msgstr ""
+msgstr "Descargar Formatos"
 
 #: views/customlang.php:91
 msgid "Drop Multiple Files or Archives Here"
@@ -214,7 +214,7 @@ msgstr "No se pudo escribir el archivo en el disco"
 
 #: views/customlang.php:86
 msgid "Files to upload"
-msgstr ""
+msgstr "Archivos para subir"
 
 #: Soundlang.class.php:564
 msgid "Finish"
@@ -447,7 +447,7 @@ msgstr "Reiniciar"
 
 #: Console/Soundlang.class.php:30
 msgid "Restart Process"
-msgstr ""
+msgstr "Reiniciar Proceso"
 
 #: Soundlang.class.php:573
 msgid "Russian"
@@ -455,7 +455,7 @@ msgstr "Russian"
 
 #: Console/Soundlang.class.php:31
 msgid "Save processes, kill PM2 and restore processes"
-msgstr ""
+msgstr "Salvar procesos, matar PM2 y restaurar procesos"
 
 #: views/packages.php:7
 #: views/rnav.php:4
@@ -465,7 +465,7 @@ msgstr "Configuración"
 
 #: Console/Soundlang.class.php:25
 msgid "Sound Language Prompts"
-msgstr ""
+msgstr "Instrucciones de Idioma de Sonido"
 
 #: soundlang.i18n.php:4
 #: soundlang.i18n.php:10
@@ -474,11 +474,11 @@ msgstr "Sonidos de Idioma"
 
 #: views/oobe.php:15
 msgid "Sound Prompts Language"
-msgstr ""
+msgstr "Idioma de Avisos de Sonido"
 
 #: Soundlang.class.php:618
 msgid "South Africa"
-msgstr "South Africa"
+msgstr "Sudáfrica"
 
 #: Soundlang.class.php:597
 msgid "Spain"
@@ -490,7 +490,7 @@ msgstr "Español"
 
 #: Console/Soundlang.class.php:29
 msgid "Stop Process"
-msgstr ""
+msgstr "Detener Proceso"
 
 #: Soundlang.class.php:271
 #: Soundlang.class.php:288
@@ -503,6 +503,7 @@ msgstr "Enviar"
 #, php-format
 msgid "Successfully set default language to %s, you will need to reload"
 msgstr ""
+"Se configuró el idioma por defecto %s correctamente, necesitará recargar"
 
 #: Soundlang.class.php:614
 msgid "Sweden"
@@ -533,6 +534,7 @@ msgstr "Este no es un ID Valido"
 #: Soundlang.class.php:390
 msgid "The file is not formatted correctly. Please try again..."
 msgstr ""
+"El archivo no está formateado correctamente. Por favor intente de nuevo..."
 
 #: Soundlang.class.php:1266
 msgid ""
@@ -540,6 +542,9 @@ msgid ""
 "previously changed from the default server(s), it has now been reset back to "
 "the standard default. Please try again"
 msgstr ""
+"El servidor espejo no retornó la respuesta correcta y se había cambiado "
+"previamente de los servidores predeterminados, ahora se ha restablecido al "
+"valor predeterminado estándar. Por favor intente nuevamente"
 
 #: Soundlang.class.php:503
 msgid ""
@@ -559,41 +564,47 @@ msgstr "El archivo fue sólo parcialmente subido"
 
 #: assets/js/soundlang.js:310
 msgid "There was an error, See the console for more details"
-msgstr ""
+msgstr "Hubo un error, vea la consola para más detalles"
 
 #: views/oobe.php:57
 msgid ""
 "This language will be used for the GUI and CLI commands for your PBX. You "
 "can change it later by navigating to 'Advanced Settings'"
 msgstr ""
+"Este idioma será usado para la GUI y comandos CLI de su PBX. Puede cambiarlo "
+"más tarde navegando a 'Ajustes Avanzados'"
 
 #: views/oobe.php:31
 msgid ""
 "This language will be used for the prompts when you call in to your PBX. You "
 "can change it later by navigating to the 'Sound Languages' module"
 msgstr ""
+"Este idioma será usado para las instrucciones cuando llamda a su PBX. Puede "
+"cambiar esto más tarde navegando al módulo 'Idiomas de Sonido'"
 
 #: Soundlang.class.php:615
 msgid "Turkey"
-msgstr ""
+msgstr "Turquía"
 
 #: Soundlang.class.php:575
 msgid "Turkish"
-msgstr ""
+msgstr "Turco"
 
 #: Soundlang.class.php:113
 #, php-format
 msgid "Unable to get online sound packages. Error was: [%s] %s"
-msgstr ""
+msgstr "No se pudo obtener paquetes de sonido en línea. El error fue: [%s] %s"
 
 #: install.php:31
 #, php-format
 msgid "Unable to get online sound packages. Error was: [%s] %s. Continuing..."
 msgstr ""
+"No se pudo obtener paquetes de sonido en línea. El error fue: [%s] %s. "
+"Continuando..."
 
 #: assets/js/soundlang.js:40
 msgid "Uninstalling. Please wait for the page to refresh"
-msgstr ""
+msgstr "Desinstalando. Por favor espere a que la página se refresque"
 
 #: Soundlang.class.php:600
 msgid "United Kingdom"
@@ -606,7 +617,7 @@ msgstr "Estados Unidos"
 #: Soundlang.class.php:1279
 #, php-format
 msgid "Unknown Error. Response was empty from %s"
-msgstr ""
+msgstr "Error desconocido. La respuesta fue vacía desde %s"
 
 #: Soundlang.class.php:495
 msgid "Unsupported file format"
@@ -627,6 +638,9 @@ msgid ""
 "includes archives (that include multiple files, such as %s) and multiple "
 "files"
 msgstr ""
+"Suba los archivos desde su sistema local. Los formatos de archivos de carga "
+"soportados son: %s. Esto incluye archivos comprimidos (que incluye varios "
+"archivos, como %s) y múltiples archivos"
 
 #: Soundlang.class.php:1076
 #, php-format
