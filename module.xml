@@ -15,7 +15,7 @@
 	</description>
   	<more-info>https://wiki.freepbx.org/display/FPG/Sound+Languages</more-info>
 	<depends>
-		<version>16.0.10.27</version>
+		<version>17.0.1</version>
 	</depends>
 	<menuitems>
 		<soundlang>Sound Languages</soundlang>
