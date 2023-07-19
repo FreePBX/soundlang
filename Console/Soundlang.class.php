@@ -23,14 +23,7 @@ class Soundlang extends Command {
 	protected function configure(){
 		$this->setName('sounds')
 			->setDescription(_('Sound Language Prompts'))
-			->setDefinition(array(
-				new InputOption('list', null, InputOption::VALUE_NONE, _('List of available packages.')),
-				new InputOption('listglobal', null, InputOption::VALUE_NONE, _('List of installed packages and which is the default.')),
-				new InputOption('install', null, InputOption::VALUE_REQUIRED, _('Installs the language pack that we specify.')),
-				new InputOption('uninstall', null, InputOption::VALUE_REQUIRED, _('Uninstalls the language pack that we specify.')),
-				new InputOption('global', null, InputOption::VALUE_REQUIRED, _('We define the default language.')),
-				new InputOption('sync', null, InputOption::VALUE_NONE, _('Download the information of the latest version available online of the language packs.')),
-			));
+			->setDefinition([new InputOption('list', null, InputOption::VALUE_NONE, _('List of available packages.')), new InputOption('listglobal', null, InputOption::VALUE_NONE, _('List of installed packages and which is the default.')), new InputOption('install', null, InputOption::VALUE_REQUIRED, _('Installs the language pack that we specify.')), new InputOption('uninstall', null, InputOption::VALUE_REQUIRED, _('Uninstalls the language pack that we specify.')), new InputOption('global', null, InputOption::VALUE_REQUIRED, _('We define the default language.')), new InputOption('sync', null, InputOption::VALUE_NONE, _('Download the information of the latest version available online of the language packs.'))]);
 	}
 	protected function execute(InputInterface $input, OutputInterface $output){
 		set_time_limit(0);
@@ -75,20 +68,21 @@ class Soundlang extends Command {
 			exit(4);
 		}
 		$this->soundlang->setLanguage($code);
-		$output->writeln(sprintf(_("Successfully set default language to [%s], you will need to reload."), strtoupper($code)));
+		$output->writeln(sprintf(_("Successfully set default language to [%s], you will need to reload."), strtoupper((string) $code)));
 		needreload();
 	}
 
 	private function listGlobalSounds(InputInterface $input, OutputInterface $output) {
-		$list 	 = $this->soundlang->getLanguages();
+		$rows = [];
+  $list 	 = $this->soundlang->getLanguages();
 		$default = $this->soundlang->getLanguage();
 		foreach ($list as $key => $value)
 		{
 			$def = ($key == $default) ? "X" : "";
-			$rows[] = array($key, $value, $def);
+			$rows[] = [$key, $value, $def];
 		}
 		$table = new Table($output);
-		$table->setHeaders(array("ID", _("Language"), _("Default")));
+		$table->setHeaders(["ID", _("Language"), _("Default")]);
 		$table->setRows($rows);
 		$table->render();
 	}
@@ -100,7 +94,7 @@ class Soundlang extends Command {
 			$output->writeln("<error>"._("That is not a valid ID")."</error>");
 			exit(4);
 		}
-		$output->write(sprintf(_("Uninstalling %s...", $code)));
+		$output->write(sprintf(_("Uninstalling %s...")));
 		$this->soundlang->uninstallLanguage($code);
 		$output->writeln(_("Done"));
 	}
@@ -130,7 +124,7 @@ class Soundlang extends Command {
 	private function listValidLangCodes() {
 		$this->soundlang->getOnlinePackages();
 		$packages = $this->soundlang->getPackages();
-		$codes = array();
+		$codes = [];
 		foreach ($packages as $package) {
 			if(in_array($package['language'],$codes)) {
 				continue;
@@ -154,7 +148,7 @@ class Soundlang extends Command {
 		$formats 			= $this->soundlang->getFormatPref();
 		$languagenames 		= $this->soundlang->getLanguageNames();
 		$languagelocations 	= $this->soundlang->getLocationNames();
-		$languages 			= array();
+		$languages 			= [];
 		foreach ($packages as $package)
 		{
 			if (isset($languages[$package['language']]))
@@ -163,18 +157,8 @@ class Soundlang extends Command {
 			}
 			else
 			{
-				$parts = explode("_",$package['language']);
-				$language = array(
-					'code' 		 => $package['language'],
-					'author' 	 => $package['author'],
-					'authorlink' => $package['authorlink'],
-					'license' 	 => $package['license'],
-					'installed'  => true,
-					'lang' 		 => array(
-						'name' 	 => isset($languagenames[$parts[0]]) ? $languagenames[$parts[0]] : $parts[0],
-						'locale' => isset($languagelocations[$parts[1]]) ? $languagelocations[$parts[1]] : (!empty($parts[1]) ? $parts[1] : ''),
-					),
-				);
+				$parts = explode("_",(string) $package['language']);
+				$language = ['code' 		 => $package['language'], 'author' 	 => $package['author'], 'authorlink' => $package['authorlink'], 'license' 	 => $package['license'], 'installed'  => true, 'lang' 		 => ['name' 	 => $languagenames[$parts[0]] ?? $parts[0], 'locale' => $languagelocations[$parts[1]] ?? (!empty($parts[1]) ? $parts[1] : '')]];
 			}
 
 			if (in_array($package['format'], $formats))
@@ -190,15 +174,10 @@ class Soundlang extends Command {
 		ksort($languages);
 
 		$table = new Table($output);
-		$table->setHeaders(array("ID", _("Language"), _("Author"), _("Installed")));
-		$rows = array();
+		$table->setHeaders(["ID", _("Language"), _("Author"), _("Installed")]);
+		$rows = [];
 		foreach($languages as $item) {
-			$rows[] = array(
-				$item['code'],
-				$item['lang']['name'] . (!empty($item['lang']['locale']) ? ' - '.$item['lang']['locale'] : '') . " (".$item['code'].")",
-				$item['author'],
-				$item['installed'] ? 'X' : ''
-			);
+			$rows[] = [$item['code'], $item['lang']['name'] . (!empty($item['lang']['locale']) ? ' - '.$item['lang']['locale'] : '') . " (".$item['code'].")", $item['author'], $item['installed'] ? 'X' : ''];
 		}
 		$table->setRows($rows);
 		$table->render();

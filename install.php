@@ -36,15 +36,15 @@ try {
 if($first_install) {
 	$vlsd = $FreePBX->Config->get("ASTVARLIBDIR")."/sounds";
 
-	$alreadyinstalled = array();
-	$list = array();
+	$alreadyinstalled = [];
+	$list = [];
 	if($online) {
 		out(_("New install, downloading default english language set..."));
 		$list = $soundlang->getPackages();
 		foreach($list as $id => $package) {
 			if($package['language'] == 'en' &&
-			in_array($package['module'], array('core-sounds','extra-sounds','module-sounds')) &&
-			in_array($package['format'], array("ulaw","g722"))) {
+			in_array($package['module'], ['core-sounds', 'extra-sounds', 'module-sounds']) &&
+			in_array($package['format'], ["ulaw", "g722"])) {
 
 				outn(sprintf(_("Installing %s..."),$package['module']."-".$package['format']));
 				$soundlang->installPackage($package['id']);
@@ -58,15 +58,9 @@ if($first_install) {
 	// Install any packages that already exist on the system, too
 	$installed = glob("$vlsd/.asterisk-*");
 	foreach ($installed as $pkg) {
-		if (preg_match("!/\.(asterisk.+)$!", $pkg, $out)) {
+		if (preg_match("!/\.(asterisk.+)$!", (string) $pkg, $out)) {
 			$tmparr = explode("-", $out[1]);
-			$package = array(
-				"type" => $tmparr[0],
-				"module" => $tmparr[1].'-'.$tmparr[2],
-				"language" => $tmparr[3],
-				"format" => $tmparr[4],
-				"version" => $tmparr[5]
-			);
+			$package = ["type" => $tmparr[0], "module" => $tmparr[1].'-'.$tmparr[2], "language" => $tmparr[3], "format" => $tmparr[4], "version" => $tmparr[5]];
 			if (isset($allreadyinstalled[$package['module']."-".$package['format']])) {
 				// This was already installed above
 				continue;
@@ -89,7 +83,7 @@ if($first_install) {
 
 /* Find and install any missing packages for installed languages. */
 if ($online) {
-	$languages = array();
+	$languages = [];
 	$packages = $soundlang->getPackages();
 	if (!empty($packages)) {
 		foreach ($packages as $package) {

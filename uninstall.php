@@ -1,5 +1,5 @@
 <?php
-$sql = array();
+$sql = [];
 $sql[] = "DROP TABLE soundlang_settings";
 $sql[] = "DROP TABLE soundlang_packages";
 $sql[] = "DROP TABLE soundlang_customlangs";

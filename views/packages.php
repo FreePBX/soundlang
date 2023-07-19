@@ -40,8 +40,8 @@
 							</tr>
 						</thead>
 					</table>
-					<?php echo load_view(dirname(__FILE__).'/packages.licensemodal.php')?>
-					<?php echo load_view(dirname(__FILE__).'/packages.language.php')?>
+					<?php echo load_view(__DIR__.'/packages.licensemodal.php')?>
+					<?php echo load_view(__DIR__.'/packages.language.php')?>
 				</div>
 			</div>
 		</div>

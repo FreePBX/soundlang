@@ -70,7 +70,7 @@
 </div>
 <script>
 
-	var soundLangs = <?php echo json_encode($langs)?>;
+	var soundLangs = <?php echo json_encode($langs, JSON_THROW_ON_ERROR)?>;
 	var oobeSoundLanguage = navigator.languages && navigator.languages[0] || navigator.language || navigator.userLanguage;
 	oobeSoundLanguage = oobeSoundLanguage.replace("-","_");
 	$("#oobeGuiLang").val(oobeSoundLanguage);

@@ -57,7 +57,7 @@
 			<field name="module" type="string" length="80"/>
 			<field name="language" type="string" length="20"/>
 			<field name="format" type="string" length="20"/>
-			<field name="filename" type="string" length="80" notnull="false"/>
+			<field name="filename" type="string" length="255" notnull="false"/>
 		</table>
 	</database>
 	<supported>
