@@ -123,7 +123,7 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 			$supported['in']['zip'] = 'zip';
 			$convertto = array_intersect($supported['out'], $this->convert);
 
-			$html .= load_view(__DIR__.'/views/customlang.php', ['customlang' => $customlang, 'convertto' => $convertto, 'supported' => $supported]);
+			$html .= load_view(__DIR__.'/views/customlang.php', ['customlang' => $customlang ?? '', 'convertto' => $convertto, 'supported' => $supported]);
 		}
 
 		return $html;
@@ -140,7 +140,7 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 		switch ($action) {
 		case 'customlangs':
 		case 'showcustomlang':
-			$save = $request['save'];
+			$save = $request['save'] ?? '';
 
 			if ($save == 'customlang') {
 				$id = $request['customlang'];
