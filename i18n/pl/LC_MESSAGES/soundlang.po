@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-01-12 10:09+0000\n"
-"PO-Revision-Date: 2023-11-17 11:12+0000\n"
+"PO-Revision-Date: 2023-11-18 12:00+0000\n"
 "Last-Translator: Szymon Wysokinski <szymon.wysokinski@sqspolska.pl>\n"
 "Language-Team: Polish <http://weblate.freepbx.org/projects/freepbx/soundlang/"
 "pl/>\n"
@@ -162,7 +162,7 @@ msgstr "Usuń proces"
 
 #: assets/js/soundlang.js:315
 msgid "Deleting Temporary Files..."
-msgstr "Usuwanie plików tymczasowych"
+msgstr "Usuwanie plików tymczasowych..."
 
 #: assets/js/soundlang.js:92
 msgid "Deleting..."
@@ -185,7 +185,7 @@ msgstr "Formaty pobierania"
 
 #: views/customlang.php:91
 msgid "Drop Multiple Files or Archives Here"
-msgstr "uPUŚĆ WIELE PLIKÓW LUB ARCHIWÓW W TYM MIEJSCU"
+msgstr "Upuść wiele plików lub archiwów w tym miejscu"
 
 #: Soundlang.class.php:569
 msgid "Dutch"
@@ -197,7 +197,7 @@ msgstr "Edytuj własny język"
 
 #: Soundlang.class.php:561
 msgid "English"
-msgstr "Angileski"
+msgstr "Angielski"
 
 #: Soundlang.class.php:1270
 #, php-format
