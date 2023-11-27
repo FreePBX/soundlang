@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-01-12 10:09+0000\n"
-"PO-Revision-Date: 2023-11-18 12:00+0000\n"
+"PO-Revision-Date: 2023-11-29 00:01+0000\n"
 "Last-Translator: Szymon Wysokinski <szymon.wysokinski@sqspolska.pl>\n"
 "Language-Team: Polish <http://weblate.freepbx.org/projects/freepbx/soundlang/"
 "pl/>\n"
@@ -60,7 +60,7 @@ msgstr "Aministrator"
 
 #: assets/js/soundlang.js:123
 msgid "Are you sure you want to delete this custom language?"
-msgstr "Czy na pewno chcesz usunąć własne dźwięki językowe?"
+msgstr "Czy na pewno chcesz usunąć własne pakiety językowe?"
 
 #: assets/js/soundlang.js:91
 #, perl-format
@@ -239,7 +239,7 @@ msgstr "Format"
 
 #: views/settings.php:59
 msgid "Formats (codecs) to download when installing a language pack"
-msgstr "Formaty (kodeki) do pobrania podczas instalacji paczki językowej"
+msgstr "Formaty (kodeki) do pobrania podczas instalacji pakietu językowego"
 
 #: Soundlang.class.php:599
 msgid "France"
@@ -293,7 +293,7 @@ msgstr "Instalowanie %s..."
 #: install.php:81
 #, php-format
 msgid "Installing additional package %s..."
-msgstr "Instalowanie dodatkowej paczki %s..."
+msgstr "Instalowanie dodatkowego pakietu %s..."
 
 #: install.php:104
 #, php-format
@@ -343,7 +343,7 @@ msgstr "Kod języka (np.: 'pl')."
 
 #: views/rnav.php:2
 msgid "Language Packs"
-msgstr "Paczki językowe"
+msgstr "Pakiety językowe"
 
 #: views/settings.php:33
 msgid "Language to be used for sound prompts throughout the system"
@@ -470,7 +470,7 @@ msgstr "Językowe komunikaty dźwiękowe"
 #: soundlang.i18n.php:4
 #: soundlang.i18n.php:10
 msgid "Sound Languages"
-msgstr "Języki dźwiękowe"
+msgstr "Pakiety Językowe"
 
 #: views/oobe.php:15
 msgid "Sound Prompts Language"
