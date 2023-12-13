@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-01-12 10:09+0000\n"
-"PO-Revision-Date: 2023-11-29 00:01+0000\n"
+"PO-Revision-Date: 2023-12-14 08:24+0000\n"
 "Last-Translator: Szymon Wysokinski <szymon.wysokinski@sqspolska.pl>\n"
 "Language-Team: Polish <http://weblate.freepbx.org/projects/freepbx/soundlang/"
 "pl/>\n"
@@ -497,7 +497,7 @@ msgstr "Zatrzymaj proces"
 #: Soundlang.class.php:300
 #: views/oobe.php:65
 msgid "Submit"
-msgstr "Wyślij"
+msgstr "Zatwierdź"
 
 #: Console/Soundlang.class.php:71
 #, php-format
