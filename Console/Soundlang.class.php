@@ -19,6 +19,7 @@ use Symfony\Component\Console\Command\HelpCommand;
 
 use Symfony\Component\Console\Question\ConfirmationQuestion;
 
+#[\AllowDynamicProperties]
 class Soundlang extends Command {
 	protected function configure(){
 		$this->setName('sounds')
@@ -158,7 +159,7 @@ class Soundlang extends Command {
 			else
 			{
 				$parts = explode("_",(string) $package['language']);
-				$language = ['code' 		 => $package['language'], 'author' 	 => $package['author'], 'authorlink' => $package['authorlink'], 'license' 	 => $package['license'], 'installed'  => true, 'lang' 		 => ['name' 	 => $languagenames[$parts[0]] ?? $parts[0], 'locale' => $languagelocations[$parts[1]] ?? (!empty($parts[1]) ? $parts[1] : '')]];
+				$language = ['code' 		 => $package['language'], 'author' 	 => $package['author'], 'authorlink' => $package['authorlink'], 'license' 	 => $package['license'], 'installed'  => true, 'lang' 		 => ['name' 	 => $languagenames[$parts[0]] ?? $parts[0], 'locale' => (isset($parts[1]) && isset($languagelocations[$parts[1]])) ? ($languagelocations[$parts[1]] ?? $parts[1]) : '']];
 			}
 
 			if (in_array($package['format'], $formats))
