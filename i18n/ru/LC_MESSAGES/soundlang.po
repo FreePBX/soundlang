@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-19 07:28+0000\n"
+"POT-Creation-Date: 2024-02-14 23:10-0500\n"
 "PO-Revision-Date: 2022-04-19 05:32+0000\n"
 "Last-Translator: Dmitriy Q <krotesk@ya.ru>\n"
 "Language-Team: Russian <http://weblate.freepbx.org/projects/freepbx/"
@@ -15,8 +15,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 3.0.1\n"
 
 #: Soundlang.class.php:1307
@@ -45,7 +45,7 @@ msgstr "Принять лицензию"
 msgid "Accept License Agreement"
 msgstr "Принять лицензионное соглашение"
 
-#: Console/Soundlang.class.php:113
+#: Console/Soundlang.class.php:114
 msgid "Accept License Agreement?"
 msgstr ""
 
@@ -87,7 +87,7 @@ msgstr "Вы точно хотите удалить элемент %s?"
 msgid "Australia"
 msgstr "Австралия"
 
-#: Console/Soundlang.class.php:177 views/packages.php:36
+#: Console/Soundlang.class.php:178 views/packages.php:36
 msgid "Author"
 msgstr "Автор"
 
@@ -170,7 +170,7 @@ msgstr "Чешская республика"
 msgid "Data update completed successfully."
 msgstr ""
 
-#: Console/Soundlang.class.php:85
+#: Console/Soundlang.class.php:86
 msgid "Default"
 msgstr ""
 
@@ -195,8 +195,8 @@ msgstr "Удаление..."
 msgid "Description"
 msgstr "Описание"
 
-#: Console/Soundlang.class.php:99 Console/Soundlang.class.php:121
-#: Console/Soundlang.class.php:140 install.php:52 install.php:77
+#: Console/Soundlang.class.php:100 Console/Soundlang.class.php:122
+#: Console/Soundlang.class.php:141 install.php:52 install.php:77
 #: install.php:100
 msgid "Done"
 msgstr "Сделано"
@@ -205,7 +205,7 @@ msgstr "Сделано"
 msgid "Download Formats"
 msgstr "Загружаемые форматы"
 
-#: Console/Soundlang.class.php:26
+#: Console/Soundlang.class.php:27
 msgid ""
 "Download the information of the latest version available online of the "
 "language packs."
@@ -364,7 +364,7 @@ msgstr ""
 msgid "Installation completed."
 msgstr ""
 
-#: Console/Soundlang.class.php:177 views/packages.language.php:24
+#: Console/Soundlang.class.php:178 views/packages.language.php:24
 msgid "Installed"
 msgstr "Установлено"
 
@@ -372,7 +372,7 @@ msgstr "Установлено"
 msgid "Installed Version"
 msgstr ""
 
-#: Console/Soundlang.class.php:119 install.php:49
+#: Console/Soundlang.class.php:120 install.php:49
 #, php-format
 msgid "Installing %s..."
 msgstr "Устанавливается %s..."
@@ -392,7 +392,7 @@ msgstr ""
 msgid "Installing/updating packages for %s..."
 msgstr "Установка/обновление пакетов для %s..."
 
-#: Console/Soundlang.class.php:26
+#: Console/Soundlang.class.php:27
 msgid "Installs the language pack that we specify."
 msgstr ""
 
@@ -424,7 +424,7 @@ msgstr "Япония"
 msgid "Japanese"
 msgstr "Японский"
 
-#: Console/Soundlang.class.php:85 Console/Soundlang.class.php:177
+#: Console/Soundlang.class.php:86 Console/Soundlang.class.php:178
 #: views/customlangs.php:21 views/packages.php:35
 msgid "Language"
 msgstr "Язык"
@@ -453,11 +453,11 @@ msgstr "Лицензионное соглашение"
 msgid "License Could Not be Retrieved"
 msgstr "Лицензия не может быть получена"
 
-#: Console/Soundlang.class.php:26
+#: Console/Soundlang.class.php:27
 msgid "List of available packages."
 msgstr ""
 
-#: Console/Soundlang.class.php:26
+#: Console/Soundlang.class.php:27
 msgid "List of installed packages and which is the default."
 msgstr ""
 
@@ -588,7 +588,7 @@ msgstr ""
 msgid "Show Installed Languages"
 msgstr ""
 
-#: Console/Soundlang.class.php:25
+#: Console/Soundlang.class.php:26
 msgid "Sound Language Prompts"
 msgstr "Звуковые подсказки"
 
@@ -621,7 +621,7 @@ msgstr "Принять"
 msgid "Successful Update."
 msgstr ""
 
-#: Console/Soundlang.class.php:71
+#: Console/Soundlang.class.php:72
 #, php-format
 msgid "Successfully set default language to [%s], you will need to reload."
 msgstr ""
@@ -638,7 +638,7 @@ msgstr "Шведский"
 msgid "Switzerland"
 msgstr "Швейцария"
 
-#: Console/Soundlang.class.php:138
+#: Console/Soundlang.class.php:139
 msgid "Sync info..."
 msgstr ""
 
@@ -650,8 +650,8 @@ msgstr "Системный язык"
 msgid "Taiwan"
 msgstr "Тайвань"
 
-#: Console/Soundlang.class.php:67 Console/Soundlang.class.php:94
-#: Console/Soundlang.class.php:106
+#: Console/Soundlang.class.php:68 Console/Soundlang.class.php:95
+#: Console/Soundlang.class.php:107
 msgid "That is not a valid ID"
 msgstr "Это неверный ID"
 
@@ -747,7 +747,7 @@ msgstr ""
 msgid "Uninstall process failed!"
 msgstr ""
 
-#: Console/Soundlang.class.php:97
+#: Console/Soundlang.class.php:98
 #, php-format
 msgid "Uninstalling %s..."
 msgstr ""
@@ -756,7 +756,7 @@ msgstr ""
 msgid "Uninstalling. Please wait for the table to refresh"
 msgstr ""
 
-#: Console/Soundlang.class.php:26
+#: Console/Soundlang.class.php:27
 msgid "Uninstalls the language pack that we specify."
 msgstr ""
 
@@ -823,7 +823,7 @@ msgstr ""
 msgid "Wait while the language [%s] is installed"
 msgstr ""
 
-#: Console/Soundlang.class.php:26
+#: Console/Soundlang.class.php:27
 msgid "We define the default language."
 msgstr ""
 
