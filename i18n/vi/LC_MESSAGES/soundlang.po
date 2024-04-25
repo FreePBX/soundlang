@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-14 23:10-0500\n"
+"POT-Creation-Date: 2024-04-25 00:36-0400\n"
 "PO-Revision-Date: 2017-08-08 16:34+0200\n"
 "Last-Translator: PETER <ftek@ymail.com>\n"
 "Language-Team: Vietnamese <http://weblate.freepbx.org/projects/freepbx/"
@@ -767,7 +767,7 @@ msgstr "Nước Anh"
 msgid "United States"
 msgstr "Nước Mỹ"
 
-#: Soundlang.class.php:1550
+#: Soundlang.class.php:1556 Soundlang.class.php:1559
 #, php-format
 msgid "Unknown Error. Response was empty from %s"
 msgstr "Lỗi không xác định. Không có phản hồi từ %s"

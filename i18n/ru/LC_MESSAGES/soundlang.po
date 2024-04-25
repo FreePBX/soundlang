@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-14 23:10-0500\n"
+"POT-Creation-Date: 2024-04-25 00:36-0400\n"
 "PO-Revision-Date: 2022-04-19 05:32+0000\n"
 "Last-Translator: Dmitriy Q <krotesk@ya.ru>\n"
 "Language-Team: Russian <http://weblate.freepbx.org/projects/freepbx/"
@@ -768,7 +768,7 @@ msgstr "Объединенное королевство"
 msgid "United States"
 msgstr "Соединенные штаты"
 
-#: Soundlang.class.php:1550
+#: Soundlang.class.php:1556 Soundlang.class.php:1559
 #, php-format
 msgid "Unknown Error. Response was empty from %s"
 msgstr "Неизвестная ошибка. Ответ был пустым из %s"
