@@ -1346,7 +1346,9 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 
 			// Extract it to the correct location
 			$destdir = "$soundsdir/".$package['language']."/";
-			@mkdir($destdir);
+			if (!file_exists($destdir)) {
+				mkdir($destdir);
+			}
 
 			$file_tar = sprintf("%s/%s", $tmpdir, $filename);
 			try
