@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-25 00:36-0400\n"
+"POT-Creation-Date: 2026-04-27 03:25-0400\n"
 "PO-Revision-Date: 2016-02-04 23:02+0200\n"
 "Last-Translator: Nicolas Riendeau <freepbx@riendeau.org>\n"
 "Language-Team: French <http://weblate.freepbx.org/projects/freepbx/soundlang/"
@@ -21,17 +21,17 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
 "X-Generator: Weblate 2.2-dev\n"
 
-#: Soundlang.class.php:1307
+#: Soundlang.class.php:1308
 #, php-format
 msgid "%s->%s - Error uninstalling package %s (%s)"
 msgstr ""
 
-#: Soundlang.class.php:1224
+#: Soundlang.class.php:1225
 #, php-format
 msgid "%s->%s - Soundlang Response: %s"
 msgstr ""
 
-#: Soundlang.class.php:894
+#: Soundlang.class.php:895
 msgid "A PHP extension stopped the file upload"
 msgstr ""
 
@@ -85,7 +85,7 @@ msgstr ""
 msgid "Are you sure you wish to delete this %s?"
 msgstr "Êtes-vous sûr de vouloir supprimer ce %s ?"
 
-#: Soundlang.class.php:943
+#: Soundlang.class.php:944
 msgid "Australia"
 msgstr "Australie"
 
@@ -101,11 +101,11 @@ msgstr "Disponible"
 msgid "Based on your locale your language and timezone have been pre-selected."
 msgstr ""
 
-#: Soundlang.class.php:943
+#: Soundlang.class.php:944
 msgid "Belgium"
 msgstr "Belgique"
 
-#: Soundlang.class.php:943
+#: Soundlang.class.php:944
 msgid "Brazil"
 msgstr "Brésil"
 
@@ -113,7 +113,7 @@ msgstr "Brésil"
 msgid "Browse"
 msgstr ""
 
-#: Soundlang.class.php:943
+#: Soundlang.class.php:944
 msgid "Canada"
 msgstr "Canada"
 
@@ -127,11 +127,11 @@ msgid ""
 "into"
 msgstr ""
 
-#: Soundlang.class.php:943
+#: Soundlang.class.php:944
 msgid "China"
 msgstr "Chine"
 
-#: Soundlang.class.php:934
+#: Soundlang.class.php:935
 msgid "Chinese"
 msgstr "Chinois"
 
@@ -139,7 +139,7 @@ msgstr "Chinois"
 msgid "Close"
 msgstr ""
 
-#: Soundlang.class.php:943
+#: Soundlang.class.php:944
 msgid "Colombia"
 msgstr ""
 
@@ -147,7 +147,7 @@ msgstr ""
 msgid "Convert To"
 msgstr ""
 
-#: Soundlang.class.php:1373
+#: Soundlang.class.php:1376
 #, php-format
 msgid "Couldn't find %s - not in archive %s?"
 msgstr ""
@@ -156,11 +156,11 @@ msgstr ""
 msgid "Custom Languages"
 msgstr "Langage personnalisé"
 
-#: Soundlang.class.php:934
+#: Soundlang.class.php:935
 msgid "Czech"
 msgstr ""
 
-#: Soundlang.class.php:943
+#: Soundlang.class.php:944
 msgid "Czech Republic"
 msgstr ""
 
@@ -193,6 +193,10 @@ msgstr "Suppression en cours..."
 msgid "Description"
 msgstr "Description"
 
+#: Soundlang.class.php:802
+msgid "Direct file move not allowed"
+msgstr ""
+
 #: Console/Soundlang.class.php:100 Console/Soundlang.class.php:122
 #: Console/Soundlang.class.php:141 install.php:52 install.php:77
 #: install.php:100
@@ -218,7 +222,7 @@ msgstr ""
 msgid "Drop Multiple Files or Archives Here"
 msgstr ""
 
-#: Soundlang.class.php:934
+#: Soundlang.class.php:935
 msgid "Dutch"
 msgstr "Hollandais"
 
@@ -226,11 +230,11 @@ msgstr "Hollandais"
 msgid "Edit Custom Language"
 msgstr "Éditer un langage personnalisé"
 
-#: Soundlang.class.php:934
+#: Soundlang.class.php:935
 msgid "English"
 msgstr "Anglais"
 
-#: Soundlang.class.php:1541
+#: Soundlang.class.php:1544
 #, php-format
 msgid "Error %s returned from remote servers %s"
 msgstr ""
@@ -239,7 +243,7 @@ msgstr ""
 msgid "Error!"
 msgstr ""
 
-#: Soundlang.class.php:402 Soundlang.class.php:1359
+#: Soundlang.class.php:402 Soundlang.class.php:1362
 #, php-format
 msgid "Error: %s"
 msgstr ""
@@ -261,7 +265,7 @@ msgstr ""
 msgid "Error: No languages ​​detected to install!"
 msgstr ""
 
-#: Soundlang.class.php:900
+#: Soundlang.class.php:901
 msgid "Error: You should never see this"
 msgstr "Erreur : Vous ne devriez jamais voir ceci"
 
@@ -278,7 +282,7 @@ msgstr ""
 msgid "Failed installation process!"
 msgstr ""
 
-#: Soundlang.class.php:891
+#: Soundlang.class.php:892
 msgid "Failed to write file to disk"
 msgstr ""
 
@@ -286,7 +290,7 @@ msgstr ""
 msgid "Files to upload"
 msgstr ""
 
-#: Soundlang.class.php:934
+#: Soundlang.class.php:935
 msgid "Finish"
 msgstr "Terminer"
 
@@ -298,7 +302,7 @@ msgstr ""
 msgid "Finished!"
 msgstr ""
 
-#: Soundlang.class.php:943
+#: Soundlang.class.php:944
 msgid "Finland"
 msgstr "Finlande"
 
@@ -314,19 +318,19 @@ msgstr ""
 msgid "Formats Installed"
 msgstr ""
 
-#: Soundlang.class.php:943
+#: Soundlang.class.php:944
 msgid "France"
 msgstr "France"
 
-#: Soundlang.class.php:934
+#: Soundlang.class.php:935
 msgid "French"
 msgstr "Français"
 
-#: Soundlang.class.php:934
+#: Soundlang.class.php:935
 msgid "German"
 msgstr "Allemand"
 
-#: Soundlang.class.php:943
+#: Soundlang.class.php:944
 msgid "Germany"
 msgstr "Allemagne"
 
@@ -338,11 +342,11 @@ msgstr ""
 msgid "Global Language"
 msgstr "Langage global"
 
-#: Soundlang.class.php:934
+#: Soundlang.class.php:935
 msgid "Hebrew"
 msgstr ""
 
-#: Soundlang.class.php:943
+#: Soundlang.class.php:944
 msgid "Hong Kong"
 msgstr "Hong Kong"
 
@@ -350,7 +354,7 @@ msgstr "Hong Kong"
 msgid "ID"
 msgstr "ID"
 
-#: Soundlang.class.php:943
+#: Soundlang.class.php:944
 msgid "India"
 msgstr ""
 
@@ -394,31 +398,39 @@ msgstr ""
 msgid "Installs the language pack that we specify."
 msgstr ""
 
-#: Soundlang.class.php:943
+#: Soundlang.class.php:775
+msgid "Invalid directory"
+msgstr ""
+
+#: Soundlang.class.php:800
+msgid "Invalid file type"
+msgstr ""
+
+#: Soundlang.class.php:944
 msgid "Iran"
 msgstr ""
 
-#: Soundlang.class.php:943
+#: Soundlang.class.php:944
 msgid "Ireland"
 msgstr ""
 
-#: Soundlang.class.php:943
+#: Soundlang.class.php:944
 msgid "Israel"
 msgstr ""
 
-#: Soundlang.class.php:934
+#: Soundlang.class.php:935
 msgid "Italian"
 msgstr "Italien"
 
-#: Soundlang.class.php:943
+#: Soundlang.class.php:944
 msgid "Italy"
 msgstr "Italie"
 
-#: Soundlang.class.php:943
+#: Soundlang.class.php:944
 msgid "Japan"
 msgstr "Japon"
 
-#: Soundlang.class.php:934
+#: Soundlang.class.php:935
 msgid "Japanese"
 msgstr "Japonais"
 
@@ -467,11 +479,11 @@ msgstr ""
 msgid "Management of sound prompt languages."
 msgstr "Gestion des langues de message."
 
-#: Soundlang.class.php:943
+#: Soundlang.class.php:944
 msgid "Mexico"
 msgstr "Mexique"
 
-#: Soundlang.class.php:888
+#: Soundlang.class.php:889
 msgid "Missing a temporary folder"
 msgstr ""
 
@@ -479,11 +491,11 @@ msgstr ""
 msgid "Module"
 msgstr "Module"
 
-#: Soundlang.class.php:943
+#: Soundlang.class.php:944
 msgid "Netherlands"
 msgstr "Pays bas"
 
-#: Soundlang.class.php:943
+#: Soundlang.class.php:944
 msgid "New Zealand"
 msgstr "Nouvelle Zélande"
 
@@ -501,11 +513,11 @@ msgstr ""
 msgid "No Suitable files were found in the archive!"
 msgstr ""
 
-#: Soundlang.class.php:885
+#: Soundlang.class.php:886
 msgid "No file was uploaded"
 msgstr ""
 
-#: Soundlang.class.php:817
+#: Soundlang.class.php:818
 msgid "No files were sent to the server"
 msgstr ""
 
@@ -518,11 +530,11 @@ msgstr ""
 msgid "No language specified!"
 msgstr ""
 
-#: Soundlang.class.php:943
+#: Soundlang.class.php:944
 msgid "Norway"
 msgstr ""
 
-#: Soundlang.class.php:934
+#: Soundlang.class.php:935
 msgid "Norwegian"
 msgstr ""
 
@@ -534,7 +546,7 @@ msgstr ""
 msgid "Online Version"
 msgstr ""
 
-#: Soundlang.class.php:934
+#: Soundlang.class.php:935
 msgid "Persian"
 msgstr ""
 
@@ -542,19 +554,19 @@ msgstr ""
 msgid "Please Select the default locales of the PBX"
 msgstr ""
 
-#: Soundlang.class.php:943
+#: Soundlang.class.php:944
 msgid "Poland"
 msgstr ""
 
-#: Soundlang.class.php:934
+#: Soundlang.class.php:935
 msgid "Polish"
 msgstr ""
 
-#: Soundlang.class.php:943
+#: Soundlang.class.php:944
 msgid "Portugal"
 msgstr "Portugal"
 
-#: Soundlang.class.php:934
+#: Soundlang.class.php:935
 msgid "Portuguese"
 msgstr "Portugais"
 
@@ -572,7 +584,7 @@ msgstr ""
 msgid "Reset"
 msgstr "Réinitialiser"
 
-#: Soundlang.class.php:934
+#: Soundlang.class.php:935
 msgid "Russian"
 msgstr "Russe"
 
@@ -600,15 +612,15 @@ msgstr "Langues"
 msgid "Sound Prompts Language"
 msgstr ""
 
-#: Soundlang.class.php:943
+#: Soundlang.class.php:944
 msgid "South Africa"
 msgstr "Afrique du sud"
 
-#: Soundlang.class.php:943
+#: Soundlang.class.php:944
 msgid "Spain"
 msgstr "Espagne"
 
-#: Soundlang.class.php:934
+#: Soundlang.class.php:935
 msgid "Spanish"
 msgstr "Espagnol"
 
@@ -626,15 +638,15 @@ msgstr ""
 msgid "Successfully set default language to [%s], you will need to reload."
 msgstr ""
 
-#: Soundlang.class.php:943
+#: Soundlang.class.php:944
 msgid "Sweden"
 msgstr "Suède"
 
-#: Soundlang.class.php:934
+#: Soundlang.class.php:935
 msgid "Swedish"
 msgstr "Suèdois"
 
-#: Soundlang.class.php:943
+#: Soundlang.class.php:944
 msgid "Switzerland"
 msgstr "Suisse"
 
@@ -646,7 +658,7 @@ msgstr ""
 msgid "System Language"
 msgstr ""
 
-#: Soundlang.class.php:943
+#: Soundlang.class.php:944
 msgid "Taiwan"
 msgstr "Taiwan"
 
@@ -655,28 +667,28 @@ msgstr "Taiwan"
 msgid "That is not a valid ID"
 msgstr "Ce n'est pas un ID valide"
 
-#: Soundlang.class.php:781
+#: Soundlang.class.php:784
 msgid "The file is not formatted correctly. Please try again..."
 msgstr ""
 
-#: Soundlang.class.php:1537
+#: Soundlang.class.php:1540
 msgid ""
 "The mirror server did not return the correct response and had been "
 "previously changed from the default server(s), it has now been reset back to "
 "the standard default. Please try again"
 msgstr ""
 
-#: Soundlang.class.php:879
+#: Soundlang.class.php:880
 msgid ""
 "The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in "
 "the HTML form"
 msgstr ""
 
-#: Soundlang.class.php:876
+#: Soundlang.class.php:877
 msgid "The uploaded file exceeds the upload_max_filesize directive in php.ini"
 msgstr ""
 
-#: Soundlang.class.php:882
+#: Soundlang.class.php:883
 msgid "The uploaded file was only partially uploaded"
 msgstr ""
 
@@ -696,11 +708,11 @@ msgid ""
 "can change it later by navigating to the 'Sound Languages' module"
 msgstr ""
 
-#: Soundlang.class.php:943
+#: Soundlang.class.php:944
 msgid "Turkey"
 msgstr ""
 
-#: Soundlang.class.php:934
+#: Soundlang.class.php:935
 msgid "Turkish"
 msgstr ""
 
@@ -710,7 +722,7 @@ msgid ""
 "internet access and try restoring again."
 msgstr ""
 
-#: Soundlang.class.php:1393
+#: Soundlang.class.php:1396
 #, php-format
 msgid "Unable to find any soundfiles in %s package"
 msgstr ""
@@ -751,20 +763,20 @@ msgstr ""
 msgid "Uninstalls the language pack that we specify."
 msgstr ""
 
-#: Soundlang.class.php:943
+#: Soundlang.class.php:944
 msgid "United Kingdom"
 msgstr "Royaume-Uni"
 
-#: Soundlang.class.php:943
+#: Soundlang.class.php:944
 msgid "United States"
 msgstr "États-Unis"
 
-#: Soundlang.class.php:1556 Soundlang.class.php:1559
+#: Soundlang.class.php:1559 Soundlang.class.php:1562
 #, php-format
 msgid "Unknown Error. Response was empty from %s"
 msgstr ""
 
-#: Soundlang.class.php:871
+#: Soundlang.class.php:872
 msgid "Unsupported file format"
 msgstr ""
 
