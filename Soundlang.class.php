@@ -874,6 +874,9 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 				$codec = $_POST['codec'];
 				$lang = $_POST['language'];
 				$directory = $_POST['directory'];
+				if (strpos((string) $directory, '..') !== false) {
+					return ["status" => false, "message" => _("Invalid directory")];
+				}
 				$path = $this->path_sounds . "/" . $lang;
 				if(!empty($directory)) {
 					$path = $path ."/".$directory;
@@ -895,13 +898,11 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 					}
 					return array("status" => true, "name" => $name);
 				} else {
-					$ext = pathinfo($temporary,PATHINFO_EXTENSION);
-					if($temporary && file_exists($temporary)) {
-						rename($temporary, $path."/".$name.".".$ext);
-						return array("status" => true, "name" => $name);
-					} else {
-						return array("status" => true, "name" => $name);
+					$ext = strtolower(pathinfo($temporary, PATHINFO_EXTENSION));
+					if (!in_array($ext, $this->convert, true)) {
+						return ["status" => false, "message" => _("Invalid file type")];
 					}
+					return ["status" => false, "message" => _("Direct file move not allowed")];
 				}
 			break;
 			case 'delete':
