@@ -768,11 +768,17 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 				$temporary = str_replace("..","",(string) $temporary);
 				$temporary = $this->path_temp."/".$temporary;
 				$name = basename((string) $_POST['name']);
-				$codec = $_POST['codec'];
-				$lang = $_POST['language'];
-				$directory = $_POST['directory'];
-				if (strpos((string) $directory, '..') !== false) {
+				$codec = (string) $_POST['codec'];
+				$lang = (string) $_POST['language'];
+				$directory = (string) $_POST['directory'];
+				if ($lang === '' || preg_match('/[^A-Za-z0-9_-]/', $lang)) {
+					return ["status" => false, "message" => _("Invalid language")];
+				}
+				if (strpos($directory, '..') !== false || strpos($directory, '\\') !== false || preg_match('#^/#', $directory)) {
 					return ["status" => false, "message" => _("Invalid directory")];
+				}
+				if ($codec !== '' && !in_array($codec, $this->convert, true)) {
+					return ["status" => false, "message" => _("Invalid codec")];
 				}
 				$path = $this->path_sounds . "/" . $lang;
 				if(!empty($directory)) {
@@ -845,7 +851,8 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 									if(!file_exists($path)) {
 										mkdir($path);
 									}
-									$tar->extract($path);
+									$allowedExtensions = array_map('preg_quote', array_values($supported['in']));
+									$tar->extract($path, '', '', '/\.(' . implode('|', $allowedExtensions) . ')$/i');
 									$objects = new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($path));
 									foreach($objects as $name => $object){
 										if($object->isDir()) {
@@ -858,7 +865,8 @@ class Soundlang extends \FreePBX_Helpers implements \BMO {
 										$dir = ($dir != ".") ? $dir : "";
 										$dname = \Media\Media::cleanFileName(pathinfo($file,PATHINFO_FILENAME));
 										if(!in_array($extension,$supported['in'])) {
-											$bfiles[] = ["directory" => $dir, "filename" => (!empty($dir) ? $dir."/" : "").$dname, "localfilename" => str_replace($this->path_temp,"",$file), "id" => ""];
+											@unlink($file);
+											$bfiles[] = ["directory" => $dir, "filename" => (!empty($dir) ? $dir."/" : "").$dname, "localfilename" => "", "id" => ""];
 											continue;
 										}
 										$gfiles[] = ["directory" => $dir, "filename" => (!empty($dir) ? $dir."/" : "").$dname, "localfilename" => str_replace($this->path_temp,"",$file), "id" => ""];
