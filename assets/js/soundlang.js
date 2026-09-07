@@ -2,7 +2,17 @@ var deleteCustoms = [],
 files = [];
 
 $(document).ready(function() {
-	$('#formats').multiselect({
+	if ($('#formats').length) {
+		$('#formats').multiselect();
+		$('#formats').multiselect('refresh');
+	}
+
+	$('#formSoundLangSettings').on('reset', function() {
+		setTimeout(function() {
+			if ($('#formats').length) {
+				$('#formats').multiselect('refresh');
+			}
+		}, 50);
 	});
 });
 
@@ -13,6 +23,9 @@ $(document).on("click", 'button[id^="licenselink"]', function(){
 
 	if ($(this).children('i').hasClass('fa-download') || $(this).children('i').hasClass('fa-level-up'))
 	{
+		$("#licensetext").text(_("Loading..."));
+		$("#licensesub").attr("disabled", true);
+		soundLangShowModal("licensemodal");
 		var post_data = {
 			module:  "soundlang",
 			command: "licenseText",
@@ -101,7 +114,7 @@ $("#licensesub").on("click", function(){
 		height: "325",
 		dialogClass: "no-close",
 		open: function (e) {
-			$('#licensemodal').modal('hide');
+			soundLangHideModal("licensemodal");
 
 			$('#langdialogwrapper').html(_('Loading..' ) + '<i class="fa fa-spinner fa-spin fa-2x">');
 			var xhr = new XMLHttpRequest();
@@ -115,13 +128,12 @@ $("#licensesub").on("click", function(){
 				if (xhr.responseText.length > 0) {
 					if ($('#langdialogwrapper').html().trim() != xhr.responseText.trim()) {
 						$('#langdialogwrapper').html(xhr.responseText);
-						$('#langprogress').animate({scrollTop: $(this).height()}, 500);
+						$('#langdialogwrapper').animate({scrollTop: $('#langdialogwrapper')[0].scrollHeight}, 500);
 					}
 				}
 				if (xhr.readyState == XMLHttpRequest.DONE) {
-					$("#langprogress").css("overflow", "auto");
 					$("#langBoxContents button").focus();
-					$('#langdialogwrapper').animate({scrollTop: $(this).height()}, 500);
+					$('#langdialogwrapper').animate({scrollTop: $('#langdialogwrapper')[0].scrollHeight}, 500);
 				}
 			}, 500);
 		},
@@ -512,7 +524,7 @@ function soundLangPackagesColActions (value, row, index)
 {
 	var html = "";
 	if (row.isUpdated) {
-		html = '<button type="button" class="btn btn-success btn-block" data-toggle="modal" data-langid="' + row.lang + '" data-target="#licensemodal" id="licenselink' + row.lang + '" data-licenselink="' + row.license + '" class="clickable"><i class="fa fa-level-up fa-fw"></i></button>';
+		html = '<button type="button" class="btn btn-success btn-block" data-bs-toggle="modal" data-langid="' + row.lang + '" data-bs-target="#licensemodal" id="licenselink' + row.lang + '" data-licenselink="' + row.license + '" class="clickable"><i class="fa fa-level-up fa-fw"></i></button>';
 	}
 	else if (row.installed)
 	{
@@ -520,7 +532,7 @@ function soundLangPackagesColActions (value, row, index)
 	}
 	else
 	{
-		html = '<button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-langid="' + row.lang + '" data-target="#licensemodal" id="licenselink' + row.lang + '" data-licenselink="' + row.license + '" class="clickable"><i class="fa fa-download fa-fw"></i></button>';
+		html = '<button type="button" class="btn btn-primary btn-block" data-bs-toggle="modal" data-langid="' + row.lang + '" data-bs-target="#licensemodal" id="licenselink' + row.lang + '" data-licenselink="' + row.license + '" class="clickable"><i class="fa fa-download fa-fw"></i></button>';
 	}
 	return html;
 }
@@ -592,13 +604,12 @@ function SettingsUpdatePackeges(message)
 				if (xhr.responseText.length > 0) {
 					if ($('#langdialogwrapper').html().trim() != xhr.responseText.trim()) {
 						$('#langdialogwrapper').html(xhr.responseText);
-						$('#langprogress').animate({scrollTop: $(this).height()}, 500);
+						$('#langdialogwrapper').animate({scrollTop: $('#langdialogwrapper')[0].scrollHeight}, 500);
 					}
 				}
 				if (xhr.readyState == XMLHttpRequest.DONE) {
-					$("#langprogress").css("overflow", "auto");
 					$("#langBoxContents button").focus();
-					$('#langdialogwrapper').animate({scrollTop: $(this).height()}, 500);
+					$('#langdialogwrapper').animate({scrollTop: $('#langdialogwrapper')[0].scrollHeight}, 500);
 					fpbxToast(message, '', 'success');
 				}
 			}, 500);
@@ -616,5 +627,19 @@ $(document).on('click', 'button[name^="langmodal"]', function() {
 	getSoundLangPackagesLangTable().bootstrapTable('refresh', {
 		url: window.FreePBX.ajaxurl + "?module=soundlang&command=packagesLang&lang=" + langid,
 	});
-	$("#langmodal").modal("show");
+	soundLangShowModal("langmodal");
 });
+
+function soundLangShowModal(id) {
+	var el = document.getElementById(id);
+	if (el && typeof bootstrap !== "undefined" && bootstrap.Modal) {
+		bootstrap.Modal.getOrCreateInstance(el).show();
+	}
+}
+
+function soundLangHideModal(id) {
+	var el = document.getElementById(id);
+	if (el && typeof bootstrap !== "undefined" && bootstrap.Modal) {
+		bootstrap.Modal.getOrCreateInstance(el).hide();
+	}
+}

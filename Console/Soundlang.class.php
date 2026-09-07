@@ -19,14 +19,14 @@ use Symfony\Component\Console\Command\HelpCommand;
 
 use Symfony\Component\Console\Question\ConfirmationQuestion;
 
-#[\AllowDynamicProperties]
 class Soundlang extends Command {
-	protected function configure(){
+	private $soundlang;
+	protected function configure(): void{
 		$this->setName('sounds')
 			->setDescription(_('Sound Language Prompts'))
 			->setDefinition([new InputOption('list', null, InputOption::VALUE_NONE, _('List of available packages.')), new InputOption('listglobal', null, InputOption::VALUE_NONE, _('List of installed packages and which is the default.')), new InputOption('install', null, InputOption::VALUE_REQUIRED, _('Installs the language pack that we specify.')), new InputOption('uninstall', null, InputOption::VALUE_REQUIRED, _('Uninstalls the language pack that we specify.')), new InputOption('global', null, InputOption::VALUE_REQUIRED, _('We define the default language.')), new InputOption('sync', null, InputOption::VALUE_NONE, _('Download the information of the latest version available online of the language packs.'))]);
 	}
-	protected function execute(InputInterface $input, OutputInterface $output){
+	protected function execute(InputInterface $input, OutputInterface $output): int{
 		set_time_limit(0);
 		$this->soundlang = \FreePBX::create()->Soundlang;
 
@@ -59,7 +59,9 @@ class Soundlang extends Command {
 			$this->setGlobal($input, $output);
 			exit();
 		}
-	}
+	
+		return 0;
+}
 
 	private function setGlobal(InputInterface $input, OutputInterface $output) {
 		$code = $input->getOption('global');

@@ -3,8 +3,8 @@
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-				<h4 class="modal-title"><?php echo _("Formats Installed")?></h4>
+				<h4 class="modal-title mr-auto"><?php echo _("Formats Installed")?></h4>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 			</div>
 			<div class="modal-body">
 				<table id="soundlang-packages-lang-list" class="table table-striped"
