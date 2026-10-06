@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-26 02:07-0400\n"
+"POT-Creation-Date: 2026-10-06 07:21-0400\n"
 "PO-Revision-Date: 2022-04-19 05:32+0000\n"
 "Last-Translator: Dmitriy Q <krotesk@ya.ru>\n"
 "Language-Team: Russian <http://weblate.freepbx.org/projects/freepbx/"
@@ -41,11 +41,11 @@ msgstr "Краткое описание этого пользовательск�
 msgid "Accept License"
 msgstr "Принять лицензию"
 
-#: assets/js/soundlang.js:28
+#: assets/js/soundlang.js:41
 msgid "Accept License Agreement"
 msgstr "Принять лицензионное соглашение"
 
-#: Console/Soundlang.class.php:114
+#: Console/Soundlang.class.php:116
 msgid "Accept License Agreement?"
 msgstr ""
 
@@ -69,16 +69,16 @@ msgstr "Добавить новый пользовательский язык"
 msgid "Admin"
 msgstr "Администратор"
 
-#: assets/js/soundlang.js:198
+#: assets/js/soundlang.js:210
 msgid "Are you sure you want to delete this custom language?"
 msgstr "Вы уверены, что хотите удалить этот пользовательский язык?"
 
-#: assets/js/soundlang.js:49
+#: assets/js/soundlang.js:62
 #, perl-format
 msgid "Are you sure you want to uninstall the \"%s\" language audio pack?"
 msgstr ""
 
-#: assets/js/soundlang.js:166
+#: assets/js/soundlang.js:178
 #, perl-format
 msgid "Are you sure you wish to delete this %s?"
 msgstr "Вы точно хотите удалить элемент %s?"
@@ -87,7 +87,7 @@ msgstr "Вы точно хотите удалить элемент %s?"
 msgid "Australia"
 msgstr "Австралия"
 
-#: Console/Soundlang.class.php:178 views/packages.php:36
+#: Console/Soundlang.class.php:180 views/packages.php:36
 msgid "Author"
 msgstr "Автор"
 
@@ -170,12 +170,12 @@ msgstr "Чешская республика"
 msgid "Data update completed successfully."
 msgstr ""
 
-#: Console/Soundlang.class.php:86
+#: Console/Soundlang.class.php:88
 msgid "Default"
 msgstr ""
 
-#: Soundlang.class.php:180 assets/js/soundlang.js:171
-#: assets/js/soundlang.js:177
+#: Soundlang.class.php:180 assets/js/soundlang.js:183
+#: assets/js/soundlang.js:189
 msgid "Delete"
 msgstr "Удалить"
 
@@ -183,11 +183,11 @@ msgstr "Удалить"
 msgid "Delete Custom Language"
 msgstr "Удалить пользовательский язык"
 
-#: assets/js/soundlang.js:390
+#: assets/js/soundlang.js:402
 msgid "Deleting Temporary Files..."
 msgstr "Удаление временных файлов..."
 
-#: assets/js/soundlang.js:167
+#: assets/js/soundlang.js:179
 msgid "Deleting..."
 msgstr "Удаление..."
 
@@ -199,8 +199,8 @@ msgstr "Описание"
 msgid "Direct file move not allowed"
 msgstr ""
 
-#: Console/Soundlang.class.php:100 Console/Soundlang.class.php:122
-#: Console/Soundlang.class.php:141 install.php:52 install.php:77
+#: Console/Soundlang.class.php:102 Console/Soundlang.class.php:124
+#: Console/Soundlang.class.php:143 install.php:52 install.php:77
 #: install.php:100
 msgid "Done"
 msgstr "Сделано"
@@ -300,7 +300,7 @@ msgstr "Закончено"
 msgid "Finished installing default sounds"
 msgstr "Установка звуков по умолчанию завершена"
 
-#: assets/js/soundlang.js:399 assets/js/soundlang.js:410
+#: assets/js/soundlang.js:411 assets/js/soundlang.js:422
 msgid "Finished!"
 msgstr "Завершено!"
 
@@ -316,7 +316,7 @@ msgstr "Формат"
 msgid "Formats (codecs) to download when installing a language pack"
 msgstr "Форматы (кодеки) для загрузки при установке языкового пакета"
 
-#: views/packages.language.php:7
+#: views/packages.language.php:6
 msgid "Formats Installed"
 msgstr ""
 
@@ -368,7 +368,7 @@ msgstr ""
 msgid "Installation completed."
 msgstr ""
 
-#: Console/Soundlang.class.php:178 views/packages.language.php:24
+#: Console/Soundlang.class.php:180 views/packages.language.php:24
 msgid "Installed"
 msgstr "Установлено"
 
@@ -376,7 +376,7 @@ msgstr "Установлено"
 msgid "Installed Version"
 msgstr ""
 
-#: Console/Soundlang.class.php:120 install.php:49
+#: Console/Soundlang.class.php:122 install.php:49
 #, php-format
 msgid "Installing %s..."
 msgstr "Устанавливается %s..."
@@ -444,7 +444,7 @@ msgstr "Япония"
 msgid "Japanese"
 msgstr "Японский"
 
-#: Console/Soundlang.class.php:86 Console/Soundlang.class.php:178
+#: Console/Soundlang.class.php:88 Console/Soundlang.class.php:180
 #: views/customlangs.php:21 views/packages.php:35
 msgid "Language"
 msgstr "Язык"
@@ -465,11 +465,11 @@ msgstr "Языковой код"
 msgid "Language to be used for sound prompts throughout the system"
 msgstr "Язык, используемый для звуковых подсказок по всей системе"
 
-#: views/packages.licensemodal.php:7
+#: views/packages.licensemodal.php:6
 msgid "License Agreement"
 msgstr "Лицензионное соглашение"
 
-#: assets/js/soundlang.js:39
+#: assets/js/soundlang.js:52
 msgid "License Could Not be Retrieved"
 msgstr "Лицензия не может быть получена"
 
@@ -481,7 +481,7 @@ msgstr ""
 msgid "List of installed packages and which is the default."
 msgstr ""
 
-#: views/packages.licensemodal.php:17
+#: views/packages.licensemodal.php:17 assets/js/soundlang.js:26
 msgid "Loading..."
 msgstr "Загрузка..."
 
@@ -513,11 +513,11 @@ msgstr "Новая Зеландия"
 msgid "New install, downloading default english language set..."
 msgstr "Новая установка, загрузка набора английского языка по умолчанию..."
 
-#: assets/js/soundlang.js:50
+#: assets/js/soundlang.js:63
 msgid "No"
 msgstr ""
 
-#: assets/js/soundlang.js:274
+#: assets/js/soundlang.js:286
 msgid "No Suitable files were found in the archive!"
 msgstr "Подходящих файлов в архиве не найдено!"
 
@@ -641,7 +641,7 @@ msgstr "Принять"
 msgid "Successful Update."
 msgstr ""
 
-#: Console/Soundlang.class.php:72
+#: Console/Soundlang.class.php:74
 #, php-format
 msgid "Successfully set default language to [%s], you will need to reload."
 msgstr ""
@@ -658,7 +658,7 @@ msgstr "Шведский"
 msgid "Switzerland"
 msgstr "Швейцария"
 
-#: Console/Soundlang.class.php:139
+#: Console/Soundlang.class.php:141
 msgid "Sync info..."
 msgstr ""
 
@@ -670,8 +670,8 @@ msgstr "Системный язык"
 msgid "Taiwan"
 msgstr "Тайвань"
 
-#: Console/Soundlang.class.php:68 Console/Soundlang.class.php:95
-#: Console/Soundlang.class.php:107
+#: Console/Soundlang.class.php:70 Console/Soundlang.class.php:97
+#: Console/Soundlang.class.php:109
 msgid "That is not a valid ID"
 msgstr "Это неверный ID"
 
@@ -704,7 +704,7 @@ msgstr "Загруженный файл превышает директиву up
 msgid "The uploaded file was only partially uploaded"
 msgstr "Загруженный файл был загружен только частично"
 
-#: assets/js/soundlang.js:385
+#: assets/js/soundlang.js:397
 msgid "There was an error, See the console for more details"
 msgstr "Произошла ошибка, более подробную информацию смотрите в консоли"
 
@@ -767,12 +767,12 @@ msgstr ""
 msgid "Uninstall process failed!"
 msgstr ""
 
-#: Console/Soundlang.class.php:98
+#: Console/Soundlang.class.php:100
 #, php-format
 msgid "Uninstalling %s..."
 msgstr ""
 
-#: assets/js/soundlang.js:52
+#: assets/js/soundlang.js:65
 msgid "Uninstalling. Please wait for the table to refresh"
 msgstr ""
 
@@ -797,7 +797,7 @@ msgstr "Неизвестная ошибка. Ответ был пустым из
 msgid "Unsupported file format"
 msgstr "Неподдерживаемый формат файла"
 
-#: assets/js/soundlang.js:255
+#: assets/js/soundlang.js:267
 msgid "Unsupported file type"
 msgstr "Неподдерживаемый тип файла"
 
@@ -847,7 +847,7 @@ msgstr ""
 msgid "We define the default language."
 msgstr ""
 
-#: assets/js/soundlang.js:50
+#: assets/js/soundlang.js:63
 msgid "Yes"
 msgstr ""
 
